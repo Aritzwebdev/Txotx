@@ -1,6 +1,6 @@
 #Txotx
 =====
-  Este proyecto consistira en hacer una especie de guia de sidrerias. Junto a la lista de todos los sagardotegis de guipuzcoa, hay opcion de ordenarlas por municipio.
+  Este proyecto consistira en hacer una especie de guia de sidrerias. Junto a la lista de todos los sagardotegis del País Vasco, hay opcion de busqueda por municipio y por provincia.
 
   Tambien dispondra de una lista de sidrerias favoritas del usuario, y podra valorar con comentarios o votando a favor o en contra de la sidreria.
   
