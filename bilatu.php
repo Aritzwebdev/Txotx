@@ -1,4 +1,7 @@
 <html>
+<head>
+	<link rel="stylesheet" href="bilatu.css"/>
+</head>
 <body>
 <?php
 	$herria=$_POST["herria"];
@@ -25,13 +28,31 @@
 	$idherria=mysql_fetch_array($result);
 	$id=$idherria['idherriak'];
 
-	$sql="SELECT izena FROM sagardotegiak WHERE herria='".$id."';";
+	$sql="SELECT izena, deskribapena, telefonoa, email, web FROM sagardotegiak WHERE herria='".$id."';";
 	$result=mysql_query($sql, $con);
 
 	while($row=mysql_fetch_array($result)){
-		echo $row['izena']."<br>";
-	}
-	
 ?>
+		<div id="izena">
+			<?php
+				echo $row['izena']."<br>";
+			?>
+		</div>
+		<div id="deskribapena" border="1px solid black">
+			<?php
+				echo $row['deskribapena']."<br>";
+				echo "Telefonoa: ".$row['telefonoa']."<br>";
+			
+			if($row['email']!=""){
+				echo "Email: ".$row['email']."<br>";
+			}
+			if($row['web']!=""){
+				echo "Web: ".$row['web']."<br>";
+			}
+			?>
+		</div>
+<?php
+	}
+?>	
 </body>
 </html>

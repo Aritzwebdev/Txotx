@@ -5,7 +5,6 @@
 	$user=$_POST["user"];
 	$pass=$_POST["pass"];
 
-
 	$con=mysql_connect("localhost", "root", "zubiri");
 
 	if(!$con){
@@ -17,7 +16,7 @@
 		echo "Error seleccion base de datos";
 		exit;
 	}
-	$sql="SELECT izena, pasahitza FROM erabiltzaileak;";
+	$sql="SELECT erabiltzailea, pasahitza FROM erabiltzaileak;";
 	$result=mysql_query($sql, $con);
 
 	if(!$result){
@@ -27,7 +26,7 @@
 	$encontrado;
 	while($row=mysql_fetch_array($result)){
 		//$row=mysql_fetch_array($result);
-		if($row['izena']==$user && $row['pasahitza']==$pass){
+		if($row['erabiltzailea']==$user && $row['pasahitza']==$pass){
 			GLOBAL $encontrado;
 			$encontrado=true;
 			break;
