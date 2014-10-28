@@ -1,3 +1,36 @@
+body{
+	font-family: 'Ubuntu', 'Lato', sans-serif;
+}
 #izena{
-	border: 1px solid black;
+	border: 2px solid black;
+	display: -webkit-box;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 0%;
+	width: 100%;
+	height: 20px;
+	-webkit-box-flex: 2;
+	-webkit-border-radius: 10px; /* 5px 10px para hacerlo asimetrico*/
+	background: -webkit-linear-gradient(left, green 75%, white 25%); /* para cambiar en horizontal con 45deg por top*/
+	/*-webkit-box-shadow: rgba(110,110,110, 0.7) 10px 10px 10px; 
+	rgb(a): es la intensidad de la sombra. LO MISMO CON inset al final para hacerla sombra dentro*/
+}#logo{
+	position: relative;
+	top: 5%;
+	left: 1%;
+	width: 80px;
+	height: 80px;
+}
+#header h1{
+	color: black;
+	font-size: 48px;
+	position: fixed;
+	left: 12%;
+	top: -2%;
+}
+a{
+	color: black;
+}
+a:hover{
+	color: green;
 }

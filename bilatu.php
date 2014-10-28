@@ -5,7 +5,13 @@
 <body>
 <?php
 	$herria=$_POST["herria"];
+?>
+	<div id="header">
+		<img id="logo" src="img/logo.png"/>
+		<h1><?php echo $herria ?></h1>
+	</div>
 
+<?php
 	$con=mysql_connect("localhost", "root", "zubiri");
 
 	if(!$con){
@@ -31,12 +37,13 @@
 	$sql="SELECT izena, deskribapena, telefonoa, email, web FROM sagardotegiak WHERE herria='".$id."';";
 	$result=mysql_query($sql, $con);
 
+	
 	while($row=mysql_fetch_array($result)){
 ?>
 		<div id="izena">
-			<?php
+			<a href=""><?php
 				echo $row['izena']."<br>";
-			?>
+			?></a>
 		</div>
 		<div id="deskribapena" border="1px solid black">
 			<?php
@@ -52,7 +59,7 @@
 			?>
 		</div>
 <?php
-	}
+	}	
 ?>	
 </body>
 </html>
