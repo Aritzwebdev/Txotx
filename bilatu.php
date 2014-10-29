@@ -1,6 +1,16 @@
 <html>
 <head>
 	<link rel="stylesheet" href="bilatu.css"/>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#izena').click(function(){
+				$('bilatu.php',{'#izena':$(this).text()},function(data){
+					$('#sagartotegia').load (sagardotegia.php);
+				});
+				return false;
+			});
+		}) ;
+	</script>
 </head>
 <body>
 <?php
@@ -34,29 +44,20 @@
 	$idherria=mysql_fetch_array($result);
 	$id=$idherria['idherriak'];
 
-	$sql="SELECT izena, deskribapena, telefonoa, email, web FROM sagardotegiak WHERE herria='".$id."';";
+	$sql="SELECT izena FROM sagardotegiak WHERE herria='".$id."';";
 	$result=mysql_query($sql, $con);
 
 	
 	while($row=mysql_fetch_array($result)){
 ?>
 		<div id="izena">
-			<a href=""><?php
-				echo $row['izena']."<br>";
-			?></a>
-		</div>
-		<div id="deskribapena" border="1px solid black">
 			<?php
-				echo $row['deskribapena']."<br>";
-				echo "Telefonoa: ".$row['telefonoa']."<br>";
-			
-			if($row['email']!=""){
-				echo "Email: ".$row['email']."<br>";
-			}
-			if($row['web']!=""){
-				echo "Web: ".$row['web']."<br>";
-			}
+				$izena=$row['izena'];
 			?>
+			<form action="sagardotegia.php" method="post">
+				<input id="sagar_ize" type="submit" name="izena" 
+				value="<?php echo $izena ?>">
+			</form>
 		</div>
 <?php
 	}	

@@ -1,0 +1,17 @@
+#izena{
+	border: 2px solid black;
+	display: -webkit-box;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 0%;
+	width: auto;
+	height: 20px;
+	-webkit-box-flex: 2;
+	-webkit-border-radius: 10px; /* 5px 10px para hacerlo asimetrico*/
+	background: -webkit-linear-gradient(right, white 25%, green 75%);
+}
+#izena h1{
+	position: absolute;
+	top: -1%;
+	left: auto;
+}
