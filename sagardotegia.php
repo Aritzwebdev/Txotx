@@ -5,7 +5,14 @@
 <body>
 <?php
 	$izena=$_POST['izena'];
+	$herria=$_POST['herria'];
 ?>
+<div id="menu_txikia">
+	<form action="bilatu.php" method="post">
+		<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
+		<a id="menu_txiki_izena"><?php echo ">".$izena ?></a>
+	</form>
+</div>
 <div id="izena">
 	<h1><?php echo $izena ;?></h1>
 </div>
@@ -33,6 +40,7 @@
 ?>
 		<div id="deskribapena">
 			<?php
+				echo "<br>";
 				echo $row['deskribapena']."<br>";
 				echo "Telefonoa: ".$row['telefonoa']."<br>";
 				if($row['email']!=""){

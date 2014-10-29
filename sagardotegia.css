@@ -12,6 +12,17 @@
 }
 #izena h1{
 	position: absolute;
-	top: -1%;
-	left: auto;
+	top: 3%;
+}
+#menu_txiki_herria{
+	background-color: white;
+	color: green;
+	border: 0px;
+}
+#menu_txiki_izena{
+	color: green;
+	font-size: 14px;
+	position: relative;
+	top: 1%;
+	left: -1%;
 }
