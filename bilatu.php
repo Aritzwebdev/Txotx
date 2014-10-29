@@ -16,6 +16,11 @@
 <?php
 	$herria=$_POST["herria"];
 ?>
+<div id="menu_txikia">
+	<form action="index.html" method="post">
+		<input id="bilatu" type="submit" name="herria" value="Bilatzailea">
+	</form>
+</div>
 	<div id="header">
 		<img id="logo" src="img/logo.png"/>
 		<h1><?php echo $herria ?></h1>

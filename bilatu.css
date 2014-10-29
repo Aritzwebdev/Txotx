@@ -1,6 +1,12 @@
 body{
 	font-family: 'Ubuntu', 'Lato', sans-serif;
 }
+#bilatu{
+	background-color: white;
+	position: relative;
+	color: green;
+	border: 0px;
+}
 #logo{
 	position: relative;
 	top: 5%;
@@ -11,9 +17,9 @@ body{
 #header h1{
 	color: black;
 	font-size: 48px;
-	position: fixed;
-	left: 12%;
-	top: -2%;
+	position: absolute;
+	left: 100px;
+	top: 15px;
 }
 #izena{
 	border: 2px solid black;

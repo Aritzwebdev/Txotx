@@ -54,6 +54,42 @@
 <?php
 	}	
 ?>	
+	<div id="iruzkin_header">
+		<h3>Iruzkinak</h3>
+	</div>
+	<div id="iruzkinak">
+		<?php
+		$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$izena."';";
+		$result=mysql_query($sql, $con);
 
+		if(!$result){
+			echo "Error resultado";
+		exit;
+		}
+
+		while($row=mysql_fetch_array($result)){
+		?>
+
+		
+		
+	</div>
+	<div>
+		<form action="iritzia.php" method="post">
+			Erabiltzailea: <input type="text" name="user">
+			<br>
+			Iruzkina:<br><textarea name="iritzia" rows="5" ></textarea>
+			<br>
+			<input type="submit" value="Bidali"> 
+		</form>
+	</div>
+	<?php
+		$user=$_POST["user"];
+		$iritzia=$_POST["iritzia"];
+	?>
+
+	<?php
+		echo $user."<br><br>";
+		echo $iritzia; 
+	?>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 #fondo{
 	position:fixed;
 	top:0;
@@ -7,9 +8,10 @@
 	height: 90%;
 }
 #titulo{
-	margin-left: 32%;
+	margin: auto; 
 	font: 54px solid white;
 	color: white;
+    text-align: center;
 }
 #registro{
 	position: fixed;

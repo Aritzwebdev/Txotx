@@ -1,21 +1,22 @@
 #izena{
+	position: relative;
 	border: 2px solid black;
 	display: -webkit-box;
 	padding: 10px;
-	margin: 10px;
-	margin-left: 0%;
-	width: auto;
+	margin: auto;
+	margin-left: 0px;
+	width: 90%;
 	height: 20px;
 	-webkit-box-flex: 2;
 	-webkit-border-radius: 10px; /* 5px 10px para hacerlo asimetrico*/
 	background: -webkit-linear-gradient(right, white 25%, green 75%);
 }
 #izena h1{
-	position: absolute;
-	top: 3%;
+	margin-top: -10px;
 }
 #menu_txiki_herria{
 	background-color: white;
+	position: relative;
 	color: green;
 	border: 0px;
 }
@@ -23,6 +24,6 @@
 	color: green;
 	font-size: 14px;
 	position: relative;
-	top: 1%;
-	left: -1%;
+	top: 0px;
+	left: -10px;
 }
