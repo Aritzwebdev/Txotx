@@ -52,21 +52,25 @@
 	$sql="SELECT izena FROM sagardotegiak WHERE herria='".$id."';";
 	$result=mysql_query($sql, $con);
 
-	
-	while($row=mysql_fetch_array($result)){
+	if(!mysql_num_rows($result)){
+		echo "Ez dago sagardotegirik";
+	}
+	else{
+		while($row=mysql_fetch_array($result)){
 ?>
-		<div id="izena">
-			<?php
-				$izena=$row['izena'];
-			?>
-			<form action="sagardotegia.php" method="post">
-				<input type="hidden" name="herria" value="<?php echo $herria ?>">
-				<input id="sagar_ize" type="submit" name="izena" 
-				value="<?php echo $izena ?>">
-			</form>
-		</div>
+			<div id="izena">
+				<?php
+					$izena=$row['izena'];
+				?>
+				<form action="sagardotegia.php" method="post">
+					<input type="hidden" name="herria" value="<?php echo $herria ?>">
+					<input id="sagar_ize" type="submit" name="izena" 
+					value="<?php echo $izena ?>">
+				</form>
+			</div>
 <?php
-	}	
+		}
+	}
 ?>	
 </body>
 </html>

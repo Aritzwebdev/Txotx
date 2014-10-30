@@ -59,22 +59,38 @@
 	</div>
 	<div id="iruzkinak">
 		<?php
-		$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$izena."';";
-		$result=mysql_query($sql, $con);
+			$con=mysql_connect("localhost", "root", "zubiri");
 
-		if(!$result){
-			echo "Error resultado";
-		exit;
-		}
+			if(!$con){
+				echo "Conexion fallida";
+				exit;
+			}
 
-		while($row=mysql_fetch_array($result)){
+			if(!mysql_select_db("txotx", $con)){
+				echo "Error seleccion base de datos";
+				exit;
+			}
+			$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$izena."';";
+			$result=mysql_query($sql, $con);
+
+			if(!$result){
+				echo "Error resultado";
+				exit;
+			}
+			while($row=mysql_fetch_array($result)){
+			?>
+			<div id="nork">
+				<?php echo $row['erabiltzailea']."    ".$row['data']."<br>";?>
+			</div>
+			<div id="iruzkina">
+				<?php echo $row['iruzkina']."<br><br>";?>
+			</div>
+		<?php	
+			}
 		?>
-
-		
-		
 	</div>
 	<div>
-		<form action="iritzia.php" method="post">
+		<form action="" method="post">
 			Erabiltzailea: <input type="text" name="user">
 			<br>
 			Iruzkina:<br><textarea name="iritzia" rows="5" ></textarea>
@@ -82,7 +98,7 @@
 			<input type="submit" value="Bidali"> 
 		</form>
 	</div>
-	<?php
+	<!--<?php
 		$user=$_POST["user"];
 		$iritzia=$_POST["iritzia"];
 	?>
@@ -90,6 +106,6 @@
 	<?php
 		echo $user."<br><br>";
 		echo $iritzia; 
-	?>
+	?>-->
 </body>
 </html>

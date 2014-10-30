@@ -17,17 +17,17 @@
 			e.style.display = 'none';
 		
 		}
-		function jarri(id) {
-		var e = document.getElementById(id);
-		
-			e.style.display = 'block';
-		
+		function jarri() {
+			alert('jaja');
 		}
 	//-->
 	</script>
+</head>
 <body>
-	<img id="fondo" src="img/txotx.jpg" alt="background" />
-	<h1 id="titulo">SagardoteGida</h1>
+	<div onclick="kendu('log'); kendu('reg');">
+	<img id="fondo" src="img/txotx.jpg" alt="background"/>
+	</div>
+	<h1 id="titulo" onclick="kendu('log'); kendu('reg')">SagardoteGida</h1>
 	<div id="registro">
 		<a id="regis" href="#" onmouseover="toggle_visibility('reg'); kendu('log')">Kontua sortu</a>
 		<a id="sartu" href="#" onmouseover="toggle_visibility('log'); kendu('reg')">Saioa hasi</a>
@@ -65,11 +65,11 @@
 	</div>
 	<div id="bilatu">
 		<form action="bilatu.php" method="post">
-			<input id="bilaketa" type="text" name="herria" placeholder="Herria" onclick="kendu('log'), kendu('reg')">
+			<input id="bilaketa" type="text" name="herria" placeholder="Herria" onclick="kendu('log'); kendu('reg');">
 			<input id="bilaketa_botoia" type="submit" value="Bilatu"> 
 		</form>
 	</div>
-	<footer id="footer">
+	<footer id="footer" onclick="kendu('log'); kendu('reg');">
 				Copyleft Aritz Etxegia 2014
 	</footer>
 	</nav>

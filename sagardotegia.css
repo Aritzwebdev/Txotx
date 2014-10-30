@@ -27,3 +27,13 @@
 	top: 0px;
 	left: -10px;
 }
+#nork{
+	border: 1px solid black;
+	display: -webkit-box;
+	padding: 7px;
+	margin: auto;
+	margin-left: 0px;
+	width: 90%;
+	height: 10px;
+	background: -webkit-linear-gradient(left, grey 25%, white 75%);
+}
