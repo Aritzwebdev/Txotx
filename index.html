@@ -29,8 +29,8 @@
 	</div>
 	<h1 id="titulo" onclick="kendu('log'); kendu('reg')">SagardoteGida</h1>
 	<div id="registro">
-		<a id="regis" href="#" onmouseover="toggle_visibility('reg'); kendu('log')">Kontua sortu</a>
-		<a id="sartu" href="#" onmouseover="toggle_visibility('log'); kendu('reg')">Saioa hasi</a>
+		<a id="regis" href="#" onclick="toggle_visibility('reg'); kendu('log')">Kontua sortu</a>
+		<a id="sartu" href="#" onclick="toggle_visibility('log'); kendu('reg')">Saioa hasi</a>
 	</div>	
 	<div id="reg">				
 		<form class="form-3" action="registro.php" method="post">
@@ -64,7 +64,7 @@
 		</form>
 	</div>
 	<div id="bilatu">
-		<form action="bilatu.php" method="post">
+		<form action="bilatu.html" method="post">
 			<input id="bilaketa" type="text" name="herria" placeholder="Herria" onclick="kendu('log'); kendu('reg');">
 			<input id="bilaketa_botoia" type="submit" value="Bilatu"> 
 		</form>
