@@ -89,9 +89,8 @@
 			}
 		?>
 	</div>
-	<!--
 	<div>
-		<form action="sagardotegia.html" method="post">
+		<form action="sagardotegia.php" method="post">
 			Erabiltzailea: <input type="text" name="user">
 			<br>
 			Iruzkina:<br><textarea name="iritzia" rows="5" ></textarea>
@@ -100,6 +99,6 @@
 			<input type="hidden" name="herria" value="<?php echo $herria; ?>">
 			<input type="submit" value="Bidali" > 
 		</form>
-	</div>-->
+	</div>
 </body>
 </html>

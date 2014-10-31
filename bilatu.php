@@ -62,7 +62,7 @@
 				<?php
 					$izena=$row['izena'];
 				?>
-				<form action="sagardotegia.html" method="post">
+				<form action="sagardotegia.php" method="post">
 					<input type="hidden" name="herria" value="<?php echo $herria ?>">
 					<input id="sagar_ize" type="submit" name="izena" 
 					value="<?php echo $izena ?>">
