@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php
-	$herria=$_POST["herria"];
+	$herria=$_GET["herria"];
 ?>
 <div id="menu_txikia">
 	<form action="index.html" method="post">
@@ -62,7 +62,7 @@
 				<?php
 					$izena=$row['izena'];
 				?>
-				<form action="sagardotegia.php" method="post">
+				<form action="sagardotegia.php" method="get">
 					<input type="hidden" name="herria" value="<?php echo $herria ?>">
 					<input id="sagar_ize" type="submit" name="izena" 
 					value="<?php echo $izena ?>">

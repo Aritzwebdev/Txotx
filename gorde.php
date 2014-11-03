@@ -1,9 +1,9 @@
 <?php
-	$iruzkina=$_POST['iruzkina'];
-	$erabiltzailea=$_POST['erabiltzailea'];
-	$data=$_POST['data'];
-	$sagardotegia=$_POST['izena'];
-	$herria=$_POST['herria'];
+	$iruzkina=$_GET['iruzkina'];
+	$erabiltzailea=$_GET['erabiltzailea'];
+	$data=$_GET['data'];
+	$sagardotegia=$_GET['izena'];
+	$herria=$_GET['herria'];
 
 	echo $iruzkina;
 	echo $erabiltzailea;
@@ -31,7 +31,6 @@
 		exit;
 	}*/
 
-	header("Location: sagardotegia.php");
+	header("Location: sagardotegia.php?izena=$sagardotegia&herria=$herria");
 	die();
-	
 ?>

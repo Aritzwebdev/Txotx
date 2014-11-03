@@ -4,11 +4,11 @@
 </head>
 <body>
 <?php
-	$izena=$_POST['izena'];
-	$herria=$_POST['herria'];
+	$izena=$_GET['izena'];
+	$herria=$_GET['herria'];
 ?>
 <div id="menu_txikia">
-	<form action="bilatu.php" method="post">
+	<form action="bilatu.php" method="get">
 		<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
 		<a id="menu_txiki_izena"><?php echo ">".$izena ?></a>
 	</form>
@@ -90,7 +90,7 @@
 		?>
 	</div>
 	<div>
-		<form action="gorde.php" method="post">
+		<form action="gorde.php" method="get">
 			Erabiltzailea: <input type="text" name="erabiltzailea">
 			<br>
 			Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>

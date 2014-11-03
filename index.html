@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="index.css"/>
 	<script type="text/javascript">
 	<!--
-		function toggle_visibility(id) {
+		function auto(id) {
 		var e = document.getElementById(id);
 		if(e.style.display == 'block')
 			e.style.display = 'none';
@@ -29,8 +29,8 @@
 	</div>
 	<h1 id="titulo" onclick="kendu('log'); kendu('reg')">SagardoteGida</h1>
 	<div id="registro">
-		<a id="regis" href="#" onclick="toggle_visibility('reg'); kendu('log')">Kontua sortu</a>
-		<a id="sartu" href="#" onclick="toggle_visibility('log'); kendu('reg')">Saioa hasi</a>
+		<a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a>
+		<a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a>
 	</div>	
 	<div id="reg">				
 		<form class="form-3" action="registro.php" method="post">
@@ -64,7 +64,7 @@
 		</form>
 	</div>
 	<div id="bilatu">
-		<form action="bilatu.php" method="post">
+		<form action="bilatu.php" method="get">
 			<input id="bilaketa" type="text" name="herria" placeholder="Herria" onclick="kendu('log'); kendu('reg');">
 			<input id="bilaketa_botoia" type="submit" value="Bilatu"> 
 		</form>
