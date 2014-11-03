@@ -90,13 +90,14 @@
 		?>
 	</div>
 	<div>
-		<form action="sagardotegia.php" method="post">
-			Erabiltzailea: <input type="text" name="user">
+		<form action="gorde.php" method="post">
+			Erabiltzailea: <input type="text" name="erabiltzailea">
 			<br>
-			Iruzkina:<br><textarea name="iritzia" rows="5" ></textarea>
+			Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
 			<br>
 			<input type="hidden" name="izena" value="<?php echo $izena; ?>">
 			<input type="hidden" name="herria" value="<?php echo $herria; ?>">
+			<input type="hidden" name="data" value="<?php echo date('Y-m-d H:m:s'); ?>">
 			<input type="submit" value="Bidali" > 
 		</form>
 	</div>

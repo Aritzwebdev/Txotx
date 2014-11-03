@@ -5,7 +5,7 @@
 	padding: 10px;
 	margin: auto;
 	margin-left: 0px;
-	width: 90%;
+	width: 97%;
 	height: 20px;
 	-webkit-box-flex: 2;
 	-webkit-border-radius: 10px; /* 5px 10px para hacerlo asimetrico*/
@@ -30,10 +30,10 @@
 #nork{
 	border: 1px solid black;
 	display: -webkit-box;
-	padding: 7px;
+	padding: 8px;
 	margin: auto;
 	margin-left: 0px;
-	width: 90%;
+	width: auto;
 	height: 10px;
 	background: -webkit-linear-gradient(left, grey 25%, white 75%);
 }
