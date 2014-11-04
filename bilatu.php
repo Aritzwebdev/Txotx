@@ -13,6 +13,23 @@
 	</script>
 </head>
 <body>
+<header id="registro">
+	<ul id="hizkuntzak">
+		<li><a href="">eu</a></li>
+		<li>|</li>
+		<li><a href="">es</a></li>
+		<li>|</li>
+		<li><a href="">en</a></li>
+		<li>|</li>
+		<li><a href="">fr</a></li>
+	</ul>
+	<ul id="top_header">
+		<li><a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a></li>
+		<li><a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a></li>
+		<li><a href="">Sagardotegiak</a></li>
+		<li><a href="index.html">Hasiera</a></li>
+	</ul>
+</header>
 <?php
 	$herria=$_GET["herria"];
 ?>

@@ -99,19 +99,20 @@
 			<br>
 			<input type="hidden" name="izena" value="<?php echo $izena; ?>">
 			<input type="hidden" name="herria" value="<?php echo $herria; ?>">
-			<input type="hidden" name="data" value="<?php echo date('Y-m-d H:m:s'); ?>">
+			<input type="hidden" name="data" 
+			value="<?php echo date('Y-m-d H:m:s'); ?>">
 			<input type="submit" value="Bidali" > 
 		</form>
 	</div>
 <?php 
 	if (isset($_GET['msg'])){
 ?>
-<script languaje="javascript">
-alert("Erabiltzaile edo pasahitz okerra");
-</script>
+	<script type="text/javascript">
+		alert("Erabiltzaile edo pasahitz okerra");
+	</script>
 
 <?php
-}
+	}
 ?>
 </body>
 </html>
