@@ -2,7 +2,7 @@
 	$iruzkina=$_GET['iruzkina'];
 	$erabiltzailea=$_GET['erabiltzailea'];
 	$data=$_GET['data'];
-	$sagardotegia=$_GET['izena'];
+	$sagardotegia=$_GET['sagardotegia'];
 	$herria=$_GET['herria'];
 
 	echo $iruzkina;
@@ -21,6 +21,7 @@
 		echo "Error seleccion base de datos";
 		exit;
 	}
+
 	$sql="INSERT INTO iruzkinak (erabiltzailea, data, iruzkina,
 		sagardotegia) VALUES ('$erabiltzailea', '$data', '$iruzkina', 
 		'$sagardotegia');";

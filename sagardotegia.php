@@ -90,8 +90,10 @@
 		?>
 	</div>
 	<div>
-		<form action="gorde.php" method="get">
+		<form action="validar.php" method="get">
 			Erabiltzailea: <input type="text" name="erabiltzailea">
+			<br>
+			Pasahitza: <input type="password" name="pasahitza">
 			<br>
 			Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
 			<br>
@@ -101,5 +103,15 @@
 			<input type="submit" value="Bidali" > 
 		</form>
 	</div>
+<?php 
+	if (isset($_GET['msg'])){
+?>
+<script languaje="javascript">
+alert("Erabiltzaile edo pasahitz okerra");
+</script>
+
+<?php
+}
+?>
 </body>
 </html>
