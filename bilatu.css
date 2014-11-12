@@ -7,6 +7,9 @@ body{
 	color: green;
 	border: 0px;
 }
+#menu_txikia{
+	margin-top: 3px;
+}
 #logo{
 	position: relative;
 	top: 5%;

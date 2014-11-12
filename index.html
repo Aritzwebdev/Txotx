@@ -2,7 +2,6 @@
 <head>
 	<link rel="stylesheet" href="index.css"/>
 	<script type="text/javascript">
-	<!--
 		function auto(id) {
 		var e = document.getElementById(id);
 		if(e.style.display == 'block')
@@ -17,10 +16,6 @@
 			e.style.display = 'none';
 		
 		}
-		function jarri() {
-			alert('jaja');
-		}
-	//-->
 	</script>
 </head>
 <body>
@@ -29,10 +24,6 @@
 			<li><a href="">eu</a></li>
 			<li>|</li>
 			<li><a href="">es</a></li>
-			<li>|</li>
-			<li><a href="">en</a></li>
-			<li>|</li>
-			<li><a href="">fr</a></li>
 		</ul>
 		<ul id="top_header">
 			<li><a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a></li>
@@ -45,14 +36,16 @@
 	<h1 id="titulo" onclick="kendu('log'); kendu('reg')">SagardoteGida</h1>
 	<div id="reg">				
 		<form class="form-3" action="registro.php" method="post">
-				<label for="login">Izena</label>
+				<!--<label id="erabiltzaile"></label>-->
+
+				<label for="izena">Izena</label>
 		        <input type="text" name="izena" placeholder="Izena">
 		    
-		        <label for="password">Abizena</label>
-		        <input type="password" name="abizena" placeholder="Abizena">
+		        <label for="abizena">Abizena</label>
+		        <input type="text" name="abizena" placeholder="Abizena">
 
-		        <label for="password">Email-a</label>
-		        <input type="password" name="email" placeholder="Email-a"> 
+		        <label for="email">Email-a</label>
+		        <input type="text" name="email" placeholder="Email-a"> 
 
 		        <label for="login">Erabiltzailea</label>
 		        <input type="text" name="user" placeholder="Erabiltzailea">
@@ -84,5 +77,29 @@
 				Copyleft Aritz Etxegia 2014
 	</footer>
 	</nav>
+	<!--<script type="text/javascript">
+<?php
+	if (isset($_GET['msg'])){
+		if($_GET['msg']=='1'){
+?>
+			<script type="text/javascript">
+				//var e = document.getElementById(erabiltzaile);
+				//e.text("Erabiltzaile ondo sortu da.");
+				alert("Erabiltzailea ondo sortu da.");
+			</script>
+<?php
+		}else if($_GET['msg']=='0'){
+?>
+			<script type="text/javascript">
+				/*var e = document.getElementById(erabiltzaile);
+				e.text("Erabiltzaile izen hori jadanik existitzen da.");*/
+				alert("Erabiltzaile izen hori jadanik existitzen da.");
+			</script>
+		
+<?php
+		}
+	}
+?>
+</script>-->
 </body>
 <html>

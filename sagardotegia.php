@@ -3,6 +3,17 @@
 	<link rel="stylesheet" href="sagardotegia.css"/>
 </head>
 <body>
+<header id="registro">
+	<ul id="hizkuntzak">
+		<li><a href="">eu</a></li>
+		<li>|</li>
+		<li><a href="">es</a></li>
+	</ul>
+	<ul id="top_header">
+		<li><a href="">Sagardotegiak</a></li>
+		<li><a href="index.html">Hasiera</a></li>
+	</ul>
+</header>
 <?php
 	$izena=$_GET['izena'];
 	$herria=$_GET['herria'];
@@ -17,26 +28,30 @@
 	<h1><?php echo $izena ;?></h1>
 </div>
 <?php
-	$con=mysql_connect("localhost", "root", "zubiri");
+	/*$con=mysql_connect("localhost", "root", "zubiri");*/
+	$con = mysqli_connect(getenv('OPENSHIFT_MYSQL_DB_HOST'), getenv('OPENSHIFT_MYSQL_DB_USERNAME'), getenv('OPENSHIFT_MYSQL_DB_PASSWORD'), "", getenv('OPENSHIFT_MYSQL_DB_PORT')) or die("Error: " . mysqli_error($con));
 
-	if(!$con){
+	/*if(!$con){
 		echo "Conexion fallida";
 		exit;
-	}
+	}*/
 
-	if(!mysql_select_db("txotx", $con)){
+	mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));
+
+	/*if(!mysql_select_db("txotx", $con)){
 		echo "Error seleccion base de datos";
 		exit;
-	}
+	}*/
+
 	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$izena."';";
-	$result=mysql_query($sql, $con);
+	$result=mysqli_query($con, $sql);
 
 	if(!$result){
 		echo "Error resultado";
 		exit;
 	}
 
-	while($row=mysql_fetch_array($result)){
+	while($row=mysqli_fetch_array($result)){
 ?>
 		<div id="deskribapena">
 			<?php
@@ -59,7 +74,7 @@
 	</div>
 	<div id="iruzkinak">
 		<?php
-			$con=mysql_connect("localhost", "root", "zubiri");
+			/*$con=mysql_connect("localhost", "root", "zubiri");
 
 			if(!$con){
 				echo "Conexion fallida";
@@ -69,18 +84,18 @@
 			if(!mysql_select_db("txotx", $con)){
 				echo "Error seleccion base de datos";
 				exit;
-			}
+			}*/
 			$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$izena."';";
-			$result=mysql_query($sql, $con);
+			$result=mysqli_query($con, $sql);
 
 			if(!$result){
 				echo "Error resultado";
 				exit;
 			}
-			while($row=mysql_fetch_array($result)){
+			while($row=mysqli_fetch_array($result)){
 			?>
 			<div id="nork">
-				<?php echo $row['erabiltzailea']."    ".$row['data']."<br>";?>
+				<?php echo $row['erabiltzailea']."    ".$row['data'];?>
 			</div>
 			<div id="iruzkina">
 				<?php echo $row['iruzkina']."<br><br>";?>
@@ -91,6 +106,7 @@
 	</div>
 	<div>
 		<form action="validar.php" method="get">
+			<label id="okerra" color="red"></label>
 			Erabiltzailea: <input type="text" name="erabiltzailea">
 			<br>
 			Pasahitza: <input type="password" name="pasahitza">
@@ -100,7 +116,7 @@
 			<input type="hidden" name="izena" value="<?php echo $izena; ?>">
 			<input type="hidden" name="herria" value="<?php echo $herria; ?>">
 			<input type="hidden" name="data" 
-			value="<?php echo date('Y-m-d H:m:s'); ?>">
+			value="<?php echo date('Y-m-d H:i:s'); ?>">
 			<input type="submit" value="Bidali" > 
 		</form>
 	</div>
@@ -108,11 +124,23 @@
 	if (isset($_GET['msg'])){
 ?>
 	<script type="text/javascript">
-		alert("Erabiltzaile edo pasahitz okerra");
+		var e=document.getElementById(okerra);
+		e.text("Erabiltzaile edo pasahitz okerra");
+		//alert("Erabiltzaile edo pasahitz okerra");
 	</script>
 
 <?php
 	}
+	else{
+?>
+		<script type="text/javascript">
+		var e=document.getElementById(okerra);
+		e.text("");
+		//alert("Erabiltzaile edo pasahitz okerra");
+	</script>
+<?php
+	}
+	mysqli_close($con);
 ?>
 </body>
 </html>
