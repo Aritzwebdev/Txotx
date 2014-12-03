@@ -5,7 +5,9 @@
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript">
 		function initialize(){
-			var myLatlng = new google.maps.LatLng(43.2981, -1.8654);
+			var lat=43.2981;
+			var lon=-1.8654;
+			var myLatlng = new google.maps.LatLng(lat, lon);
 			var myOptions = {
 			  zoom: 8,
 			  center: myLatlng,
@@ -89,7 +91,7 @@
 <?php
 	}	
 ?>	
-	<div id="map_canvas" style="width: 640px; height: 400px;"></div>
+	<div id="map_canvas" style="width: 640px; height: 400px;">gasdghsdfhadfhdash</div>
 	<div id="iruzkin_header">
 		<h3>Iruzkinak</h3>
 	</div>
