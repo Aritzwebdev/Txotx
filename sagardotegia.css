@@ -53,6 +53,11 @@
 	top: 5px;
 	left: -10px;
 }
+#map_canvas{
+	position: absolute;
+	top: 50px;
+	left: 300px;
+}
 #nork{
 	border-left: 1px solid black;
 	border-bottom: 1px solid black;

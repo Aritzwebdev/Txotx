@@ -1,8 +1,28 @@
 <html>
 <head>
 	<link rel="stylesheet" href="sagardotegia.css"/>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+		function initialize(){
+			var myLatlng = new google.maps.LatLng(43.2981, -1.8654);
+			var myOptions = {
+			  zoom: 8,
+			  center: myLatlng,
+			  mapTypeId: google.maps.MapTypeId.HYBRID
+			};
+
+			var map = new google.maps.Map($("#map_canvas").get(0), myOptions);
+
+			var marker = new google.maps.Marker({
+		    	position: myLatlng,
+		    	map: map,
+		    	title:"Sagardotegia"
+		  	});
+		}
+	</script>
 </head>
-<body>
+<body onload="initialize()">
 <header id="registro">
 	<ul id="hizkuntzak">
 		<li><a href="">eu</a></li>
@@ -69,6 +89,7 @@
 <?php
 	}	
 ?>	
+	<div id="map_canvas" style="width: 640px; height: 400px;"></div>
 	<div id="iruzkin_header">
 		<h3>Iruzkinak</h3>
 	</div>
