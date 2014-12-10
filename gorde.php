@@ -1,3 +1,4 @@
+
 <?php
 	$iruzkina=$_GET['iruzkina'];
 	$erabiltzailea=$_GET['erabiltzailea'];

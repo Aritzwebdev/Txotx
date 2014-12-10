@@ -55,8 +55,8 @@
 }
 #map_canvas{
 	position: absolute;
-	top: 50px;
-	left: 300px;
+	top: 100px;
+	left: 700px;
 }
 #nork{
 	border-left: 1px solid black;

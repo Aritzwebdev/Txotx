@@ -2,26 +2,22 @@
 <head>
 	<link rel="stylesheet" href="sagardotegia.css"/>
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript">
-		function initialize(){
-			var lat=43.2981;
-			var lon=-1.8654;
-			var myLatlng = new google.maps.LatLng(lat, lon);
-			var myOptions = {
-			  zoom: 8,
-			  center: myLatlng,
-			  mapTypeId: google.maps.MapTypeId.HYBRID
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
+	<script>
+		function initialize(lat, lng) {
+			var mapProp = {
+			  center:new google.maps.LatLng(lat,lng),
+			  zoom:16,
+			  mapTypeId:google.maps.MapTypeId.ROADMAP
 			};
+			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			var marker=new google.maps.Marker({
+			  position:new google.maps.LatLng(lat,lng),
+			});
 
-			var map = new google.maps.Map($("#map_canvas").get(0), myOptions);
-
-			var marker = new google.maps.Marker({
-		    	position: myLatlng,
-		    	map: map,
-		    	title:"Sagardotegia"
-		  	});
+			marker.setMap(map);
 		}
+		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 </head>
 <body onload="initialize()">
@@ -60,12 +56,12 @@
 
 	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
 
-	/*if(!mysql_select_db("txotx", $con)){
+	if(!mysqli_select_db($con, "txotx")){
 		echo "Error seleccion base de datos";
 		exit;
-	}*/
+	}
 
-	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$izena."';";
+	$sql="SELECT deskribapena, telefonoa, email, web, lat, lng FROM sagardotegiak WHERE izena='".$izena."';";
 	$result=mysqli_query($con, $sql);
 
 	if(!$result){
@@ -86,12 +82,17 @@
 				if($row['web']!=""){
 					echo "Web: ".$row['web']."<br>";
 				} 
+				echo "Latitud: ".$row['lat']."<br>";
+				echo "Longitud: ".$row['lng']."<br>";
+				$lat=$row['lat'];
+				$lng=$row['lng'];
 			?>
 		</div>
+		<div id="map_canvas" style="width: 640px; height: 400px;"><?php $lat ?></div>
 <?php
 	}	
 ?>	
-	<div id="map_canvas" style="width: 640px; height: 400px;">gasdghsdfhadfhdash</div>
+	
 	<div id="iruzkin_header">
 		<h3>Iruzkinak</h3>
 	</div>
