@@ -111,8 +111,9 @@
 				echo "Latitud: ".$lat."<br>";
 				echo "Longitud: ".$lng."<br>";
 			?>
+			<a id="comentarios" href="#" onClick="iruzkinak('iruzkin')">Iruzkinak ikusi</a>
 		</div>
-		<a id="comentarios" href="#" onClick="iruzkinak('iruzkin')">Iruzkinak ikusi</a>
+		
 		<div id="googleMap" style="width: 640px; height: 400px;"></div>
 <?php
 	}	
