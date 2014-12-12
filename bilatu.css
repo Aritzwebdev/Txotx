@@ -1,6 +1,9 @@
 body{
 	font-family: 'Ubuntu', 'Lato', sans-serif;
 }
+a{
+	text-decoration: none;
+}
 #bilatu{
 	background-color: white;
 	position: relative;

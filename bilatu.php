@@ -48,10 +48,10 @@
 	
 	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
 
-	if(!mysqli_select_db($con, "txotx")){
+	/*if(!mysqli_select_db($con, "txotx")){
 		echo "Error seleccion base de datos";
 		exit;
-	}
+	}*/
 
 	$sql="SELECT idherriak FROM herriak WHERE izena='".$herria."';";
 	$result=mysqli_query($con, $sql);

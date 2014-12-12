@@ -4,11 +4,6 @@
 
 	$con=mysqli_connect("localhost", "root", "zubiri","txotx");
 
-	if(!mysqli_select_db($con, "txotx")){
-		echo "Error seleccion base de datos";
-		exit;
-	}
-
 	$sql="SELECT lat, lng FROM sagardotegiak WHERE izena='".$izena."';";
 	$result=mysqli_query($con, $sql);
 
