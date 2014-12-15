@@ -4,6 +4,11 @@
 
 	$con=mysqli_connect("localhost", "root", "zubiri","txotx");
 
+	if(!mysqli_select_db($con, "txotx")){
+		echo "Error seleccion base de datos";
+		exit;
+	}
+
 	$sql="SELECT lat, lng FROM sagardotegiak WHERE izena='".$izena."';";
 	$result=mysqli_query($con, $sql);
 
@@ -14,8 +19,8 @@
 ?>
 <html>
 <head>
-	<link rel="stylesheet" href="sagardotegia.css"/>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/sagardotegia.css"/>
+	<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
 	<script>
 		function initialize() {
