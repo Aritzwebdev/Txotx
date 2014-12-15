@@ -1,0 +1,46 @@
+body{
+    background: url("img/txotx.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+img{
+	width:60px;
+	height:60px;
+}
+
+#hizkuntzak{
+	border-left: 1px solid white;
+	border-right: 1px solid white;	
+}	
+#hizkuntzak li{
+	border-right:1px solid grey;	
+}
+#Registro,#Login{
+	background:#222222;
+}
+#Registro input,#Login input{
+	margin-bottom:1px;
+}
+#titulo{
+	margin: auto; 
+	font: 54px solid white;
+	color: white;
+    text-align: center;
+}
+#bilatu{
+	margin-top:150px;	
+}	
+#main{
+	margin-left:auto;
+	margin-right:auto;
+	widht:500px;
+	height:400px;
+	text-align:center;
+}
+#footer{
+	margin-top:200px;
+	text-align:center;	
+	color:white;
+}	
