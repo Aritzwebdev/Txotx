@@ -1,3 +1,4 @@
+
 <?php
 	$iruzkina=$_GET['iruzkina'];
 	$erabiltzailea=$_GET['erabiltzailea'];
@@ -15,10 +16,11 @@
 
 	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
 
-	if(!mysqli_select_db("txotx", $con)){
+	/*if(!mysqli_select_db("txotx", $con)){
 		echo "Error seleccion base de datos";
 		exit;
-	}
+	}*/
+
 
 	$sql="INSERT INTO iruzkinak (erabiltzailea, data, iruzkina,
 		sagardotegia) VALUES ('$erabiltzailea', '$data', '$iruzkina', 

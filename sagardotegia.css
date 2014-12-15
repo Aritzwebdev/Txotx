@@ -1,3 +1,6 @@
+a{
+	text-decoration: none;
+}
 #hizkuntzak li{
     display:inline-block;
     float: left;
@@ -53,10 +56,20 @@
 	top: 5px;
 	left: -10px;
 }
-#map_canvas{
+#deskribapena{
 	position: absolute;
-	top: 50px;
-	left: 300px;
+	top: 200px;
+}
+#googleMap{
+	position: absolute;
+	top: 130px;
+	left: 400px;
+}
+#iruzkin{
+	position: absolute;
+	width: 300px;
+	top: 330px;
+	display: none;
 }
 #nork{
 	border-left: 1px solid black;

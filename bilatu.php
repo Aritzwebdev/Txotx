@@ -48,7 +48,7 @@
 	
 	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
 
-	/*if(!mysql_select_db("txotx", $con)){
+	/*if(!mysqli_select_db($con, "txotx")){
 		echo "Error seleccion base de datos";
 		exit;
 	}*/
