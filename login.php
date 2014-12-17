@@ -8,7 +8,7 @@
 	include 'conectar.php';
 	$con=conectar();
 
-	$sql="SELECT erabiltzailea, pasahitza FROM erabiltzaileak;";
+	$sql="SELECT iderabiltzaileak ,erabiltzailea, pasahitza FROM erabiltzaileak;";
 	$result=mysqli_query($con, $sql);
 
 	if(!$result){
@@ -21,16 +21,18 @@
 		if($row['erabiltzailea']==$user && $row['pasahitza']==$pass){
 			GLOBAL $encontrado;
 			$encontrado=true;
+
+			$id = $row['iderabiltzaileak'];
 			break;
 		}
 	}
 	if($encontrado==true){
 		if (!isset($_SESSION["user"])){ 
 		   	$_SESSION["user"] = $user; 
+		   	$_SESSION["id"] = $id;
 		}else{ 
 		   	$_SESSION["user"]=""; 
 		} 
-		echo "ongi etorri ".$_SESSION["user"];
 ?>
 		<script type="text/javascript">
 			location.href = "index.php";

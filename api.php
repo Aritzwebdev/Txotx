@@ -1,7 +1,9 @@
 <?php
 
   session_start();
-  $user = '2';
+  
+  echo $_SESSION["id"];
+  $userid = '1';
 
               include "conectar.php";
               $con = conectar();
@@ -10,12 +12,12 @@
                 if(isset($_GET['user']) && intval($_GET['user'])) {
 
                                /* recibir variables por medio de GET */
-                               $usuariosId = isset($_GET['num']) ? intval($_GET['num']) : $user; // # 1 es default
+                               $usuariosId = isset($_GET['num']) ? intval($_GET['num']) : $userid; // # 1 es default
                                $format = 'json'; //tipo de formato que devuelve es JSON
 
                                /* consulta a la tabla comida dependiendo del id del usuario */
 
-                               $sql = "SELECT iderabiltzaileak,erabiltzailea FROM erabiltzaileak WHERE iderabiltzaileak='$usuariosId'";
+                               $sql = "SELECT iderabiltzaileak,erabiltzailea FROM erabiltzaileak WHERE iderabiltzaileak='".$usuariosId."';";
                                $result=mysqli_query($con, $sql);
 
                                 if(!$result){
