@@ -1,9 +1,6 @@
 body{
 	font-family: 'Ubuntu', 'Lato', sans-serif;
 }
-a{
-	text-decoration: none;
-}
 #bilatu{
 	background-color: white;
 	position: relative;
@@ -13,6 +10,22 @@ a{
 #menu_txikia{
 	margin-top: 3px;
 }
+
+input[type="search"]{
+	width: 45px;
+	background: #ededed url('../img/lupa.png') no-repeat 20px center;
+	padding: 10px 11px 10px 33px;
+	border-radius: 15em;
+	transition: all .5s;
+	outline: none;
+}
+input[type="search"]:focus{
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #FFF;
+}
+
 #logo{
 	position: relative;
 	top: 5%;

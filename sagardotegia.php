@@ -124,7 +124,7 @@
 			?>
 		</div>
 		<div>
-			<form action="guardarcomentario.php" method="get">
+			<form action="guardarComentario.php" method="get">
 				<label id="okerra" color="red"></label>
 				Erabiltzailea: <input type="text" name="erabiltzailea">
 				<br>

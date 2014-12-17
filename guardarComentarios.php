@@ -15,6 +15,12 @@
 	$row=mysqli_fetch_array($result);
 
 	if($row['erabiltzailea']==$erabiltzailea&&$row['pasahitza']==$pasahitza){
+		
+		$sql="INSERT INTO iruzkinak (erabiltzailea, data, iruzkina,
+		sagardotegia) VALUES ('$erabiltzailea', '$data', '$iruzkina', 
+		'$sagardotegia');";
+		
+		$result=mysqli_query($con, $sql);
 		header("Location: gorde.php?iruzkina=$iruzkina&erabiltzailea=$erabiltzailea&data=$data&sagardotegia=$sagardotegia&herria=$herria");
 	}
 	else{
