@@ -30,10 +30,9 @@
 		}else{ 
 		   	$_SESSION["user"]=""; 
 		} 
-		echo "ongi etorri ".$_SESSION["user"];
-		//header("Location: index.php"); die;
+		header("Location: index.php"); die;
 	}else{
-		//header("Location: index.php"); die;
+		header("Location: index.php"); die;
 	}
 	mysqli_close($con);
 ?>
