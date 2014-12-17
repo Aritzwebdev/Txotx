@@ -16,7 +16,7 @@
 		exit;
 	}
 	
-	while($row=mysqli_fetch_array($result) || $encontrado==false){
+	while($row=mysqli_fetch_array($result)){
 		//$row=mysql_fetch_array($result);
 		if($row['erabiltzailea']==$user && $row['pasahitza']==$pass){
 			GLOBAL $encontrado;
