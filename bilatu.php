@@ -1,16 +1,6 @@
 <html>
 <head>
-	<link rel="stylesheet" href="css/bilatu.css"/>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#izena').click(function(){
-				$('bilatu.php',{'#izena':$(this).text()},function(data){
-					$('#sagartotegia').load (sagardotegia.php);
-				});
-				return false;
-			});
-		}) ;
-	</script>
+	<link rel="stylesheet" href="bilatu.css"/>
 </head>
 <body>
 <header id="registro">
@@ -38,28 +28,12 @@
 	</div>
 
 <?php
-	$con=mysqli_connect("localhost", "root", "zubiri","txotx");
-	/*$con = mysqli_connect(getenv('OPENSHIFT_MYSQL_DB_HOST'), getenv('OPENSHIFT_MYSQL_DB_USERNAME'), getenv('OPENSHIFT_MYSQL_DB_PASSWORD'), "", getenv('OPENSHIFT_MYSQL_DB_PORT')) or die("Error: " . mysqli_error($con));*/
 
-	if(!$con){
-		echo "Conexion fallida";
-		exit;
-	}
+	include("conectar.php");
+	$con=conectar();
 	
-	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
-
-	if(!mysqli_select_db($con, "txotx")){
-		echo "Error seleccion base de datos";
-		exit;
-	}
-
 	$sql="SELECT idherriak FROM herriak WHERE izena='".$herria."';";
 	$result=mysqli_query($con, $sql);
-
-	/*if(!$result){
-		echo "Error resultado";
-		exit;
-	}*/
 
 	$idherria=mysqli_fetch_array($result);
 	$id=$idherria['idherriak'];
@@ -70,6 +44,7 @@
 	if(!mysqli_num_rows($result)){
 		echo "Ez dago sagardotegirik";
 	}
+
 	else{
 		while($row=mysqli_fetch_array($result)){
 ?>

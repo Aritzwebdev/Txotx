@@ -1,10 +1,9 @@
+<?php 
+ session_start();
+?>
 <html>
 <head>
-	<link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
-	<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-	<script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
-
+	<link rel="stylesheet" href="index.css"/>
 	<script type="text/javascript">
 		function auto(id) {
 		var e = document.getElementById(id);
@@ -23,104 +22,38 @@
 	</script>
 </head>
 <body>
-
-<!-- MENU --> 
 	<header id="registro">
-		<div id="page-wrap">	   	   
-        <ul class="dropdown">
-        	<li><a href="index.html">Hasiera</a></li>
-        	<li><a href="">Sagardotegiak</a>
-        		<ul class="sub_menu">
-        			 <li>
-        				<a href="#">Gipuzkoa</a>
-        				<ul>
-        					<li><a href="#">Hernani</a>
-        						<ul class="sub_menu">
-        							<li><a href="">Rufino</a></li>
-        							<li><a href="">Itxasburu</a></li>
-        						</ul>
-        					</li>
-        					<li><a href="#">Oiartzun</a>
-        						<ul class="sub_menu">
-        							<li><a href="http://localhost/Txotx/sagardotegia.php?herria=oiartzun&izena=Baleio">Baleio</a></li>
-        							<li><a href="">Ordo-zelai</a></li>
-        						</ul>
-        					</li>
-        					<li><a href="#">Astigarraga</a>
-        						<ul class="sub_menu">
-        							<li><a href="">Alguna</a></li>
-        							<li><a href="">Fijo</a></li>
-        						</ul>
-        					</li>
-        				</ul>
-        			 </li>
-        			 <li>
-        				<a href="#">Bizkaia</a>
-        				<ul>
-        					<li><a href="#">Bilbao</a>
-        						<ul class="sub_menu">
-        							<li><a href="">Nose</a></li>
-        							<li><a href="">Pase</a></li>
-        						</ul>
-        					</li>
-        					<li><a href="#">Getxo</a>
-        						<ul class="sub_menu">
-        							<li><a href="">Pos</a></li>
-        							<li><a href="">Alao</a></li>
-        						</ul>
-        					</li>
-        				</ul>
-        			 </li>
-        			 <li>
-        				<a href="#">Araba</a>
-        				<ul>
-        					<li><a href="#">Gazteiz</a>
-        						<ul class="sub_menu">
-        							<li><a href="">Iepa </a></li>
-        							<li><a href="">Pues</a></li>
-        						</ul>
-        					</li>
-        				</ul>
-        			 </li>
-        			 <li>
-        				<a href="#">Nafarroa</a>
-        				<ul>
-        					<li><a href="#">Pamplona</a>
-        						<ul class="sub_menu">
-        							<li><a href="">aupa</a></li>
-        							<li><a href="">lahostia</a></li>
-        						</ul>
-        					</li>
-        				</ul>
-        			 </li>
-        			 <li>
-        				<a href="#">Iparralde</a>
-        				<ul>
-        					<li><a href="#">Francia</a>
-        						<ul class="sub_menu">
-        							<li><a href="">Gabaxo1</a></li>
-        							<li><a href="">Gabaxo2</a></li>
-        						</ul>
-        					</li>
-        				</ul>
-        			 </li>
-        		</ul>
-        	</li>
-        	<li><a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a></li>
-        	<li><a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a></li>
-        </ul>		
-	</div>
-	<ul id="hizkuntzak">
-			<li><img id="logo" src="img/logo.png"/></li>
+		<ul id="hizkuntzak">
 			<li><a href="">eu</a></li>
-			<li>|</li>
+			<li>|<?php echo $_SESSION["user"] ?></li>
 			<li><a href="">es</a></li>
 		</ul>
+		<ul id="top_header">
+		<?php 
+			if ($_SESSION["user"]!=""){ 
+		?>
+			<li><a id="user" href="#"><?php echo $_SESSION["user"]; ?></a></li>
+			<li>
+			<a id="sartu" href="#" onclick="cerrarsesion.php">Saioa itxi</a>
+			</li>
+					
+		<?php }
+			else{ ?>
+			
+			<li><a id="regis" href="#" onclick="auto('reg'); kendu('log')" onblur="kendu('reg')">Kontua sortu</a></li>
+			<li>
+			<a id="sartu" href="#" onclick="auto('log'); kendu('reg')" onblur="kendu('log')">Saioa hasi</a>
+			</li>				
+			<?php } ?>
+			<li><a href="">Sagardotegiak</a></li>
+			<li><a href="index.html">Hasiera</a></li>
+		</ul>
+		
+				
+				 	
 	</header>
-
-<!-- WEB -->
-	<img id="fondo" src="img/txotx.jpg" alt="background"/>
-	<h1 id="titulo" onclick="kendu('log'); kendu('reg')">SagardoteGida</h1>
+	<img id="fondo" src="img/txotx.jpg" alt="background" href="#"/>
+	<h1 id="titulo">SagardoteGida</h1>
 	<div id="reg">				
 		<form class="form-3" action="registro.php" method="post">
 				<!--<label id="erabiltzaile"></label>-->
@@ -160,33 +93,9 @@
 			<input id="bilaketa_botoia" type="submit" value="Bilatu"> 
 		</form>
 	</div>
-	<footer id="footer" onclick="kendu('log'); kendu('reg');">
-				Copyleft Aritz Etxegia 2014
+	<footer id="footer">
+				Copyleft Aritz Etxegia, Ruben Aparicio, Lander Reyes 2014
 	</footer>
 	</nav>
-	<!--<script type="text/javascript">
-<?php
-	if (isset($_GET['msg'])){
-		if($_GET['msg']=='1'){
-?>
-			<script type="text/javascript">
-				//var e = document.getElementById(erabiltzaile);
-				//e.text("Erabiltzaile ondo sortu da.");
-				alert("Erabiltzailea ondo sortu da.");
-			</script>
-<?php
-		}else if($_GET['msg']=='0'){
-?>
-			<script type="text/javascript">
-				/*var e = document.getElementById(erabiltzaile);
-				e.text("Erabiltzaile izen hori jadanik existitzen da.");*/
-				alert("Erabiltzaile izen hori jadanik existitzen da.");
-			</script>
-		
-<?php
-		}
-	}
-?>
-</script>-->
 </body>
 <html>

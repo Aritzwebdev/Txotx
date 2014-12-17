@@ -1,25 +1,13 @@
-<html>
-<body>
 <?php
+	session_start();
 
 	$user=$_POST["user"];
 	$pass=$_POST["pass"];
+	$encontrado;
+	
+	include 'conectar.php';
+	$con=conectar();
 
-	$con=mysqli_connect("localhost", "root", "zubiri", "txotx");
-	/*$con = mysqli_connect(getenv('OPENSHIFT_MYSQL_DB_HOST'), getenv('OPENSHIFT_MYSQL_DB_USERNAME'), getenv('OPENSHIFT_MYSQL_DB_PASSWORD'), "", getenv('OPENSHIFT_MYSQL_DB_PORT')) or die("Error: " . mysqli_error($con));*/
-
-	if(!$con){
-		echo "Conexion fallida";
-		exit;
-	}
-
-	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
-/*
-	if(!mysql_select_db("txotx", $con)){
-		echo "Error seleccion base de datos";
-		exit;
-	}
-*/
 	$sql="SELECT erabiltzailea, pasahitza FROM erabiltzaileak;";
 	$result=mysqli_query($con, $sql);
 
@@ -27,8 +15,8 @@
 		echo "Error resultado";
 		exit;
 	}
-	$encontrado;
-	while($row=mysqli_fetch_array($result)){
+	
+	while($row=mysqli_fetch_array($result) || $encontrado==false){
 		//$row=mysql_fetch_array($result);
 		if($row['erabiltzailea']==$user && $row['pasahitza']==$pass){
 			GLOBAL $encontrado;
@@ -36,13 +24,16 @@
 			break;
 		}
 	}
-	
 	if($encontrado==true){
-		echo "Ongi etorri ".$user;
+		if (!isset($_SESSION["user"])){ 
+		   	$_SESSION["user"] = $user; 
+		}else{ 
+		   	$_SESSION["user"]=""; 
+		} 
+		echo "ongi etorri ".$_SESSION["user"];
+		//header("Location: index.php"); die;
 	}else{
-		echo "Erabiltzaile hori ez da existitzen edo datuak gaizki daude.";
+		//header("Location: index.php"); die;
 	}
 	mysqli_close($con);
 ?>
-</body>
-</html>

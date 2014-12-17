@@ -2,12 +2,9 @@
 	$izena=$_GET['izena'];
 	$herria=$_GET['herria'];
 
-	$con=mysqli_connect("localhost", "root", "zubiri","txotx");
-
-	if(!mysqli_select_db($con, "txotx")){
-		echo "Error seleccion base de datos";
-		exit;
-	}
+	include 'conectar.php';
+	$con=conectar();
+	
 
 	$sql="SELECT lat, lng FROM sagardotegiak WHERE izena='".$izena."';";
 	$result=mysqli_query($con, $sql);
@@ -19,8 +16,7 @@
 ?>
 <html>
 <head>
-	<link rel="stylesheet" href="css/sagardotegia.css"/>
-	<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+	<link rel="stylesheet" href="sagardotegia.css"/>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
 	<script>
 		function initialize() {
@@ -75,25 +71,8 @@
 	<h1><?php echo $izena ;?></h1>
 </div>
 <?php
-	
-	/*$con = mysqli_connect(getenv('OPENSHIFT_MYSQL_DB_HOST'), getenv('OPENSHIFT_MYSQL_DB_USERNAME'), getenv('OPENSHIFT_MYSQL_DB_PASSWORD'), "", getenv('OPENSHIFT_MYSQL_DB_PORT')) or die("Error: " . mysqli_error($con));*/
-
-	if(!$con){
-		echo "Conexion fallida";
-		exit;
-	}
-
-	/*mysqli_select_db($con, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($con));*/
-
-	
-
 	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$izena."';";
 	$result=mysqli_query($con, $sql);
-
-	if(!$result){
-		echo "Error resultado";
-		exit;
-	}
 
 	while($row=mysqli_fetch_array($result)){
 ?>
@@ -124,17 +103,7 @@
 		</div>
 		<div id="iruzkinak">
 			<?php
-				/*$con=mysql_connect("localhost", "root", "zubiri");
-
-				if(!$con){
-					echo "Conexion fallida";
-					exit;
-				}
-
-				if(!mysql_select_db("txotx", $con)){
-					echo "Error seleccion base de datos";
-					exit;
-				}*/
+				
 				$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$izena."';";
 				$result=mysqli_query($con, $sql);
 
@@ -155,7 +124,7 @@
 			?>
 		</div>
 		<div>
-			<form action="validar.php" method="get">
+			<form action="guardarcomentario.php" method="get">
 				<label id="okerra" color="red"></label>
 				Erabiltzailea: <input type="text" name="erabiltzailea">
 				<br>
