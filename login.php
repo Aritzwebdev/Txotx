@@ -31,8 +31,18 @@
 		   	$_SESSION["user"]=""; 
 		} 
 		echo "ongi etorri ".$_SESSION["user"];
+?>
+		<script type="text/javascript">
+			location.href = "index.php";
+		</script>
+<?php
 		//header("Location: index.php"); die;
 	}else{
+?>
+		<script type="text/javascript">
+			location.href = "index.php";
+		</script>
+<?php
 		//header("Location: index.php"); die;
 	}
 	mysqli_close($con);

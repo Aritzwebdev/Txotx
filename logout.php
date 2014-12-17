@@ -1,8 +1,10 @@
-<?php 
+<?php
 	//Crear sesión
 	session_start();
+	//Vaciar sesión
+	$_SESSION = array();
 	//Destruir Sesión
-	unset($_SESSION['user']);
+	session_destroy();
 	//Redireccionar a index.php
 	header("location: index.php");
 ?>

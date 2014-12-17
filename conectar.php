@@ -1,13 +1,17 @@
 <?php
-//if(!getenv('OPENSHIFT_MYSQL_DB_HOST')){
+if(!getenv('OPENSHIFT_MYSQL_DB_HOST')){
 	function conectar(){
 		$con=mysqli_connect("localhost", "root", "zubiri","txotx");
 		return $con;
 	}
-/*}else{
+}else{
+	$server=getenv('OPENSHIFT_MYSQL_DB_HOST');
+	$user=getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+	$password=getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+	$db=getenv('OPENSHIFT_APP_NAME');
 	function conectar(){
-		$con = mysqli_connect(getenv('OPENSHIFT_MYSQL_DB_HOST'), getenv('OPENSHIFT_MYSQL_DB_USERNAME'), getenv('OPENSHIFT_MYSQL_DB_PASSWORD'), getenv('OPENSHIFT_APP_NAME')) , getenv('OPENSHIFT_MYSQL_DB_PORT')) or die("Error: " . mysqli_error($con));
+		$con=mysql_connect($server,$user,$password, $db) or die(mysql_error());
 		return $con;
 	}
-}*/
+}
 ?>

@@ -13,16 +13,23 @@
 	$row=mysqli_fetch_array($result);
 
 	if($row['erabiltzailea']==$erabiltzailea || $row['email']==$email){
-		echo "Jadanik badago erabiltzaile bat datu hoiekin.";
+?>
+		<script type="text/javascript">
+			alert("Jadanik badago erabiltzaile bat datu hoiekin.");
+			location.href = "index.php";
+		</script>
+<?php
 	}else{
 		$sql="INSERT INTO erabiltzaileak (erabiltzailea, pasahitza, izena,
 			abizena, email) VALUES ('$erabiltzailea', '$pasahitza', '$izena', 
 			'$abizena', '$email');";
 		$result=mysqli_query($con, $sql);
-
-		echo "Erregistroa ondo burutu da";
-		/*header("Location: index.html?var=1");
-		die();*/
+?>
+		<script type="text/javascript">
+			alert("Erregistroa ondo burutu da.");
+			location.href = "index.php";
+		</script>
+<?php
 	}
 
 	mysqli_close($con);

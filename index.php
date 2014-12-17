@@ -19,32 +19,33 @@
 			e.style.display = 'none';
 		
 		}
+		function logout(){
+			location.href="logout.php";
+		}
 	</script>
 </head>
 <body>
 	<header id="registro">
 		<ul id="hizkuntzak">
 			<li><a href="">eu</a></li>
-			<li>|<?php echo $_SESSION["user"]; ?></li>
+			<li>|</li>
 			<li><a href="">es</a></li>
 		</ul>
 		<ul id="top_header">
-		<!--<?php 
-			if ($_SESSION["user"]!=""){ 
+		<?php 
+			if (!isset($_SESSION["user"])){ 
 		?>
-			<li><a id="user" href="#"><?php echo $_SESSION["user"]; ?></a></li>
-			<li>
-			<a id="sartu" href="#" onclick="cerrarsesion.php">Saioa itxi</a>
-			</li>
-					
-		<?php }
-			else{ ?>-->
-			
 			<li><a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a></li>
 			<li>
 			<a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a>
-			</li>				
-			<!--<?php } ?>-->
+			</li>					
+		<?php }
+			else{ ?>	
+			<li>
+			<a id="sartu" href="#" onclick="logout();">Saioa itxi</a>
+			</li>
+			<li><a id="user" href="#"><?php echo $_SESSION["user"]; ?></a></li>
+			<?php } ?>
 			<li><a href="">Sagardotegiak</a></li>
 			<li><a href="index.html">Hasiera</a></li>
 		</ul>
