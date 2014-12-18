@@ -1,7 +1,9 @@
-$("#enviarT").click(function(mievento) {
+$(document).ready(function(){      
+
+        $("#enviarT").click(function(mievento) {
                 $.ajax({
                     type: 'GET',
-                    url: "http://localhost/Txotx/respuestaApi.php",
+                    url: "http://localhost/Txotx/api/respuestaApi.php",
                     dataType: "json",
                     success: function(data) {
                         var datos ={
@@ -16,3 +18,5 @@ $("#enviarT").click(function(mievento) {
                    }
                 });
            });
+
+    });

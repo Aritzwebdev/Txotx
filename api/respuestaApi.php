@@ -1,10 +1,15 @@
 <?php
+
+  session_start();
+  $user = $_SESSION['id'];
+ 
                 //se verifica que exista soporte cURL
+  
                 if (function_exists('curl_init')) {
                                //se inicia la sesion de cURL
                                $ch = curl_init();
                                //asignamos la direccion al cual se conecta
-                               curl_setopt($ch, CURLOPT_URL,"http://localhost/Txotx/api.php?user=1");
+                               curl_setopt($ch, CURLOPT_URL,"http://localhost/Txotx/api/api.php?user=".$user."");
                                //el tiempo maximo de respuesta
                                curl_setopt($ch, CURLOPT_TIMEOUT, 30);
                                //Si en el servidor al que nos conectamos hubiese alguna redirección (código 302) y nos interesa seguirla entonces debemos decírselo a cURL:
