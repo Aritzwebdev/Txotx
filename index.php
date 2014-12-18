@@ -33,6 +33,10 @@
                     location.href="logout.php";
                 }
 
+                function perfil(){
+                    location.href="perfil.php";
+                }
+
         </script>
 
 </head>
@@ -41,8 +45,7 @@
     <img id="logo" src="img/logo.png"/>
 
     <!-- MENU --> 
-        <header id="registro">
-                <div id="page-wrap">    
+        <header id="registro">  
         <ul class="dropdown">
                 <li><a href="index.php">Hasiera</a></li>
                 <li><a href="">Sagardotegiak</a>
@@ -129,7 +132,7 @@
                 <?php }
                     else{ ?>    
                     <li>
-                       <a id="user" href="#"><?php echo $_SESSION["user"]; ?></a>
+                       <a id="user" href="#" onclick="perfil();"><?php echo $_SESSION["user"]; ?></a>
                     </li>
                     <li>
                         <a id="sartu" href="#" onclick="logout();">Saioa itxi</a>
