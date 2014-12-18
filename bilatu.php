@@ -27,7 +27,7 @@
 	</ul>
 </header>
 <?php
-	$herria=$_POST["herria"];
+	$herria=$_GET["herria"];
 ?>
 <div id="menu_txikia">
 	<form action="index.php" method="post">
@@ -37,8 +37,8 @@
 	<div id="header">
 		<img id="logo" src="img/logo.png"/>
 		<h1><?php echo $herria ?></h1>
-		<form action="bilatu.php" method="POST">
-			<input type="search" name="herria" placeholder="buscar..." />
+		<form action="bilatu.php" method="GET">
+			<input type="search" name="herria" placeholder="bilatu..." />
 		</form>
 	</div>
 
@@ -51,10 +51,10 @@
 	$sql="SELECT idherriak FROM herriak WHERE izena='".$herria."';";
 	$result=mysqli_query($con, $sql);
 
-	/*if(!$result){
+	if(!$result){
 		echo "Error resultado";
 		exit;
-	}*/
+	}
 
 	$idherria=mysqli_fetch_array($result);
 	$id=$idherria['idherriak'];
@@ -67,15 +67,11 @@
 	}
 	else{
 		while($row=mysqli_fetch_array($result)){
+			$sagardotegia=$row['izena'];
 ?>
-			<div id="izena">
-				<?php
-					$izena=$row['izena'];
-				?>
+			<div id="izena">					
 				<form action="sagardotegia.php" method="get">
-					<input type="hidden" name="herria" value="<?php echo $herria ?>">
-					<input id="sagar_ize" type="submit" name="izena" 
-					value="<?php echo $izena ?>">
+					<input id="sagar_ize" type="submit" name="sagardotegia" value="<?php echo $sagardotegia ?>">
 				</form>
 			</div>
 <?php

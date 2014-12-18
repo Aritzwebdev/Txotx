@@ -1,22 +1,26 @@
 <?php
-	$izena=$_GET['izena'];
-	$herria=$_GET['herria'];
+	$sagardotegia=$_GET['sagardotegia'];
 
 	include 'conectar.php';
 	$con=conectar();
 	
 
-	$sql="SELECT lat, lng FROM sagardotegiak WHERE izena='".$izena."';";
+	$sql="SELECT lat, lng, herria FROM sagardotegiak WHERE izena='".$sagardotegia."';";
 	$result=mysqli_query($con, $sql);
 
 	while($row=mysqli_fetch_array($result)){
 		$lat=$row['lat'];
 		$lng=$row['lng'];
+		$herriaznb=$row['herria'];
 	}
+	$sql="SELECT izena FROM herriak WHERE idherriak='".$herriaznb."';";
+	$result=mysqli_query($con, $sql);
+
+	if($row=mysqli_fetch_array($result)){$herria=$row['izena'];}
 ?>
 <html>
 <head>
-	<link rel="stylesheet" href="sagardotegia.css"/>
+	<link rel="stylesheet" href="css/sagardotegia.css"/>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
 	<script>
 		function initialize() {
@@ -58,20 +62,20 @@
 	</ul>
 	<ul id="top_header">
 		<li><a href="">Sagardotegiak</a></li>
-		<li><a href="index.html">Hasiera</a></li>
+		<li><a href="index.php">Hasiera</a></li>
 	</ul>
 </header>
 <div id="menu_txikia">
 	<form action="bilatu.php" method="get">
 		<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
-		<a id="menu_txiki_izena"><?php echo ">".$izena ?></a>
+		<!--<a id="menu_txiki_izena"><?php echo ">".$sagardotegia ?></a>-->
 	</form>
 </div>
 <div id="izena">
-	<h1><?php echo $izena ;?></h1>
+	<h1><?php echo $sagardotegia ;?></h1>
 </div>
 <?php
-	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$izena."';";
+	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$sagardotegia."';";
 	$result=mysqli_query($con, $sql);
 
 	while($row=mysqli_fetch_array($result)){
@@ -104,7 +108,7 @@
 		<div id="iruzkinak">
 			<?php
 				
-				$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$izena."';";
+				$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$sagardotegia."';";
 				$result=mysqli_query($con, $sql);
 
 				if(!$result){

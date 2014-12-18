@@ -120,15 +120,20 @@
                 <?php 
                     if (!isset($_SESSION["user"])){ 
                 ?>
-                    <li><a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a></li>
                     <li>
-                    <a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a>
-                    </li>                   
+                       <a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a>
+                    </li> 
+                    <li>
+                       <a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a>
+                    </li>                 
                 <?php }
                     else{ ?>    
                     <li>
-                    <a id="sartu" href="#" onclick="logout();">Saioa itxi</a></li>
-                    <li><a id="user" href="#">Ongi Etorri <?php echo $_SESSION["user"]; ?></a></li>
+                       <a id="user" href="#"><?php echo $_SESSION["user"]; ?></a>
+                    </li>
+                    <li>
+                        <a id="sartu" href="#" onclick="logout();">Saioa itxi</a>
+                    </li>
                 <?php } ?>
         </ul>  
         <ul id="hizkuntzak">
@@ -174,19 +179,19 @@
                     <input type="submit" value="Sartu">               
             </form>
         </div>
-        <div id="subtitulo"><h2>¡Zure sagardotegi gogokoenak klik batean!</h2></div>
+        <div id="subtitulo"><h2>Toda la información de tu sidrería favorita en un solo click</h2></div>
         <div id="bilatu">
-        <form class="bilatzailea" action="bilatu.php" method="POST">
-                        <input class="bilaketa" name="herria" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
+        <form class="bilatzailea" action="sagardotegia.php" method="GET">
+                        <input class="bilaketa" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
                         <input class="bilaketaBotoia" type="submit" value="Bilatu" />
                 </form>
         </div>
         <div id="contenido2"><button id="enviarT" >Ver usuarios</button></div>
         <script id="entry-template2" type="text/x-handlebars-template">
             {{#if user}}
-                <h1>{{user}}</h1>
+                <h1>{{user}} </h1>
             {{else}}
-                <h1>No hay nadie logeado</h1>
+                <h1>no va</h1>
             {{/if}}
             
            
@@ -196,9 +201,9 @@
         </footer>
         </nav>
 </body>
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
     $(document).ready(function(){      
-
+    
         $("#enviarT").click(function(mievento) {
                 $.ajax({
                     type: 'GET',
@@ -221,5 +226,5 @@
     });
 
         </script>
--->
+
 <html>
