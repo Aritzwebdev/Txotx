@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
         <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
         <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
-        <script type="text/javascript" language="javascript" src="js/api.js"></script>
+        <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
 
         <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
@@ -129,10 +129,10 @@
                 <?php }
                     else{ ?>    
                     <li>
-                       <a id="user" href="#"><?php echo $_SESSION["user"]; ?></a>
+                       <a id="user" href="#">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
-                        <a id="sartu" href="#" onclick="logout();">Saioa itxi</a>
+                        <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
                     </li>
                 <?php } ?>
         </ul>  
@@ -149,34 +149,52 @@
         <div id="reg">              
             <form class="form-3" action="registro.php" method="post" >
                     <!--<label id="erabiltzaile"></label>-->
+                    <!--<div id="validate"><ul><font color="red">sfdg</font></ul></div>-->
 
-                    <label for="izena">Izena</label>
-                    <input type="text" name="izena" placeholder="Izena">
-                
-                    <label for="abizena">Abizena</label>
-                    <input type="text" name="abizena" placeholder="Abizena">
-
-                    <label for="email">Email-a</label>
-                    <input type="text" name="email" placeholder="Email-a"> 
-
-                    <label for="login">Erabiltzailea</label>
-                    <input type="text" name="user" placeholder="Erabiltzailea">
-                
-                    <label for="password">Pasahitza</label>
-                    <input type="password" name="pass" placeholder="Pasahitza"> 
-                
-                    <input type="submit" value="Kontua sortu">                
+                    <div>
+                        <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
+                        <input type="text" name="erabiltzailea" id="erabiltzailea" required title="Sartu erabiltzaile izena">
+                    </div>
+                    <div>
+                        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
+                        <input type="password" name="pasahitza" id="pasahitza" required title="Sartu pasahitza">
+                    </div>
+                    <div>
+                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Emaila</font></label>
+                        <input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                    </div>
+                    <div>
+                        <label for="izena" style="padding: 15px 0px 2px 0px;"><font color="white">Izena</font></label>
+                        <input type="text" name="izena" id="izena" required title="Sartu zure izena" pattern="[a-zA-Z]">
+                    </div>
+                    <div>
+                        <label for="abizena" style="padding: 15px 0px 2px 0px;"><font color="white">Abizena</font></label>
+                        <input type="text" name="abizena" id="abizena" required title="Sartu zure abizena" pattern="[A-Za-z]">
+                    </div>
+                    <div>
+                        <label for="kodea" style="padding: 15px 0px 2px 0px;"><font color="white">Kode sekretua idatzi: <span id="secret"></span> (<a href="#" class="refresh">aldatu</a>)</font></label>
+                        <input type="text" name="kodea" id="kodea" required class="required antispam" maxlength="6" minlength="6" title="Sartu ikusten duzun kodea">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Erregistratu">
+                    </div>                
             </form>
         </div>  
         <div id="log">              
-            <form class="form-3" action="login.php" method="post">          
-                    <label for="login">Erabiltzailea</label>
-                    <input type="text" name="user" placeholder="Erabiltzailea">
-                
-                    <label for="password">Pasahitza</label>
-                    <input type="password" name="pass" placeholder="Pasahitza"> 
-                
-                    <input type="submit" value="Sartu">               
+            <form class="form-4" action="login.php" method="post"> 
+                   
+                    <div>
+                        <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
+                        <input type="text" name="erabiltzailea" id="erabiltzailea" title="Sartu erabiltzaile izena" required />
+                    </div>
+                    <div>
+                        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
+                        <input type="password" name="pasahitza" id="pasahitza" title="Sartu pasahitza" required />
+                    </div>
+                    <div id="aviso"></div>
+                    <div class="submit"> 
+                       <input type="submit" value="Sartu" id="butsartu">               
+                    </div>
             </form>
         </div>
         <div id="subtitulo"><h2>Toda la información de tu sidrería favorita en un solo click</h2></div>
@@ -207,7 +225,7 @@
         $("#enviarT").click(function(mievento) {
                 $.ajax({
                     type: 'GET',
-                    url: "http://localhost/Txotx/respuestaApi.php",
+                    url: "http://localhost/Txotx/respuestaApiUsuarios.php",
                     dataType: "json",
                     success: function(data) {
                         var datos ={
@@ -225,6 +243,115 @@
 
     });
 
-        </script>
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_es.js "></script>
+    
+    <script>
+
+    $(document).ready(function(){
+
+        /* CREAR NUMERO SECRETO RANDOM */
+    function randomgen()
+    {
+        var rannumber='';
+        for(ranNum=1; ranNum<=6; ranNum++){
+            rannumber+=Math.floor(Math.random()*10).toString();
+        }
+        $('#secret').text(rannumber);
+    }
+
+        if ($("#secret")) randomgen();
+        
+        $(".refresh").bind("click",function(e){ e.preventDefault();randomgen(); })
+
+        
+        $.validator.addMethod("antispam", function(antispam) 
+        {
+            if ( antispam==$("#secret").text() ) return true;
+        });
+  
+    });
+    </script>
+
+    <script>
+
+    /*  API PARA VALIDAR FORMULARIO DE REGISTRO  */
+
+        function iniciar(){
+          user=document.getElementById("erabiltzailea");
+          user.addEventListener("input", validacion, false);
+          pass=document.getElementById("pasahitza");
+          pass.addEventListener("input", validacion, false);  
+          izena=document.getElementById("izena");
+          izena.addEventListener("input", validacion, false);
+          abizena=document.getElementById("abizena");
+          abizena.addEventListener("input", validacion, false);
+          email=document.getElementById("email");
+          email.addEventListener("input", validacion, false);
+          kode=document.getElementById("kodea");
+          kode.addEventListener("input", validacion, false);
+          validacion();
+        }
+
+        function validacion(){
+        if(user.value==""){
+          user.setCustomValidity('Sartu erabiltzailea');
+          
+          }else{
+          user.setCustomValidity('');
+          
+        }
+
+        if(pass.value==""){
+          pass.setCustomValidity('Sartu pasahitza');
+          
+        }else if(pass.length < 6){
+            pass.setCustomValidity('Pasahitza motzegia da');
+           
+        }else{
+          pass.setCustomValidity('');
+         
+        }
+
+        if(email.value==""){
+          email.setCustomValidity('Sartu emaila');
+          
+          }else{
+          email.setCustomValidity('');
+        
+        }
+
+        if(izena.value==""){
+          izena.setCustomValidity('Sartu zure izena');
+          
+          }else if(izena.value.length < 3){
+            izena.setCustomValidity('Izena 3 karaktere edo gehiago eduki behar ditu');
+          }
+          else{
+          izena.setCustomValidity('');
+        }
+
+        if(abizena.value==""){
+          abizena.setCustomValidity('Sartu zure abizena');
+          }else if(abizena.value.length < 3){
+            abizena.setCustomValidity('Abizena 3 karaktere edo gehiago eduki behar ditu');
+          }else{
+          abizena.setCustomValidity('');
+        }
+
+        if(kode.value==""){
+          kode.setCustomValidity('Sartu ikusten duzun zenbakia');
+          }else{
+          kode.setCustomValidity('');
+        }
+
+        }
+
+        window.addEventListener("load", iniciar, false);
+
+    </script>
 
 <html>

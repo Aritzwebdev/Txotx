@@ -3,7 +3,7 @@ $(document).ready(function(){
         $("#enviarT").click(function(mievento) {
                 $.ajax({
                     type: 'GET',
-                    url: "http://localhost/Txotx/api/respuestaApi.php",
+                    url: "http://localhost/Txotx/api/respuestaApiUsuarios.php",
                     dataType: "json",
                     success: function(data) {
                         var datos ={

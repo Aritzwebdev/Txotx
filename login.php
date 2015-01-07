@@ -1,8 +1,8 @@
 <?php
 	session_start();
 
-	$user=$_POST["user"];
-	$pass=$_POST["pass"];
+	$user=$_POST["erabiltzailea"];
+	$pass=$_POST["pasahitza"];
 	$encontrado;
 	
 	include 'conectar.php';
@@ -42,7 +42,9 @@
 	}else{
 ?>
 		<script type="text/javascript">
+			
 			location.href = "index.php";
+			
 		</script>
 <?php
 		//header("Location: index.php"); die;

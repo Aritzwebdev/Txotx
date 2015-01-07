@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$sagardotegia=$_GET['sagardotegia'];
 
 	include 'conectar.php';
@@ -16,7 +17,14 @@
 	$sql="SELECT izena FROM herriak WHERE idherriak='".$herriaznb."';";
 	$result=mysqli_query($con, $sql);
 
-	if($row=mysqli_fetch_array($result)){$herria=$row['izena'];}
+	if($row=mysqli_fetch_array($result)){
+		$herria=$row['izena'];
+		if(!isset($_SESSION['herria'])){
+			$_SESSION['herria'] = $herria;
+		}else{
+			$_SESSION['herria'] = "";
+		}
+	}
 ?>
 <html>
 <head>
