@@ -13,6 +13,7 @@ $result=mysqli_query($con, $sql);
     <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
     <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
     <script type="text/javascript" language="javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	
 	<link rel="stylesheet" href="css/menu.css"/>
 	<link rel="stylesheet" href="css/perfil.css"/>
@@ -21,124 +22,104 @@ $result=mysqli_query($con, $sql);
 		function logout(){
             location.href="logout.php";
         }
-        function auto(id) {
-            var e = document.getElementById(id);
-            if(e.style.display == 'block')
-                e.style.display = 'none';
-            else
-                e.style.display = 'block';    
-        }
-
-        function kendu(id) {
-            var e = document.getElementById(id);   
-            e.style.display = 'none';
-                
-        }
 	</script>
 </head>
 <body>
 <header id="registro">
 <ul class="dropdown">
     <li><a href="index.php">Hasiera</a></li>
-    <li><a href="">Sagardotegiak</a>
-	    <ul class="sub_menu">
-		    <li><a href="#">Gipuzkoa</a>
-		        <ul>
-		            <li><a href="#">Hernani</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">Rufino</a></li>
-		                    <li><a href="">Itxasburu</a></li>
-		                </ul>
-		            </li>
-		            <li><a href="#">Oiartzun</a>
-		                <ul class="sub_menu">
-		                    <li><a href="http://localhost/Txotx/sagardotegia.php?herria=oiartzun&izena=Baleio">Baleio</a></li>
-		                    <li><a href="">Ordo-zelai</a></li>
-		                </ul>
-		            </li>
-		            <li><a href="#">Astigarraga</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">Alguna</a></li>
-		                    <li><a href="">Fijo</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </li>
-		    <li><a href="#">Bizkaia</a>
-		        <ul>
-		            <li><a href="#">Bilbao</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">Nose</a></li>
-		                    <li><a href="">Pase</a></li>
-		                </ul>
-		            </li>
-		            <li><a href="#">Getxo</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">Pos</a></li>
-		                    <li><a href="">Alao</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </li>
-		    <li><a href="#">Araba</a>
-		        <ul>
-		            <li><a href="#">Gazteiz</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">Iepa </a></li>
-		                    <li><a href="">Pues</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </li>
-		    <li><a href="#">Nafarroa</a>
-		        <ul>
-		            <li><a href="#">Pamplona</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">aupa</a></li>
-		                    <li><a href="">lahostia</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </li>
-		    <li><a href="#">Iparralde</a>
-		        <ul>
-		            <li><a href="#">Francia</a>
-		                <ul class="sub_menu">
-		                    <li><a href="">Gabaxo1</a></li>
-		                    <li><a href="">Gabaxo2</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </li>
-		</ul>
-    </li> 
+    <li><a href="#" id="butlista">Sagardotegiak</a></li>
+    <li><a href="#" id="datu">Datuak</a></li>
+    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
+    <li><a href="#" id="iruzkin">Iruzkinak</a></li>
+    <li><a href="#" id="elimUsu">Erabiltzailea ezabatu</a></li>
     <li>
     <a id="logout" href="#" onclick="logout();">Saioa itxi</a>
     </li>
-    <li><a href="#" onclick="">Datuak</a></li>
-    <li><a href="#" onclick="">Pasahitza aldatu</a></li>
-    <li><a href="#" onclick="">Iruzkinak</a></li>
-    <li><a href="#" onclick="">Erabiltzailea ezabatu</a></li>
 </ul>
 </header>
+<div id="lista">
+	<img src="img/gipuzkoa.png" />	
+	<img src="img/bizkaia.png" />
+	<img src="img/araba.png" />
+	<img src="img/nafarroa.png" />
+</div>
 <div id="datuak">
 <?php
 
 if($row=mysqli_fetch_array($result)){
-	echo $row['iderabiltzaileak']."<br/>"; 
-	echo $row['erabiltzailea']."<br/>";
-	echo $row['izena']."<br/>";
-	echo $row['abizena']."<br/>";
-	echo $row['email']."<br/>";
-}
-
-$sql="SELECT * FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
-$result=mysqli_query($con, $sql);
-
-while($row=mysqli_fetch_array($result)){
-	echo $row['erabiltzailea']."<br/>"; 
-	echo $row['data']."<br/>";
-	echo $row['iruzkina']."<br/>";
-	echo $row['sagardotegia']."<br/>";
+?>
+<table>
+	<tr><td>Erabiltzailea: </td><td><input type="text" value="<?php echo $row['erabiltzailea']; ?>" />
+	</td><td>Izena: </td><td><input type="text" value="<?php echo $row['izena']; ?>" /></td></tr>
+	<br><br>
+	<tr><td>Abizena: </td><td><input type="text" value="<?php echo $row['abizena']; ?>" />
+	</td><td>Email-a: </td><td><input type="text" value="<?php echo $row['email']; ?>" /></td></tr>
+</table>
+	<br>
+	<input type="button" id="butdatuak" value="Datuak Aldatu"/>
+<?php
 }
 ?>
+</div>
+<div id="pass">
+<table>
+	<tr><td>Pasahitz zaharra: </td><td><input id="textpass" type="password" /></td></tr>
+	<br><br>
+	<tr><td>Pasahitz berria: </td><td><input  id="textpass" type="password" /></td></tr>
+	<br><br>
+	<tr><td>Pasahitz berriaren <br>konfirmazioa: </td><td><input id="textpass" type="password" /></td></tr><tr><td></td><td>
+	<input type="button" id="butpass" value="Pasahitza Aldatu"/></td></tr>
+	</table>
+</div>
+
+<?php
+$sql="SELECT * FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
+$result=mysqli_query($con, $sql);
+?>
+
+<div id="sagardo">
+
+<?php
+while($row=mysqli_fetch_array($result)){
+?>
+	<label>Sagardotegia: </label><input type="text" value="<?php echo $row['sagardotegia']; ?>" />
+	<label>Erabiltzailea: </label><input type="text" value="<?php echo $row['erabiltzailea']; ?>" />
+	<label>Data: </label><input type="text" value="<?php echo $row['data']; ?>" />
+	<br>
+	Iruzkina:<br><textarea type="text" rows="5" style="width: 728px;"><?php echo $row['iruzkina'];?></textarea>
+	<input type="checkbox"/>
+	<br><br>
+<?php
+}
+?>
+<input type="button" id="butiruzkin" value="Iruzkinak ezabatu"/>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#datu").click(function(){
+		$("#datuak").show();
+		$("#sagardo").hide();
+		$("#pass").hide();
+		$("#lista").hide();
+	});
+	$("#iruzkin").click(function(){
+		$("#datuak").hide();
+		$("#sagardo").show();
+		$("#pass").hide();
+		$("#lista").hide();
+	});
+	$("#cambiopass").click(function(){
+		$("#datuak").hide();
+		$("#sagardo").hide();
+		$("#pass").show();
+		$("#lista").hide();
+	});
+	$("#butlista").click(function(){
+	 	$("#lista").slideToogle("slow");
+	});
+ });
+</script>
+</div>
+</body>
+</html>

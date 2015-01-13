@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	$sagardotegia=$_GET['sagardotegia'];
 
 	include 'conectar.php';
@@ -127,13 +129,16 @@
 				}
 			?>
 		</div>
+		
 		<div>
 			<form action="guardarComentario.php" method="get">
 				<label id="okerra" color="red"></label>
+				<?php if(!isset($_SESSION["user"])){ ?>
 				Erabiltzailea: <input type="text" name="erabiltzailea">
 				<br>
 				Pasahitza: <input type="password" name="pasahitza">
 				<br>
+				<?php } ?>
 				Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
 				<br>
 				<input type="hidden" name="izena" value="<?php echo $izena; ?>">
@@ -143,6 +148,7 @@
 				<input type="submit" value="Bidali" > 
 			</form>
 		</div>
+		
 	</div><!--iruzkinak div-->
 <?php 
 	if (isset($_GET['msg'])){

@@ -182,7 +182,7 @@
                     <input type="submit" value="Sartu">               
             </form>
         </div>
-        <div id="subtitulo"><h2>Toda la información de tu sidrería favorita en un solo click</h2></div>
+        <div id="subtitulo"><h2>Zure sagardotegi gogokoenaren informazioa klik batean!</h2></div>
         <div id="bilatu">
         <form class="bilatzailea" action="sagardotegia.php" method="GET">
                         <input class="bilaketa" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
