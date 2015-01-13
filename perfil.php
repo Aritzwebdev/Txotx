@@ -75,39 +75,47 @@ if($row=mysqli_fetch_array($result)){
 
 	<!-- CAMBIAR CONTRASEÑA -->
 <?php
-
-    //if(isset($_SESSION['user'])) { // comprobamos que la sesión esté iniciada
-    	if($_POST['viejoPass'] == $row['pasahitza']){
-	        if(isset($_POST['cambiar'])) {
-	            if($_POST['pass'] != $_POST['passConfirmado']) {
-	                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
-	            }else {
-	                $user= $_SESSION['user'];
-	                $pass = mysql_real_escape_string($_POST["pass"]);
-	                $sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
-	                $result=mysqli_query($con, $sql);
-	                if($result) {
-	                    echo "Contraseña cambiada correctamente.";
-	                }else {
-	                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
-	                }
-	            }
-	        }
-    	}
+    
+    if(isset($_SESSION['user'])) { // comprobamos que la sesión esté iniciada
+        if(isset($_POST['cambiar'])) {
+            if($_POST['pass'] != $_POST['passConfirmado']) {
+                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
+            }else {
+                $user= $_SESSION['user'];
+                $pass = mysql_real_escape_string($_POST["pass"]);
+                $sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
+                $result=mysqli_query($con, $sql);
+                if($result) {
+                    echo "Contraseña cambiada correctamente.";
+                }else {
+                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
+                }
+            }
+        }else {
 ?>
+	<div id="pass">
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+            <label>Vieja contraseña:</label>
+ 
+            <input type="password" name="viejoPass" maxlength="15" />
 
-<div id="pass">
- <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-	<table>
-		<tr><td>Pasahitz zaharra: </td><td><input id="textpass" name="viejoPass" type="password" /></td></tr>
-		<br><br>
-		<tr><td>Pasahitz berria: </td><td><input  id="textpass" name="pass" type="password" /></td></tr>
-		<br><br>
-		<tr><td>Pasahitz berriaren <br>konfirmazioa: </td><td><input id="passConfirmado" type="password" /></td></tr><tr><td></td><td>
-		<input type="submit" id="cambiar" value="Pasahitza Aldatu"/></td></tr>
-	</table>
-</form>
-</div>
+            <label>Nueva contraseña:</label>
+ 
+            <input type="password" name="pass" maxlength="15" />
+ 
+            <label>Confirmar:</label>
+ 
+            <input type="password" name="passConfirmado" maxlength="15" />
+ 
+            <input type="submit" name="cambiar" value="cambiar" />
+        </form>
+   </div>     
+<?php
+        }
+    }else {
+        header("location:index.php");
+    }
+?> 
 
 <?php
 $sql="SELECT * FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
