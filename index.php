@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,6 +31,10 @@
                 
                 function logout(){
                     location.href="logout.php";
+                }
+
+                function perfil(){
+                    location.href="perfil.php";
                 }
         </script>
 
@@ -129,7 +132,7 @@
                 <?php }
                     else{ ?>    
                     <li>
-                       <a id="user" href="#">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                       <a id="user" href="#" onclick="perfil();">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
                         <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
