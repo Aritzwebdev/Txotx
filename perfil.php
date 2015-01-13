@@ -22,6 +22,13 @@ $result=mysqli_query($con, $sql);
 		function logout(){
             location.href="logout.php";
         }
+		 //funcion para darse de baja
+        function baja(){
+        		var baja=confirm ("Erabiltzailea ezabatu nahi duzu?");
+        		if(baja){
+        			location.href = "baja.php";
+        		}
+        };
 	</script>
 </head>
 <body>
@@ -30,9 +37,9 @@ $result=mysqli_query($con, $sql);
     <li><a href="index.php">Hasiera</a></li>
     <li><a href="#" id="butlista">Sagardotegiak</a></li>
     <li><a href="#" id="datu">Datuak</a></li>
-    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
+    <li><a href="cambioContrasena.php" id="cambiopass">Pasahitza aldatu</a></li>
     <li><a href="#" id="iruzkin">Iruzkinak</a></li>
-    <li><a href="#" id="elimUsu">Erabiltzailea ezabatu</a></li>
+    <li><a href="#" onclick="baja()" id="elimUsu">Erabiltzailea ezabatu</a></li>
     <li>
     <a id="logout" href="#" onclick="logout();">Saioa itxi</a>
     </li>
