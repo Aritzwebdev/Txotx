@@ -33,6 +33,10 @@
                     location.href="logout.php";
                 }
 
+                function perfil(){
+                    location.href="perfil.php";
+                }
+
         </script>
 
 </head>
@@ -41,8 +45,7 @@
     <img id="logo" src="img/logo.png"/>
 
     <!-- MENU --> 
-        <header id="registro">
-                <div id="page-wrap">    
+        <header id="registro">  
         <ul class="dropdown">
                 <li><a href="index.php">Hasiera</a></li>
                 <li><a href="">Sagardotegiak</a>
@@ -129,7 +132,11 @@
                 <?php }
                     else{ ?>    
                     <li>
+<<<<<<< HEAD
                        <a id="user" href="#">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+=======
+                       <a id="user" href="#" onclick="perfil();"><?php echo $_SESSION["user"]; ?></a>
+>>>>>>> 12951f7ae4ad2b013e4cfa645b43ce12a4f7e1b1
                     </li>
                     <li>
                         <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
@@ -197,7 +204,7 @@
                     </div>
             </form>
         </div>
-        <div id="subtitulo"><h2>Toda la información de tu sidrería favorita en un solo click</h2></div>
+        <div id="subtitulo"><h2>Zure sagardotegi gogokoenaren informazioa klik batean!</h2></div>
         <div id="bilatu">
         <form class="bilatzailea" action="sagardotegia.php" method="GET">
                         <input class="bilaketa" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
