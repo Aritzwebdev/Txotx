@@ -3,7 +3,7 @@ session_start();
 include "conectar.php";
 $con=conectar();
 
-$sql="SELECT * FROM erabiltzaileak WHERE erabiltzailea='".$_SESSION["user"]."';";
+$sql="SELECT * FROM erabiltzaileak, pasahitza WHERE erabiltzailea='".$_SESSION["user"]."';";
 $result=mysqli_query($con, $sql);
 ?>
 <html>
@@ -19,10 +19,12 @@ $result=mysqli_query($con, $sql);
 	<link rel="stylesheet" href="css/perfil.css"/>
 
 	<script type="text/javascript">
+		
 		function logout(){
             location.href="logout.php";
         }
-		 //funcion para darse de baja
+
+        //funcion para darse de baja
         function baja(){
         		var baja=confirm ("Erabiltzailea ezabatu nahi duzu?");
         		if(baja){
@@ -37,7 +39,7 @@ $result=mysqli_query($con, $sql);
     <li><a href="index.php">Hasiera</a></li>
     <li><a href="#" id="butlista">Sagardotegiak</a></li>
     <li><a href="#" id="datu">Datuak</a></li>
-    <li><a href="cambioContrasena.php" id="cambiopass">Pasahitza aldatu</a></li>
+    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
     <li><a href="#" id="iruzkin">Iruzkinak</a></li>
     <li><a href="#" onclick="baja()" id="elimUsu">Erabiltzailea ezabatu</a></li>
     <li>
@@ -45,6 +47,7 @@ $result=mysqli_query($con, $sql);
     </li>
 </ul>
 </header>
+
 <div id="lista">
 	<img src="img/gipuzkoa.png" />	
 	<img src="img/bizkaia.png" />
@@ -69,15 +72,41 @@ if($row=mysqli_fetch_array($result)){
 }
 ?>
 </div>
+
+	<!-- CAMBIAR CONTRASEÑA -->
+<?php
+
+    //if(isset($_SESSION['user'])) { // comprobamos que la sesión esté iniciada
+    	if($_POST['viejoPass'] == $row['pasahitza']){
+	        if(isset($_POST['cambiar'])) {
+	            if($_POST['pass'] != $_POST['passConfirmado']) {
+	                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
+	            }else {
+	                $user= $_SESSION['user'];
+	                $pass = mysql_real_escape_string($_POST["pass"]);
+	                $sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
+	                $result=mysqli_query($con, $sql);
+	                if($result) {
+	                    echo "Contraseña cambiada correctamente.";
+	                }else {
+	                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
+	                }
+	            }
+	        }
+    	}
+?>
+
 <div id="pass">
-<table>
-	<tr><td>Pasahitz zaharra: </td><td><input id="textpass" type="password" /></td></tr>
-	<br><br>
-	<tr><td>Pasahitz berria: </td><td><input  id="textpass" type="password" /></td></tr>
-	<br><br>
-	<tr><td>Pasahitz berriaren <br>konfirmazioa: </td><td><input id="textpass" type="password" /></td></tr><tr><td></td><td>
-	<input type="button" id="butpass" value="Pasahitza Aldatu"/></td></tr>
+ <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+	<table>
+		<tr><td>Pasahitz zaharra: </td><td><input id="textpass" name="viejoPass" type="password" /></td></tr>
+		<br><br>
+		<tr><td>Pasahitz berria: </td><td><input  id="textpass" name="pass" type="password" /></td></tr>
+		<br><br>
+		<tr><td>Pasahitz berriaren <br>konfirmazioa: </td><td><input id="passConfirmado" type="password" /></td></tr><tr><td></td><td>
+		<input type="submit" id="cambiar" value="Pasahitza Aldatu"/></td></tr>
 	</table>
+</form>
 </div>
 
 <?php
