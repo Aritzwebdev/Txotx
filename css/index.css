@@ -1,6 +1,16 @@
-body{
-   font-family: 'Ubuntu', 'Lato';
+* {
+    margin: 0;
+    padding: 0;
 }
+html {
+    background-color: #000;
+    height: 100%;
+}
+body {
+    color: green;
+    font: 0.75em/1.5em 'Ubuntu';
+}
+
 #contenido2{
     color: white;
     z-index: 3;
@@ -15,9 +25,8 @@ body{
 }
 #logo{
     position: absolute;
-    top: 55px;
+    top: 0.25%;
     left: 1%;
-    margin-right: 15px;
     width: 100px;
     height: 100px;
     z-index: 3;

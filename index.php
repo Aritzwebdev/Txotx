@@ -6,7 +6,6 @@
 <head>
         <meta charset="utf-8" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
-        <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
         <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
         <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
 
@@ -50,15 +49,15 @@
         <div class="container">
         <img id="logo" src="img/logo.png"/>
             <ul id="nav">
-                <li><a href="home.php">Hasiera</a></li>
+                <li><a href="index.php">Hasiera</a></li>
                 <li><a href="#s1">Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
-                        <li><a href="#">Gipuzkoa</a><img src="img/gipuzkoa.png" /></li>
-                        <li><a href="#">Bizkaia</a><img src="img/bizkaia.png" /></li>
-                        <li><a href="#">Araba</a><img src="img/araba.png" /></li>
-                        <li><a href="#">Nafarroa</a><img src="img/nafarroa.png" /></li>
-                         <li><a href="#">Iparralde</a><img src="" /></li>
+                        <li><a href="#">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
+                        <li><a href="#">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#">Araba<img id="araba" src="img/araba.png" /></a></li>
+                        <li><a href="#">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
+                         <li><a href="#">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
                     </ul>
                 </li>
                 <?php 
@@ -140,7 +139,7 @@
             </form>
         </div>
 
-        <div id="subtitulo"><h2>Toda la información de tu sidrería favorita en un solo click</h2></div>
+        <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
         <div id="bilatu">
             <form class="bilatzailea" action="sagardotegia.php" method="GET">
                  <input class="bilaketa" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
