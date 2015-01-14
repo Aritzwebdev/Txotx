@@ -14,9 +14,10 @@ $result=mysqli_query($con, $sql);
     <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
     <!--<script type="text/javascript" language="javascript" src="js/api.js"></script>-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	
-	<link rel="stylesheet" href="css/menu.css"/>
+
 	<link rel="stylesheet" href="css/perfil.css"/>
+	<link rel="stylesheet" href="css/menu.css"/>
+	
 
 	<script type="text/javascript">
 		
@@ -35,25 +36,37 @@ $result=mysqli_query($con, $sql);
 </head>
 <body>
 <header id="registro">
-<ul class="dropdown">
-    <li><a href="index.php">Hasiera</a></li>
-    <li><a href="#" id="butlista">Sagardotegiak</a></li>
-    <li><a href="#" id="datu">Datuak</a></li>
-    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
-    <li><a href="#" id="iruzkin">Iruzkinak</a></li>
-    <li><a href="#" onclick="baja()" id="elimUsu">Erabiltzailea ezabatu</a></li>
-    <li>
-    <a id="logout" href="#" onclick="logout();">Saioa itxi</a>
-    </li>
-</ul>
-</header>
-
-<div id="lista">
-	<img src="img/gipuzkoa.png" />	
-	<img src="img/bizkaia.png" />
-	<img src="img/araba.png" />
-	<img src="img/nafarroa.png" />
+<div class="container">
+            <ul id="nav">
+                <li><a href="index.php">Hasiera</a></li>
+                <li><a href="#s1" id="butlista">Sagardotegiak</a>
+                    <span id="s1"></span>
+                    <ul class="subs">
+                        <li><a href="#">Gipuzkoa</a><img src="img/gipuzkoa.png" /></li>
+                        <li><a href="#">Bizkaia</a><img src="img/bizkaia.png" /></li>
+                        <li><a href="#">Araba</a><img src="img/araba.png" /></li>
+                        <li><a href="#">Nafarroa</a><img src="img/nafarroa.png" /></li>
+                         <li><a href="#">Iparralde</a><img src="" /></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="datu">Datuak</a></li>
+			    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
+			    <li><a href="#" id="iruzkin">Iruzkinak</a></li>
+			    <li><a href="#" onclick="baja()" id="elimUsu">Erabiltzailea ezabatu</a></li>
+                <li>
+                    <a id="user" href="#" onclick="perfil();">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                </li>
+                <li>
+                    <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
+                </li>
+            </ul>
+            <ul id="hizkuntzak">
+            <li><a href="">eu</a></li>
+            <li>|</li>
+            <li><a href="">es</a></li>
+        </ul>
 </div>
+</header>
 <div id="datuak">
 <?php
 
@@ -73,44 +86,6 @@ if($row=mysqli_fetch_array($result)){
 ?>
 </div>
 
-	<!-- CAMBIAR CONTRASEÑA -->
-<?php
-    
-    if(isset($_SESSION['user'])) { // comprobamos que la sesión esté iniciada
-        if(isset($_POST['cambiar'])) {
-            if($_POST['pass'] != $_POST['passConfirmado']) {
-                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
-            }else {
-                $user= $_SESSION['user'];
-                $passViejo = $_POST["viejoPass"];
-                $pass = $_POST["pass"];
-                
-                if($passViejo == $row['pasahitza']){
-                	 if($passViejo == $pass){
-	                	?><script text/javascript>
-	                		kk.innerHTML = '<?php echo "kakita" ?>';
-	                		          		
-	                	</script>
-	                <?php
-	                	//echo "La contraseña actual no puede ser igual que la utilizada anteriormente <a href='javascript:history.back();'>Reintentar</a>";
-	                }else if ($passViejo!=$row['pasahitza']){
-	                	echo "Escribe tu contraseña actual <a href='javascript:history.back();'>Reintentar</a>";
-	                }else{
-	                	$sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
-		                $result=mysqli_query($con, $sql);
-		                if($result) {
-		                    echo "Contraseña cambiada correctamente.";
-		                }else {
-		                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
-		                }
-	                }
-                }else{
-                	echo "La contraseña actual no coincide, debe de ser la misma que tenia usted antes. <a href='javascript:history.back();'>Reintentar</a>";
-                }
-               
-            }
-        }else {
-?>
 	<div id="pass">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
         <table>
@@ -137,8 +112,63 @@ if($row=mysqli_fetch_array($result)){
         </table>
         </form>
    </div>     
-   <div><p id="kk">asdf</p></div>
+   <div><p id="errorea"></p></div>
+
+	<!-- CAMBIAR CONTRASEÑA -->
 <?php
+    
+    if(isset($_SESSION['user'])) { // comprobamos que la sesión esté iniciada
+        if(isset($_POST['cambiar'])) {
+            if($_POST['pass'] != $_POST['passConfirmado']) {
+                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
+            }else {
+                $user= $_SESSION['user'];
+                $passViejo = $_POST["viejoPass"];
+                $pass = $_POST["pass"];
+                
+                if($passViejo == $row['pasahitza']){
+                	 if($passViejo == $pass){
+	                	
+	                	?><script text/javascript>
+	                		errorea.innerHTML = "Pasahitz zaharra eta berriak ezin dira berdinak izan. <a href='javascript:history.back();'>Reintentar</a>";
+	                		          		
+	                	</script>
+	                <?php
+	                	
+	                }else if ($passViejo!=$row['pasahitza']){
+	                	
+	                	?><script text/javascript>
+	                		errorea.innerHTML = "Zure pasahitza idatzi <a href='javascript:history.back();'>Reintentar</a>";
+	                	</script>
+	                	<?php
+	                
+	                }else{
+	                	$sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
+		                $result=mysqli_query($con, $sql);
+		                if($result) {
+		                   	
+		                   	?><script text/javascript>
+	                			errorea.innerHTML = "Pasahitza ondo aldatuta";
+		                	</script>
+		                	<?php
+
+		                }else {
+
+		                	?><script text/javascript>
+	                			errorea.innerHTML = "Errorea: ezin izan da pasahitza aldatu. <a href='javascript:history.back();'>Reintentar</a>";
+		                	</script>
+		                	<?php
+		                }
+	                }
+                }else{
+
+                	?><script text/javascript>
+	                	errorea.innerHTML = "Zure pasahitz zaharra okerra da. <a href='javascript:history.back();'>Reintentar</a>";
+		            </script>
+		            <?php
+                }
+               
+            }
         }
     }else {
         header("location:index.php");

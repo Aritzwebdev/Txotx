@@ -1,9 +1,9 @@
 body{
-   font-family: sans-serif;
+   font-family: 'Ubuntu', 'Lato';
 }
 #contenido2{
     color: white;
-    z-index: 7;
+    z-index: 3;
 }
 #fondo{
 	position:absolute;
@@ -20,32 +20,32 @@ body{
     margin-right: 15px;
     width: 100px;
     height: 100px;
-    z-index: 5;
+    z-index: 3;
 }
 #titulo{
 	margin: auto; 
     position: absolute;
-    top: 2%;
+    top: 4%;
     left: 37%;
-	font: 54px solid white;
+    font-size: 54px;
 	color: white;
     text-align: center;
 }
 #subtitulo{
     margin: auto;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 30%;
     color: white;
-    z-index: 1;
+    z-index: -1;
 }
 #hizkuntzak li{
     font-family: 'Ubuntu', 'Lato', sans-serif;
     font-style: italic;
     display:inline-block;
     position: relative;
-    top: -35px;
-    left: 92%;
+    top: -25px;
+    left: 89%;
     padding-top: -30px;
     margin-left: 5px;
     color: white;
@@ -286,6 +286,7 @@ border: 1px solid green;
     position: fixed;
     top: 50%;
     left: 40%;
+    z-index: -1;
 }
 
 .bilatzailea {
@@ -294,7 +295,8 @@ border: 1px solid green;
     *display: inline;
     border: solid 1px #d2d2d2;
     padding: 3px 5px;
-    
+    z-index: -1;
+
     -webkit-border-radius: 2em;
     -moz-border-radius: 2em;
     border-radius: 2em;
@@ -356,7 +358,7 @@ border: 1px solid green;
 	text-align: center;
     padding-top: 5px;
 	color: white;
-    z-index: 1;
+    z-index: -1;
 }
 
 a{

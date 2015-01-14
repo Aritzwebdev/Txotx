@@ -10,8 +10,9 @@
         <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
         <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
 
-        <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
+        <link rel="stylesheet" href="css/index.css" />
+        
 
         <script type="text/javascript">
                 function auto(id) {
@@ -41,83 +42,23 @@
 </head>
 <body>
 
-    <img id="logo" src="img/logo.png"/>
+    <h1 id="titulo">SagardoteGida</h1>
 
     <!-- MENU --> 
-        <header id="registro">
-                <div id="page-wrap">    
-        <ul class="dropdown">
-                <li><a href="index.php">Hasiera</a></li>
-                <li><a href="">Sagardotegiak</a>
-                    <ul class="sub_menu">
-                        <li><a href="#">Gipuzkoa</a>
-                            <ul>
-                                <li><a href="#">Hernani</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">Rufino</a></li>
-                                        <li><a href="">Itxasburu</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Oiartzun</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="http://localhost/Txotx/sagardotegia.php?herria=oiartzun&izena=Baleio">Baleio</a></li>
-                                        <li><a href="">Ordo-zelai</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Astigarraga</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">Alguna</a></li>
-                                        <li><a href="">Fijo</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Bizkaia</a>
-                            <ul>
-                                <li><a href="#">Bilbao</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">Nose</a></li>
-                                        <li><a href="">Pase</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Getxo</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">Pos</a></li>
-                                        <li><a href="">Alao</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Araba</a>
-                            <ul>
-                                <li><a href="#">Gazteiz</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">Iepa </a></li>
-                                        <li><a href="">Pues</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Nafarroa</a>
-                            <ul>
-                                <li><a href="#">Pamplona</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">aupa</a></li>
-                                        <li><a href="">lahostia</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Iparralde</a>
-                            <ul>
-                                <li><a href="#">Francia</a>
-                                    <ul class="sub_menu">
-                                        <li><a href="">Gabaxo1</a></li>
-                                        <li><a href="">Gabaxo2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+
+     <header id="registro">
+        <div class="container">
+        <img id="logo" src="img/logo.png"/>
+            <ul id="nav">
+                <li><a href="home.php">Hasiera</a></li>
+                <li><a href="#s1">Sagardotegiak</a>
+                    <span id="s1"></span>
+                    <ul class="subs">
+                        <li><a href="#">Gipuzkoa</a><img src="img/gipuzkoa.png" /></li>
+                        <li><a href="#">Bizkaia</a><img src="img/bizkaia.png" /></li>
+                        <li><a href="#">Araba</a><img src="img/araba.png" /></li>
+                        <li><a href="#">Nafarroa</a><img src="img/nafarroa.png" /></li>
+                         <li><a href="#">Iparralde</a><img src="" /></li>
                     </ul>
                 </li>
                 <?php 
@@ -138,22 +79,22 @@
                         <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
                     </li>
                 <?php } ?>
-        </ul>  
-        <ul id="hizkuntzak">
-            <li><a href="">eu</a></li>
-            <li>|</li>
-            <li><a href="">es</a></li>
+            </ul>
+                <div id="hizkuntzak">
+                    <li><a href="">eu</a></li>
+                    <li>|</li>
+                    <li><a href="">es</a></li>
+                </div>
+            
         </ul>
-        </header>
+        </div>
+
+    </header>
 
 <!-- WEB -->
         <img id="fondo" src="img/txotx.jpg" alt="background" href="#"/>
-        <h1 id="titulo">SagardoteGida</h1>
         <div id="reg">              
             <form class="form-3" action="registro.php" method="post" >
-                    <!--<label id="erabiltzaile"></label>-->
-                    <!--<div id="validate"><ul><font color="red">sfdg</font></ul></div>-->
-
                     <div>
                         <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
                         <input type="text" name="erabiltzailea" id="erabiltzailea" required title="Sartu erabiltzaile izena">
