@@ -3,7 +3,7 @@ session_start();
 include "conectar.php";
 $con=conectar();
 
-$sql="SELECT * FROM erabiltzaileak, pasahitza WHERE erabiltzailea='".$_SESSION["user"]."';";
+$sql="SELECT * FROM erabiltzaileak WHERE erabiltzailea='".$_SESSION["user"]."';";
 $result=mysqli_query($con, $sql);
 ?>
 <html>
@@ -12,7 +12,7 @@ $result=mysqli_query($con, $sql);
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
     <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
     <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
-    <script type="text/javascript" language="javascript" src="js/api.js"></script>
+    <!--<script type="text/javascript" language="javascript" src="js/api.js"></script>-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	
 	<link rel="stylesheet" href="css/menu.css"/>
@@ -82,34 +82,62 @@ if($row=mysqli_fetch_array($result)){
                 echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
             }else {
                 $user= $_SESSION['user'];
-                $pass = mysql_real_escape_string($_POST["pass"]);
-                $sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
-                $result=mysqli_query($con, $sql);
-                if($result) {
-                    echo "Contraseña cambiada correctamente.";
-                }else {
-                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
+                $passViejo = $_POST["viejoPass"];
+                $pass = $_POST["pass"];
+                
+                if($passViejo == $row['pasahitza']){
+                	 if($passViejo == $pass){
+	                	?><script text/javascript>
+	                		kk.innerHTML = '<?php echo "kakita" ?>';
+	                		          		
+	                	</script>
+	                <?php
+	                	//echo "La contraseña actual no puede ser igual que la utilizada anteriormente <a href='javascript:history.back();'>Reintentar</a>";
+	                }else if ($passViejo!=$row['pasahitza']){
+	                	echo "Escribe tu contraseña actual <a href='javascript:history.back();'>Reintentar</a>";
+	                }else{
+	                	$sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
+		                $result=mysqli_query($con, $sql);
+		                if($result) {
+		                    echo "Contraseña cambiada correctamente.";
+		                }else {
+		                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
+		                }
+	                }
+                }else{
+                	echo "La contraseña actual no coincide, debe de ser la misma que tenia usted antes. <a href='javascript:history.back();'>Reintentar</a>";
                 }
+               
             }
         }else {
 ?>
 	<div id="pass">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-            <label>Vieja contraseña:</label>
+        <table>
+            <tr>
+            	<td><label>Pasahitza:</label></td>
  
-            <input type="password" name="viejoPass" maxlength="15" />
-
-            <label>Nueva contraseña:</label>
+            	<td><input type="password" name="viejoPass" maxlength="15" /></td>
+            </tr>
+            <tr>
+            	<td><label>Pasahitz berria:</label></td>
  
-            <input type="password" name="pass" maxlength="15" />
+            	<td><input type="password" name="pass" maxlength="15" /></td>
+ 			</tr>
+ 			<tr>
+            	<td><label>Pasahitz berria <br> konfirmatu:</label></td>
  
-            <label>Confirmar:</label>
- 
-            <input type="password" name="passConfirmado" maxlength="15" />
- 
-            <input type="submit" name="cambiar" value="cambiar" />
+            	<td><input type="password" name="passConfirmado" maxlength="15" /></td>
+ 			</tr>
+ 			<tr></tr>
+ 			<tr></tr>
+ 			<tr>
+            	<td></td><td><input type="submit" name="cambiar" value="Aldatu" /></td>
+            </tr>
+        </table>
         </form>
    </div>     
+   <div><p id="kk">asdf</p></div>
 <?php
         }
     }else {
