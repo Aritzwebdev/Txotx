@@ -1,6 +1,8 @@
 <?php 
     session_start();
+    require 'vendor/autoload.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
