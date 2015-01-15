@@ -190,13 +190,13 @@ $result=mysqli_query($con, $sql);
 		$cont=1;
 		while($row=mysqli_fetch_array($result)){
 	?>
-			<label id="zenb"> <?php echo $cont ?>.- </label>
+			<div><label id="zenb"> <?php echo $cont ?>.- </label>
 			<label>Sagardotegia: </label><input type="text" value="<?php echo $row['sagardotegia']; ?>" readonly />
-			<label> Data: </label><input type="text" value="<?php echo $row['data']; ?>" readonly/>
-			</br></br>
-			<label>Iruzkina:</label><br><textarea type="text" rows="5" style="width: 728px;" readonly><?php echo $row['iruzkina'];?></textarea>
-			<input type="checkbox"/>
-			</br></br></br>
+			<label> Data: </label><input type="text" value="<?php echo $row['data']; ?>" readonly/></div>
+			</br>
+			<div><label>Iruzkina:</label><br><textarea type="text" rows="5" style="width: 728px;" readonly><?php echo $row['iruzkina'];?></textarea>
+			<input type="checkbox"/></div>
+			</br>
 	<?php
 			$cont++;
 		}

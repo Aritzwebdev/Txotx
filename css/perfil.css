@@ -12,7 +12,8 @@ body {
     width: 90%;
     height: 85%;
     margin: 20px auto;
-    background-color: white;
+   /*background-image: url('../img/fondoTextura.png') repeat;*/
+    background: rgba(255,255,255,0.7);   
     padding: 20px;
     z-index: 2;
 }
@@ -42,7 +43,7 @@ body {
     top: 30%;
     left: 24%;
     display: none;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 #sagardo label{

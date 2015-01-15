@@ -53,19 +53,41 @@
 			else
 				e.style.display = 'block';
 		}
+
+		function argazkiak(){
+			var m = document.getElementById("googleMap");
+			var a = document.getElementById("slider");
+			
+				m.style.display = 'none';
+				a.style.display = 'block';
+			
+		}
+
+		function mapa(){
+			var m = document.getElementById("googleMap");
+			var a = document.getElementById("slider");
+			
+				a.style.display = 'none';
+				m.style.display = 'block';
+			
+		}
 	</script>
 </head>
 <body onload="initialize();">
 <header id="registro">
+	
+	<ul id="top_header">
+		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
+		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
+		<li><a href="#">Sagardotegiak</a></li>
+		<li><a href="index.php">Hasiera</a></li>
+	</ul>
 	<ul id="hizkuntzak">
 		<li><a href="">eu</a></li>
 		<li>|</li>
 		<li><a href="">es</a></li>
 	</ul>
-	<ul id="top_header">
-		<li><a href="">Sagardotegiak</a></li>
-		<li><a href="index.php">Hasiera</a></li>
-	</ul>
+
 </header>
 <div id="menu_txikia">
 	<form action="bilatu.php" method="get">
@@ -100,6 +122,7 @@
 		</div>
 		
 		<div id="googleMap" style="width: 640px; height: 400px;"></div>
+		<div id="slider"> jajajajajajaja</div>
 <?php
 	}	
 ?>	
