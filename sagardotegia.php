@@ -50,18 +50,9 @@
 			});
 
 			marker.setMap(map);
-
-			var m = document.getElementById("googleMap");
-			var a = document.getElementById("slider");
-			
-				a.style.display = 'none';
-				m.style.display = 'block';
-
 		}
 		google.maps.event.addDomListener(window, 'load', initialize());
-
 	</script>
-	
 	<script type="text/javascript">
 		function iruzkinak(id){
 			var e = document.getElementById(id);
