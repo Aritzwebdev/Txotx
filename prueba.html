@@ -1,0 +1,56 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	
+</head>
+<body>
+<div>
+	<form id="formname"> 
+	                         
+	    Erabiltzailea: <input type="text" name="erabiltzaileaLog" />
+	            
+	    Pasahitza: <input type="password" name="pasahitzaLog" />
+
+	    
+	                    
+	    <input type="submit" value="Sartu" />
+	</form>
+</div>
+
+<div id="error"></div>
+
+</body>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$( "#formname" ).submit(function( event ) {
+
+		        /* Stop form from submitting normally */
+		        event.preventDefault();
+		        /* Clear result div*/
+		        $("#error").html('...');
+
+		        var formData = $(this).serializeArray();
+		        $.ajax({
+		           //type: "GET",
+		           type: "POST",
+		           url:"verificarUser.php",
+		           dataType: "json",
+		           //dataType: "html",
+		           data: formData,
+
+		           success: function(data){
+		              $( "#error" ).html(data);
+
+		           },
+		           error: function(XMLHttpRequest, textStatus, errorThrown) {
+		              //alert("Status: " + textStatus); alert("Error: " + errorThrown);
+		              console.log(XMLHttpRequest.responseText);
+		              $( "#error" ).html(XMLHttpRequest.responseText);
+		           }
+
+		        });
+
+		    });
+		});
+</script>
+</html>
