@@ -3,14 +3,17 @@ a{
 }
 #hizkuntzak li{
     display:inline-block;
-    float: left;
-    padding: 10px;
+    float: right;
+    padding-top: 10px;
     color: white;
+    margin-right: 15px;
 }
 #top_header li{
     display:inline-block;
-    float: right;
-    padding: 10px;
+    float: left;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-left: 15px;
 }
 #registro{
     background-color: green;
@@ -65,6 +68,13 @@ a{
 	top: 180px;
 	left: 400px;
 }
+
+#slider{
+	position: absolute;
+	top: 180px;
+	left: 400px;
+}
+
 #iruzkin{
 	position: absolute;
 	width: 370px;
