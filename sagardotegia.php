@@ -134,18 +134,27 @@
 			<form action="guardarComentario.php" method="get">
 				<label id="okerra" color="red"></label>
 				<?php if(!isset($_SESSION["user"])){ ?>
-				Erabiltzailea: <input type="text" name="erabiltzailea">
-				<br>
-				Pasahitza: <input type="password" name="pasahitza">
-				<br>
+					Erabiltzailea: <input type="text" name="erabiltzailea">
+					<br>
+					Pasahitza: <input type="password" name="pasahitza">
+					<br>
+					Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
+					<br>
+					<input type="hidden" name="izena" value="<?php echo $izena; ?>">
+					<input type="hidden" name="herria" value="<?php echo $herria; ?>">
+					<input type="hidden" name="data" 
+					value="<?php echo date('Y-m-d H:i:s'); ?>">
+					<input type="submit" value="Bidali" > 
+				<?php 
+				}else{ ?>
+					Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
+					<br>
+					<input type="hidden" name="izena" value="<?php echo $izena; ?>">
+					<input type="hidden" name="herria" value="<?php echo $herria; ?>">
+					<input type="hidden" name="data" 
+					value="<?php echo date('Y-m-d H:i:s'); ?>">
+					<input type="submit" value="Bidali" > 
 				<?php } ?>
-				Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
-				<br>
-				<input type="hidden" name="izena" value="<?php echo $izena; ?>">
-				<input type="hidden" name="herria" value="<?php echo $herria; ?>">
-				<input type="hidden" name="data" 
-				value="<?php echo date('Y-m-d H:i:s'); ?>">
-				<input type="submit" value="Bidali" > 
 			</form>
 		</div>
 		

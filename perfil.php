@@ -88,6 +88,7 @@ if($row=mysqli_fetch_array($result)){
                 if($passViejo == $row['pasahitza']){
                 	 if($passViejo == $pass){
 	                	?><script text/javascript>
+	                		var
 	                		kk.innerHTML = '<?php echo "kakita" ?>';
 	                		          		
 	                	</script>
