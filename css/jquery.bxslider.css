@@ -16,19 +16,19 @@
 
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto 60px;
+	margin: 0 auto 50px;
 	padding: 0;
 	*zoom: 1;
-	width: 42%;
+	width:62.5%;
 }
 
 .bx-wrapper img {
-	max-width: 100%;
+	max-width: 80%;
 	display: block;
 	padding-top: 5px;
-	padding-left: 45px;
-	padding-right: 45px;
-	padding-bottom: 40px;
+	padding-left: 62px;
+	padding-right: 50px;
+	padding-bottom: 15px;
 }
 
 /** THEME
@@ -53,7 +53,7 @@
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
 	position: absolute;
-	bottom: -30px;
+	bottom: -15px;
 	width: 100%;
 }
 
