@@ -200,7 +200,7 @@ border: 1px solid green;
     outline: none; /* Remove Chrome outline */
 }
 .form-3 input[type=submit],
-.form-4 input[type=button] {
+.form-4 input[type=submit] {
     /* Width and position */
     width: 95%;
     padding: 8px 5px;

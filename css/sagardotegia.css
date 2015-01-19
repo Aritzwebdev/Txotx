@@ -61,27 +61,24 @@ a{
 }
 #deskribapena{
 	position: absolute;
-	top: 22%;
-	left: 2%;
+	top: 160px;
 }
 #googleMap{
-	
 	position: absolute;
-	top: 25%;
-	left: 35%;
+	top: 180px;
+	left: 400px;
 }
 
 #slider{
 	position: absolute;
-	top: 25%;
-	left: 25%;
+	top: 180px;
+	left: 400px;
 }
 
 #iruzkin{
 	position: absolute;
 	width: 370px;
-	top: 40%;
-	left: 2%;
+	top: 280px;
 	display: none;
 }
 #nork{

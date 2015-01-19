@@ -37,37 +37,6 @@ $result=mysqli_query($con, $sql);
 
 	<h1 id="userPerfil"><ins><?php echo $_SESSION["user"]; ?></ins> (r)en profila </h1>
 
-	<!-- CAMBIAR CONTRASEÑA -->
-<?php
-    
-    if(isset($_SESSION['user'])) { // comprobamos que la sesión esté iniciada
-        if(isset($_POST['cambiar'])) {
-            if($_POST['pass'] != $_POST['passConfirmado']) {
-                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
-            }else {
-                $user= $_SESSION['user'];
-                $passViejo = $_POST["viejoPass"];
-                $pass = $_POST["pass"];
-                
-                if($passViejo == $row['pasahitza']){
-                	 if($passViejo == $pass){
-	                	?><script text/javascript>
-	                		var
-	                		kk.innerHTML = '<?php echo "kakita" ?>';
-	                		          		
-	                	</script>
-	                <?php
-	                	//echo "La contraseña actual no puede ser igual que la utilizada anteriormente <a href='javascript:history.back();'>Reintentar</a>";
-	                }else if ($passViejo!=$row['pasahitza']){
-	                	echo "Escribe tu contraseña actual <a href='javascript:history.back();'>Reintentar</a>";
-	                }else{
-	                	$sql = "UPDATE erabiltzaileak SET pasahitza='".$pass."' WHERE erabiltzailea='".$user."'";
-		                $result=mysqli_query($con, $sql);
-		                if($result) {
-		                    echo "Contraseña cambiada correctamente.";
-		                }else {
-		                    echo "Error: No se pudo cambiar la contraseña. <a href='javascript:history.back();'>Reintentar</a>";
-		            ?>
 	<header id="registro">
 	        <div class="container"> 	
 	            <ul id="nav">
