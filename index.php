@@ -204,39 +204,21 @@
 
         /* VALIDAR LOGIN */
 
-            $('#butsartu').click(function(){
-                
-                var erabiltzailea=$("#erabiltzaileaLog").val();
-                var pasahitza=$("#pasahitzaLog").val();
-                var dataString = 'erabiltzailea='+erabiltzailea+'&pasahitza='+pasahitza;
-                if($.trim(erabiltzailea).length>0 && $.trim(pasahitza).length>0){
-                    $.ajax({
-                    type: "POST",
-                    url: "http://localhost/Txotx/login.php",
-                    data: dataString,
-                    cache: false,
-                        beforeSend: function(){ $("#butsartu").val('Konektatzen...');},
-                        success: function(data){
-                        
-                            if(data){
-                                //$("body").load("index.php").hide().fadeIn(1500).delay(6000);
-                                //or
-                                window.location.href = "index.php";
-                            }
-                            else{                             
-                                 //Shake animation effect.
-                                $('#log').shake();
-                                $("#butsartu").val('Sartu')
-                                $("#aviso").html("<font color='red'>Erabiltzaile edo pasahitz desegokia</font>");
-                            }
-                        }
-                    });
-
-                }else{
-                    $("#aviso").html("Ezin da hutsik egon");
-                }
-                return false;
-            });
+           $("#butSartu").click(function(evento){
+            evento.preventDefault();
+            if($("#erabiltzaileaLog").val() == "" && $("#pasahitzaLog").val() == ""){
+                $("#aviso").text('Ezin da hutsik utzi');
+            }else{
+                $("#aviso").load("login.php", {user: $("#erabiltzaileaLog").val(),      pass: $("#pasahitzaLog").val()}, function(response){
+                    if(response==""){
+                        location.reload();
+                    }else{
+                        $("#aviso").text(response);
+                    }
+                });
+            }
+            
+        });
     
 /* CREAR NUMERO SECRETO RANDOM */
     function randomgen()
