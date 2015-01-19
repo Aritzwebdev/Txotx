@@ -22,9 +22,18 @@
 ?>
 <html>
 <head>
-	<link rel="stylesheet" href="css/sagardotegia.css"/>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="css/jquery.bxslider.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/sagardotegia.css"/>
+
+
 	<script>
+
 		function initialize() {
 			var lat="<?php echo $lat; ?>";
 			var lng="<?php echo $lng; ?>";
@@ -42,8 +51,16 @@
 			});
 
 			marker.setMap(map);
+
+			var m = document.getElementById("googleMap");
+			var a = document.getElementById("slider");
+			
+				a.style.display = 'none';
+				m.style.display = 'block';
 		}
+		
 		google.maps.event.addDomListener(window, 'load', initialize());
+	
 	</script>
 	<script type="text/javascript">
 		function iruzkinak(id){
@@ -53,19 +70,42 @@
 			else
 				e.style.display = 'block';
 		}
+
+		function argazkiak(){
+			var m = document.getElementById("googleMap");
+			var a = document.getElementById("slider");
+			
+				m.style.display = 'none';
+				a.style.display = 'block';
+			
+		}
+
+		function mapa(){
+			var m = document.getElementById("googleMap");
+			var a = document.getElementById("slider");
+			
+				a.style.display = 'none';
+				m.style.display = 'block';
+			
+		}
 	</script>
 </head>
 <body onload="initialize();">
 <header id="registro">
+
+	<ul id="top_header">
+		<li><a href="index.php">Hasiera</a></li>
+		<li><a href="#">Sagardotegiak</a></li>
+		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
+		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
+	</ul>
 	<ul id="hizkuntzak">
 		<li><a href="">eu</a></li>
 		<li>|</li>
 		<li><a href="">es</a></li>
 	</ul>
-	<ul id="top_header">
-		<li><a href="">Sagardotegiak</a></li>
-		<li><a href="index.php">Hasiera</a></li>
-	</ul>
+	
+
 </header>
 <div id="menu_txikia">
 	<form action="bilatu.php" method="get">
@@ -74,7 +114,7 @@
 	</form>
 </div>
 <div id="izena">
-	<h1><?php echo $sagardotegia ;?></h1>
+	<h1><?php echo $sagardotegia; ?></h1>
 </div>
 <?php
 	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$sagardotegia."';";
@@ -99,7 +139,20 @@
 			<a id="comentarios" href="#" onClick="iruzkinak('iruzkin')">Iruzkinak ikusi</a>
 		</div>
 		
+		<!-- GOOGLE MAPS -->
 		<div id="googleMap" style="width: 640px; height: 400px;"></div>
+		
+		<!-- SLIDER -->
+		<div id="slider"> 
+
+			<ul class="bxslider">
+			  <li><img src="img/sidra.jpg" /></li>
+			  <li><img src="img/slide.jpg" /></li>
+			  <li><img src="img/txotx2.jpg" /></li>
+			  <li><img src="img/sag-usurbilsaizar01.jpg" /></li>
+			</ul>
+
+		</div>
 <?php
 	}	
 ?>	
@@ -182,4 +235,13 @@
 	mysqli_close($con);
 ?>
 </body>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+	  $('.bxslider').bxSlider();
+	});
+
+</script>
+
 </html>

@@ -3,14 +3,17 @@ a{
 }
 #hizkuntzak li{
     display:inline-block;
-    float: left;
-    padding: 10px;
+    float: right;
+    padding-top: 10px;
     color: white;
+    margin-right: 15px;
 }
 #top_header li{
     display:inline-block;
-    float: right;
-    padding: 10px;
+    float: left;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-left: 15px;
 }
 #registro{
     background-color: green;
@@ -58,17 +61,27 @@ a{
 }
 #deskribapena{
 	position: absolute;
-	top: 160px;
+	top: 22%;
+	left: 2%;
 }
 #googleMap{
+	
 	position: absolute;
-	top: 180px;
-	left: 400px;
+	top: 25%;
+	left: 35%;
 }
+
+#slider{
+	position: absolute;
+	top: 25%;
+	left: 25%;
+}
+
 #iruzkin{
 	position: absolute;
 	width: 370px;
-	top: 280px;
+	top: 40%;
+	left: 2%;
 	display: none;
 }
 #nork{

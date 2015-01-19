@@ -22,7 +22,7 @@
         },
         "time": "2014-12-09 19:59:29",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-0": {
                 "Slim": "."
