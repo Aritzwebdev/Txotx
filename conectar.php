@@ -5,13 +5,16 @@ if(!getenv('OPENSHIFT_MYSQL_DB_HOST')){
 		return $con;
 	}
 }else{
-	$server=getenv('OPENSHIFT_MYSQL_DB_HOST');
-	$user=getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-	$password=getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-	$db=getenv('OPENSHIFT_APP_NAME');
-	function conectar(){
-		$con=mysqli_connect($server,$user,$password, $db) or die(mysqli_error());
-		return $con;
+
+	$mysqlCon = mysqli_connect(getenv('OPENSHIFT_MYSQL_DB_HOST'), 
+				getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
+				getenv('OPENSHIFT_MYSQL_DB_PASSWORD'), 
+				"", 
+				getenv('OPENSHIFT_MYSQL_DB_PORT')) or die("Error: " . mysqli_error($mysqlCon));
+	
+	mysqli_select_db($mysqlCon, getenv('OPENSHIFT_APP_NAME')) or die("Error: " . mysqli_error($mysqlCon));
+	
+	return $mysqlCon;
 	}
 }
 ?>

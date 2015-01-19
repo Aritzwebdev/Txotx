@@ -33,7 +33,6 @@
 
 
 	<script>
-
 		function initialize() {
 			var lat="<?php echo $lat; ?>";
 			var lng="<?php echo $lng; ?>";
@@ -51,16 +50,8 @@
 			});
 
 			marker.setMap(map);
-
-			var m = document.getElementById("googleMap");
-			var a = document.getElementById("slider");
-			
-				a.style.display = 'none';
-				m.style.display = 'block';
 		}
-		
 		google.maps.event.addDomListener(window, 'load', initialize());
-	
 	</script>
 	<script type="text/javascript">
 		function iruzkinak(id){
@@ -187,27 +178,18 @@
 			<form action="guardarComentario.php" method="get">
 				<label id="okerra" color="red"></label>
 				<?php if(!isset($_SESSION["user"])){ ?>
-					Erabiltzailea: <input type="text" name="erabiltzailea">
-					<br>
-					Pasahitza: <input type="password" name="pasahitza">
-					<br>
-					Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
-					<br>
-					<input type="hidden" name="izena" value="<?php echo $izena; ?>">
-					<input type="hidden" name="herria" value="<?php echo $herria; ?>">
-					<input type="hidden" name="data" 
-					value="<?php echo date('Y-m-d H:i:s'); ?>">
-					<input type="submit" value="Bidali" > 
-				<?php 
-				}else{ ?>
-					Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
-					<br>
-					<input type="hidden" name="izena" value="<?php echo $izena; ?>">
-					<input type="hidden" name="herria" value="<?php echo $herria; ?>">
-					<input type="hidden" name="data" 
-					value="<?php echo date('Y-m-d H:i:s'); ?>">
-					<input type="submit" value="Bidali" > 
+				Erabiltzailea: <input type="text" name="erabiltzailea">
+				<br>
+				Pasahitza: <input type="password" name="pasahitza">
+				<br>
 				<?php } ?>
+				Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
+				<br>
+				<input type="hidden" name="izena" value="<?php echo $izena; ?>">
+				<input type="hidden" name="herria" value="<?php echo $herria; ?>">
+				<input type="hidden" name="data" 
+				value="<?php echo date('Y-m-d H:i:s'); ?>">
+				<input type="submit" value="Bidali" > 
 			</form>
 		</div>
 		
