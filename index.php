@@ -36,7 +36,9 @@
                 }
 
                 function perfil(){
-                    location.href="perfil.php";
+                    
+                        location.href="perfil.php";
+                    
                 }
         </script>
 
@@ -126,7 +128,7 @@
             </form>
         </div>  
         <div id="log">              
-            <form class="form-4" action="" method="post"> 
+            <form class="form-4"> 
                    
                 <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
                 <input type="text" name="erabiltzaileaLog" id="erabiltzaileaLog" title="Sartu erabiltzaile izena" oninvalid="setCustomValidity('Ezin da hutsik utzi')" onchange="try{setCustomValidity('')}catch(e){}" required />
@@ -137,7 +139,7 @@
                    
                 <font color="red"><div id="aviso"></div></font></br>
                     
-                <input type="submit" value="Sartu" id="butsartu" />
+                <input type="button" value="Sartu" id="butSartu" />
             </form>
         </div>
 
@@ -203,40 +205,20 @@
     $(document).ready(function(){
 
         /* VALIDAR LOGIN */
-
-            $('#butsartu').click(function(){
-                
-                var erabiltzailea=$("#erabiltzaileaLog").val();
-                var pasahitza=$("#pasahitzaLog").val();
-                var dataString = 'erabiltzailea='+erabiltzailea+'&pasahitza='+pasahitza;
-                if($.trim(erabiltzailea).length>0 && $.trim(pasahitza).length>0){
-                    $.ajax({
-                    type: "POST",
-                    url: "http://localhost/Txotx/login.php",
-                    data: dataString,
-                    cache: false,
-                        beforeSend: function(){ $("#butsartu").val('Konektatzen...');},
-                        success: function(data){
-                        
-                            if(data){
-                                //$("body").load("index.php").hide().fadeIn(1500).delay(6000);
-                                //or
-                                window.location.href = "index.php";
-                            }
-                            else{                             
-                                 //Shake animation effect.
-                                $('#log').shake();
-                                $("#butsartu").val('Sartu')
-                                $("#aviso").html("<font color='red'>Erabiltzaile edo pasahitz desegokia</font>");
-                            }
-                        }
-                    });
-
-                }else{
-                    $("#aviso").html("Ezin da hutsik egon");
-                }
-                return false;
-            });
+        $("#butSartu").click(function(evento){
+            evento.preventDefault();
+            if($("#erabiltzaileaLog").val()=="" && $("#pasahitzaLog").val()==""){
+                $("#aviso").text("Ezin dira hutsik egon");
+            }else{
+                $("#aviso").load("login.php", {user: $("#erabiltzaileaLog").val(), pass: $("#pasahitzaLog").val()}, function(response){
+                    if(response==""){
+                        location.reload();
+                    }else{
+                        $("#aviso").text(response);
+                    }
+                });
+            }
+        });
     
 /* CREAR NUMERO SECRETO RANDOM */
     function randomgen()
