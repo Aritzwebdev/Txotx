@@ -62,17 +62,18 @@ $result=mysqli_query($con, $sql);
 
 	if($row=mysqli_fetch_array($result)){
 	?>
+	<form action="modificarUsuario.php" method="post">
 	<table>
 		<tr>
-			<td>Erabiltzailea: </td><td><input type="text" value="<?php echo $row['erabiltzailea']; ?>" /></td>
+			<td>Erabiltzailea: </td><td><input type="text" name="erabiltzailea" value="<?php echo $row['erabiltzailea']; ?>" /></td>
 			<td></td>
-			<td>Izena: </td><td><input type="text" value="<?php echo $row['izena']; ?>" /></td>
+			<td>Izena: </td><td><input type="text" name="izena" value="<?php echo $row['izena']; ?>" /></td>
 		</tr>
 		<br><br>
 		<tr>
-			<td>Abizena: </td><td><input type="text" value="<?php echo $row['abizena']; ?>" /></td>
+			<td>Abizena: </td><td><input type="text" name="abizena" value="<?php echo $row['abizena']; ?>" /></td>
 			<td></td>
-			<td>Email-a: </td><td><input type="text" value="<?php echo $row['email']; ?>" /></td>
+			<td>Email-a: </td><td><input type="text" name="email" value="<?php echo $row['email']; ?>" /></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
@@ -80,11 +81,12 @@ $result=mysqli_query($con, $sql);
 		<tr>
 			<td></td>
 			<td></td>
-			<td><input type="button" id="butdatuak" value="Datuak Aldatu"/></td>
+			<td><input type="submit" id="butdatuak" name="butdatuak" value="Datuak Aldatu"/></td>
 			<td></td>
 			<td></td>
 		</tr>
 	</table>
+	</form>
 	<?php
 	}
 	?>
