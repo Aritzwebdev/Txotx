@@ -71,8 +71,28 @@
         <div id="anadir">
             <form class="form-4" action="anadirSagardotegi.php" method="post" >
                     <div>
-                        <label for="sagardotegi" style="padding: 10px 0px 2px 0px;"><font color="white">Sagardotegi Gehitu</font></label>
-                        <input type="text" name="sagardotegi" id="sagardotegi" required title="Sartu erabiltzaile izena">
+                        <label for="izena" style="padding: 10px 0px 2px 0px;"><font color="white">Izena</font></label>
+                        <input type="text" name="izena" id="izena" required title="Sartu sagardotegiaren izena">
+                    </div>
+                    <div>
+                        <label for="herria" style="padding: 10px 0px 2px 0px;"><font color="white">Herria</font></label>
+                        <input type="text" name="herria" id="herria" required title="Sartu sagardotegiaren herria">
+                    </div>
+                    <div>
+                        <label for="deskribapena" style="padding: 10px 0px 2px 0px;"><font color="white">Deskribapena</font></label>
+                        <input type="text" name="deskribapena" id="deskribapena" required title="Sartu sagardotegiaren deskribapena">
+                    </div>
+                    <div>
+                        <label for="probintzia" style="padding: 10px 0px 2px 0px;"><font color="white">Probintzia</font></label>
+                        <input type="text" name="probintzia" id="probintzia" required title="Sartu sagardotegiaren probintzia">
+                    </div>
+                    <div>
+                        <label for="telefonoa" style="padding: 10px 0px 2px 0px;"><font color="white">Telefonoa</font></label>
+                        <input type="text" name="telefonoa" id="telefonoa" required title="Sartu sagardotegiaren telefonoa">
+                    </div>
+                    <div>
+                        <label for="email" style="padding: 10px 0px 2px 0px;"><font color="white">Email</font></label>
+                        <input type="text" name="email" id="email" required title="Sartu sagardotegiaren emaila">
                     </div>
                     <div class="submit">
                         <input type="submit" value="Gehitu" name="anadirSagardotegi">
