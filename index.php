@@ -55,11 +55,11 @@
                 <li><a href="#s1">Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
-                        <li><a href="#">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
+                        <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
                         <li><a href="#">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
                         <li><a href="#">Araba<img id="araba" src="img/araba.png" /></a></li>
                         <li><a href="#">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
-                         <li><a href="#">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
+                        <li><a href="#">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
                     </ul>
                 </li>
                 <?php 
@@ -171,23 +171,27 @@
     $(document).ready(function(){      
     
         $("#enviarT").click(function(mievento) {
-                $.ajax({
-                    type: 'GET',
-                    url: "http://localhost/Txotx/respuestaApiUsuarios.php",
-                    dataType: "json",
-                    success: function(data) {
-                        var datos ={
-                            user: data.user
-                        };
-                        
-                        //Compilamos el template:
-                        var source   = $("#entry-template2").html();
-                        var template = Handlebars.compile(source);    
-                        var user = template(datos);
-                        $("#contenido2").html(user);
-                   }
-                });
-           });
+            $.ajax({
+                type: 'GET',
+                url: "http://localhost/Txotx/respuestaApiUsuarios.php",
+                dataType: "json",
+                success: function(data) {
+                    var datos ={
+                        user: data.user
+                    };
+                    
+                    //Compilamos el template:
+                    var source   = $("#entry-template2").html();
+                    var template = Handlebars.compile(source);    
+                    var user = template(datos);
+                    $("#contenido2").html(user);
+                }
+            });
+        });
+
+        $("#giputxi").click(function(){
+            document.location.href="lista.php?probintzia=1";
+        });
 
     });
 
