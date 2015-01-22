@@ -4,22 +4,18 @@
 </head>
 <body>
 	<div id="herria"></div>
-	<div id="kop"></div>
 </body>
 <script type="text/javascript">
-	$(document).ready(function(){  
-        /*var url="listaPueblos.php";
-        $("#tablajson tbody").html("");
-        $.getJSON(url, {probintzia: "1"}, function(rawdata){
-        	$.each(rawdata, function(i, data){
-        		var newRow=""+""+data.Herria+""+""+data.Sagadotegi_kopurua+""+"";
-        		$(newRow).appendTo("#tablajson tbody");
-        	});
-        });*/
-
-		$("#herria").load("listaPueblos.php?probintzia=1", function(response){      
-            $("#herria").text(response);
-        });
+	$(document).ready(function(){ 
+	var array; 
+		/*$("#herria").load("listaPueblos.php?probintzia=1", function(response){  
+				$("#herria").text(response.herria);
+		});*/
+		$.getJSON("listaPueblos.php", {probintzia: "1"}, function(response){
+			array=new Array(response);
+			
+		});
+		$("#herria").text(array);
     });
 </script>
 </html>
