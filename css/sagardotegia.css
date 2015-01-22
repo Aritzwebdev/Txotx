@@ -1,6 +1,7 @@
 a{
 	text-decoration: none;
 }
+
 #hizkuntzak li{
     display:inline-block;
     float: right;
@@ -46,9 +47,10 @@ a{
 	margin-top: -10px;
 }
 #menu_txiki_herria{
-	background-color: white;
+	background: none;
 	position: relative;
-	top: 5px;
+	top: 7px;
+	left: 1%;
 	color: green;
 	border: 0px;
 }
@@ -62,7 +64,7 @@ a{
 #deskribapena{
 	position: absolute;
 	top: 23%;
-	left: 3%
+	left: 6%
 }
 #googleMap{
 	position: absolute;
@@ -71,6 +73,7 @@ a{
 }
 
 #slider{
+	background: none;
 	position: absolute;
 	top: 25%;
 	left: 25%;
@@ -80,7 +83,7 @@ a{
 	position: absolute;
 	width: 370px;
 	top: 45%;
-	left: 3%;
+	left: 6%;
 	display: none;
 }
 #nork{
