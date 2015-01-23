@@ -96,7 +96,7 @@
         <div id="taulaHerriak">
 			<table class="grilla" id="tablajson">
 				<thead>
-					<th>Herriak</th>			
+					<th>Sagardotegiak</th>			
 				</thead>
 				<tbody></tbody>
 			</table>
@@ -104,14 +104,14 @@
 			<script type="text/javascript">
 
 			$(document).ready(function(){
-				var url="listaPueblos.php";
+				var url="listaSidrerias.php";
 				$("#tablajson tbody").html("");
 				
 				$.getJSON(url,function(pueblos){
 					$.each(pueblos, function(i,pueblo){
 						var newRow =
 						"<tr>"
-						+"<td><a href='#' onclick='sagarZerrenda();'><div id='herriIze'>"+pueblo.Herria+"</div></a></td>"
+						+"<td>"+pueblo.Sagardotegia+"</td>"
 						+"</tr>";
 						$(newRow).appendTo("#tablajson tbody");
 					});
@@ -124,11 +124,4 @@
 	</div>
 
 </body>
-<script type="text/javascript">
-		function sagarZerrenda(){
-			var herria=$("#herriIze").val();
-			alert(herria);
-			//document.location.href="zerrendaHerria.php?herria='"+herria+";"
-		}
-</script>
 </html>
