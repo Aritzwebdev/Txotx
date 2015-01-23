@@ -190,24 +190,33 @@
         });
 
         $("#giputxi").click(function(){
-            <?php $_SESSION['probintzia'] = 1; ?>
-            document.location.href="bilatu.php?probintzia=1";
+
+            document.location.href="zerrenda.php?probintzia=1";
+
         });
 
         $("#bizka").click(function(){
-            document.location.href="bilatu.php?probintzia=2";
+           
+            document.location.href="zerrenda.php?probintzia=2";
+            
         });
 
         $("#arab").click(function(){
-            document.location.href="bilatu.php?probintzia=3";
+            
+            document.location.href="zerrenda.php?probintzia=3";
+            
         });
 
         $("#nafar").click(function(){
-            document.location.href="bilatu.php?probintzia=4";
+           
+            document.location.href="zerrenda.php?probintzia=4";
+          
         });
 
         $("#ipar").click(function(){
-            document.location.href="bilatu.php?probintzia=5";
+           
+            document.location.href="zerrenda.php?probintzia=5";
+          
         });
 
     });

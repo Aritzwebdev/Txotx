@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 //Creamos la conexión
 include('conectar.php');
 $conexion = conectar();

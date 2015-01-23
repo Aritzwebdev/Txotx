@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -18,7 +19,7 @@
 <header id="registro">
 
 	<ul id="top_header">
-		<li><a href="index.php">Hasiera</a></li>
+		<li><a href="index.php" id="hasiera" >Hasiera</a></li>
 		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
 		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
 	</ul>

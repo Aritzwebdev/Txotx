@@ -42,13 +42,13 @@ input[type="search"]:focus{
 }
 #hizkuntzak li{
     display:inline-block;
-    float: left;
+    float: right;
     padding: 10px;
     color: white;
 }
 #top_header li{
     display:inline-block;
-    float: right;
+    float: left;
     padding: 10px;
 }
 #registro{
