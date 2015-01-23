@@ -69,33 +69,33 @@
             </form>
         </div>
         <div id="anadir">
-            <form class="form-4" action="anadirSagardotegi.php" method="post" >
+           <form class="form-4" action="anadirSagardotegi.php" method="post" >
                     <div>
                         <label for="izena" style="padding: 10px 0px 2px 0px;"><font color="white">Izena</font></label>
                         <input type="text" name="izena" id="izena" required title="Sartu sagardotegiaren izena">
                     </div>
                     <div>
-                        <label for="herria" style="padding: 10px 0px 2px 0px;"><font color="white">Herria</font></label>
-                        <input type="text" name="herria" id="herria" required title="Sartu sagardotegiaren herria">
+                        <label for="herria" style="padding: 15px 0px 2px 0px;"><font color="white">Herria</font></label>
+                        <input type="text" name="herria" id="herria" required title="Sartu herria" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="deskribapena" style="padding: 10px 0px 2px 0px;"><font color="white">Deskribapena</font></label>
-                        <input type="text" name="deskribapena" id="deskribapena" required title="Sartu sagardotegiaren deskribapena">
+                        <label for ="deskribapena" style="padding: 15px 0px 2px 0px;"><font color="white">Deskribapena</font></label>
+                        <input type="text" name="deskribapena" id="deskribapena" required title="Sartu deskribapena">
                     </div>
                     <div>
-                        <label for="probintzia" style="padding: 10px 0px 2px 0px;"><font color="white">Probintzia</font></label>
-                        <input type="text" name="probintzia" id="probintzia" required title="Sartu sagardotegiaren probintzia">
+                        <label for="probintzia" style="padding: 15px 0px 2px 0px;"><font color="white">Probintzia</font></label>
+                        <input type="text" name="probintzia" id="probintzia" required title="Sartu probintzia" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="telefonoa" style="padding: 10px 0px 2px 0px;"><font color="white">Telefonoa</font></label>
-                        <input type="text" name="telefonoa" id="telefonoa" required title="Sartu sagardotegiaren telefonoa">
+                        <label for="telefonoa" style="padding: 15px 0px 2px 0px;"><font color="white">Telefonoa</font></label>
+                        <input type="text" name="telefonoa" id="telefonoa" required title="Sartu Telefonoa" pattern="[0-9]{9}" oninvalid="setCustomValidity('Zenbakiak bakarrik(9 zenbaki)')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="email" style="padding: 10px 0px 2px 0px;"><font color="white">Email</font></label>
-                        <input type="text" name="email" id="email" required title="Sartu sagardotegiaren emaila">
+                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Emaila</font></label>
+                        <input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('Formatu desegokia ')" onchange="try{setCustomValidity('')}catch(e){}" required>
                     </div>
                     <div class="submit">
-                        <input type="submit" value="Gehitu" name="anadirSagardotegi">
+                        <input type="submit" name="anadirSagardotegi" value="Gehitu">
                     </div>                
             </form>
         </div> 
@@ -183,78 +183,72 @@
 
     /*  API PARA VALIDAR FORMULARIO DE REGISTRO  */
 
-        /**function iniciar(){
-          user=document.getElementById("erabiltzailea");
-          user.addEventListener("input", validacion, false);
-          pass=document.getElementById("pasahitza");
-          pass.addEventListener("input", validacion, false);  
-          izena=document.getElementById("izena");
-          izena.addEventListener("input", validacion, false);
-          abizena=document.getElementById("abizena");
-          abizena.addEventListener("input", validacion, false);
-          email=document.getElementById("email");
-          email.addEventListener("input", validacion, false);
-          kode=document.getElementById("kodea");
-          kode.addEventListener("input", validacion, false);
-          validacion();
+        function iniciar(){
+        	izena=document.getElementById("izena");
+        	izena.addEventListener("input", validacion, false);
+        	herria=document.getElementById("herria");
+        	herria.addEventListener("input", validacion, false);
+        	deskribapena=document.getElementById("deskribapena");
+        	deskribapena.addEventListener("input", validacion, false);   
+       		probintzia=document.getElementById("probintzia");
+        	probintzia.addEventListener("input", validacion, false);
+         	email=document.getElementById("email");
+         	email.addEventListener("input", validacion, false);
+         	sintaxis="!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/";
+         	telefonoa=document.getElementById("telefonoa");
+          	telefonoa.addEventListener("input", validacion, false);
+          	validacion();
         }
+        
 
         function validacion(){
-        if(user.value==""){
-          user.setCustomValidity('Sartu erabiltzailea');
-          
-          }else{
-          user.setCustomValidity('');
-          
-        }
+            //validacion izena
+	        if(izena.value==""){
+	          izena.setCustomValidity('Sartu izena');   
+	        }else{
+	          izena.setCustomValidity('');   
+	        }
 
-        if(pass.value==""){
-          pass.setCustomValidity('Sartu pasahitza');
-          
-        }else if(pass.length < 6){
-            pass.setCustomValidity('Pasahitza motzegia da');
-           
-        }else{
-          pass.setCustomValidity('');
-         
-        }
+	    	//validacion herria
+	        if(herria.value==""){
+	        	herria.setCustomValidity('Sartu herria');
+	        }else{
+	          herria.setCustomValidity('');      
+	        }
 
-        if(email.value==""){
-          email.setCustomValidity('Sartu emaila');
-          
-          }else{
-          email.setCustomValidity('');
+	    	//validacion deskribapena
+	        if(deskribapena.value==""){
+	        	deskribapena.setCustomValidity('Sartu deskribapena');  
+	        }else{
+	        	deskribapena.setCustomValidity(''); 
+	        }
+
+	    	//validacion probintzia
+	        if(probintzia.value==""){
+	        	probintzia.setCustomValidity('Sartu probintzia');
+	        }else{
+	        	probintzia.setCustomValidity('');
+	        }
+
+	    	//validacion email
+	        if (email.value==""){
+	        	email.setCustomValidity('Sartu probintzia');
+	        }else{
+	        	email.setCustomValidity('');
+	        }
+
+	    	//validacion telefonoa
+	        if(telefonoa.value==""){
+	        	telefonoa.setCustomValidity('Sartu telefonoa');
+	        }else{
+	        	  telefonoa.setCustomValidity('');
+	        }
         
         }
 
-        if(izena.value==""){
-          izena.setCustomValidity('Sartu zure izena');
-          
-          }else if(izena.value.length < 3){
-            izena.setCustomValidity('Izena 3 karaktere edo gehiago eduki behar ditu');
-          }
-          else{
-          izena.setCustomValidity('');
-        }
+        window.addEventListener("load", iniciar, false);
 
-        if(abizena.value==""){
-          abizena.setCustomValidity('Sartu zure abizena');
-          }else if(abizena.value.length < 3){
-            abizena.setCustomValidity('Abizena 3 karaktere edo gehiago eduki behar ditu');
-          }else{
-          abizena.setCustomValidity('');
-        }
-
-        if(kode.value==""){
-          kode.setCustomValidity('Sartu ikusten duzun zenbakia');
-          }else{
-          kode.setCustomValidity('');
-        }
-
-        }
-
-        window.addEventListener("load", iniciar, false);*/
-
+        
     </script>
 
 <html>
