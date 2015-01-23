@@ -56,10 +56,10 @@
                     <span id="s1"></span>
                     <ul class="subs">
                         <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
-                        <li><a href="#">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
-                        <li><a href="#">Araba<img id="araba" src="img/araba.png" /></a></li>
-                        <li><a href="#">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
-                        <li><a href="#">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
+                        <li><a href="#" id="bizka">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#" id="arab">Araba<img id="araba" src="img/araba.png" /></a></li>
+                        <li><a href="#" id="nafar">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
+                        <li><a href="#" id="ipar">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
                     </ul>
                 </li>
                 <?php 
@@ -190,7 +190,24 @@
         });
 
         $("#giputxi").click(function(){
-            document.location.href="lista.php?probintzia=1";
+            <?php $_SESSION['probintzia'] = 1; ?>
+            document.location.href="bilatu.php?probintzia=1";
+        });
+
+        $("#bizka").click(function(){
+            document.location.href="bilatu.php?probintzia=2";
+        });
+
+        $("#arab").click(function(){
+            document.location.href="bilatu.php?probintzia=3";
+        });
+
+        $("#nafar").click(function(){
+            document.location.href="bilatu.php?probintzia=4";
+        });
+
+        $("#ipar").click(function(){
+            document.location.href="bilatu.php?probintzia=5";
         });
 
     });

@@ -82,5 +82,45 @@
 	}
 	mysqli_close($con);
 ?>	
+
+	<div>
+		 <!-- Cabecera -->
+        <header>
+            <h1>Parsear o leer JSON con jQuery</h1>
+        </header>
+
+        <!-- Contenido -->
+        <section>
+            
+        <div id="taulaHerriak">
+			<table class="grilla" id="tablajson">
+				<thead>
+					<th>Herriak</th>			
+				</thead>
+				<tbody></tbody>
+			</table>
+		<div>
+			<script type="text/javascript">
+
+			$(document).ready(function(){
+				var url="listaPueblos.php";
+				$("#tablajson tbody").html("");
+				
+				$.getJSON(url,function(pueblos){
+					$.each(pueblos, function(i,pueblo){
+						var newRow =
+						"<tr>"
+						+"<td>"+pueblo.Herria+"</td>"
+						+"</tr>";
+						$(newRow).appendTo("#tablajson tbody");
+					});
+				});
+			});
+
+			</script>
+ 
+        </section>
+	</div>
+
 </body>
 </html>

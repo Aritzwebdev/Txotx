@@ -1,18 +1,13 @@
 <?php 
 
-$server = "localhost";
-$user = "root";
-$pass = "zubiri";
-$bd = "txotx";
-
 //Creamos la conexión
-$conexion = mysqli_connect($server, $user, $pass,$bd) 
-or die("Ha sucedido un error inexperado en la conexion de la base de datos");
+include('conectar.php');
+$conexion = conectar();
 
-//$probintzia = $_SESSION['probintzia'];
+$probintzia = $_SESSION['probintzia'];
 
 //generamos la consulta
-$sql = "SELECT izena FROM herriak WHERE probintzia=1;";
+$sql = "SELECT izena FROM herriak WHERE probintzia='".$probintzia."';";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
@@ -36,6 +31,7 @@ or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
 //Creamos el JSON
 $json_string = json_encode($pueblos);
 echo $json_string;
+
 
 //Si queremos crear un archivo json, sería de esta forma:
 /*
