@@ -16,15 +16,18 @@
 </head>
 <body>
 <header id="registro">
+
+	<ul id="top_header">
+		<li><a href="index.php">Hasiera</a></li>
+		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
+		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
+	</ul>
 	<ul id="hizkuntzak">
 		<li><a href="">eu</a></li>
 		<li>|</li>
 		<li><a href="">es</a></li>
 	</ul>
-	<ul id="top_header">
-		<li><a href="">Sagardotegiak</a></li>
-		<li><a href="index.php">Hasiera</a></li>
-	</ul>
+
 </header>
 <?php
 	$herria=$_GET["herria"];
