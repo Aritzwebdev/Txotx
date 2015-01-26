@@ -8,19 +8,27 @@ body{
 	border: 0px;
 }
 #menu_txikia{
+	background: none;
 	margin-top: 3px;
 }
 
+#menu_txikia input{
+	background: none;
+}
+
 input[type="search"]{
+	position: absolute;
+	top: 19%;
+	left: 83.5%;
 	width: 45px;
-	background: #ededed url('../img/lupa.png') no-repeat 20px center;
-	padding: 10px 11px 10px 33px;
+	background: #ededed url('../img/lupa.png') no-repeat 12px center;
+	padding: 12px 11px 10px 33px;
 	border-radius: 15em;
 	transition: all .5s;
 	outline: none;
 }
 input[type="search"]:focus{
-	width: 130px;
+	width: 150px;
 	padding-left: 32px;
 	color: #000;
 	background-color: #FFF;
@@ -34,16 +42,25 @@ input[type="search"]:focus{
 	height: 80px;
 }
 #header h1{
+	position: absolute;
+	top: 20%;
+	left: 13%;
 	color: black;
 	font-size: 48px;
-	position: absolute;
-	left: 100px;
-	top: 60px;
 }
+
+#probin{
+	position: absolute;
+	top: 15%;
+	left: 10%;
+}
+
 #hizkuntzak li{
     display:inline-block;
     float: right;
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
     color: white;
 }
 #top_header li{

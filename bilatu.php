@@ -1,8 +1,21 @@
+<?php
+	session_start();
+
+	$probintzia= $_SESSION["probintzia"];
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/bilatu.css"/>
+
+	<link rel="stylesheet" href="css/perfil.css"/>
+	
 
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -16,6 +29,7 @@
 	</script>
 </head>
 <body>
+<div class="foo">
 <header id="registro">
 
 	<ul id="top_header">
@@ -30,9 +44,7 @@
 	</ul>
 
 </header>
-<?php
-	$herria=$_GET["herria"];
-?>
+
 <div id="menu_txikia">
 	<form action="index.php" method="post">
 		<input id="bilatu" type="submit" name="herria" value="Bilatzailea" />
@@ -40,12 +52,24 @@
 </div>
 	<div id="header">
 		<img id="logo" src="img/logo.png"/>
-		<h1><?php echo $herria ?></h1>
+		<h1><p id="probin"><?php 
+			if($probintzia == 1){
+				echo "Gipuzkoa";
+			}else if($probintzia == 2){
+				echo "Bizkaia";
+			}else if($probintzia == 3){
+				echo "Araba";
+			}else if($probintzia == 4){
+				echo "Nafarroa";
+			}else if($probintzia == 5){
+				echo "Iparralde";
+			}
+		?></p></h1>
 		<form action="bilatu.php" method="GET">
-			<input type="search" name="herria" placeholder="bilatu..." />
+			<input type="search" name="herria" placeholder="Bilatu..." />
 		</form>
-	</div>
-
+	
+<!--
 <?php
 	
 	include "conectar.php";
@@ -82,13 +106,9 @@
 		}
 	}
 	mysqli_close($con);
-?>	
-
+?>	-->
+</div>
 	<div>
-		 <!-- Cabecera -->
-        <header>
-            <h1>Parsear o leer JSON con jQuery</h1>
-        </header>
 
         <!-- Contenido -->
         <section>
@@ -96,9 +116,10 @@
         <div id="taulaHerriak">
 			<table class="grilla" id="tablajson">
 				<thead>
+					<th></th>
 					<th>Herriak</th>			
 				</thead>
-				<tbody></tbody>
+				<tbody class="taula"></tbody>
 			</table>
 		<div>
 			<script type="text/javascript">
@@ -110,8 +131,8 @@
 				$.getJSON(url,function(pueblos){
 					$.each(pueblos, function(i,pueblo){
 						var newRow =
-						"<tr>"
-						+"<td><a href='#' onclick='sagarZerrenda();'><div id='herriIze'>"+pueblo.Herria+"</div></a></td>"
+						"<tr id='taula'>"
+						+"<td>"+ parseInt(i+1) +"<td><a href='#' onclick='sagarZerrenda();'><div id='herriIze'>"+pueblo.Herria+"</div></a></td>"
 						+"</tr>";
 						$(newRow).appendTo("#tablajson tbody");
 					});
@@ -122,7 +143,7 @@
  
         </section>
 	</div>
-
+</div>
 </body>
 <script type="text/javascript">
 		function sagarZerrenda(){
@@ -130,5 +151,19 @@
 			alert(herria);
 			//document.location.href="zerrendaHerria.php?herria='"+herria+";"
 		}
+</script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.backstretch.js"></script>
+	
+<script type="text/javascript">
+		$.backstretch([
+	          "img/txotx.jpg",
+	          "img/slide.jpg",
+	          "img/sidra.jpg"
+	        ], {
+	            fade: 750,
+	            duration: 4000
+	        });
 </script>
 </html>
