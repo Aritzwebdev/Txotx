@@ -116,7 +116,7 @@
         <div id="taulaHerriak">
 			<table class="grilla" id="tablajson">
 				<thead>
-					<th></th>
+					<th>idHerriak</th>
 					<th>Herriak</th>			
 				</thead>
 				<tbody class="taula"></tbody>
@@ -132,7 +132,7 @@
 					$.each(pueblos, function(i,pueblo){
 						var newRow =
 						"<tr id='taula'>"
-						+"<td>"+ parseInt(i+1) +"<td><a href='#' onclick='sagarZerrenda();'><div id='herriIze'>"+pueblo.Herria+"</div></a></td>"
+						+"<td>"+pueblo.idHerria+"</td>"+"<td><a href='#' onclick='sagarZerrenda();'><div id='herriIze'>"+pueblo.Herria+"</div></a></td>"
 						+"</tr>";
 						$(newRow).appendTo("#tablajson tbody");
 					});
