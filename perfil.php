@@ -13,8 +13,10 @@ $result=mysqli_query($con, $sql);
     <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
     <!--<script type="text/javascript" language="javascript" src="js/api.js"></script>-->
 
-	<link rel="stylesheet" href="css/menuPerfil.css" media="screen, projection"/>
 	<link rel="stylesheet" href="css/perfil.css"/>	
+	<link rel="stylesheet" href="css/menuPerfil.css" media="screen, projection"/>
+	
+
 
 
 	<script type="text/javascript">
@@ -187,26 +189,35 @@ $result=mysqli_query($con, $sql);
 	?>
 
 	<div id="sagardo">
+		<section>
+			
+			<?php
+				$cont=1;
+				while($row=mysqli_fetch_array($result)){
+			?>
+					<div><label id="zenb"> <?php echo $cont ?>.- </label>
+					<label>Sagardotegia: </label><input type="text" value="<?php echo $row['sagardotegia']; ?>" readonly />
+					<label> Data: </label><input type="text" value="<?php echo $row['data']; ?>" readonly/></div>
+					</br>
+					<div><label>Iruzkina:</label><br><textarea type="text" rows="5" style="width: 728px;" readonly><?php echo $row['iruzkina'];?></textarea>
+					<input type="checkbox"/></div>
+					</br>
+			<?php
+					$cont++;
+				}
+			?>
 
-	<?php
-		$cont=1;
-		while($row=mysqli_fetch_array($result)){
-	?>
-			<div><label id="zenb"> <?php echo $cont ?>.- </label>
-			<label>Sagardotegia: </label><input type="text" value="<?php echo $row['sagardotegia']; ?>" readonly />
-			<label> Data: </label><input type="text" value="<?php echo $row['data']; ?>" readonly/></div>
-			</br>
-			<div><label>Iruzkina:</label><br><textarea type="text" rows="5" style="width: 728px;" readonly><?php echo $row['iruzkina'];?></textarea>
-			<input type="checkbox"/></div>
-			</br>
-	<?php
-			$cont++;
-		}
-	?>
-		<input type="button" id="butiruzkin" value="Iruzkinak ezabatu"/>
+		</section>
 	</div>
+
+	<input type="button" id="butiruzkin" value="Iruzkinak ezabatu"/>
+
 </div>
-	<script type="text/javascript">
+	
+
+</body>
+
+<script type="text/javascript">
 
 	$(document).ready(function(){
 		$("#datu").click(function(){
@@ -214,16 +225,19 @@ $result=mysqli_query($con, $sql);
 			$("#sagardo").hide();
 			$("#pass").hide();
 			$("#lista").hide();
+			$("#butiruzkin").hide();
 		});
-		$("#iruzkin").click(function(){
-			$("#datuak").hide();
+		$("#iruzkin").click(function(){		
+			$("#butiruzkin").show();
 			$("#sagardo").show();
+			$("#datuak").hide();
 			$("#pass").hide();
 			$("#lista").hide();
 		});
 		$("#cambiopass").click(function(){
 			$("#datuak").hide();
 			$("#sagardo").hide();
+			$("#butiruzkin").hide();
 			$("#pass").show();
 			$("#lista").hide();
 		});
@@ -248,7 +262,5 @@ $result=mysqli_query($con, $sql);
 	            duration: 4000
 	        });
 	</script>
-
-</body>
 
 </html>

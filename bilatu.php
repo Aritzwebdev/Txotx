@@ -68,7 +68,7 @@
 		<form action="bilatu.php" method="GET">
 			<input type="search" name="herria" placeholder="Bilatu..." />
 		</form>
-</div>
+	</div>
 	<div>
 
         <!-- Contenido -->

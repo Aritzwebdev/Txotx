@@ -17,7 +17,10 @@ $con=conectar();
 	$sql="SELECT izena FROM herriak WHERE idherriak='".$herriaznb."';";
 	$result=mysqli_query($con, $sql);
 
-	if($row=mysqli_fetch_array($result)){$herria=$row['izena'];}
+	if($row=mysqli_fetch_array($result)){
+		$herria=$row['izena'];
+		$_SESSION['Herria']=$herria;
+	}
 ?>
 <html>
 <head>
