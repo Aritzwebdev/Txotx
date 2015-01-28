@@ -2,6 +2,23 @@
 	session_start();
 
 	$herria= $_SESSION["Herria"];
+
+	include "conectar.php";
+	$con=conectar();
+
+	$sql="SELECT probintzia FROM herriak WHERE izena='".$herria."';";
+	$result=mysqli_query($con, $sql);
+
+	if($row=mysqli_fetch_array($result)){
+		$probintziaid=$row['probintzia'];
+		$_SESSION['probintzia']=$probintziaid;
+	}
+	$sql="SELECT izena FROM probintzia WHERE idprobintzia='".$probintziaid."';";
+	$result=mysqli_query($con, $sql);
+
+	if($row=mysqli_fetch_array($result)){
+		$probintzia=$row['izena'];
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -34,8 +51,8 @@
 </header>
 
 <div id="menu_txikia">
-	<form action="index.php" method="post">
-		<input id="bilatu" type="submit" name="herria" value="Bilatzailea" />
+	<form action="bilatu.php" method="get">
+		<input id="bilatu" type="submit" name="herria" value="<?php echo $probintzia;?>" />
 	</form>
 </div>
 	<div id="header">

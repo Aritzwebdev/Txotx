@@ -57,9 +57,9 @@
 				echo "Gipuzkoa";
 			}else if($probintzia == 2){
 				echo "Bizkaia";
-			}else if($probintzia == 3){
-				echo "Araba";
 			}else if($probintzia == 4){
+				echo "Araba";
+			}else if($probintzia == 3){
 				echo "Nafarroa";
 			}else if($probintzia == 5){
 				echo "Iparralde";
@@ -68,7 +68,7 @@
 		<form action="bilatu.php" method="GET">
 			<input type="search" name="herria" placeholder="Bilatu..." />
 		</form>
-	</div>
+</div>
 	<div>
 
         <!-- Contenido -->
