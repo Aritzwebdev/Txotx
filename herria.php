@@ -1,21 +1,23 @@
+<?php
+	session_start();
+
+	$herria= $_SESSION["Herria"];
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/bilatu.css"/>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#izena').click(function(){
-				$('bilatu.php',{'#izena':$(this).text()},function(data){
-					$('#sagartotegia').load (sagardotegia.php);
-				});
-				return false;
-			});
-		}) ;
-	</script>
+	<link rel="stylesheet" href="css/perfil.css"/>
 </head>
 <body>
+<div class="foo">
 <header id="registro">
 
 	<ul id="top_header">
@@ -30,9 +32,7 @@
 	</ul>
 
 </header>
-<?php
-	$herria=$_GET["herria"];
-?>
+
 <div id="menu_txikia">
 	<form action="index.php" method="post">
 		<input id="bilatu" type="submit" name="herria" value="Bilatzailea" />
@@ -40,61 +40,22 @@
 </div>
 	<div id="header">
 		<img id="logo" src="img/logo.png"/>
-		<h1><?php echo $herria ?></h1>
+		<h1><p id="probin"><?php echo $herria ?></p></h1>
 		<form action="bilatu.php" method="GET">
-			<input type="search" name="herria" placeholder="bilatu..." />
+			<input type="search" name="herria" placeholder="Bilatu..." />
 		</form>
-	</div>
-
-<?php
-	
-	include "conectar.php";
-    $con = conectar();
-	
-
-	$sql="SELECT idherriak FROM herriak WHERE izena='".$herria."';";
-	$result=mysqli_query($con, $sql);
-
-	if(!$result){
-		echo "Error resultado";
-		exit;
-	}
-
-	$idherria=mysqli_fetch_array($result);
-	$id=$idherria['idherriak'];
-
-	$sql="SELECT izena FROM sagardotegiak WHERE herria='".$id."';";
-	$result=mysqli_query($con, $sql);
-
-	if(!mysqli_num_rows($result)){
-		echo "Ez dago sagardotegirik";
-	}
-	else{
-		while($row=mysqli_fetch_array($result)){
-			$sagardotegia=$row['izena'];
-?>
-			<div id="izena">					
-				<form action="sagardotegia.php" method="get">
-					<input id="sagar_ize" type="submit" name="sagardotegia" value="<?php echo $sagardotegia ?>">
-				</form>
-			</div>
-<?php
-		}
-	}
-	mysqli_close($con);
-?>	
-
+</div>
 	<div>
-		 
+
         <!-- Contenido -->
         <section>
             
         <div id="taulaHerriak">
-			<table class="grilla" id="tablajson">
+			<table class="table" id="tablajson">
 				<thead>
 					<th>Sagardotegiak</th>			
 				</thead>
-				<tbody></tbody>
+				<tbody class="taula"></tbody>
 			</table>
 		<div>
 			<script type="text/javascript">
@@ -103,11 +64,11 @@
 				var url="listaSidrerias.php";
 				$("#tablajson tbody").html("");
 				
-				$.getJSON(url,function(pueblos){
-					$.each(pueblos, function(i,pueblo){
+				$.getJSON(url,function(sidrerias){
+					$.each(sidrerias, function(i,sidreria){
 						var newRow =
-						"<tr>"
-						+"<td>"+pueblo.Sagardotegia+"</td>"
+						"<tr value='"+sidreria.Sagardotegia+"' class='tr'>"
+						+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+sidreria.Sagardotegia+"</a></td>"
 						+"</tr>";
 						$(newRow).appendTo("#tablajson tbody");
 					});
@@ -118,6 +79,28 @@
  
         </section>
 	</div>
-
+</div>
 </body>
+<script type="text/javascript">
+		$(".table").on('click','.tr',function(e){
+			e.preventDefault();
+			var sagardotegia=$(this).attr('value');
+
+			location.href="zerrendaSagardo.php?Sagardotegia="+sagardotegia;
+		});
+</script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.backstretch.js"></script>
+	
+<script type="text/javascript">
+		$.backstretch([
+	          "img/txotx.jpg",
+	          "img/slide.jpg",
+	          "img/sidra.jpg"
+	        ], {
+	            fade: 750,
+	            duration: 4000
+	        });
+</script>
 </html>

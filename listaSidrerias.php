@@ -6,22 +6,22 @@ session_start();
 include('conectar.php');
 $conexion = conectar();
 
-$herria = $_SESSION['herria'];
+$herria = $_SESSION['Herria'];
 
 //generamos la consulta
-$sql = "SELECT sagardotegiak.izena FROM sagardotegiak INNER JOIN herriak ON sagardotegiak.herria=herriak.idherriak WHERE herriak.izena='".$herria."';";
+$sql = "SELECT sagardotegiak.idsagardotegiak, sagardotegiak.izena FROM sagardotegiak INNER JOIN herriak ON sagardotegiak.herria=herriak.idherriak WHERE herriak.izena='".$herria."';";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
 
-$pueblos = array(); //creamos un array
+$sidrerias = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) 
 { 
-	
+	$idSagar=$row['idsagardotegiak'];
 	$sagardotegia=$row['izena'];
 
-	$sidrerias[] = array('Sagardotegia'=> $sagardotegia);
+	$sidrerias[] = array('idSagardotegia'=> $idSagar, 'Sagardotegia'=> $sagardotegia);
 
 }
 	
@@ -31,15 +31,7 @@ or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
   
 
 //Creamos el JSON
-$json_string = json_encode($pueblos);
+$json_string = json_encode($sidrerias);
 echo $json_string;
-
-
-//Si queremos crear un archivo json, sería de esta forma:
-/*
-$file = 'pueblos.json';
-file_put_contents($file, $json_string);
-*/
-	
 
 ?>

@@ -68,45 +68,6 @@
 		<form action="bilatu.php" method="GET">
 			<input type="search" name="herria" placeholder="Bilatu..." />
 		</form>
-	
-<!--
-<?php
-	
-	include "conectar.php";
-    $con = conectar();
-	
-
-	$sql="SELECT idherriak FROM herriak WHERE izena='".$herria."';";
-	$result=mysqli_query($con, $sql);
-
-	if(!$result){
-		echo "Error resultado";
-		exit;
-	}
-
-	$idherria=mysqli_fetch_array($result);
-	$id=$idherria['idherriak'];
-
-	$sql="SELECT izena FROM sagardotegiak WHERE herria='".$id."';";
-	$result=mysqli_query($con, $sql);
-
-	if(!mysqli_num_rows($result)){
-		echo "Ez dago sagardotegirik";
-	}
-	else{
-		while($row=mysqli_fetch_array($result)){
-			$sagardotegia=$row['izena'];
-?>
-			<div id="izena">					
-				<form action="sagardotegia.php" method="get">
-					<input id="sagar_ize" type="submit" name="sagardotegia" value="<?php echo $sagardotegia ?>">
-				</form>
-			</div>
-<?php
-		}
-	}
-	mysqli_close($con);
-?>	-->
 </div>
 	<div>
 
@@ -114,9 +75,8 @@
         <section>
             
         <div id="taulaHerriak">
-			<table class="grilla" id="tablajson">
+			<table class="table" id="tablajson">
 				<thead>
-					<th>idHerriak</th>
 					<th>Herriak</th>			
 				</thead>
 				<tbody class="taula"></tbody>
@@ -131,8 +91,8 @@
 				$.getJSON(url,function(pueblos){
 					$.each(pueblos, function(i,pueblo){
 						var newRow =
-						"<tr id='taula'>"
-						+"<td>"+pueblo.idHerria+"</td>"+"<td><a href='#' onclick='sagarZerrenda();'><div id='herriIze'>"+pueblo.Herria+"</div></a></td>"
+						"<tr value='"+pueblo.Herria+"' class='tr'>"
+						+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
 						+"</tr>";
 						$(newRow).appendTo("#tablajson tbody");
 					});
@@ -146,11 +106,12 @@
 </div>
 </body>
 <script type="text/javascript">
-		function sagarZerrenda(){
-			var herria=$("#herriIze").val();
-			alert(herria);
-			//document.location.href="zerrendaHerria.php?herria='"+herria+";"
-		}
+		$(".table").on('click','.tr',function(e){
+			e.preventDefault();
+			var herria=$(this).attr('value');
+
+			location.href="zerrendaHerria.php?Herria="+herria;
+		});
 </script>
 
 	<script src="js/jquery.js"></script>

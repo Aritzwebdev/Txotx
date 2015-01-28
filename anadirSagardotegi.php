@@ -10,13 +10,18 @@ if(isset($_POST['anadirSagardotegi'])){
 		$probintzia=$_POST['probintzia'];
 		$telefonoa=$_POST['telefonoa'];
 		$email=$_POST['email'];
+		if($_POST['web']==""){
+			$web="";
+		}else{
+			$web=$_POST['web'];
+		}
 		
 		$sql="SELECT * FROM sagardotegiak WHERE izena='$izena'";
 		$result = mysqli_num_rows(mysqli_query($con, $sql));
 		if($result==0){
 			$sql="INSERT INTO sagardotegiak (izena, herria, deskribapena,
-			probintzia, telefonoa, email) VALUES ('$izena', '$herria', '$deskribapena', 
-			'$probintzia','$telefonoa', '$email');";
+			probintzia, telefonoa, email,web) VALUES ('$izena', '$herria', '$deskribapena', 
+			'$probintzia','$telefonoa', '$email', '$web');";
 			$result=mysqli_query($con, $sql);
 			if($result){
 				echo "<script type='text/javascript'>alert('$izena sagardotegia gehitu da');location.href = 'admin.php';</script>";

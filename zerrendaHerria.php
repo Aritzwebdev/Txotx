@@ -2,12 +2,12 @@
 
 	session_start();
 
-	$herria = $_GET['herria'];
+	$herria = $_GET['Herria'];
 
-	if(!isset($_SESSION['herria'])){
-		$_SESSION['herria'] = $herria;
+	if(!isset($_SESSION['Herria'])){
+		$_SESSION['Herria'] = $herria;
 	}else{
-		$_SESSION['herria'] = $herria;
+		$_SESSION['Herria'] = $herria;
 	}
 
 	header("location: herria.php");

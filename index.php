@@ -35,8 +35,12 @@
                     location.href="logout.php";
                 }
 
-                function perfil(){
-                    location.href="perfil.php";
+                function perfil(user){
+                    if(user=="Admin"){
+                        location.href="admin.php";
+                    }else{
+                        location.href="perfil.php";
+                    }
                 }
         </script>
 
@@ -74,7 +78,7 @@
                 <?php }
                     else{ ?>    
                     <li>
-                       <a id="user" href="#" onclick="perfil();">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                       <a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
                         <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
@@ -143,10 +147,10 @@
 
         <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
         <div id="bilatu">
-            <form class="bilatzailea" action="sagardotegia.php" method="GET">
-                 <input class="bilaketa" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
+            <form class="bilatzailea" >
+                 <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
                 
-                 <input class="bilaketaBotoia" type="submit" value="Bilatu" />
+                 <input class="bilaketaBotoia" id="bilaketa" type="button" value="Bilatu" />
             </form>
         </div>
         <div id="contenido2"><button id="enviarT" >Ver usuarios</button></div>
@@ -217,6 +221,17 @@
            
             document.location.href="zerrenda.php?probintzia=5";
           
+        });
+        $("#bilaketa").click(function(){
+            var sagardotegia=$("#sagardotegia").val();
+            if(sagardotegia==""){
+                alert("jaj");
+            }else if(sagardotegia=="Sagardotegia..."){
+
+            }else{
+                document.location.href="zerrendaSagardo.php?Sagardotegia="+sagardotegia;
+            }
+            
         });
 
     });

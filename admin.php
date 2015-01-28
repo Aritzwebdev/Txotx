@@ -71,28 +71,36 @@
         <div id="anadir">
            <form class="form-4" action="anadirSagardotegi.php" method="post" >
                     <div>
-                        <label for="izena" style="padding: 10px 0px 2px 0px;"><font color="white">Izena</font></label>
+                        <label for="izena" style="padding: 10px 0px 2px 0px;"><font color="white">Izena*</font></label>
                         <input type="text" name="izena" id="izena" required title="Sartu sagardotegiaren izena">
                     </div>
                     <div>
-                        <label for="herria" style="padding: 15px 0px 2px 0px;"><font color="white">Herria</font></label>
+                        <label for="herria" style="padding: 15px 0px 2px 0px;"><font color="white">Herria*</font></label>
                         <input type="text" name="herria" id="herria" required title="Sartu herria" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for ="deskribapena" style="padding: 15px 0px 2px 0px;"><font color="white">Deskribapena</font></label>
+                        <label for ="deskribapena" style="padding: 15px 0px 2px 0px;"><font color="white">Deskribapena*</font></label>
                         <input type="text" name="deskribapena" id="deskribapena" required title="Sartu deskribapena">
                     </div>
                     <div>
-                        <label for="probintzia" style="padding: 15px 0px 2px 0px;"><font color="white">Probintzia</font></label>
+                        <label for="probintzia" style="padding: 15px 0px 2px 0px;"><font color="white">Probintzia*</font></label>
                         <input type="text" name="probintzia" id="probintzia" required title="Sartu probintzia" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="telefonoa" style="padding: 15px 0px 2px 0px;"><font color="white">Telefonoa</font></label>
+                        <label for="telefonoa" style="padding: 15px 0px 2px 0px;"><font color="white">Telefonoa*</font></label>
                         <input type="text" name="telefonoa" id="telefonoa" required title="Sartu Telefonoa" pattern="[0-9]{9}" oninvalid="setCustomValidity('Zenbakiak bakarrik(9 zenbaki)')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Emaila</font></label>
+                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Email-a*</font></label>
                         <input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('Formatu desegokia ')" onchange="try{setCustomValidity('')}catch(e){}" required>
+                    </div>
+                    <div>
+                        <label for="web" style="padding: 15px 0px 2px 0px;"><font color="white">Web-a</font></label>
+                        <input type="text" name="web" id="web" pattern="[a-zA-Z]+" >
+                    </div>
+                    <div>
+                        <label for="web" style="padding: 15px 0px 2px 0px;"><font color="white">* Derrigorrezko informazioa</font></label>
+                        
                     </div>
                     <div class="submit">
                         <input type="submit" name="anadirSagardotegi" value="Gehitu">

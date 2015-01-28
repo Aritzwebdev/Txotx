@@ -1,10 +1,11 @@
 <?php
-session_start();
+	session_start();
 
-$sagardotegia=$_SESSION['Sagardotegia'];
+	$sagardotegia=$_GET['sagardotegia'];
 
-include "conectar.php";
-$con=conectar();
+	include 'conectar.php';
+	$con=conectar();
+	
 
 	$sql="SELECT lat, lng, herria FROM sagardotegiak WHERE izena='".$sagardotegia."';";
 	$result=mysqli_query($con, $sql);
@@ -21,6 +22,7 @@ $con=conectar();
 ?>
 <html>
 <head>
+	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
 	<!-- bxSlider Javascript file -->
@@ -29,11 +31,8 @@ $con=conectar();
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/sagardotegia.css"/>
 
-	<link rel="stylesheet" href="css/perfil.css"/>
 
-
-	<script type="text/javascript">
-		
+	<script>
 		function initialize() {
 			var lat="<?php echo $lat; ?>";
 			var lng="<?php echo $lng; ?>";
@@ -59,9 +58,7 @@ $con=conectar();
 				m.style.display = 'block';
 		}
 		google.maps.event.addDomListener(window, 'load', initialize());
-	
 	</script>
-	
 	<script type="text/javascript">
 		function iruzkinak(id){
 			var e = document.getElementById(id);
@@ -88,21 +85,15 @@ $con=conectar();
 				m.style.display = 'block';
 			
 		}
-
 	</script>
-
 </head>
-
 <body onload="initialize();">
-
-<div class="foo">
-
-	<h1 id="userPerfil"><ins><?php echo $sagardotegia; ?></ins> sagardotegia</h1>
 
 <header id="registro">
 
 	<ul id="top_header">
 		<li><a href="index.php">Hasiera</a></li>
+		<li><a href="#">Sagardotegiak</a></li>
 		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
 		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
 	</ul>
@@ -111,14 +102,17 @@ $con=conectar();
 		<li>|</li>
 		<li><a href="">es</a></li>
 	</ul>
+	
 
 </header>
-
 <div id="menu_txikia">
-	<form action="herria.php" method="get">
+	<form action="bilatu.php" method="get">
 		<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
 		<!--<a id="menu_txiki_izena"><?php echo ">".$sagardotegia ?></a>-->
 	</form>
+</div>
+<div id="izena">
+	<h1><?php echo $sagardotegia; ?></h1>
 </div>
 
 <?php
@@ -167,7 +161,7 @@ $con=conectar();
 		</div>
 		<div id="iruzkinak">
 			<?php
-
+				
 				$sql="SELECT erabiltzailea, data, iruzkina FROM iruzkinak WHERE sagardotegia='".$sagardotegia."';";
 				$result=mysqli_query($con, $sql);
 
@@ -208,29 +202,37 @@ $con=conectar();
 		</div>
 		
 	</div><!--iruzkinak div-->
+<?php 
+	if (isset($_GET['msg'])){
+?>
+	<script type="text/javascript">
+		var e=document.getElementById(okerra);
+		e.text("Erabiltzaile edo pasahitz okerra");
+		//alert("Erabiltzaile edo pasahitz okerra");
+	</script>
 
-</div>
+<?php
+	}
+	else{
+?>
+		<script type="text/javascript">
+		var e=document.getElementById(okerra);
+		e.text("");
+		//alert("Erabiltzaile edo pasahitz okerra");
+	</script>
+<?php
+	}
+	mysqli_close($con);
+?>
 
 </body>
 
 <script type="text/javascript">
-		
-		  $('.bxslider').bxSlider();
-
-</script>
-
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.backstretch.js"></script>
 	
-<script type="text/javascript">
-		$.backstretch([
-	          "img/txotx.jpg",
-	          "img/slide.jpg",
-	          "img/sidra.jpg"
-	        ], {
-	            fade: 750,
-	            duration: 4000
-	        });
+	$(document).ready(function(){
+	  $('.bxslider').bxSlider();
+	});
+
 </script>
 
 </html>
