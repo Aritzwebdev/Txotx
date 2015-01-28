@@ -225,7 +225,7 @@
         $("#bilaketa").click(function(){
             var sagardotegia=$("#sagardotegia").val();
             if(sagardotegia==""){
-                alert("jaj");
+               
             }else if(sagardotegia=="Sagardotegia..."){
 
             }else{
