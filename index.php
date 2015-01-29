@@ -187,12 +187,12 @@
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
             <div id="redSocial"> 
-            <img src="img/facebook2.png" id="face" /><img src="img/twitter.png" id="twit" />
-            <img src="img/youtube.png" id="yout" /><img src="img/google+.png" id="goog" />
-            <img src="img/instagram.png" id="inst" />
+                <img src="/img/facebook2.png" id="face" /><img src="img/twitter.png" id="twit" />
+                <img src="/img/youtube.png" id="yout" /><img src="img/google+.png" id="goog" />
+                <img src="/img/instagram.png" id="inst" />
             </div>
             <div id="about">
-            Contactanos
+                Contactanos
             </div>
             
 
@@ -264,6 +264,13 @@
             
         });
 
+
+        $('#btnPlay').click(function(){
+            $("#media-player").animate({"right": "37%"}, "slow");
+        }, 
+            function(){
+                $("#media-player").animate({"left": "-37%"}, "slow");
+            });
     });
 
 </script>
