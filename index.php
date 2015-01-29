@@ -163,7 +163,7 @@
         
         <div id="btnPlay">
             
-            <img src="img/logoPlay.png" />
+            <a href="#" id="butPlay"><img src="img/logoPlay.png" /></a>
 
         </div>
 
@@ -187,9 +187,9 @@
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
             <div id="redSocial"> 
-                <img src="/img/facebook2.png" id="face" /><img src="img/twitter.png" id="twit" />
-                <img src="/img/youtube.png" id="yout" /><img src="img/google+.png" id="goog" />
-                <img src="/img/instagram.png" id="inst" />
+                <img src="img/facebook.png" id="face" /><img src="img/twitter.png" id="twit" />
+                <img src="img/youtube.png" id="yout" /><img src="img/google+.png" id="goog" />
+                <img src="img/instagram.png" id="inst" />
             </div>
             <div id="about">
                 Contactanos
@@ -264,13 +264,6 @@
             
         });
 
-
-        $('#btnPlay').click(function(){
-            $("#media-player").animate({"right": "37%"}, "slow");
-        }, 
-            function(){
-                $("#media-player").animate({"left": "-37%"}, "slow");
-            });
     });
 
 </script>
@@ -399,16 +392,21 @@
 
     </script>
 
-    <script type="text/javascript">
+    
+
+   <script type="text/javascript">
 
         $(document).ready(function (){
-          
-            $('#media-player').click(function(){
-                        $(".cmenu").animate({"left": "-124px"}, "slow");
-            }, 
-                    function(){
-                        $(".cmenu").animate({"left": "0px"}, "slow");
-                    });
+            $('#butPlay').click(function(){
+                $("#media-player").fadeTo(1500).delay(3000);
+                //$("#media-player").animate({"left": "30%"}, "slow");
+                //#media-player.delay(4000);
+                $('#media-video').css({ 'width':'450px', 'height':'350px' });
+            });/*, 
+                function(){
+                    $("#media-player").animate({"left": "-45%"}, "slow");
+                    $('#media-video').css({ 'width':'305px', 'height':'160px' });
+            });*/
         });
 
     </script>
