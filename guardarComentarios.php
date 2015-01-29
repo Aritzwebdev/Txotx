@@ -5,12 +5,12 @@
 	$con=conectar();
 
 if(!isset($_SESSION["user"])){
-	$erabiltzailea=$_GET['erabiltzailea'];
-	$pasahitza=$_GET['pasahitza'];
-	$iruzkina=$_GET['iruzkina'];
-	$data=$_GET['data'];
-	$sagardotegia=$_GET['izena'];
-	$herria=$_GET['herria'];
+	$erabiltzailea=$_POST['erabiltzailea'];
+	$pasahitza=$_POST['pasahitza'];
+	$iruzkina=$_POST['iruzkina'];
+	$data=$_POST['data'];
+	$sagardotegia=$_POST['izena'];
+	$herria=$_POST['herria'];
 }else{
 	$erabiltzailea=$_SESSION['user'];
 
@@ -20,10 +20,10 @@ if(!isset($_SESSION["user"])){
 
 	$pasahitza=$row["pasahitza"];
 
-	$iruzkina=$_GET['iruzkina'];
-	$data=$_GET['data'];
-	$sagardotegia=$_GET['izena'];
-	$herria=$_GET['herria'];
+	$iruzkina=$_POST['iruzkina'];
+	$data=$_POST['data'];
+	$sagardotegia=$_POST['izena'];
+	$herria=$_POST['herria'];
 }
 	
 
@@ -32,19 +32,27 @@ if(!isset($_SESSION["user"])){
 	$sql="SELECT erabiltzailea, pasahitza FROM erabiltzaileak 
 		WHERE erabiltzailea='".$erabiltzailea."';";
 	$result=mysqli_query($con, $sql);
-	$row=mysqli_fetch_array($result);
-
-	if($row['erabiltzailea']==$erabiltzailea&&$row['pasahitza']==$pasahitza){
-		
-		$sql="INSERT INTO iruzkinak (erabiltzailea, data, iruzkina,
-		sagardotegia) VALUES ('$erabiltzailea', '$data', '$iruzkina', 
-		'$sagardotegia');";
-		
-		$result=mysqli_query($con, $sql);
-		echo "";
+	
+	if(!$result){
+		echo "Error resultado";
+		exit;
 	}
-	else{
-		echo "Erabiltzaile edo pasahitz okerra";
+
+	if($row=mysqli_fetch_array($result);){
+		if($row['pasahitza']==$pasahitza){
+			
+			$sql="INSERT INTO iruzkinak (erabiltzailea, data, iruzkina,
+			sagardotegia) VALUES ('$erabiltzailea', '$data', '$iruzkina', 
+			'$sagardotegia');";
+			
+			$result=mysqli_query($con, $sql);
+			echo "";
+		}
+		else{
+			echo "Pasahitz okerra";
+		}
+	}else{
+		echo "Erabiltzaile okerra";
 	}
 	mysqli_close($con);
 ?>
