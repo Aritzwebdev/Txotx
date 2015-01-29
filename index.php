@@ -163,6 +163,12 @@
             
            
         </script>
+        <div>
+            <video width="512" height="288" controls="controls">
+                <source src="https://dl.dropboxusercontent.com/u/31412543/VID-20150119-WA0005.mp4" type="video/mp4" />
+            </video>
+            
+        </div>
        
         <footer id="footer" onclick="kendu('log'); kendu('reg');">
                                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
