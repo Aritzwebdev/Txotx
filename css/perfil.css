@@ -27,6 +27,16 @@ body {
     z-index: -1;
 }
 
+#titulo{
+    margin: auto; 
+    position: absolute;
+    top: 5%;
+    left: 37%;
+    font-size: 54px;
+    color: black;
+    text-align: center;
+}
+
 #userPerfil{
     margin: 10px;
 }

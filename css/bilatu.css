@@ -1,6 +1,17 @@
 body{
 	font-family: 'Ubuntu', 'Lato', sans-serif;
 }
+
+#titulo{
+	margin: auto; 
+    position: absolute;
+    top: 7%;
+    left: 37%;
+    font-size: 54px;
+	color: black;
+    text-align: center;
+}
+
 #bilatu{
 	background-color: white;
 	position: relative;
@@ -36,10 +47,10 @@ input[type="search"]:focus{
 
 #logo{
 	position: relative;
-	top: 5%;
+	top: 3%;
 	left: 1%;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 }
 #header h1{
 	position: absolute;
@@ -49,10 +60,18 @@ input[type="search"]:focus{
 	font-size: 48px;
 }
 
+#log{
+	position: relative;
+	left: 2%;
+	margin-top: 15px;
+	width: 25px;
+	height:25px;
+}
+
 #probin{
 	position: absolute;
-	top: 15%;
-	left: 10%;
+	top: 10%;
+	left: -15%;
 }
 
 #hizkuntzak li{
@@ -68,6 +87,7 @@ input[type="search"]:focus{
     float: left;
     padding: 10px;
 }
+
 #registro{
     background-color: green;
     display: block;
@@ -103,6 +123,18 @@ a{
 a:hover{
 	color: green;
 }
+
+.thHerriak{
+	font: 1em/1.5em 'Ubuntu';
+	font-weight: 9; 
+}
+
+#taulaHerriak{
+	position: relative;
+	left: 15%;
+	margin-top: 15px;
+}
+
 #sagar_ize{
 	background-color: green;
 	border: 0px;

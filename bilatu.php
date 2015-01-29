@@ -32,9 +32,10 @@
 	
 	<div class="foo">
 
+
 	 	<img id="logo" src="img/logo.png" />
 	 	<h1 id="titulo">SagardoteGida</h1>
-	 	
+
 		<header id="registro">
 
 			<ul id="top_header">
@@ -56,8 +57,8 @@
 			</form>
 		</div>
 			<div id="header">
-				<img id="logo" src="img/logo.png"/>
-				<h1><p id="probin"><?php 
+				<img id="log" src="img/logo.png"/>
+				<h1 id="probin"><?php 
 					if($probintzia == 1){
 						echo "Gipuzkoa";
 					}else if($probintzia == 2){
@@ -69,7 +70,7 @@
 					}else if($probintzia == 5){
 						echo "Iparralde";
 					}
-				?></p></h1>
+				?></h1>
 				<form action="bilatu.php" method="GET">
 					<input type="search" name="herria" placeholder="Bilatu..." />
 				</form>
@@ -82,7 +83,8 @@
 		        <div id="taulaHerriak">
 					<table class="table" id="tablajson">
 						<thead>
-							<th>Herriak</th>			
+							<th></th>
+							<th class="thHerriak">Herriak</th>			
 						</thead>
 						<tbody class="taula"></tbody>
 					</table>

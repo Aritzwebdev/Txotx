@@ -407,7 +407,7 @@
             $('.play').click(function(){
 
                 $('#media-video').css({ 'width':'550px', 'height':'450px' });
-                $('#progress-bar').css({ 'width':'450px'});
+                $('#progress-bar').css({ 'width':'425px'});
 
             });
 
@@ -415,7 +415,7 @@
                 
                 $('#media-video').css({ 'width':'305px', 'height':'160px' });
                 $('#progress-bar').css({ 'width':'172px'});
-                
+
                 $("#media-player").animate({"left": "-45%"}, "slow");
 
             });
