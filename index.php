@@ -13,7 +13,9 @@
 
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/index.css" />
-        
+
+        <link href='css/media-player.css' rel='stylesheet' />
+        <script src='js/media-player.js'></script>        
 
         <script type="text/javascript">
                 function auto(id) {
@@ -153,16 +155,24 @@
                  <input class="bilaketaBotoia" id="bilaketa" type="button" value="Bilatu" />
             </form>
         </div>
-        <div id="contenido2"><button id="enviarT" >Ver usuarios</button></div>
-        <script id="entry-template2" type="text/x-handlebars-template">
-            {{#if user}}
-                <h1>{{user}} </h1>
-            {{else}}
-                <h1>no va</h1>
-            {{/if}}
-            
-           
-        </script>
+        
+        <!-- REPRODUCTOR DE VIDEO -->
+
+        <h1>Inicio de la temporada de TXOTX 2015</h1>
+        <div id='media-player'>
+            <video id='media-video' controls>
+                <source src='https://dl.dropboxusercontent.com/u/31412543/VID-20150119-WA0005.mp4' type='video/mp4'>
+            </video>
+            <div id='media-controls'>
+                <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+                <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>   
+                <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
+                <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
+                <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+                <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+                <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>  
+            </div>
+        </div>  
        
         <footer id="footer" onclick="kendu('log'); kendu('reg');">
                                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
@@ -205,13 +215,13 @@
             
         });
 
-        $("#nafar").click(function(){
+        $("#arab").click(function(){
             
             document.location.href="zerrenda.php?probintzia=3";
             
         });
 
-        $("#arab").click(function(){
+        $("#nafar").click(function(){
            
             document.location.href="zerrenda.php?probintzia=4";
           
@@ -358,6 +368,20 @@
         }
 
         window.addEventListener("load", iniciar, false);
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function (){
+          
+            $('#media-player').click(function(){
+                        $(".cmenu").animate({"left": "-124px"}, "slow");
+            }, 
+                    function(){
+                        $(".cmenu").animate({"left": "0px"}, "slow");
+                    });
+        });
 
     </script>
 
