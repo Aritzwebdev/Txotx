@@ -44,7 +44,7 @@ body {
     margin: auto;
     position: absolute;
     top: 28%;
-    left: 32%;
+    left: 34%;
     color: white;
     z-index: -1;
 }
@@ -373,6 +373,14 @@ border: 1px solid green;
 	color: white;
     font: 1.15em/1.5em 'Ubuntu'; 
     z-index: -1;
+}
+
+#btnPlay{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 350px;
+    height: 350px;
 }
 
 #autores{
