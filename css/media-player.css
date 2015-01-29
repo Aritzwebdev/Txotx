@@ -11,8 +11,8 @@ h1 {
 
 #media-player {
 	position: absolute;
-	top: 55%;
-	left: 37%;
+	top: 20%;
+	left: -37%;
 	float:left;
 	padding:1em 1em .5em;
 	background: rgba(0,0,0,0.5);
@@ -34,7 +34,6 @@ button {
 	background:transparent url('../img/buttons.png') no-repeat 0 0;
 }
 
-.play {}
 .pause { background-position:-19px 0; }
 .stop { background-position:-38px 0; }
 .volume-plus { background-position:-57px 0; }
