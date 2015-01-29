@@ -3,13 +3,14 @@ session_start();
 
 $sagardotegia=$_SESSION['Sagardotegia'];
 
-include "conectar.php";
-$con=conectar();
+
+	include "conectar.php";
+	$con=conectar();
 
 	$sql="SELECT lat, lng, herria FROM sagardotegiak WHERE izena='".$sagardotegia."';";
 	$result=mysqli_query($con, $sql);
 
-	while($row=mysqli_fetch_array($result)){
+	if($row=mysqli_fetch_array($result)){
 		$lat=$row['lat'];
 		$lng=$row['lng'];
 		$herriaznb=$row['herria'];

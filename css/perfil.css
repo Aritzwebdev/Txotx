@@ -12,7 +12,7 @@ body {
     width: 90%;
     height: 85%;
     margin: 20px auto;
-    /*background: url('../img/fondoTextura.png') repeat;*/
+   background: url('../img/fondoTextura.png') repeat;
     background: rgba(255,255,255,0.7);   
     padding: 20px;
     z-index: 2;
@@ -25,14 +25,6 @@ body {
     width: 100%;
     height: 95%;
     z-index: -1;
-}
-
-#hizkuntzak,
-#hizkuntzak a{
-    color: white;
-    text-decoration: none;
-    padding-top: 18px;
-    font: 1.10em 'Ubuntu';
 }
 
 #userPerfil{
@@ -63,14 +55,12 @@ body {
 #sagardo label#zenb{
     font-size: 20px;
 }
-
 #butiruzkin{
     position: absolute;
     top: 87%;
     left: 25%;
     display: none;
 }
-
 #pass{
     position: absolute;
     top: 30%;

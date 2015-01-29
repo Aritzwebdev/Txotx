@@ -211,13 +211,13 @@
             
         });
 
-        $("#arab").click(function(){
+        $("#nafar").click(function(){
             
             document.location.href="zerrenda.php?probintzia=3";
             
         });
 
-        $("#nafar").click(function(){
+        $("#arab").click(function(){
            
             document.location.href="zerrenda.php?probintzia=4";
           
