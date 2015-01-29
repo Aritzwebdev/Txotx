@@ -193,21 +193,21 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 		</div>
 		
 		<div>
-			<form action="guardarComentario.php" method="get">
+			<form action="" method="get">
 				<label id="okerra" color="red"></label>
 				<?php if(!isset($_SESSION["user"])){ ?>
-				Erabiltzailea: <input type="text" name="erabiltzailea">
+				Erabiltzailea: <input type="text" id="erab" name="erabiltzailea">
 				<br>
-				Pasahitza: <input type="password" name="pasahitza">
+				Pasahitza: <input type="password" id="pass" name="pasahitza">
 				<br>
 				<?php } ?>
-				Iruzkina:<br><textarea name="iruzkina" rows="5" ></textarea>
+				Iruzkina:<br><textarea id="iruzkina" name="iruzkina" rows="5" ></textarea>
 				<br>
 				<input type="hidden" name="izena" value="<?php echo $izena; ?>">
 				<input type="hidden" name="herria" value="<?php echo $herria; ?>">
 				<input type="hidden" name="data" 
 				value="<?php echo date('Y-m-d H:i:s'); ?>">
-				<input type="submit" value="Bidali" > 
+				<input type="button" value="Bidali" > 
 			</form>
 		</div>
 		
@@ -235,6 +235,32 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	            fade: 750,
 	            duration: 4000
 	        });
+</script>
+<script type="text/javascript">
+	$("#Bidali").click(function(evento){
+            evento.preventDefault();
+            if($("#erab").val()=="" && $("#pass").val()==""){
+                $("#okerra").text("Ezin dira hutsik egon");
+            }else{
+            <?php if(!isset($_SESSION["user"])){ ?>
+                $("#okerra").load("guardarComentario.php", {user: $("#erab").val(), pass: $("#pass").val(), iruzkina: $("#iruzkina").val()}, function(response){
+                    if(response==""){
+                        location.reload();
+                    }else{
+                        $("#okerra").text(response);
+                    }
+                });
+            <?php }else{ ?>
+            		$("#okerra").load("guardarComentario.php", {iruzkina: $("#iruzkina").val()}, function(response){
+			        if(response==""){
+			            location.reload();
+			        }else{
+			        	$("#okerra").text(response);
+			            }
+			        });
+           <?php } ?>
+            }
+        });
 </script>
 
 </html>
