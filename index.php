@@ -187,7 +187,7 @@
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
             <div id="redSocial"> 
-            <img src="img/facebook.png" id="face" /><img src="img/twitter.png" id="twit" />
+            <img src="img/facebook2png" id="face" /><img src="img/twitter2.png" id="twit" />
             <img src="img/youtube.png" id="yout" /><img src="img/google+.png" id="goog" />
             <img src="img/instagram.png" id="inst" />
             </div>

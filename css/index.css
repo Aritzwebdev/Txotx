@@ -377,8 +377,8 @@ border: 1px solid green;
 
 #btnPlay{
     position: absolute;
-    top: 70%;
-    left: 10%;
+    top: 50%;
+    left: 5%;
     width: 150px;
     height: 150px;
 }
