@@ -27,8 +27,8 @@ body {
     position: absolute;
     top: 0.25%;
     left: 1%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     z-index: 3;
 }
 #titulo{
