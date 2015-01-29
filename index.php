@@ -158,7 +158,15 @@
         
         <!-- REPRODUCTOR DE VIDEO -->
 
+
         <h1>Inicio de la temporada de TXOTX 2015</h1>
+        
+        <div id="btnPlay">
+            
+            <img src="img/logoPlay.png" />
+
+        </div>
+
         <div id='media-player'>
             <video id='media-video' controls>
                 <source src='https://dl.dropboxusercontent.com/u/31412543/VID-20150119-WA0005.mp4' type='video/mp4'>
