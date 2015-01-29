@@ -1,13 +1,33 @@
 <?php
+	session_start();
+
+	include 'conectar.php';
+	$con=conectar();
+
+if(!isset($_SESSION["user"])){
 	$erabiltzailea=$_GET['erabiltzailea'];
 	$pasahitza=$_GET['pasahitza'];
 	$iruzkina=$_GET['iruzkina'];
 	$data=$_GET['data'];
 	$sagardotegia=$_GET['izena'];
 	$herria=$_GET['herria'];
+}else{
+	$erabiltzailea=$_SESSION['user'];
 
-	include 'conectar.php';
-	$con=conectar();
+	$sql="SELECT pasahitza FROM erabiltzaileak WHERE erabiltzailea='".$erabiltzailea."';";
+	$result=mysqli_query($con,$sql);
+	$row=mysqli_fetch_array($result);
+
+	$pasahitza=$row["pasahitza"];
+
+	$iruzkina=$_GET['iruzkina'];
+	$data=$_GET['data'];
+	$sagardotegia=$_GET['izena'];
+	$herria=$_GET['herria'];
+}
+	
+
+	
 
 	$sql="SELECT erabiltzailea, pasahitza FROM erabiltzaileak 
 		WHERE erabiltzailea='".$erabiltzailea."';";
@@ -21,11 +41,10 @@
 		'$sagardotegia');";
 		
 		$result=mysqli_query($con, $sql);
-		header("Location: gorde.php?iruzkina=$iruzkina&erabiltzailea=$erabiltzailea&data=$data&sagardotegia=$sagardotegia&herria=$herria");
+		echo "";
 	}
 	else{
-		header ("Location: sagardotegia.php?msg=error&izena=$sagardotegia&herria=$herria"); 
-  		exit;
+		echo "Erabiltzaile edo pasahitz okerra";
 	}
 	mysqli_close($con);
 ?>
