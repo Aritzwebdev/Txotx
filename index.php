@@ -57,8 +57,8 @@
         <div class="container">
         <img id="logo" src="img/logo.png"/>
             <ul id="nav">
-                <li><a href="index.php">Hasiera</a></li>
-                <li><a href="#s1">Sagardotegiak</a>
+                <li><img src="img/inicio.png" class="imgMenu" /><a href="index.php">Hasiera</a></li>
+                <li><img src="img/logoIcon.png" class="imgMenu" /><a href="#s1">Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
                         <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
@@ -72,18 +72,18 @@
                     if (!isset($_SESSION["user"])){ 
                 ?>
                     <li>
-                       <a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a>
+                       <img src="img/login.png" class="imgMenu" /><a id="sartu" href="#" onclick="auto('log'); kendu('reg')">Saioa hasi</a>
                     </li> 
                     <li>
-                       <a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a>
+                       <img src="img/addUsuario.png" class="imgMenu"/><a id="regis" href="#" onclick="auto('reg'); kendu('log')">Kontua sortu</a>
                     </li>                 
                 <?php }
                     else{ ?>    
                     <li>
-                       <a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
-                        <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
+                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
                     </li>
                 <?php } ?>
             </ul>
@@ -278,6 +278,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+
         /* VALIDAR LOGIN */
 
             /* VALIDAR LOGIN */
@@ -407,7 +408,7 @@
 
                 $("#media-player").animate({"left": "-45%"}, "slow");
             },false);
-            
+
 
             $('#butPlay').click(function(){
                
