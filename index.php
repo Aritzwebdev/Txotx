@@ -396,16 +396,29 @@
    <script type="text/javascript">
 
         $(document).ready(function (){
+
             $('#butPlay').click(function(){
-                $("#media-player").fadeTo(1500).delay(3000);
-                //$("#media-player").animate({"left": "30%"}, "slow");
-                //#media-player.delay(4000);
-                $('#media-video').css({ 'width':'450px', 'height':'350px' });
-            });/*, 
-                function(){
-                    $("#media-player").animate({"left": "-45%"}, "slow");
-                    $('#media-video').css({ 'width':'305px', 'height':'160px' });
-            });*/
+               
+                $("#media-player").animate({"left": "30%"}, "slow");
+                
+            }); 
+               
+            $('.play').click(function(){
+
+                $('#media-video').css({ 'width':'550px', 'height':'450px' });
+                $('#progress-bar').css({ 'width':'425px'});
+
+            });
+
+            $('.stop').click(function(){
+                
+                $('#media-video').css({ 'width':'305px', 'height':'160px' });
+                $('#progress-bar').css({ 'width':'172px'});
+
+                $("#media-player").animate({"left": "-45%"}, "slow");
+
+            });
+
         });
 
     </script>

@@ -29,81 +29,88 @@
 	</script>
 </head>
 <body>
-<div class="foo">
-<header id="registro">
+	
+	<div class="foo">
 
-	<ul id="top_header">
-		<li><a href="index.php" id="hasiera" >Hasiera</a></li>
-		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
-		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
-	</ul>
-	<ul id="hizkuntzak">
-		<li><a href="">eu</a></li>
-		<li>|</li>
-		<li><a href="">es</a></li>
-	</ul>
 
-</header>
+	 	<img id="logo" src="img/logo.png" />
+	 	<h1 id="titulo">SagardoteGida</h1>
 
-<div id="menu_txikia">
-	<form action="index.php" method="post">
-		<input id="bilatu" type="submit" name="herria" value="Bilatzailea" />
-	</form>
-</div>
-	<div id="header">
-		<img id="logo" src="img/logo.png"/>
-		<h1><p id="probin"><?php 
-			if($probintzia == 1){
-				echo "Gipuzkoa";
-			}else if($probintzia == 2){
-				echo "Bizkaia";
-			}else if($probintzia == 4){
-				echo "Araba";
-			}else if($probintzia == 3){
-				echo "Nafarroa";
-			}else if($probintzia == 5){
-				echo "Iparralde";
-			}
-		?></p></h1>
-		<form action="bilatu.php" method="GET">
-			<input type="search" name="herria" placeholder="Bilatu..." />
-		</form>
-</div>
-	<div>
+		<header id="registro">
 
-        <!-- Contenido -->
-        <section>
-            
-        <div id="taulaHerriak">
-			<table class="table" id="tablajson">
-				<thead>
-					<th>Herriak</th>			
-				</thead>
-				<tbody class="taula"></tbody>
-			</table>
-		<div>
-			<script type="text/javascript">
+			<ul id="top_header">
+				<li><a href="index.php" id="hasiera" >Hasiera</a></li>
+				<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
+				<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
+			</ul>
+			<ul id="hizkuntzak">
+				<li><a href="">eu</a></li>
+				<li>|</li>
+				<li><a href="">es</a></li>
+			</ul>
 
-			$(document).ready(function(){
-				var url="listaPueblos.php";
-				$("#tablajson tbody").html("");
-				
-				$.getJSON(url,function(pueblos){
-					$.each(pueblos, function(i,pueblo){
-						var newRow =
-						"<tr value='"+pueblo.Herria+"' class='tr'>"
-						+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
-						+"</tr>";
-						$(newRow).appendTo("#tablajson tbody");
+		</header>
+
+		<div id="menu_txikia">
+			<form action="index.php" method="post">
+				<input id="bilatu" type="submit" name="herria" value="Bilatzailea" />
+			</form>
+		</div>
+			<div id="header">
+				<img id="log" src="img/logo.png"/>
+				<h1 id="probin"><?php 
+					if($probintzia == 1){
+						echo "Gipuzkoa";
+					}else if($probintzia == 2){
+						echo "Bizkaia";
+					}else if($probintzia == 4){
+						echo "Araba";
+					}else if($probintzia == 3){
+						echo "Nafarroa";
+					}else if($probintzia == 5){
+						echo "Iparralde";
+					}
+				?></h1>
+				<form action="bilatu.php" method="GET">
+					<input type="search" name="herria" placeholder="Bilatu..." />
+				</form>
+		</div>
+			<div>
+
+		        <!-- Contenido -->
+		        <section>
+		            
+		        <div id="taulaHerriak">
+					<table class="table" id="tablajson">
+						<thead>
+							<th></th>
+							<th class="thHerriak">Herriak</th>			
+						</thead>
+						<tbody class="taula"></tbody>
+					</table>
+				<div>
+					<script type="text/javascript">
+
+					$(document).ready(function(){
+						var url="listaPueblos.php";
+						$("#tablajson tbody").html("");
+						
+						$.getJSON(url,function(pueblos){
+							$.each(pueblos, function(i,pueblo){
+								var newRow =
+								"<tr value='"+pueblo.Herria+"' class='tr'>"
+								+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+								+"</tr>";
+								$(newRow).appendTo("#tablajson tbody");
+							});
+						});
 					});
-				});
-			});
 
-			</script>
- 
-        </section>
+					</script>
+		 
+		        </section>
+			</div>
 	</div>
-</div>
 </body>
 <script type="text/javascript">
 		$(".table").on('click','.tr',function(e){

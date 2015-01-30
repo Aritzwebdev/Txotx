@@ -2,6 +2,16 @@ a{
 	text-decoration: none;
 }
 
+#titulo{
+	margin: auto; 
+    position: absolute;
+    top: 5%;
+    left: 37%;
+    font-size: 54px;
+	color: black;
+    text-align: center;
+}
+
 #hizkuntzak li{
     display:inline-block;
     float: right;
