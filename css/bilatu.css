@@ -2,12 +2,20 @@ body{
 	font-family: 'Ubuntu', 'Lato', sans-serif;
 }
 
-#titulo{
-	margin: auto; 
+#logo{
+    margin-left: 30%;
+    margin-top: -0.5%;
+    margin-bottom: 1%;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+}
+#titulo{ 
     position: absolute;
-    top: 7%;
+    top: 10%;
     left: 37%;
     font-size: 54px;
+    margin-bottom: 1%;
 	color: black;
     text-align: center;
 }
@@ -15,12 +23,20 @@ body{
 #bilatu{
 	background-color: white;
 	position: relative;
+	top: 0.5%;
+	left: 1%;
 	color: green;
 	border: 0px;
 }
 #menu_txikia{
 	background: none;
 	margin-top: 3px;
+}
+
+#bil{
+	position: fixed;
+	top: 29.5%;
+	left: 83.5%;
 }
 
 #menu_txikia input{
@@ -45,17 +61,10 @@ input[type="search"]:focus{
 	background-color: #FFF;
 }
 
-#logo{
-	position: relative;
-	top: 3%;
-	left: 1%;
-	width: 60px;
-	height: 60px;
-}
 #header h1{
 	position: absolute;
-	top: 20%;
-	left: 13%;
+	top: 30%;
+	left: 10%;
 	color: black;
 	font-size: 48px;
 }
@@ -124,14 +133,14 @@ a:hover{
 	color: green;
 }
 
-.thHerriak{
-	font: 1em/1.5em 'Ubuntu';
+th{
+	font: 1.5em 'Ubuntu';
 	font-weight: 9; 
 }
 
 #taulaHerriak{
 	position: relative;
-	left: 15%;
+	left: 5%;
 	margin-top: 15px;
 }
 

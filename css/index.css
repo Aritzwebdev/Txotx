@@ -26,15 +26,15 @@ body {
 #logo{
     position: absolute;
     top: 1%;
-    left: 2%;
-    width: 80px;
-    height: 80px;
+    left: 32%;
+    width: 60px;
+    height: 60px;
     z-index: 3;
 }
 #titulo{
 	margin: auto; 
     position: absolute;
-    top: 4%;
+    top: 5%;
     left: 37%;
     font-size: 54px;
 	color: white;
@@ -44,7 +44,7 @@ body {
     margin: auto;
     position: absolute;
     top: 28%;
-    left: 34%;
+    left: 35%;
     color: white;
     z-index: -1;
 }
@@ -294,7 +294,7 @@ border: 1px solid green;
 #bilatu{
     position: fixed;
     top: 35%;
-    left: 40%;
+    left: 41%;
     z-index: -1;
 }
 
@@ -375,12 +375,17 @@ border: 1px solid green;
     z-index: -1;
 }
 
+#iniTxotx{
+    position: absolute;
+    left: 2%;
+}
+
 #btnPlay{
     position: absolute;
-    top: 50%;
-    left: 5%;
-    width: 150px;
-    height: 150px;
+    top: 65%;
+    left: 6%;
+    width: 125px;
+    height: 125px;
 }
 
 #autores{
@@ -389,11 +394,21 @@ border: 1px solid green;
 }
 #redSocial{
     float: left;
-    padding-left: 40px;
+    padding-left: 175px;
 }
 #about{
     float: right;
     padding-right: 10px;
+}
+
+#face,
+#yout,
+#inst,
+#twit,
+#goog{
+    text-align: center;
+    width: 30px;
+    height: 30px;
 }
 
 a{

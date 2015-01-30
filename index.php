@@ -159,7 +159,7 @@
         <!-- REPRODUCTOR DE VIDEO -->
 
 
-        <h1>Inicio de la temporada de TXOTX 2015</h1>
+        <h1 id="iniTxotx">Inicio de la temporada de TXOTX 2015</h1>
         
         <div id="btnPlay">
             
@@ -179,6 +179,7 @@
                 <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
                 <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
                 <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>  
+                <p id="start"></p>
             </div>
         </div>  
        
@@ -198,6 +199,7 @@
 
         </footer>
         </nav>
+
 </body>
 
  <script type="text/javascript">
@@ -398,21 +400,38 @@
 
         $(document).ready(function (){
 
+            document.getElementById("media-video").addEventListener("ended", function(){
+                $("#media-player").animate({"top": "50%"}, "slow");
+
+                $('#media-video').css({ 'width':'305px', 'height':'160px' });
+                $('#progress-bar').css({ 'width':'172px'});
+
+                $("#media-player").animate({"left": "-45%"}, "slow");
+            },false);
+            
+
             $('#butPlay').click(function(){
                
-                $("#media-player").animate({"left": "30%"}, "slow");
+                $("#media-player").animate({"left": "38%"}, "slow");
                 
             }); 
                
             $('.play').click(function(){
 
-                $('#media-video').css({ 'width':'550px', 'height':'450px' });
-                $('#progress-bar').css({ 'width':'425px'});
+                $('#media-player').animate({"left": "32%"}, "slow");
+                $("#media-player").animate({"top": "20%"}, "slow");
+
+                $('#media-video').css({ 'width':'525px', 'height':'425px' });
+                $('#progress-bar').css({ 'width':'400px'});
+
+               // terminado();
 
             });
 
             $('.stop').click(function(){
                 
+                $("#media-player").animate({"top": "50%"}, "slow");
+
                 $('#media-video').css({ 'width':'305px', 'height':'160px' });
                 $('#progress-bar').css({ 'width':'172px'});
 

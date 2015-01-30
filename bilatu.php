@@ -12,9 +12,10 @@
 	<script src="js/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/bilatu.css"/>
+	
 
 	<link rel="stylesheet" href="css/perfil.css"/>
+	<link rel="stylesheet" href="css/bilatu.css"/>
 	
 
 	<script type="text/javascript">
@@ -71,7 +72,7 @@
 						echo "Iparralde";
 					}
 				?></h1>
-				<form action="bilatu.php" method="GET">
+				<form action="bilatu.php" method="GET" id="bil">
 					<input type="search" name="herria" placeholder="Bilatu..." />
 				</form>
 		</div>
