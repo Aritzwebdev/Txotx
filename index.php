@@ -278,7 +278,6 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
-
         /* VALIDAR LOGIN */
 
             /* VALIDAR LOGIN */

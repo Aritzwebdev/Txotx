@@ -2,13 +2,18 @@
 
 	session_start();
 
+	include('conectar.php');
+	$con=conectar();
+
 	$sagardotegia = $_GET['Sagardotegia'];
 
-	if(!isset($_SESSION['Sagardotegia'])){
-		$_SESSION['Sagardotegia'] = $sagardotegia;
-	}else{
-		$_SESSION['Sagardotegia'] = $sagardotegia;
-	}
+	$sql="SELECT herriak.izena FROM herriak INNER JOIN sagardotegiak ON sagardotegiak.herria=herriak.idherriak WHERE sagardotegiak.izena='".$sagardotegia."';";
+	$result=mysqli_query($con, $sql);
+	$row=mysqli_fetch_array($result);
+	
+	$_SESSION['Herria']=$row['herriak.izena'];
+
+	$_SESSION['Sagardotegia'] = $sagardotegia;
 
 	header("location: sagardotegia.php");
 

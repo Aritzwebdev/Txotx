@@ -66,10 +66,10 @@ a{
 }
 #menu_txiki_izena{
 	color: green;
-	font-size: 14px;
+	font-size: 12px;
 	position: relative;
-	top: 5px;
-	left: -10px;
+	top: 7.33px;
+	left: 10px;
 }
 #deskribapena{
 	position: absolute;
@@ -88,12 +88,22 @@ a{
 	top: 25%;
 	left: 25%;
 }
-
+#iruzkin_header{
+	margin-top: 130px;
+	margin-left: 15px;
+	display: none;
+}
 #iruzkin{
-	position: absolute;
+	margin-top: 30px;
+	margin-left: 15px;
 	width: 370px;
-	top: 45%;
-	left: 6%;
+	height: 295px;
+	display: none;
+	overflow: scroll;
+}
+#iruzkinaSartu{
+	margin-top: 25px;
+	margin-left: 15px;
 	display: none;
 }
 #nork{
