@@ -192,8 +192,9 @@
                 <img src="img/youtube.png" id="yout" /><img src="img/google+.png" id="goog" />
                 <img src="img/instagram.png" id="inst" />
             </div>
+            <img src="img/info.png" id="info" />
             <div id="about">
-                Contactanos
+               Contactanos
             </div>
             
 

@@ -40,9 +40,9 @@
 		<header id="registro">
 
 			<ul id="top_header">
-				<li><a href="index.php" id="hasiera" >Hasiera</a></li>
-				<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
-				<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
+				<li><img src="img/inicio.png" class="imgMenu" /><a href="index.php" id="hasiera" >Hasiera</a></li>
+				<li><img src="img/fotos.png" class="imgMenu" /><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
+				<li><img src="img/mapa.png" class="imgMenu" /><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
 			</ul>
 			<ul id="hizkuntzak">
 				<li><a href="">eu</a></li>

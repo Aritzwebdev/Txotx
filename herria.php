@@ -29,74 +29,80 @@
 	<script src="js/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/bilatu.css"/>
 
 	<link rel="stylesheet" href="css/perfil.css"/>
+	<link rel="stylesheet" href="css/bilatu.css"/>
+
 </head>
 <body>
-<div class="foo">
-<header id="registro">
+	<div class="foo">
 
-	<ul id="top_header">
-		<li><a href="index.php" id="hasiera" >Hasiera</a></li>
-		<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
-		<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
-	</ul>
-	<ul id="hizkuntzak">
-		<li><a href="">eu</a></li>
-		<li>|</li>
-		<li><a href="">es</a></li>
-	</ul>
+		<img id="logo" src="img/logo.png" />
+	 	<h1 id="titulo">SagardoteGida</h1>
 
-</header>
+	<header id="registro">
 
-<div id="menu_txikia">
-	<form action="bilatu.php" method="get">
-		<input id="bilatu" type="submit" name="herria" value="<?php echo $probintzia;?>" />
-	</form>
-</div>
-	<div id="header">
-		<img id="logo" src="img/logo.png"/>
-		<h1><p id="probin"><?php echo $herria ?></p></h1>
-		<form action="bilatu.php" method="GET">
-			<input type="search" name="herria" placeholder="Bilatu..." />
+		<ul id="top_header">
+			<li><a href="index.php" id="hasiera" >Hasiera</a></li>
+			<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
+			<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
+		</ul>
+		<ul id="hizkuntzak">
+			<li><a href="">eu</a></li>
+			<li>|</li>
+			<li><a href="">es</a></li>
+		</ul>
+
+	</header>
+
+	<div id="menu_txikia">
+		<form action="bilatu.php" method="get">
+			<input id="bilatu" type="submit" name="herria" value="<?php echo $probintzia;?>" />
 		</form>
-</div>
-	<div>
-
-        <!-- Contenido -->
-        <section>
-            
-        <div id="taulaHerriak">
-			<table class="table" id="tablajson">
-				<thead>
-					<th>Sagardotegiak</th>			
-				</thead>
-				<tbody class="taula"></tbody>
-			</table>
+	</div>
+		<div id="header">
+			<img id="log" src="img/logo.png"/>
+			<h1><p id="probin"><?php echo $herria ?></p></h1>
+			<form action="bilatu.php" method="GET" id="bil">
+				<input type="search" name="herria" placeholder="Bilatu..." />
+			</form>
+	</div>
 		<div>
-			<script type="text/javascript">
 
-			$(document).ready(function(){
-				var url="listaSidrerias.php";
-				$("#tablajson tbody").html("");
-				
-				$.getJSON(url,function(sidrerias){
-					$.each(sidrerias, function(i,sidreria){
-						var newRow =
-						"<tr value='"+sidreria.Sagardotegia+"' class='tr'>"
-						+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+sidreria.Sagardotegia+"</a></td>"
-						+"</tr>";
-						$(newRow).appendTo("#tablajson tbody");
+	        <!-- Contenido -->
+	        <section>
+	            
+	        <div id="taulaHerriak">
+				<table class="table" id="tablajson">
+					<thead>
+						<th></th>
+						<th>Sagardotegiak</th>			
+					</thead>
+					<tbody class="taula"></tbody>
+				</table>
+			<div>
+				<script type="text/javascript">
+
+				$(document).ready(function(){
+					var url="listaSidrerias.php";
+					$("#tablajson tbody").html("");
+					
+					$.getJSON(url,function(sidrerias){
+						$.each(sidrerias, function(i,sidreria){
+							var newRow =
+							"<tr value='"+sidreria.Sagardotegia+"' class='tr'>"
+							+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+sidreria.Sagardotegia+"</a></td>"
+							+"</tr>";
+							$(newRow).appendTo("#tablajson tbody");
+						});
 					});
 				});
-			});
 
-			</script>
- 
-        </section>
+				</script>
+	 
+	        </section>
+		</div>
 	</div>
-</div>
 </body>
 <script type="text/javascript">
 		$(".table").on('click','.tr',function(e){
