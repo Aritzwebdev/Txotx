@@ -5,12 +5,8 @@
 	$con=conectar();
 
 if(!isset($_SESSION["user"])){
-	$erabiltzailea=$_POST['erabiltzailea'];
-	$pasahitza=$_POST['pasahitza'];
-	$iruzkina=$_POST['iruzkina'];
-	$data=$_POST['data'];
-	$sagardotegia=$_POST['izena'];
-	$herria=$_POST['herria'];
+	$erabiltzailea=$_POST['user'];
+	$pasahitza=$_POST['pass'];
 }else{
 	$erabiltzailea=$_SESSION['user'];
 
@@ -19,13 +15,11 @@ if(!isset($_SESSION["user"])){
 	$row=mysqli_fetch_array($result);
 
 	$pasahitza=$row["pasahitza"];
-
-	$iruzkina=$_POST['iruzkina'];
-	$data=$_POST['data'];
-	$sagardotegia=$_POST['izena'];
-	$herria=$_POST['herria'];
 }
-	
+	$iruzkina=$_POST['iruzkina'];
+	$data=date("Y-m-d H:i:s");
+	$sagardotegia=$_SESSION['Sagardotegia'];
+	$herria=$_SESSION=['Herria'];
 
 	
 
@@ -38,7 +32,7 @@ if(!isset($_SESSION["user"])){
 		exit;
 	}
 
-	if($row=mysqli_fetch_array($result);){
+	if($row=mysqli_fetch_array($result)){
 		if($row['pasahitza']==$pasahitza){
 			
 			$sql="INSERT INTO iruzkinak (erabiltzailea, data, iruzkina,
