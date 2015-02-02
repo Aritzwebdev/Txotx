@@ -131,8 +131,8 @@ $result=mysqli_query($con, $sql);
 	                echo "Las contraseñas ingresadas no coinciden. <a href='javascript:history.back();'>Reintentar</a>";
 	            }else {
 	                $user= $_SESSION['user'];
-	                $passViejo = $_POST["viejoPass"];
-	                $pass = $_POST["pass"];
+	                $passViejo = md5($_POST["viejoPass"]);
+	                $pass = md5($_POST["pass"]);
 	                
 	                if($passViejo == $row['pasahitza']){
 	                	 if($passViejo == $pass){

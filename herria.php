@@ -33,6 +33,20 @@
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/bilatu.css"/>
 
+	<script type="text/javascript">
+		function logout(){
+                location.href="logout.php";
+        }
+
+        function perfil(user){
+            if(user=="Admin"){
+                location.href="admin.php";
+            }else{
+                location.href="perfil.php";
+            }
+        }
+	</script>
+
 </head>
 <body>
 	<div class="foo">
@@ -44,14 +58,22 @@
 
 		<ul id="top_header">
 			<li><a href="index.php" id="hasiera" ><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-			<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
-			<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
 		</ul>
 		<ul id="hizkuntzak">
 			<li><a href="">eu</a></li>
 			<li>|</li>
 			<li><a href="">es</a></li>
 		</ul>
+		<?php 
+            if (isset($_SESSION["user"])){ 
+        ?>
+			<ul id="top_headerDer">
+				<li><a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
+				<li>
+                    <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                </li>
+			</ul>
+		<?php } ?>
 
 	</header>
 

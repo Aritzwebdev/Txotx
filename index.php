@@ -15,7 +15,8 @@
         <link rel="stylesheet" href="css/index.css" />
 
         <link href='css/media-player.css' rel='stylesheet' />
-        <script src='js/media-player.js'></script>        
+        <script src='js/media-player.js'></script>  
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>      
 
         <script type="text/javascript">
                 function auto(id) {
@@ -61,9 +62,9 @@
                 <li><img src="img/logoIcon.png" class="imgMenu" /><a href="#s1">Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
-                        <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
-                        <li><a href="#" id="bizka">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
                         <li><a href="#" id="arab">Araba<img id="araba" src="img/araba.png" /></a></li>
+                        <li><a href="#" id="bizka">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
                         <li><a href="#" id="nafar">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
                         <li><a href="#" id="ipar">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
                     </ul>
@@ -99,7 +100,7 @@
     </header>
 
 <!-- WEB -->
-        <img id="fondo" src="img/txotx.jpg" alt="background" href="#"/>
+        <img id="fondo" src="img/slide.jpg" alt="background" href="#"/>
         <div id="reg">              
             <form class="form-3" action="registro.php" method="post" >
                     <div>
@@ -238,13 +239,13 @@
             
         });
 
-        $("#arab").click(function(){
+        $("#nafar").click(function(){
             
             document.location.href="zerrenda.php?probintzia=3";
             
         });
 
-        $("#nafar").click(function(){
+        $("#arab").click(function(){
            
             document.location.href="zerrenda.php?probintzia=4";
           
@@ -319,6 +320,7 @@
   
     });
 
+
     /*  API PARA VALIDAR FORMULARIO DE REGISTRO  */
 
         function iniciar(){
@@ -353,8 +355,7 @@
             pass.setCustomValidity('Pasahitza motzegia da');
            
         }else{
-          pass.setCustomValidity('');
-         
+          pass.setCustomValidity('');       
         }
 
         if(email.value==""){

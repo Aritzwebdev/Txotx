@@ -38,7 +38,22 @@ a{
     padding-top: 10px;
     padding-left: 20px;
     margin-left: 15px;
+    font: 1.25em/1.5em 'Ubuntu';
 }
+
+#top_headerDer li{
+    display:inline-block;
+    float: right;
+   
+    padding-right: 50px;
+    font: 1.25em/1.5em 'Ubuntu';
+}
+
+#top_headerDer img{
+    margin-top: 5px;
+    padding-right: 2px;
+}
+
 #registro{
     background-color: green;
     display: block;

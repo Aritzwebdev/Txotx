@@ -92,6 +92,18 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 			
 		}
 
+		function logout(){
+                location.href="logout.php";
+        }
+
+        function perfil(user){
+            if(user=="Admin"){
+                location.href="admin.php";
+            }else{
+                location.href="perfil.php";
+            }
+        }
+
 	</script>
 
 </head>
@@ -115,6 +127,14 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 		<li>|</li>
 		<li><a href="">es</a></li>
 	</ul>
+	<?php 
+        if (isset($_SESSION["user"])){ 
+    ?>
+		<ul id="top_headerDer">
+			<li><a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
+			<li><img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
+		</ul>
+	<?php } ?>
 
 </header>
 
@@ -199,16 +219,12 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				<label id="okerra" color="red"></label>
 				<?php if(!isset($_SESSION["user"])){ ?>
 				Erabiltzailea: <input type="text" id="erab" name="erabiltzailea">
-				<br>
-				Pasahitza: <input type="password" id="pass" name="pasahitza">
-				<br>
+				</br>
+				Pasahitza: <input type="password" id="password" name="pasahitza">
+				</br>
 				<?php } ?>
 				Iruzkina:<br><textarea id="iruzkina" name="iruzkina" rows="5" ></textarea>
-				<br>
-				<input type="hidden" name="izena" value="<?php echo $izena; ?>">
-				<input type="hidden" name="herria" value="<?php echo $herria; ?>">
-				<input type="hidden" name="data" 
-				value="<?php echo date('Y-m-d H:i:s'); ?>">
+				</br>
 				<input type="button" value="Bidali" > 
 			</form>
 		</div>
