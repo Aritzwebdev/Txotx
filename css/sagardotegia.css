@@ -2,14 +2,27 @@ a{
 	text-decoration: none;
 }
 
-#titulo{
-	margin: auto; 
+#logo{
+    margin-left: 30%;
+    margin-top: -0.5%;
+    margin-bottom: 1%;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+}
+#titulo{ 
     position: absolute;
-    top: 5%;
+    top: 9%;
     left: 37%;
     font-size: 54px;
+    margin-bottom: 1%;
 	color: black;
     text-align: center;
+}
+
+#userPerfil{
+	text-align: center;
+	margin-top: -8px;
 }
 
 #hizkuntzak li{
@@ -66,44 +79,34 @@ a{
 }
 #menu_txiki_izena{
 	color: green;
-	font-size: 12px;
+	font-size: 14px;
 	position: relative;
-	top: 7.33px;
-	left: 10px;
+	top: 5px;
+	left: -10px;
 }
 #deskribapena{
 	position: absolute;
-	top: 23%;
+	top: 28%;
 	left: 6%
 }
 #googleMap{
 	position: absolute;
-	top: 25%;
+	top: 31%;
 	left: 40%;
 }
 
 #slider{
 	background: none;
 	position: absolute;
-	top: 25%;
+	top: 31%;
 	left: 25%;
 }
-#iruzkin_header{
-	margin-top: 130px;
-	margin-left: 15px;
-	display: none;
-}
+
 #iruzkin{
-	margin-top: 30px;
-	margin-left: 15px;
+	position: absolute;
 	width: 370px;
-	height: 295px;
-	display: none;
-	overflow: scroll;
-}
-#iruzkinaSartu{
-	margin-top: 25px;
-	margin-left: 15px;
+	top: 45%;
+	left: 6%;
 	display: none;
 }
 #nork{

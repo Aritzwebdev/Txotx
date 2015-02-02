@@ -43,7 +43,7 @@
 	<header id="registro">
 
 		<ul id="top_header">
-			<li><a href="index.php" id="hasiera" >Hasiera</a></li>
+			<li><a href="index.php" id="hasiera" ><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
 			<li><a href="#" id="argazkiak" onclick="argazkiak();"> Argazkiak </a></li>
 			<li><a href="#" id="mapa" onclick="mapa();"> Mapa </a></li>
 		</ul>
