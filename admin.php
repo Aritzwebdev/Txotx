@@ -13,11 +13,6 @@
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/tabla.css" />
         <link rel="stylesheet" href="css/admin.css" />
-		
-        
-
-        
-
 </head>
 <body>
 
@@ -99,8 +94,6 @@
         <footer id="footer">
                                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
         </footer>
-
-
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
