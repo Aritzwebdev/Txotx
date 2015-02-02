@@ -10,9 +10,9 @@ body {
 
 .foo {
     width: 90%;
-    height: 85%;
+    height: 90%;
     margin: 20px auto;
-   background: url('../img/fondoTextura.png') repeat;
+    background: url('../img/fondoTextura.png') repeat;
     background: rgba(255,255,255,0.7);   
     padding: 20px;
     z-index: 2;
