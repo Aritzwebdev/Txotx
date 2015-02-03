@@ -10,13 +10,7 @@
 
 	$data=date("Y-m-d H:i:s");
 	$sagardotegia=$_SESSION['Sagardotegia'];
-	$herria=$_SESSION=['Herria'];
-
-	echo $erabiltzailea;
-	echo $iruzkina;
-	echo $data;
-	echo $sagardotegia;
-	echo $herria;
+	$herria=$_SESSION['Herria'];
 
 	if($iruzkina==""){
 		echo "Ez duzu iruzkinik sartu";

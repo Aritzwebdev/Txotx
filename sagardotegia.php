@@ -198,9 +198,8 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<?php if(isset($_SESSION["user"])){ ?>
 		<div id="iruzkinSartu">
 			<form action="" method="post">
-				<label id="okerra" color="red"></label>
-				
-				Iruzkina:<br><textarea id="iruzkina" name="text_iruzkina" rows="5" ></textarea>
+				<font color="red" ><label id="okerra"></label></font>
+				Iruzkina:<br><textarea id="text_iruzkina" name="text_iruzkina" rows="5" ></textarea>
 				</br>
 				<input type="button" id="btnbidali" value="Bidali" >
 						 

@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 	   $("#btnbidali").click(function(evento){
             evento.preventDefault();
-            $("#okerra").load("guardarComentarios.php", {iruzkina: $("#iruzkina").val()}, function(response){
+            $("#okerra").load("guardarComentarios.php", {iruzkina: $("#text_iruzkina").val()}, function(response){
                 if(response==""){
                     location.reload();
                 }else{
