@@ -5,7 +5,7 @@
 	$abizena=$_POST['abizena'];
 	$email=$_POST['email'];
 	$erabiltzailea=$_POST['erabiltzailea'];
-	$pasahitza=$_POST['pasahitza'];
+	$pasahitza=md5($_POST['pasahitza']);
 
 	include 'conectar.php';
 	$con=conectar();

@@ -15,12 +15,14 @@
 		exit;
 	}
 	
+	$pasahitz = md5($pass);
+
 	if($row=mysqli_fetch_array($result)){
 	//$row=mysql_fetch_array($result);
-		if($user=="Admin" && $pass=="admin"){
+		if($user=="Admin" && $pasahitz==$row['pasahitza']){
 			$_SESSION["user"]="Admin";
 		}else{
-			if($row['erabiltzailea']==$user && $row['pasahitza']==$pass){
+			if($row['erabiltzailea']==$user && $row['pasahitza']==$pasahitz){
 				$_SESSION["user"]=$user;
 				echo "";
 			}else{
