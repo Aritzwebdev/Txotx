@@ -78,9 +78,7 @@
 	</header>
 
 	<div id="menu_txikia">
-		<form action="bilatu.php" method="get">
-			<input id="bilatu" type="submit" name="herria" value="<?php echo $probintzia;?>" />
-		</form>
+			<a id="bilatu" href="bilatu.php"><?php echo $probintzia;?> </a>
 	</div>
 		<div id="header">
 			<img id="log" src="img/logo.png"/>

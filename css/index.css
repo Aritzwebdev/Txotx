@@ -7,6 +7,7 @@ html {
     height: 100%;
 }
 body {
+    width: 90%;
     color: green;
     font: 0.75em/1.5em 'Ubuntu';
 }
@@ -74,8 +75,10 @@ body {
 #registro{
     background: rgba(0,0,0,0.5);
     display: block;
-    width: 75%;
+    width: 80%;
     height: 40px;
+    margin-left: 4%;
+    margin-right: 4%;
     margin-top: 2%;
     padding-left: 23%;
     -webkit-border-radius: 10px;
@@ -367,10 +370,10 @@ border: 1px solid green;
 #footer{
 	position: absolute;
 	top: 95%;
-	width: 100%;
-	height: 4.2%;
+	width: 95%;
+	height: 5px;
 	background: black;
-    padding-top: 5px;
+    padding-top: 1px;
 	color: white;
     font: 1.15em/1.5em 'Ubuntu'; 
     z-index: -1;
@@ -378,13 +381,13 @@ border: 1px solid green;
 
 #iniTxotx{
     position: absolute;
-    left: 2%;
+    left: 79%;
 }
 
 #btnPlay{
     position: absolute;
     top: 65%;
-    left: 6%;
+    left: 85%;
     width: 125px;
     height: 125px;
 }
@@ -405,7 +408,7 @@ border: 1px solid green;
 #info{
     width: 20px;
     height: 20px;
-    margin-left: 505px;
+    margin-left: 450px;
 }
 
 #face,

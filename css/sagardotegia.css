@@ -123,6 +123,11 @@ a{
 	top: 45%;
 	left: 6%;
 	display: none;
+	overflow: scroll;
+	height: 180px;
+}
+#iruzkinSartu{
+	margin-top: 300px;
 }
 #nork{
 	border-left: 1px solid black;

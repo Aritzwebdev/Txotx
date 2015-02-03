@@ -213,24 +213,20 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				}
 			?>
 		</div>
-		
-		<div>
+	</div><!--iruzkinak div-->
+	<?php if(isset($_SESSION["user"])){ ?>
+		<div id="iruzkinSartu">
 			<form action="" method="get">
 				<label id="okerra" color="red"></label>
-				<?php if(!isset($_SESSION["user"])){ ?>
-				Erabiltzailea: <input type="text" id="erab" name="erabiltzailea">
-				</br>
-				Pasahitza: <input type="password" id="password" name="pasahitza">
-				</br>
-				<?php } ?>
+				
 				Iruzkina:<br><textarea id="iruzkina" name="iruzkina" rows="5" ></textarea>
 				</br>
-				<input type="button" value="Bidali" > 
+				<input type="button" value="Bidali" >
+				
+				 
 			</form>
 		</div>
-		
-	</div><!--iruzkinak div-->
-
+		<?php } ?>
 </div>
 
 </body>

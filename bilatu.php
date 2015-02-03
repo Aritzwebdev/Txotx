@@ -19,16 +19,7 @@
 	
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#izena').click(function(){
-				$('bilatu.php',{'#izena':$(this).text()},function(data){
-					$('#sagartotegia').load (sagardotegia.php);
-				});
-				return false;
-			});
-
-		}) ;
-
+		
 		function logout(){
                 location.href="logout.php";
         }
@@ -75,9 +66,7 @@
 		</header>
 
 		<div id="menu_txikia">
-			<form action="index.php" method="post">
-				<input id="bilatu" type="submit" name="herria" value="Bilatzailea" />
-			</form>
+				<a id="bilatu" href="index.php">Bilatzailea</a>
 		</div>
 			<div id="header">
 				<img id="log" src="img/logo.png"/>

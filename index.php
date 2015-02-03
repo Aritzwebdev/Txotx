@@ -160,7 +160,7 @@
         <!-- REPRODUCTOR DE VIDEO -->
 
 
-        <h1 id="iniTxotx">Inicio de la temporada de TXOTX 2015</h1>
+        <h1 id="iniTxotx">TXOTX 2015, denboraldiaren hasiera!!</h1>
         
         <div id="btnPlay">
             
@@ -195,7 +195,7 @@
             </div>
             <img src="img/info.png" id="info" />
             <div id="about">
-               Contactanos
+               Kontaktua
             </div>
             
 

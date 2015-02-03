@@ -21,10 +21,10 @@ body{
 }
 
 #bilatu{
-	background-color: white;
+	background-color: none;
 	position: relative;
 	top: 0.5%;
-	left: -20%;
+	left: 2%;
 	color: green;
 	border: 0px;
 }
@@ -37,10 +37,6 @@ body{
 	position: fixed;
 	top: 25%;
 	left: 83.5%;
-}
-
-#menu_txikia input{
-	background: none;
 }
 
 input[type="search"]{
