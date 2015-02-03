@@ -58,16 +58,15 @@ body {
 
 #top_header li{
     display:inline-block;
-    float: right;
+    float: center;
     padding: 10px;
 }
 #registro{
-    background: rgba(0,0,0,0.5);
     display: block;
     width: 75%;
     height: 40px;
     margin-top: 6%;
-    padding-left: 23%;
+    padding-left: 15%;
     -webkit-border-radius: 10px;
     z-index: 2;
 }
@@ -320,3 +319,32 @@ border: 1px solid green;
 a{
     text-decoration: none;
 }
+
+@media only screen and (max-width: 800px) {
+	#titulo{
+		margin: auto; 
+	    position: absolute;
+	    top: 4%;
+	    left: 15%;
+	    font-size: 40px;
+		color: white;
+	    text-align: center;
+	}
+	#subtitulo{
+	    margin: auto;
+	    position: absolute;
+	    top: 24%;
+	    left: 27%;
+	    color: white;
+	    z-index: -1;
+	    font-size:15px;
+	    text-decoration:underline;
+	}	
+	
+	#registro{
+		position: absolute;
+	    top: 9%;
+	}
+		
+}
+

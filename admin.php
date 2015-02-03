@@ -8,16 +8,13 @@
        	<meta content="width=device-width, height=device-height, initial-scale=1.0" name="viewport" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
         <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   		<script src="js/menuAdmin.js"></script>
 		<script type="text/javascript" src="js/admin.js"></script>
 		
-        <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
+        <link rel="stylesheet" href="css/menuAdmin.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/tabla.css" />
         <link rel="stylesheet" href="css/admin.css" />
-		
-        
-
-        
-
 </head>
 <body>
 
@@ -27,23 +24,18 @@
 
      <header id="registro">
         <div class="container">
-            <ul id="nav">
-                <li><a href="#s1">Sagardotegiak</a>
-                    <span id="s1"></span>
-                    <ul class="subs">
-                        <li><a href="#" id="anadirSagardotegi">Gehitu</a></li>
-                        <li><a href="#" id="borrarSagardotegi">Ezabatu</a></li>
-                    </ul>
-                </li>
-              	<li><a href="#" id="borrarUsuarios">Erabiltzaileak</a></li>
-               <li><a href="#" id="borrarComentarios">Iruzkinak</a></li>
-            </ul>
-                <div id="hizkuntzak">
-                    <li><a href="">eu</a></li>
-                    <li>|</li>
-                    <li><a href="">es</a></li>
-                </div>     
-        	</ul>
+            <div id='cssmenu' class="align-center">
+		<ul>
+   			<li class='active'><a href="#s">Sagardotegiak</a>
+      			<ul>
+         			<li><a href="#" id="anadirSagardotegi">Gehitu</a></li>
+         			<li><a href="#" id="borrarSagardotegi">Ezabatu</a></li>
+      			</ul>
+   			</li>
+		  	<li><a href="#" id="borrarUsuarios">Erabiltzaileak</a></li>
+		  	<li><a href="#" id="borrarComentarios">Iruzkinak</a></li>
+		</ul>
+	</div>
         </div>
     </header>
 
@@ -99,8 +91,6 @@
         <footer id="footer">
                                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
         </footer>
-
-
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
