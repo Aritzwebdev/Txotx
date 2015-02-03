@@ -31,7 +31,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<script src="js/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-
+	<script src="js/sagardotegia.js"></script>
 
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/sagardotegia.css"/>
@@ -62,63 +62,13 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				a.style.display = 'none';
 				m.style.display = 'block';
 		}
-		google.maps.event.addDomListener(window, 'load', initialize());
+		//google.maps.event.addDomListener(window, 'load', initialize());
 	
-	</script>
-	
-	<script type="text/javascript">
-		function iruzkinak(id){
-			var e = document.getElementById(id);
-			if(e.style.display == 'block')
-				e.style.display = 'none';
-			else
-				e.style.display = 'block';
-		}
-
-		function argazkiak(){
-			var m = document.getElementById("googleMap");
-			var a = document.getElementById("slider");
-			
-				m.style.display = 'none';
-				a.style.display = 'block';
-			
-		}
-
-		function mapa(){
-			var m = document.getElementById("googleMap");
-			var a = document.getElementById("slider");
-			
-				a.style.display = 'none';
-				m.style.display = 'block';
-			
-		}
-
-		function login(){
-            var e = document.getElementById('login');
-			if(e.style.display == 'block')
-				e.style.display = 'none';
-			else
-				e.style.display = 'block';
-				document.getElementById('erabiltzaileaLog').focus();
-        }
-
-		function logout(){
-                location.href="logout.php";
-        }
-
-        function perfil(user){
-            if(user=="Admin"){
-                location.href="admin.php";
-            }else{
-                location.href="perfil.php";
-            }
-        }
-
 	</script>
 
 </head>
 
-<body onload="initialize();">
+<body>
 
 <div class="foo">
 
@@ -129,8 +79,8 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 
 	<ul id="top_header">
 		<li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-		<li><a href="#" id="argazkiak" onclick="argazkiak();"><img src="img/fotos.png" class="imgMenu" /> Argazkiak </a></li>
-		<li><a href="#" id="mapa" onclick="mapa();"><img src="img/mapa.png" class="imgMenu" /> Mapa </a></li>
+		<li><a href="#" id="argazkiak" ><img src="img/fotos.png" class="imgMenu" /> Argazkiak </a></li>
+		<li><a href="#" id="mapa" ><img src="img/mapa.png" class="imgMenu" /> Mapa </a></li>
 	</ul>
 	<ul id="hizkuntzak">
 		<li><a href="">eu</a></li>
@@ -141,12 +91,12 @@ $sagardotegia=$_SESSION['Sagardotegia'];
         if (isset($_SESSION["user"])){ 
     ?>
 		<ul id="top_headerDer">
-			<li><a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
-			<li><img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
+			<li><a id="itxi" href="#" ><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
+			<li><img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
 		</ul>
 	<?php }else{ ?>
 		<ul id="top_headerDer">
-			<li><a id="itxi" href="#" onclick="login();"><img src="img/login.png" class="imgMenu" />Saioa hasi</a></li>	
+			<li><a id="iriki" href="#" ><img src="img/login.png" class="imgMenu" />Saioa hasi</a></li>	
 		</ul>
 	<?php } ?>
 
@@ -198,7 +148,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 					echo "Web: ".$row['web']."<br>";
 				} 
 			?>
-			<a id="comentarios" href="#" onClick="iruzkinak('iruzkin')">Iruzkinak ikusi</a>
+			<a id="comentarios" href="#" >Iruzkinak ikusi</a>
 		</div>
 		
 		<!-- GOOGLE MAPS -->
@@ -247,12 +197,12 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	</div><!--iruzkinak div-->
 	<?php if(isset($_SESSION["user"])){ ?>
 		<div id="iruzkinSartu">
-			<form action="" method="get">
+			<form action="" method="post">
 				<label id="okerra" color="red"></label>
 				
-				Iruzkina:<br><textarea id="iruzkina" name="iruzkina" rows="5" ></textarea>
+				Iruzkina:<br><textarea id="iruzkina" name="text_iruzkina" rows="5" ></textarea>
 				</br>
-				<input type="button" value="Bidali" >
+				<input type="button" id="btnbidali" value="Bidali" >
 						 
 			</form>
 		</div>
@@ -269,55 +219,5 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.backstretch.js"></script>
-	
-<script type="text/javascript">
-		$.backstretch([
-	          "img/txotx.jpg",
-	          "img/slide.jpg",
-	          "img/sidra.jpg"
-	        ], {
-	            fade: 750,
-	            duration: 4000
-	        });
-</script>
-<script type="text/javascript">
-	$("#Bidali").click(function(evento){
-            evento.preventDefault();
-            if($("#erab").val()=="" && $("#pass").val()==""){
-                $("#okerra").text("Ezin dira hutsik egon");
-            }else{
-                $("#okerra").load("guardarComentario.php", {user: $("#erab").val(), pass: $("#pass").val(), iruzkina: $("#iruzkina").val()}, function(response){
-                    if(response==""){
-                        location.reload();
-                    }else{
-                        $("#okerra").text(response);
-                    }
-                });   
-            }
-        });
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-
-        /* VALIDAR LOGIN */
-
-            /* VALIDAR LOGIN */
-        $("#butsartu").click(function(evento){
-            evento.preventDefault();
-            if($("#erabiltzaileaLog").val()=="" && $("#pasahitzaLog").val()==""){
-                $("#aviso").text("Ezin dira hutsik egon");
-            }else{
-                $("#aviso").load("login.php", {user: $("#erabiltzaileaLog").val(), pass: $("#pasahitzaLog").val()}, function(response){
-                    if(response==""){
-                        location.reload();
-                    }else{
-                        $("#aviso").text(response);
-                    }
-                });
-            }
-        });
-    });
-</script>
 
 </html>
