@@ -27,14 +27,38 @@ body {
     z-index: -1;
 }
 
-#titulo{
-    margin: auto; 
+#logo{
+    margin-left: 30%;
+    margin-top: -0.5%;
+    margin-bottom: 1%;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+}
+#titulo{ 
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 37%;
     font-size: 54px;
+    margin-bottom: 1%;
     color: black;
     text-align: center;
+}
+
+#header h1{
+    position: absolute;
+    top: 28%;
+    left: 8%;
+    color: black;
+    font-size: 30px;
+}
+
+#log{
+    position: relative;
+    left: 2%;
+    margin-top: 15px;
+    width: 25px;
+    height:25px;
 }
 
 #userPerfil{
@@ -43,14 +67,14 @@ body {
 
 .greenBox{
     position: absolute;
-    top: 27%;
+    top: 40%;
     left: 17%;
     display: none;
 }
 
 #datuak{
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: 28%;
 }
 
@@ -62,7 +86,7 @@ body {
 }
 #pass{
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 32%;
     display: none;
 }

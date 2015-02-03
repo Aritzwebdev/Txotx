@@ -37,7 +37,8 @@ $result=mysqli_query($con, $sql);
 <body>
 <div class="foo">
 
-	<h1 id="userPerfil"><ins><?php echo $_SESSION["user"]; ?></ins></h1>
+	<img id="logo" src="img/logo.png" />
+	<h1 id="titulo">SagardoteGida</h1>
 
 	<header id="registro">
 	        <div class="container"> 	
@@ -57,7 +58,12 @@ $result=mysqli_query($con, $sql);
 	            <li><a href="">es</a></li>
 	        </div>
 
-	    </header>
+	</header>
+
+	<div id="header">
+		<img id="log" src="img/logo.png"/>
+		<h1 id="userPerfil"><?php echo $_SESSION["user"]; ?> -(r)en perfila</h1>
+	</div>
 
 	<div id="datuak">
 	<?php

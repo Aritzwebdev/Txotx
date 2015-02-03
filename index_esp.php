@@ -66,7 +66,7 @@
 </head>
 <body>
 
-    <h1 id="titulo">SagardoteGida</h1>
+    <h1 id="titulo">SidreGuia</h1>
 
     <!-- MENU --> 
 
@@ -74,14 +74,14 @@
         <div class="container">
         <img id="logo" src="img/logo.png"/>
             <ul id="nav">
-                <li><img src="img/inicio.png" class="imgMenu" /><a href="index.php">Hasiera</a></li>
-                <li><img src="img/logoIcon.png" class="imgMenu" /><a href="#s1">Sagardotegiak</a>
+                <li><img src="img/inicio.png" class="imgMenu" /><a href="index.php">Inicio</a></li>
+                <li><img src="img/logoIcon.png" class="imgMenu" /><a href="#s1">Sidrerias</a>
                     <span id="s1"></span>
                     <ul class="subs">
-                        <li><a href="#" id="arab">Araba<img id="araba" src="img/araba.png" /></a></li>
-                        <li><a href="#" id="bizka">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
-                        <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
-                        <li><a href="#" id="nafar">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
+                        <li><a href="#" id="arab">Alava<img id="araba" src="img/araba.png" /></a></li>
+                        <li><a href="#" id="bizka">Bizcaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#" id="giputxi">Guipuzcoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
+                        <li><a href="#" id="nafar">Navarra<img id="nafarroa" src="img/nafarroa.png" /></a></li>
                         <li><a href="#" id="ipar">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
                     </ul>
                 </li>
@@ -89,18 +89,18 @@
                     if (!isset($_SESSION["user"])){ 
                 ?>
                     <li>
-                       <img src="img/login.png" class="imgMenu" /><a id="sartu" href="#" onclick="autoLog('log'); kendu('reg')">Saioa hasi</a>
+                       <img src="img/login.png" class="imgMenu" /><a id="sartu" href="#" onclick="autoLog('log'); kendu('reg')">Inicio sesión</a>
                     </li> 
                     <li>
-                       <img src="img/addUsuario.png" class="imgMenu"/><a id="regis" href="#" onclick="autoKont('reg'); kendu('log')">Kontua sortu</a>
+                       <img src="img/addUsuario.png" class="imgMenu"/><a id="regis" href="#" onclick="autoKont('reg'); kendu('log')">Registrarse</a>
                     </li>                 
                 <?php }
                     else{ ?>    
                     <li>
-                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Hola, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
-                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
+                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" onclick="logout();">Cerrar sesión</a>
                     </li>
                 <?php } ?>
             </ul>
@@ -120,27 +120,27 @@
         <div id="reg">              
             <form class="form-3" action="registro.php" method="post" >
                     <div>
-                        <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
+                        <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Usuario</font></label>
                         <input type="text" name="erabiltzailea" id="erabiltzailea" required title="Sartu erabiltzaile izena">
                     </div>
                     <div>
-                        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
+                        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Contraseña</font></label>
                         <input type="password" name="pasahitza" id="pasahitza" required title="Sartu pasahitza">
                     </div>
                     <div>
-                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Emaila</font></label>
+                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Email</font></label>
                         <input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('Formatu desegokia ')" onchange="try{setCustomValidity('')}catch(e){}" required>
                     </div>
                     <div>
-                        <label for="izena" style="padding: 15px 0px 2px 0px;"><font color="white">Izena</font></label>
+                        <label for="izena" style="padding: 15px 0px 2px 0px;"><font color="white">Nombre</font></label>
                         <input type="text" name="izena" id="izena" required title="Sartu zure izena" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="abizena" style="padding: 15px 0px 2px 0px;"><font color="white">Abizena</font></label>
+                        <label for="abizena" style="padding: 15px 0px 2px 0px;"><font color="white">Apellido</font></label>
                         <input type="text" name="abizena" id="abizena" required title="Sartu zure abizena" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
                     </div>
                     <div>
-                        <label for="kodea" style="padding: 15px 0px 2px 0px;"><font color="white">Kode sekretua idatzi: <span id="secret"></span> (<a href="#" class="refresh">aldatu</a>)</font></label>
+                        <label for="kodea" style="padding: 15px 0px 2px 0px;"><font color="white">Escriba el código secreto: <span id="secret"></span> (<a href="#" class="refresh">cambiar</a>)</font></label>
                         <input type="text" name="kodea" id="kodea" required class="required antispam" maxlength="6" minlength="6" title="Sartu ikusten duzun kodea">
                     </div>
                     <div class="submit">
@@ -151,11 +151,11 @@
         <div id="log">              
             <form class="form-4" action="" method="post"> 
                    
-                <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
+                <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Usuario</font></label>
                 <input type="text" name="erabiltzaileaLog" id="erabiltzaileaLog" title="Sartu erabiltzaile izena" />
                     
                     
-                <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
+                <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Contraseña</font></label>
                 <input type="password" name="pasahitzaLog" id="pasahitzaLog" title="Sartu pasahitza" />
                    
                 <font color="red"><div id="aviso"></div></font></br>
@@ -164,19 +164,19 @@
             </form>
         </div>
 
-        <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
+        <div id="subtitulo"><h2>Toda la información de tus sidrerias favoritas en un solo click</h2></div>
         <div id="bilatu">
             <form class="bilatzailea" >
-                 <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
+                 <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sidreria..." onfocus="if (this.value == 'Sidreria...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sidreria...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
                 
-                 <input class="bilaketaBotoia" id="bilaketa" type="button" value="Bilatu" />
+                 <input class="bilaketaBotoia" id="bilaketa" type="button" value="IR" />
             </form>
         </div>
         
         <!-- REPRODUCTOR DE VIDEO -->
 
 
-        <h1 id="iniTxotx">TXOTX 2015, denboraldiaren hasiera!!</h1>
+        <h1 id="iniTxotx">Inicio de la temporada TXOTX 2015!!</h1>
         
         <div id="btnPlay">
             
@@ -193,8 +193,8 @@
                 <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>   
                 <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
                 <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
-                <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
-                <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+                <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Subir volumen</button>
+                <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Bajar volumen</button>
                 <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>  
                 <p id="start"></p>
             </div>
@@ -213,7 +213,7 @@
             </div>
             <img src="img/info.png" id="info" />
             <div id="about">
-            Kontaktua
+               Contacto
             </div>
             
 

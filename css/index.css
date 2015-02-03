@@ -5,6 +5,7 @@
 html {
     background-color: #000;
     height: 100%;
+    overflow-x: hidden;
 }
 body {
     width: 90%;
@@ -410,7 +411,7 @@ border: 1px solid green;
 #info{
     width: 20px;
     height: 20px;
-    margin-left: 465px;
+    margin-left: 460px;
 }
 
 #face,
