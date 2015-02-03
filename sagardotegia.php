@@ -161,7 +161,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 
 <div id="header">
 	<img id="log" src="img/logo.png"/>
-	<h1 id="userPerfil"><ins><?php echo $sagardotegia; ?></ins> sagardotegia</h1>
+	<h1 id="userPerfil"><?php echo $sagardotegia; ?> sagardotegia</h1>
 </div>
 
 <div id="login">              

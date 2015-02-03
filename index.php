@@ -27,7 +27,7 @@
                     }
                     else{
                         e.style.display = 'block';
-                        document.getElementById('erabiltzaileaLog').focus();
+                        document.getElementById('erabiltzaileaLog') .focus();
                     }
                 }
 
