@@ -37,7 +37,7 @@ $result=mysqli_query($con, $sql);
 <body>
 <div class="foo">
 
-	<h1 id="userPerfil"><ins><?php echo $_SESSION["user"]; ?></ins> (r)en profila </h1>
+	<h1 id="userPerfil"><ins><?php echo $_SESSION["user"]; ?></ins></h1>
 
 	<header id="registro">
 	        <div class="container"> 	
