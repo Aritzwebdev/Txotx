@@ -66,3 +66,15 @@ body {
     left: 32%;
     display: none;
 }
+#hizkuntzak {
+    position: relative;
+    top: 6px;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+#hizkuntzak a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
