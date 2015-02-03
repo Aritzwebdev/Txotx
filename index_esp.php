@@ -79,7 +79,7 @@
                     <span id="s1"></span>
                     <ul class="subs">
                         <li><a href="#" id="arab">Alava<img id="araba" src="img/araba.png" /></a></li>
-                        <li><a href="#" id="bizka">Bizcaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#" id="bizka">Vizcaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
                         <li><a href="#" id="giputxi">Guipuzcoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
                         <li><a href="#" id="nafar">Navarra<img id="nafarroa" src="img/nafarroa.png" /></a></li>
                         <li><a href="#" id="ipar">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>

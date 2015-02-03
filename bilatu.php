@@ -87,20 +87,55 @@
 					<input type="search" name="herria" placeholder="Bilatu..." />
 				</form>
 		</div>
-			<div>
 
+		<div id="herri"> Herriak</div>
+			
+			<div>
 		        <!-- Contenido -->
 		        <section>
-		            
+		     
+		     <?php 
+					if($probintzia == 1){
+			?>
+
 		        <div id="taulaHerriak">
 					<table class="table" id="tablajson">
-						<thead>
-							<th></th>
-							<th class="thHerriak">Herriak</th>			
-						</thead>
-						<tbody class="taula"></tbody>
+						<tbody class="taula1"></tbody>
 					</table>
 				<div>
+
+				<div id="taulaHerriak2">
+					<table class="table" id="tablajson">
+						<tbody class="taula2"></tbody>
+					</table>
+				<div>
+
+				<div id="taulaHerriak3">
+					<table class="table" id="tablajson">
+						<tbody class="taula3"></tbody>
+					</table>
+				<div>
+
+				<div id="taulaHerriak4">
+					<table class="table" id="tablajson">
+						<tbody class="taula4"></tbody>
+					</table>
+				<div>
+
+				<div id="taulaHerriak5">
+					<table class="table" id="tablajson">
+						<tbody class="taula5"></tbody>
+					</table>
+				<div>
+			<?php }else{ ?>
+
+				<div id="taulaHerriak">
+					<table class="table" id="tablajson">
+						<tbody class="taula1"></tbody>
+					</table>
+				<div>
+			<?php } ?>
+
 					<script type="text/javascript">
 
 					$(document).ready(function(){
@@ -109,11 +144,43 @@
 						
 						$.getJSON(url,function(pueblos){
 							$.each(pueblos, function(i,pueblo){
-								var newRow =
-								"<tr value='"+pueblo.Herria+"' class='tr'>"
-								+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
-								+"</tr>";
-								$(newRow).appendTo("#tablajson tbody");
+								
+								if(i < 10){
+									var newRow =
+									"<tr value='"+pueblo.Herria+"' class='tr'>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"</tr>";
+									$(newRow).appendTo("#tablajson .taula1");
+
+								}else if(i >= 10 && i < 20){
+									var newRow =
+									"<tr value='"+pueblo.Herria+"' class='tr'>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"</tr>";
+									$(newRow).appendTo("#tablajson .taula2");
+								
+								}else if(i >= 20 && i < 30){
+									var newRow =
+									"<tr value='"+pueblo.Herria+"' class='tr'>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"</tr>";
+									$(newRow).appendTo("#tablajson .taula3");
+
+								}else if(i >= 30 && i < 40){
+									var newRow =
+									"<tr value='"+pueblo.Herria+"' class='tr'>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"</tr>";
+									$(newRow).appendTo("#tablajson .taula4");
+								
+								}else{
+									var newRow =
+									"<tr value='"+pueblo.Herria+"' class='tr'>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"</tr>";
+									$(newRow).appendTo("#tablajson .taula5");
+								}
+								
 							});
 						});
 					});

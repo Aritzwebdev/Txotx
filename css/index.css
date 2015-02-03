@@ -47,10 +47,10 @@ body {
     margin: auto;
     position: absolute;
     top: 51%;
-    left: 26%;
+    left: 30%;
     color: white;
     z-index: -1;
-    font: 1.5em 'Ubuntu';
+    font: 1.2em 'Ubuntu';
 }
 #hizkuntzak li{
     font-family: 'Ubuntu', 'Lato', sans-serif;

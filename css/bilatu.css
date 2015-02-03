@@ -144,7 +144,10 @@ a:hover{
 	color: green;
 }
 
-th{
+#herri{
+	position: absolute;
+	top: 37%;
+	left: 10%;
 	font: 1.5em 'Ubuntu';
 	font-weight: 9; 
 }
@@ -152,7 +155,31 @@ th{
 #taulaHerriak{
 	position: relative;
 	left: 5%;
-	margin-top: 15px;
+	margin-top: 5%;
+}
+
+#taulaHerriak2{
+	position: relative;
+	left: 15%;
+	margin-top: -16.5%;
+}
+
+#taulaHerriak3{
+	position: relative;
+	left: 15%;
+	margin-top: -16.5%;
+}
+
+#taulaHerriak4{
+	position: relative;
+	left: 15%;
+	margin-top: -16.5%;
+}
+
+#taulaHerriak5{
+	position: relative;
+	left: 15%;
+	margin-top: -16.5%;
 }
 
 #sagar_ize{
