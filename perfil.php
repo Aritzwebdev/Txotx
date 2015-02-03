@@ -183,34 +183,43 @@ $result=mysqli_query($con, $sql);
 	    }
 	?> 
 
-	<?php
-	$sql="SELECT * FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
-	$result=mysqli_query($con, $sql);
-	?>
-
-	<div id="sagardo">
-		<section>
-			
-			<?php
-				$cont=1;
-				while($row=mysqli_fetch_array($result)){
-			?>
-					<div><label id="zenb"> <?php echo $cont ?>.- </label>
-					<label>Sagardotegia: </label><input type="text" value="<?php echo $row['sagardotegia']; ?>" readonly />
-					<label> Data: </label><input type="text" value="<?php echo $row['data']; ?>" readonly/></div>
-					</br>
-					<div><label>Iruzkina:</label><br><textarea type="text" rows="5" style="width: 728px;" readonly><?php echo $row['iruzkina'];?></textarea>
-					<input type="checkbox"/></div>
-					</br>
-			<?php
-					$cont++;
-				}
-			?>
-
-		</section>
+	<div class="greenBox">
+	<div class="myTable">
+		<table class="table-bordered table-striped table-condensed flip-content">
+		<form action="borrarComentariosUser.php" method="post">
+			<thead class="flip-content">
+				<tr>
+					<th>Borrar</th>
+					<th>Id</th>
+					<th>Erabiltzailea</th>
+					<th>Iruzkina</th>
+					<th>Data</th>
+					<th>Sagardotegia</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php 
+	include_once 'conectar.php';
+	$conexion=conectar();
+	// Seleccionar todos los registros 
+	$consulta = "SELECT * FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
+	$result=mysqli_query($conexion, $consulta);
+	while ($registro = mysqli_fetch_row($result)){
+		echo "<tr>";
+		echo "<td><input type='checkbox' name='iruzkinak[]' value=$registro[0]/></td>";
+		foreach($registro  as $valor){
+			echo "<td>",$valor,"</td>";
+ 		}
+	}
+	mysqli_close($conexion);
+?>
+				<tr><td colspan=12 align=center><input type="submit" name="borrar" id="btnBorrar" value="Borrar"></td></tr>
+			</tbody>
+			</form>
+		</table>
 	</div>
 
-	<input type="button" id="butiruzkin" value="Iruzkinak ezabatu"/>
+</div>
 
 </div>
 	
@@ -222,21 +231,21 @@ $result=mysqli_query($con, $sql);
 	$(document).ready(function(){
 		$("#datu").click(function(){
 			$("#datuak").show();
-			$("#sagardo").hide();
+			$(".greenBox").hide();
 			$("#pass").hide();
 			$("#lista").hide();
 			$("#butiruzkin").hide();
 		});
 		$("#iruzkin").click(function(){		
 			$("#butiruzkin").show();
-			$("#sagardo").show();
+			$(".greenBox").show();
 			$("#datuak").hide();
 			$("#pass").hide();
 			$("#lista").hide();
 		});
 		$("#cambiopass").click(function(){
 			$("#datuak").hide();
-			$("#sagardo").hide();
+			$(".greenBox").hide();
 			$("#butiruzkin").hide();
 			$("#pass").show();
 			$("#lista").hide();

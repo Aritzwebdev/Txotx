@@ -41,30 +41,19 @@ body {
     margin: 10px;
 }
 
+.greenBox{
+    position: absolute;
+    top: 27%;
+    left: 17%;
+    display: none;
+}
 
 #datuak{
     position: absolute;
     top: 25%;
     left: 28%;
-    display: none;
-}
-#sagardo{
-    position: absolute;
-    top: 30%;
-    left: 24%;
-    width: 60%;
-    height: 350px;
-    display: none;
-    overflow: scroll;
 }
 
-#sagardo label{
-    font-size: 16px;
-}
-
-#sagardo label#zenb{
-    font-size: 20px;
-}
 #butiruzkin{
     position: absolute;
     top: 87%;
