@@ -32,6 +32,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
+
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/sagardotegia.css"/>
 
@@ -92,6 +93,14 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 			
 		}
 
+		function login(){
+            var e = document.getElementById('login');
+			if(e.style.display == 'block')
+				e.style.display = 'none';
+			else
+				e.style.display = 'block';
+        }
+
 		function logout(){
                 location.href="logout.php";
         }
@@ -134,6 +143,10 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 			<li><a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
 			<li><img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
 		</ul>
+	<?php }else{ ?>
+		<ul id="top_headerDer">
+			<li><a id="itxi" href="#" onclick="login();"><img src="img/login.png" class="imgMenu" />Saioa hasi</a></li>	
+		</ul>
 	<?php } ?>
 
 </header>
@@ -145,7 +158,26 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	</form>
 </div>
 
-<h1 id="userPerfil"><ins><?php echo $sagardotegia; ?></ins> sagardotegia</h1>
+<div id="header">
+	<img id="log" src="img/logo.png"/>
+	<h1 id="userPerfil"><ins><?php echo $sagardotegia; ?></ins> sagardotegia</h1>
+</div>
+
+<div id="login">              
+    <form class="form-4" action="" method="post"> 
+                  
+    	<label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
+        <input type="text" name="erabiltzaileaLog" id="erabiltzaileaLog" title="Sartu erabiltzaile izena" />
+                    
+                    
+        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
+        <input type="password" name="pasahitzaLog" id="pasahitzaLog" title="Sartu pasahitza" />
+                   
+        <font color="red"><div id="aviso"></div></font></br>
+                    
+        <input type="button" value="Sartu" id="butsartu" />
+    </form>
+</div>
 
 <?php
 	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$sagardotegia."';";
@@ -164,8 +196,6 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				if($row['web']!=""){
 					echo "Web: ".$row['web']."<br>";
 				} 
-				echo "Latitud: ".$lat."<br>";
-				echo "Longitud: ".$lng."<br>";
 			?>
 			<a id="comentarios" href="#" onClick="iruzkinak('iruzkin')">Iruzkinak ikusi</a>
 		</div>
@@ -222,8 +252,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				Iruzkina:<br><textarea id="iruzkina" name="iruzkina" rows="5" ></textarea>
 				</br>
 				<input type="button" value="Bidali" >
-				
-				 
+						 
 			</form>
 		</div>
 		<?php } ?>
@@ -256,25 +285,38 @@ $sagardotegia=$_SESSION['Sagardotegia'];
             if($("#erab").val()=="" && $("#pass").val()==""){
                 $("#okerra").text("Ezin dira hutsik egon");
             }else{
-            <?php if(!isset($_SESSION["user"])){ ?>
                 $("#okerra").load("guardarComentario.php", {user: $("#erab").val(), pass: $("#pass").val(), iruzkina: $("#iruzkina").val()}, function(response){
                     if(response==""){
                         location.reload();
                     }else{
                         $("#okerra").text(response);
                     }
-                });
-            <?php }else{ ?>
-            		$("#okerra").load("guardarComentario.php", {iruzkina: $("#iruzkina").val()}, function(response){
-			        if(response==""){
-			            location.reload();
-			        }else{
-			        	$("#okerra").text(response);
-			            }
-			        });
-           <?php } ?>
+                });   
             }
         });
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+        /* VALIDAR LOGIN */
+
+            /* VALIDAR LOGIN */
+        $("#butsartu").click(function(evento){
+            evento.preventDefault();
+            if($("#erabiltzaileaLog").val()=="" && $("#pasahitzaLog").val()==""){
+                $("#aviso").text("Ezin dira hutsik egon");
+            }else{
+                $("#aviso").load("login.php", {user: $("#erabiltzaileaLog").val(), pass: $("#pasahitzaLog").val()}, function(response){
+                    if(response==""){
+                        location.reload();
+                    }else{
+                        $("#aviso").text(response);
+                    }
+                });
+            }
+        });
+    });
 </script>
 
 </html>

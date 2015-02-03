@@ -80,13 +80,15 @@
 	<div id="menu_txikia">
 			<a id="bilatu" href="bilatu.php"><?php echo $probintzia;?> </a>
 	</div>
-		<div id="header">
-			<img id="log" src="img/logo.png"/>
-			<h1><p id="probin"><?php echo $herria ?></p></h1>
-			<form action="bilatu.php" method="GET" id="bil">
-				<input type="search" name="herria" placeholder="Bilatu..." />
-			</form>
+	
+	<div id="header">
+		<img id="log" src="img/logo.png"/>
+		<h1><p id="probin"><?php echo $herria ?></p></h1>
+		<form action="bilatu.php" method="GET" id="bil">
+			<input type="search" name="herria" placeholder="Bilatu..." />
+		</form>
 	</div>
+		
 		<div>
 
 	        <!-- Contenido -->

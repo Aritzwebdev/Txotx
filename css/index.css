@@ -40,6 +40,7 @@ body {
     font-size: 54px;
 	color: white;
     text-align: center;
+    font: 'Ubuntu';
 }
 #subtitulo{
     margin: auto;
@@ -382,6 +383,7 @@ border: 1px solid green;
 #iniTxotx{
     position: absolute;
     left: 79%;
+    z-index: -1;
 }
 
 #btnPlay{
@@ -390,6 +392,7 @@ border: 1px solid green;
     left: 85%;
     width: 125px;
     height: 125px;
+    z-index: -1;
 }
 
 #autores{
@@ -402,13 +405,12 @@ border: 1px solid green;
 }
 #about{
     float: right;
-    padding-right: 10px;
 }
 
 #info{
     width: 20px;
     height: 20px;
-    margin-left: 450px;
+    margin-left: 465px;
 }
 
 #face,
