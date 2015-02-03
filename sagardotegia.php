@@ -99,6 +99,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				e.style.display = 'none';
 			else
 				e.style.display = 'block';
+				document.getElementById('erabiltzaileaLog').focus();
         }
 
 		function logout(){
