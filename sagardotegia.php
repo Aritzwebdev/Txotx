@@ -31,7 +31,6 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<script src="js/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
-	<script src="js/sagardotegia.js"></script>
 
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/sagardotegia.css"/>
@@ -210,13 +209,12 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 
 </body>
 
-<script type="text/javascript">
-		
+<script type="text/javascript">		
 		  $('.bxslider').bxSlider();
-
 </script>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.backstretch.js"></script>
+	<script src="js/sagardotegia.js"></script>
 
 </html>

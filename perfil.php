@@ -12,27 +12,9 @@ $result=mysqli_query($con, $sql);
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
     <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
     <!--<script type="text/javascript" language="javascript" src="js/api.js"></script>-->
-
+	
 	<link rel="stylesheet" href="css/perfil.css"/>	
 	<link rel="stylesheet" href="css/menuPerfil.css" media="screen, projection"/>
-	
-
-
-
-	<script type="text/javascript">
-		
-		function logout(){
-            location.href="logout.php";
-        }
-
-        //funcion para darse de baja
-        function baja(){
-        		var baja=confirm ("Erabiltzailea ezabatu nahi duzu?");
-        		if(baja){
-        			location.href = "baja.php";
-        		}
-        };
-	</script>
 </head>
 <body>
 <div class="foo">
@@ -47,9 +29,9 @@ $result=mysqli_query($con, $sql);
 	                <li><a href="#" id="datu">Datuak</a></li>
 				    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
 				    <li><a href="#" id="iruzkin">Iruzkinak</a></li>
-				    <li><a href="#" onclick="baja()" id="elimUsu">Erabiltzailea ezabatu</a></li>
+				    <li><a href="#" id="elimUsu">Erabiltzailea ezabatu</a></li>
 	                <li>
-	                    <a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
+	                    <a id="itxi" href="#" >Saioa itxi</a>
 	                </li>
 	            </ul>
 	            <ul id="hizkuntzak">
@@ -226,56 +208,9 @@ $result=mysqli_query($con, $sql);
 	</div>
 
 </div>
-
 </div>
-	
-
 </body>
-
-<script type="text/javascript">
-
-	$(document).ready(function(){
-		$("#datu").click(function(){
-			$("#datuak").show();
-			$(".greenBox").hide();
-			$("#pass").hide();
-			$("#lista").hide();
-			$("#butiruzkin").hide();
-		});
-		$("#iruzkin").click(function(){		
-			$("#butiruzkin").show();
-			$(".greenBox").show();
-			$("#datuak").hide();
-			$("#pass").hide();
-			$("#lista").hide();
-		});
-		$("#cambiopass").click(function(){
-			$("#datuak").hide();
-			$(".greenBox").hide();
-			$("#butiruzkin").hide();
-			$("#pass").show();
-			$("#lista").hide();
-		});
-		$("#butlista").click(function(){
-		 	$("#lista").slideToogle("slow");
-		});
-
-	 });
-
-	</script>
-
-	<script src="js/jquery.js"></script>
+ <script src="js/jquery.js"></script>
 	<script src="js/jquery.backstretch.js"></script>
-	
-	<script type="text/javascript">
-		$.backstretch([
-	          "img/txotx.jpg",
-	          "img/slide.jpg",
-	          "img/sidra.jpg"
-	        ], {
-	            fade: 750,
-	            duration: 4000
-	        });
-	</script>
-
+	<script src="js/perfil.js"></script>
 </html>
