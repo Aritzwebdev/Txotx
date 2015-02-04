@@ -1,3 +1,10 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+
 <div class="greenBox">
 	<div class="myTable">
 		<table class="table-bordered table-striped table-condensed flip-content">
@@ -13,9 +20,6 @@
 					<th>Telefonoa</th>
 					<th>Email</th>
 					<th>Web</th>
-					<th>Balorazioa</th>
-					<th>Lat</th>
-					<th>Lng</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -23,7 +27,7 @@
 	include_once 'conectar.php';
 	$conexion=conectar();
 	// Seleccionar todos los registros 
-	$consulta = "SELECT * FROM sagardotegiak";
+	$consulta = "SELECT idsagardotegiak, izena, herria, deskribapena, probintzia, telefonoa, email, web FROM sagardotegiak";
 	$result=mysqli_query($conexion, $consulta);
 	while ($registro = mysqli_fetch_row($result)){
 		echo "<tr>";
@@ -41,3 +45,6 @@
 	</div>
 
 </div>	
+
+</body>
+</html>

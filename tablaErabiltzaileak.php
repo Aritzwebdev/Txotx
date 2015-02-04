@@ -7,7 +7,6 @@
 					<th>Borrar</th>
 					<th>Id</th>
 					<th>Erabiltzailea</th>
-					<th>Pasahitza</th>
 					<th>Izena</th>
 					<th>Abizena</th>
 					<th>Email</th>
@@ -18,7 +17,7 @@
 	include_once 'conectar.php';
 	$conexion=conectar();
 	// Seleccionar todos los registros 
-	$consulta = "SELECT * FROM erabiltzaileak";
+	$consulta = "SELECT iderabiltzaileak, erabiltzailea, izena, abizena, email FROM erabiltzaileak";
 	$result=mysqli_query($conexion, $consulta);
 	while ($registro = mysqli_fetch_row($result)){
 		echo "<tr>";

@@ -11,7 +11,7 @@
 	$result=mysqli_query($con, $sql);
 	$row=mysqli_fetch_array($result);
 	
-	$_SESSION['Herria']=$row['herriak.izena'];
+	$_SESSION['Herria']=$row['izena'];
 
 	$_SESSION['Sagardotegia'] = $sagardotegia;
 

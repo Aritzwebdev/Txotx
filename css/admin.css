@@ -20,24 +20,41 @@ body {
 	height: 95%;
 }
 
-#titulo{
-	margin: auto; 
+#logo{
     position: absolute;
-    top: 4%;
-    left: 37%;
-    font-size: 54px;
-	color: white;
-    text-align: center;
+    top: 1%;
+    left: 36%;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
 }
+#titulo{
+    margin: auto; 
+    position: absolute;
+    top: 5%;
+    left: 41%;
+    font-size: 54px;
+    color: white;
+    text-align: center;
+    font: 'Ubuntu';
+}
+
+#log{
+    position: relative;
+    left: 18%;
+    margin-top: 20px;
+    width: 25px;
+    height:25px;
+}
+
 #subtitulo{
     margin: auto;
     position: absolute;
-    top: 22%;
-    left: 40%;
+    top: 23%;
+    left: 20%;
     color: white;
     z-index: -1;
-    font-size:20px;
-    text-decoration:underline;
+    font-size:18px;
 }
 #hizkuntzak li{
     font-family: 'Ubuntu', 'Lato', sans-serif;
@@ -91,6 +108,12 @@ input:valid {
  
 border: 1px solid green;
  
+}
+
+#anadir{
+    position: absolute;
+    top: 35%;
+    left: 10%;
 }
 
 .form-3, 
@@ -321,29 +344,45 @@ a{
 }
 
 @media only screen and (max-width: 800px) {
-	#titulo{
+	
+    #logo{
+        position: absolute;
+        top: 2%;
+        left: 11%;
+    }
+
+    #titulo{
 		margin: auto; 
 	    position: absolute;
-	    top: 4%;
-	    left: 15%;
+	    top: 7%;
+	    left: 25%;
 	    font-size: 40px;
 		color: white;
 	    text-align: center;
 	}
-	#subtitulo{
+
+    #log{
+        position: absolute;
+        top: 64%;
+        left: 22%;
+        z-index: -1;
+    }
+	
+    #subtitulo{
 	    margin: auto;
 	    position: absolute;
-	    top: 24%;
-	    left: 27%;
+	    top: 68%;
+	    left: 30%;
 	    color: white;
 	    z-index: -1;
 	    font-size:15px;
-	    text-decoration:underline;
+        z-index: -1;
 	}	
 	
 	#registro{
 		position: absolute;
-	    top: 9%;
+        left: -7%;
+	    top: -2%;
 	}
 		
 }
