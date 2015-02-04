@@ -77,10 +77,8 @@
                     <td><input type="text" name="email" /></td>
                     <td><input type="text" name="web" /></td>
                 </tr>
-                <tr>   
-                    <td colspan="7" rowspan="4"><input type="submit" id="anadirSagardotegi" name="anadirSagardotegi" value="Bidali"/></td>
-                </tr>
             </table>
+            <input type="submit" id="bidali" name="anadirSagardotegi" value="Bidali"/>
         </form>
     </div>
         
