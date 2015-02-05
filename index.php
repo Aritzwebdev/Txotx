@@ -53,13 +53,14 @@
 </head>
 <body>
 
+    <img id="logo" src="img/logo.png"/>
     <h1 id="titulo">SagardoteGida</h1>
 
     <!-- MENU --> 
 
      <header id="registro">
         <div class="container">
-        <img id="logo" src="img/logo.png"/>
+        
             <ul id="nav">
                 <li><img src="img/inicio.png" class="imgMenu" /><a href="index.php">Hasiera</a></li>
                 <li><img src="img/logoIcon.png" class="imgMenu" /><a href="#s1">Sagardotegiak</a>
@@ -188,9 +189,20 @@
         </div>  
        
         <footer id="footer" onclick="kendu('log'); kendu('reg');">
-            <div id="autores">
+
+            <img src="img/copyleft.png" id="copyleft" />
+            <div id="autores" title="Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015">
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
+           
+            <script type="text/javascript">
+                if($(window).width() <= 800){
+                    $("#autores").text("Copyleft");
+                }else{
+                    $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
+                }
+           </script> 
+
             <div id="redSocial"> 
                 <a href="http://www.facebook.com/sagardotegida" target="_blank"><img src="img/facebook.png" id="face" /></a>
                 <a href="https://www.twitter.com/SagardoteGida" target="_blank"><img src="img/twitter.png" id="twit" /></a>
