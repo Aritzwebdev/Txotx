@@ -11,10 +11,11 @@ $result=mysqli_query($con, $sql);
 	<meta charset="utf-8" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
     <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
+     <script type="text/javascript" src="js/menuAdmin.js"></script>
     <!--<script type="text/javascript" language="javascript" src="js/api.js"></script>-->
 	
 	<link rel="stylesheet" href="css/perfil.css"/>	
-	<link rel="stylesheet" href="css/menuPerfil.css" media="screen, projection"/>
+	<link rel="stylesheet" href="css/menuAdmin.css" media="screen, projection"/>
 </head>
 <body>
 <div class="foo">
@@ -24,20 +25,17 @@ $result=mysqli_query($con, $sql);
 
 	<header id="registro">
 	        <div class="container"> 	
-	            <ul id="nav">
-	                <li><a href="index.php">Hasiera</a></li>
-	                <li><a href="#" id="datu">Datuak</a></li>
-				    <li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
-				    <li><a href="#" id="iruzkin">Iruzkinak</a></li>
-				    <li><a href="#" id="elimUsu">Erabiltzailea ezabatu</a></li>
-	                <li>
-	                    <a id="itxi" href="#" >Saioa itxi</a>
-	                </li>
-	            </ul>
-	            <ul id="hizkuntzak">
-	            <li><a href="">eu</a></li>
-	            <li>|</li>
-	            <li><a href="">es</a></li>
+	            <div id='cssmenu' class="align-center">
+		<ul>
+            <li><a href="index.php">Hasiera</a></li>
+   			<li><a href="#" id="datu">Datuak</a></li>
+		  	<li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
+		  	<li><a href="#" id="iruzkin">Iruzkinak</a></li>
+            <li><a href="#" id="elimUsu">Erabiltzailea ezabatu</a></li>
+            <li><a id="itxi" href="#" >Saioa itxi</a></li>
+            <li><a id="idioma" href="#" >eu|es</a></li>
+		</ul>
+	</div>
 	        </div>
 
 	</header>
@@ -57,13 +55,13 @@ $result=mysqli_query($con, $sql);
 		<tr>
 			<td>Erabiltzailea: </td><td><input type="text" name="erabiltzailea" value="<?php echo $row['erabiltzailea']; ?>" /></td>
 			<td></td>
-			<td>Izena: </td><td><input type="text" name="izena" value="<?php echo $row['izena']; ?>" /></td>
+			<td id="lblIzena">Izena: </td><td id="izena"><input type="text" name="izena" value="<?php echo $row['izena']; ?>" /></td>
 		</tr>
 		<br><br>
 		<tr>
 			<td>Abizena: </td><td><input type="text" name="abizena" value="<?php echo $row['abizena']; ?>" /></td>
 			<td></td>
-			<td>Email-a: </td><td><input type="text" name="email" value="<?php echo $row['email']; ?>" /></td>
+			<td id="lblEmail">Email-a: </td><td id="email"><input type="text" name="email" value="<?php echo $row['email']; ?>" /></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
@@ -171,7 +169,7 @@ $result=mysqli_query($con, $sql);
 	    }
 	?> 
 
-	<div class="greenBox">
+	<div id="iruzkinak" class="greenBox">
 	<div class="myTable">
 		<table class="table-bordered table-striped table-condensed flip-content">
 		<form action="borrarComentariosUser.php" method="post">

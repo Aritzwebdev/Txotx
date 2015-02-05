@@ -9,7 +9,7 @@ $conexion = conectar();
 $probintzia = $_SESSION['probintzia'];
 
 //generamos la consulta
-$sql = "SELECT izena FROM herriak WHERE probintzia='".$probintzia."';";
+$sql = "SELECT izena, sagardotegi_kop FROM herriak WHERE probintzia='".$probintzia."';";
 mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($conexion, $sql)) die();
@@ -19,8 +19,9 @@ $pueblos = array(); //creamos un array
 while($row = mysqli_fetch_array($result)) 
 { 
 	$herria=$row['izena'];
+	$kop=$row['sagardotegi_kop'];
 
-	$pueblos[] = array('Herria'=> $herria);
+	$pueblos[] = array('Herria'=> $herria, 'Kop'=>$kop);
 
 }
 	

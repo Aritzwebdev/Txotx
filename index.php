@@ -191,12 +191,12 @@
             </video>
             <div id='media-controls'>
                 <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
-                <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>   
-                <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
-                <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
-                <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
-                <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
-                <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>  
+                <button id='replay-button' class='replay' title='Berrikusi' onclick='replayMedia();'>Replay</button>   
+                <button id='play-pause-button' class='play' title='Abiarazi' onclick='togglePlayPause();'>Play</button>
+                <button id='stop-button' class='stop' title='Gelditu' onclick='stopPlayer();'>Stop</button>
+                <button id='volume-inc-button' class='volume-plus' title='Ahotsa igo' onclick='changeVolume("+");'>Increase volume</button>
+                <button id='volume-dec-button' class='volume-minus' title='Ahotsa jaitsi' onclick='changeVolume("-");'>Decrease volume</button>
+                <button id='mute-button' class='mute' title='Ahotsa kendu' onclick='toggleMute("true");'>Mute</button>  
                 <p id="start"></p>
             </div>
         </div>  
@@ -206,11 +206,11 @@
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
             <div id="redSocial"> 
-                <a href="http://www.facebook.com/sagardotegida"><img src="img/facebook.png" id="face" /></a>
-                <a href="https://www.twitter.com/SagardoteGida"><img src="img/twitter.png" id="twit" /></a>
-                <a href="https://www.youtube.com/channel/UCoDkOZgVVDrDJSpgUptF5Gw/feed"><img src="img/youtube.png" id="yout" /></a>
-                <a href="https://plus.google.com/u/0/105399675361069810113/posts"><img src="img/google+.png" id="goog" /></a>
-                <a href="https://instagram.com/sagardotegida"><img src="img/instagram.png" id="inst" /></a>
+                <a href="http://www.facebook.com/sagardotegida" target="_blank"><img src="img/facebook.png" id="face" /></a>
+                <a href="https://www.twitter.com/SagardoteGida" target="_blank"><img src="img/twitter.png" id="twit" /></a>
+                <a href="https://www.youtube.com/channel/UCoDkOZgVVDrDJSpgUptF5Gw/feed" target="_blank"><img src="img/youtube.png" id="yout" /></a>
+                <a href="https://plus.google.com/u/0/105399675361069810113/posts" target="_blank"><img src="img/google+.png" id="goog" /></a>
+                <a href="https://instagram.com/sagardotegida" target="_blank"><img src="img/instagram.png" id="inst" /></a>
             </div>
             <img src="img/info.png" id="info" />
             <div id="about">
@@ -222,248 +222,9 @@
         </nav>
 
 </body>
-
- <script type="text/javascript">
-
-    $(document).ready(function(){      
-    
-        $("#enviarT").click(function(mievento) {
-            $.ajax({
-                type: 'GET',
-                url: "http://localhost/Txotx/respuestaApiUsuarios.php",
-                dataType: "json",
-                success: function(data) {
-                    var datos ={
-                        user: data.user
-                    };
-                    
-                    //Compilamos el template:
-                    var source   = $("#entry-template2").html();
-                    var template = Handlebars.compile(source);    
-                    var user = template(datos);
-                    $("#contenido2").html(user);
-                }
-            });
-        });
-
-        $("#giputxi").click(function(){
-
-            document.location.href="zerrenda.php?probintzia=1";
-
-        });
-
-        $("#bizka").click(function(){
-           
-            document.location.href="zerrenda.php?probintzia=2";
-            
-        });
-
-        $("#nafar").click(function(){
-            
-            document.location.href="zerrenda.php?probintzia=3";
-            
-        });
-
-        $("#arab").click(function(){
-           
-            document.location.href="zerrenda.php?probintzia=4";
-          
-        });
-
-        $("#ipar").click(function(){
-           
-            document.location.href="zerrenda.php?probintzia=5";
-          
-        });
-        $("#bilaketa").click(function(){
-            var sagardotegia=$("#sagardotegia").val();
-            if(sagardotegia==""){
-               
-            }else if(sagardotegia=="Sagardotegia..."){
-
-            }else{
-                document.location.href="zerrendaSagardo.php?Sagardotegia="+sagardotegia;
-            }
-            
-        });
-
-    });
-
-</script>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_es.js "></script>
-    
-<script type="text/javascript">
-
-    $(document).ready(function(){
-
-        /* VALIDAR LOGIN */
-
-            /* VALIDAR LOGIN */
-        $("#butsartu").click(function(evento){
-            evento.preventDefault();
-            if($("#erabiltzaileaLog").val()=="" && $("#pasahitzaLog").val()==""){
-                $("#aviso").text("Ezin dira hutsik egon");
-            }else{
-                $("#aviso").load("login.php", {user: $("#erabiltzaileaLog").val(), pass: $("#pasahitzaLog").val()}, function(response){
-                    if(response==""){
-                        location.reload();
-                    }else if(response == " "){
-                        location.href="admin.php";
-                    }else{
-                        $("#aviso").text(response);
-                    }
-                });
-            }
-        });
-    
-/* CREAR NUMERO SECRETO RANDOM */
-    function randomgen()
-    {
-        var rannumber='';
-        for(ranNum=1; ranNum<=6; ranNum++){
-            rannumber+=Math.floor(Math.random()*10).toString();
-        }
-        $('#secret').text(rannumber);
-    }
-
-        if ($("#secret")) randomgen();
-        
-        $(".refresh").bind("click",function(e){ e.preventDefault();randomgen(); })
-        
-        $.validator.addMethod("antispam", function(antispam) 
-        {
-            if ( antispam==$("#secret").text() ) return true;
-        });
-  
-    });
-
-
-    /*  API PARA VALIDAR FORMULARIO DE REGISTRO  */
-
-        function iniciar(){
-          user=document.getElementById("erabiltzailea");
-          user.addEventListener("input", validacion, false);
-          pass=document.getElementById("pasahitza");
-          pass.addEventListener("input", validacion, false);  
-          izena=document.getElementById("izena");
-          izena.addEventListener("input", validacion, false);
-          abizena=document.getElementById("abizena");
-          abizena.addEventListener("input", validacion, false);
-          email=document.getElementById("email");
-          email.addEventListener("input", validacion, false);
-          kode=document.getElementById("kodea");
-          kode.addEventListener("input", validacion, false);
-          validacion();
-        }
-
-        function validacion(){
-        if(user.value==""){
-          user.setCustomValidity('Sartu erabiltzailea');
-          
-          }else{
-          user.setCustomValidity('');
-          
-        }
-
-        if(pass.value==""){
-          pass.setCustomValidity('Sartu pasahitza');
-          
-        }else if(pass.length < 6){
-            pass.setCustomValidity('Pasahitza motzegia da');
-           
-        }else{
-          pass.setCustomValidity('');       
-        }
-
-        if(email.value==""){
-          email.setCustomValidity('Sartu emaila');
-          
-          }else{
-          email.setCustomValidity('');
-        
-        }
-
-        if(izena.value==""){
-          izena.setCustomValidity('Sartu zure izena');
-          
-          }else if(izena.value.length < 3){
-            izena.setCustomValidity('Izena 3 karaktere edo gehiago eduki behar ditu');
-          }
-          else{
-          izena.setCustomValidity('');
-        }
-
-        if(abizena.value==""){
-          abizena.setCustomValidity('Sartu zure abizena');
-          }else if(abizena.value.length < 3){
-            abizena.setCustomValidity('Abizena 3 karaktere edo gehiago eduki behar ditu');
-          }else{
-          abizena.setCustomValidity('');
-        }
-
-        if(kode.value==""){
-          kode.setCustomValidity('Sartu ikusten duzun zenbakia');
-          }else{
-          kode.setCustomValidity('');
-        }
-
-        }
-
-        window.addEventListener("load", iniciar, false);
-
-    </script>
-
-    
-
-   <script type="text/javascript">
-
-        $(document).ready(function (){
-
-            document.getElementById("media-video").addEventListener("ended", function(){
-                $("#media-player").animate({"top": "50%"}, "slow");
-
-                $('#media-video').css({ 'width':'305px', 'height':'160px' });
-                $('#progress-bar').css({ 'width':'172px'});
-
-                $("#media-player").animate({"left": "145%"}, "slow");
-            },false);
-
-
-            $('#butPlay').click(function(){
-               
-                $("#media-player").animate({"left": "38%"}, "slow");
-                
-            }); 
-               
-            $('.play').click(function(){
-
-                $("#media-player").animate({"top": "20%"}, "slow");
-                $('#media-player').animate({"left": "25%"}, "slow");
-
-                $('#media-video').css({ 'width':'750px', 'height':'425px' });
-                $('#progress-bar').css({ 'width':'625px'});
-
-               // terminado();
-
-            });
-
-            $('.stop').click(function(){
-                
-                $("#media-player").animate({"top": "50%"}, "slow");
-
-                $('#media-video').css({ 'width':'305px', 'height':'160px' });
-                $('#progress-bar').css({ 'width':'172px'});
-
-                $("#media-player").animate({"left": "145%"}, "slow");
-
-            });
-
-        });
-
-    </script>
-
+    <script src="js/index.js"></script>
 <html>
