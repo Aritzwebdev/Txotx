@@ -29,19 +29,19 @@
         <div class="container">
             <div id='cssmenu' class="align-center">
 		<ul>
-            <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-   			<li class='active'><a href="#s"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
+            <li class="men"><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
+   			<li class="active"><a href="#s"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
       			<ul>
          			<li><a href="#" id="anadirSagardotegi"><img src="img/mas.png" class="imgMenu" />Gehitu</a></li>
          			<li><a href="#" id="borrarSagardotegi"><img src="img/menos.png" class="imgMenu" />Ezabatu</a></li>
       			</ul>
    			</li>
-		  	<li><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
-		  	<li><a href="#" id="borrarComentarios"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
+		  	<li class="men"><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
+		  	<li class="men"><a href="#" id="borrarComentarios"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
         <?php 
             if (isset($_SESSION["user"])){ 
         ?>   
-            <li>
+            <li class="men">
                 <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
             </li>
         <?php } ?>

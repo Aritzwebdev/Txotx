@@ -5,8 +5,9 @@
 	$pass=$_POST["pass"];
 
 	include 'conectar.php';
+	
 	$con=conectar();
-
+	
 	$sql="SELECT iderabiltzaileak ,erabiltzailea, pasahitza FROM erabiltzaileak WHERE erabiltzailea='".$user."';";
 	$result=mysqli_query($con, $sql);
 
