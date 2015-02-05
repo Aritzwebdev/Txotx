@@ -36,7 +36,7 @@
          			<li><a href="#" id="borrarSagardotegi"><img src="img/menos.png" class="imgMenu" />Ezabatu</a></li>
       			</ul>
    			</li>
-		  	<li class="men"><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
+		  	<li class="men1"><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
 		  	<li class="men"><a href="#" id="borrarComentarios"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
         <?php 
             if (isset($_SESSION["user"])){ 
