@@ -5,10 +5,10 @@
 		return $con;
 	}
 }else{*/
-	$server=getenv('OPENSHIFT_MYSQL_DB_HOST');
-	$db=getenv('OPENSHIFT_APP_NAME');
-	$user=getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-	$password=getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+	$server="127.608.2";
+	$db="txotx";
+	$user=;
+	$password=;
 	
 	function conectar(){
 		$con=mysqli_connect($server,$user,$password,$db) or die(mysqli_error());
