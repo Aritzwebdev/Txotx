@@ -102,3 +102,76 @@ body {
     font-size: 14px;
     text-decoration: none;
 }
+@media only screen and (max-width: 800px) {
+	
+	#logo{
+		position:absolute;
+		left:-25%;
+		top:5%;
+	}
+
+    #titulo{
+	    position: absolute;
+	    left: 25%;
+	    font-size: 35px;
+	    margin-bottom: 1%;
+	    color: black;
+	    text-align: center;
+
+	}
+
+	#registro{
+		position:absolute;
+		left:5%;
+		top:18%;
+		width:90%;
+	}
+	
+    #log{
+        position: absolute;
+        top: 25%;
+        left: 3%;     
+    }
+	
+   #datuak #izena{
+   	position:absolute;
+   	left:32%;
+   	top:92%;
+   }
+   
+   #datuak #lblIzena{
+   	position:absolute;
+   	left:1%;
+   	top:92%;   	
+   }
+   
+    #datuak #lblEmail{
+   	position:absolute;
+   	left:1%;
+   	top:120%;   	
+   }
+   
+   #datuak #email{
+   	position:absolute;
+   	left:32%;
+   	top:120%; 
+   }
+   
+   #datuak #butdatuak{
+   	position:absolute;
+   	left:15%;
+   	top:150%; 
+   }
+		
+	#pass{
+		position:absolute;
+		left:5%;
+	}	
+	
+	#iruzkinak{
+	width:50px;
+		position:absolute;
+		left:1%;
+	}
+	
+}
