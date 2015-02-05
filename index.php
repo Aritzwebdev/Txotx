@@ -67,7 +67,7 @@
 </head>
 <body>
 
-    <h1 id="titulo">SagardoteGidaaaa</h1>
+    <h1 id="titulo">SagardoteGida</h1>
 
     <!-- MENU --> 
 
