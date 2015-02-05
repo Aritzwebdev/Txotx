@@ -191,12 +191,12 @@
             </video>
             <div id='media-controls'>
                 <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
-                <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>   
-                <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
-                <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
-                <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
-                <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
-                <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>  
+                <button id='replay-button' class='replay' title='Berrikusi' onclick='replayMedia();'>Replay</button>   
+                <button id='play-pause-button' class='play' title='Abiarazi' onclick='togglePlayPause();'>Play</button>
+                <button id='stop-button' class='stop' title='Gelditu' onclick='stopPlayer();'>Stop</button>
+                <button id='volume-inc-button' class='volume-plus' title='Ahotsa igo' onclick='changeVolume("+");'>Increase volume</button>
+                <button id='volume-dec-button' class='volume-minus' title='Ahotsa jaitsi' onclick='changeVolume("-");'>Decrease volume</button>
+                <button id='mute-button' class='mute' title='Ahotsa kendu' onclick='toggleMute("true");'>Mute</button>  
                 <p id="start"></p>
             </div>
         </div>  

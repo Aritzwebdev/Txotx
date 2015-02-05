@@ -51,17 +51,6 @@
 				<li>|</li>
 				<li><a href="">es</a></li>
 			</ul>
-			<?php 
-                if (isset($_SESSION["user"])){ 
-                ?>
-			<ul id="top_headerDer">
-				<li><a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
-				<li>
-                    <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
-                </li>
-			</ul>
-			<?php } ?>
-
 		</header>
 
 		<div id="menu_txikia">
@@ -147,35 +136,35 @@
 								if(i < 10){
 									var newRow =
 									"<tr value='"+pueblo.Herria+"' class='tr'>"
-									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a> ("+pueblo.Kop+")</td>"
 									+"</tr>";
 									$(newRow).appendTo("#tablajson .taula1");
 
 								}else if(i >= 10 && i < 20){
 									var newRow =
 									"<tr value='"+pueblo.Herria+"' class='tr'>"
-									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a> ("+pueblo.Kop+")</td>"
 									+"</tr>";
 									$(newRow).appendTo("#tablajson .taula2");
 								
 								}else if(i >= 20 && i < 30){
 									var newRow =
 									"<tr value='"+pueblo.Herria+"' class='tr'>"
-									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a> ("+pueblo.Kop+")</td>"
 									+"</tr>";
 									$(newRow).appendTo("#tablajson .taula3");
 
 								}else if(i >= 30 && i < 40){
 									var newRow =
 									"<tr value='"+pueblo.Herria+"' class='tr'>"
-									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a> ("+pueblo.Kop+")</td>"
 									+"</tr>";
 									$(newRow).appendTo("#tablajson .taula4");
 								
 								}else{
 									var newRow =
 									"<tr value='"+pueblo.Herria+"' class='tr'>"
-									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a></td>"
+									+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+pueblo.Herria+"</a> ("+pueblo.Kop+")</td>"
 									+"</tr>";
 									$(newRow).appendTo("#tablajson .taula5");
 								}
