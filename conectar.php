@@ -5,10 +5,10 @@
 		return $con;
 	}
 }else{*/
-	$server="127.608.2";
+	$server="127.608.2:3306";
 	$db="txotx";
-	$user=;
-	$password=;
+	$user="adminRWvhzzZ";
+	$password="uzkjKSqYAIM5";
 	
 	function conectar(){
 		$con=mysqli_connect($server,$user,$password,$db) or die(mysqli_error());
