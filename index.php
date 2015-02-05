@@ -66,7 +66,7 @@
 </head>
 <body>
 
-    <h1 id="titulo">SagardoteGida</h1>
+    <h1 id="titulo">SagardoteGidaaaa</h1>
 
     <!-- MENU --> 
 
@@ -205,11 +205,11 @@
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
             <div id="redSocial"> 
-                <a href="http://www.facebook.com/sagardotegida"><img src="img/facebook.png" id="face" /></a>
-                <a href="https://www.twitter.com/SagardoteGida"><img src="img/twitter.png" id="twit" /></a>
-                <a href="https://www.youtube.com/channel/UCoDkOZgVVDrDJSpgUptF5Gw/feed"><img src="img/youtube.png" id="yout" /></a>
-                <a href="https://plus.google.com/u/0/105399675361069810113/posts"><img src="img/google+.png" id="goog" /></a>
-                <a href="https://instagram.com/sagardotegida"><img src="img/instagram.png" id="inst" /></a>
+                <a href="http://www.facebook.com/sagardotegida" target="_blank"><img src="img/facebook.png" id="face" /></a>
+                <a href="https://www.twitter.com/SagardoteGida" target="_blank"><img src="img/twitter.png" id="twit" /></a>
+                <a href="https://www.youtube.com/channel/UCoDkOZgVVDrDJSpgUptF5Gw/feed" target="_blank"><img src="img/youtube.png" id="yout" /></a>
+                <a href="https://plus.google.com/u/0/105399675361069810113/posts" target="_blank"><img src="img/google+.png" id="goog" /></a>
+                <a href="https://instagram.com/sagardotegida" target="_blank"><img src="img/instagram.png" id="inst" /></a>
             </div>
             <img src="img/info.png" id="info" />
             <div id="about">
