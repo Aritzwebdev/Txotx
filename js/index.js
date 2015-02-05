@@ -1,4 +1,16 @@
-$(document).ready(function(){      
+$(document).ready(function(){ 
+
+        $("#user").click(function(){
+          if($("#erabiltzaileaLog").val()=="Admin"){
+            location.href="admin.php";
+          }else{
+            location.href="perfil.php";
+          }
+        });     
+
+        $("#itxi").click(function(){
+          location.href="logout.php";
+        });
 
         $("#giputxi").click(function(){
 

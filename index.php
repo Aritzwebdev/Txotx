@@ -49,21 +49,7 @@
                     e.style.display = 'none';
                 
                 }
-                
-                function logout(){
-                    location.href="logout.php";
-                }
-
-                function perfil(user){
-                    if(user=="Admin"){
-                        location.href="admin.php";
-                    }else{
-                        location.href="perfil.php";
-                    }
-                }
-
         </script>
-
 </head>
 <body>
 
