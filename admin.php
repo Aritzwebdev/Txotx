@@ -69,13 +69,13 @@
                 <th>Email-a</th>
                 <th>Web-a</th>
                 <tr>
-                    <td><input type="text" name="izena" /></td>
-                    <td><input type="text" name="helbidea" /></td>
-                    <td><input type="text" name="herria" /></td>
-                    <td><input type="text" name="probintzia" /></td>
-                    <td><input type="text" name="telefonoa" /></td>
-                    <td><input type="text" name="email" /></td>
-                    <td><input type="text" name="web" /></td>
+                    <td><input type="text" name="izena" id="izena" required title="Sartu izena"></td>
+                    <td><input type="text" name="helbidea" id="helbidea" required title="Sartu helbidea"/></td>
+                    <td><input type="text" name="herria" id="herria" required title="Sartu herria" pattern="[0-9]+" oninvalid="setCustomValidity('zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}"></td>
+                    <td><input type="text" name="probintzia" id="probintzia" required title="Sartu probintzia" pattern="[0-9]+" oninvalid="setCustomValidity('zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}" /></td>
+                    <td><input type="text" name="telefonoa" id="telefonoa" required title="Sartu telefonoa" pattern="[0-9]+" oninvalid="setCustomValidity('zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}" /></td>
+                    <td><input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('Formatu desegokia ')" onchange="try{setCustomValidity('')}catch(e){}" required></td>
+                    <td><input type="text" name="web" required/></td>
                 </tr>
             </table>
             <input type="submit" id="bidali" name="anadirSagardotegi" value="Bidali"/>
