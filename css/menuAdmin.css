@@ -14,8 +14,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-radius:10px;
-  background: rgba(0,0,0,0.9);
+  border-radius:5px;
+  background: rgba(0,0,0,0.5);
+  z-index: 5;
 }
 #cssmenu:after,
 #cssmenu > ul:after {
@@ -30,9 +31,10 @@
   display: none;
 }
 #cssmenu {
-  width: auto;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 5px;
   font-family: 'Open Sans', Helvetica, sans-serif;
+  color: white;
 }
 #cssmenu.align-center > ul {
   font-size: 0;
@@ -60,7 +62,7 @@
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
   font-weight: 700;
   text-decoration: none;
   -webkit-transition: color .2s ease;
@@ -72,7 +74,7 @@
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover,
 #cssmenu > ul > li.active > a {
-  color: #cae5fd;
+  color: white;
 }
 #cssmenu > ul > li.has-sub > a {
   padding-right: 40px;
@@ -86,7 +88,7 @@
   width: 18px;
   height: 18px;
   border-radius: 9px;
-  background: #008000;
+  background: green;
   background-size: 36px 36px;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -157,7 +159,7 @@
   padding: 12px 25px;
   font-size: 13px;
   font-weight: 700;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
   color: #ffffff;
   text-decoration: none;
   -webkit-transition: color .2s ease;
@@ -169,7 +171,7 @@
 #cssmenu ul ul li:hover > a,
 #cssmenu ul ul li > a:hover,
 #cssmenu ul ul li.active > a {
-  color: #cae5fd;
+  color: green;
 }
 #cssmenu ul ul li:first-child > a {
   border-top-left-radius: 5px;
@@ -203,6 +205,14 @@
   top: 15.5px;
   right: auto;
   left: 16px;
+}
+
+.imgMenu{
+    float: left;
+    list-style: none outside none;
+    margin-top: -9px;
+    margin-right: 5px;
+    padding: 0;
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
@@ -281,7 +291,7 @@
     display: block;
     width: 53px;
     height: 53px;
-    border-left: 1px solid rgba(120, 120, 120, 0.2);
+    border-left: 1px solid rgba(120, 120, 120, 0.5);
     z-index: 10;
     cursor: pointer;
   }
@@ -335,4 +345,5 @@
   #cssmenu .submenu-button.submenu-opened:before {
     border-top-color: #19799f;
   }
+
 }

@@ -9,14 +9,15 @@
         <meta charset="utf-8" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
         <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+        
         <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
 
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/index.css" />
 
         <link href='css/media-player.css' rel='stylesheet' />
-        <script src='js/media-player.js'></script>  
-        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>      
+        <script src='js/media-player.js'></script>       
 
         <script type="text/javascript"> 
 
@@ -310,6 +311,8 @@
                 $("#aviso").load("login.php", {user: $("#erabiltzaileaLog").val(), pass: $("#pasahitzaLog").val()}, function(response){
                     if(response==""){
                         location.reload();
+                    }else if(response == " "){
+                        location.href="admin.php";
                     }else{
                         $("#aviso").text(response);
                     }

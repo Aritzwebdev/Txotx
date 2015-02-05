@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
        	<meta content="width=device-width, height=device-height, initial-scale=1.0" name="viewport" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
         <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
@@ -12,12 +12,15 @@
    		<script src="js/menuAdmin.js"></script>
 		<script type="text/javascript" src="js/admin.js"></script>
 		
+        <link rel="stylesheet" href="css/menu.css" />
         <link rel="stylesheet" href="css/menuAdmin.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/tabla.css" />
         <link rel="stylesheet" href="css/admin.css" />
+
 </head>
 <body>
 
+    <img id="logo" src="img/logo.png" />
     <h1 id="titulo">SagardoteGida</h1>
 
     <!-- MENU --> 
@@ -26,57 +29,58 @@
         <div class="container">
             <div id='cssmenu' class="align-center">
 		<ul>
-   			<li class='active'><a href="#s">Sagardotegiak</a>
+            <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
+   			<li class='active'><a href="#s"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
       			<ul>
-         			<li><a href="#" id="anadirSagardotegi">Gehitu</a></li>
-         			<li><a href="#" id="borrarSagardotegi">Ezabatu</a></li>
+         			<li><a href="#" id="anadirSagardotegi"><img src="img/mas.png" class="imgMenu" />Gehitu</a></li>
+         			<li><a href="#" id="borrarSagardotegi"><img src="img/menos.png" class="imgMenu" />Ezabatu</a></li>
       			</ul>
    			</li>
-		  	<li><a href="#" id="borrarUsuarios">Erabiltzaileak</a></li>
-		  	<li><a href="#" id="borrarComentarios">Iruzkinak</a></li>
+		  	<li><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
+		  	<li><a href="#" id="borrarComentarios"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
+        <?php 
+            if (isset($_SESSION["user"])){ 
+        ?>   
+            <li>
+                <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
+            </li>
+        <?php } ?>
 		</ul>
 	</div>
         </div>
     </header>
 
 <!-- WEB -->
-        <img id="fondo" src="img/txotx.jpg" alt="background" href="#"/>
+        <img id="fondo" src="img/slide.jpg" alt="background" href="#"/>
            
         <div id="borrar">  
         	<?php include 'tablaSagardotegis.php';?>
         </div> 
         
         <div id="anadir">
-           <form class="form-4" action="anadirSagardotegi.php" method="post" >
-                    <div>
-                        <label for="izena" style="padding: 10px 0px 2px 0px;"><font color="white">Izena</font></label>
-                        <input type="text" name="izena" id="izena" required title="Sartu sagardotegiaren izena">
-                    </div>
-                    <div>
-                        <label for="herria" style="padding: 15px 0px 2px 0px;"><font color="white">Herria</font></label>
-                        <input type="text" name="herria" id="herria" required title="Sartu herria" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
-                    </div>
-                    <div>
-                        <label for ="deskribapena" style="padding: 15px 0px 2px 0px;"><font color="white">Deskribapena</font></label>
-                        <input type="text" name="deskribapena" id="deskribapena" required title="Sartu deskribapena">
-                    </div>
-                    <div>
-                        <label for="probintzia" style="padding: 15px 0px 2px 0px;"><font color="white">Probintzia</font></label>
-                        <input type="text" name="probintzia" id="probintzia" required title="Sartu probintzia" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Ezin dira zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}">
-                    </div>
-                    <div>
-                        <label for="telefonoa" style="padding: 15px 0px 2px 0px;"><font color="white">Telefonoa</font></label>
-                        <input type="text" name="telefonoa" id="telefonoa" required title="Sartu Telefonoa" pattern="[0-9]{9}" oninvalid="setCustomValidity('Zenbakiak bakarrik(9 zenbaki)')" onchange="try{setCustomValidity('')}catch(e){}">
-                    </div>
-                    <div>
-                        <label for="email" style="padding: 15px 0px 2px 0px;"><font color="white">Emaila</font></label>
-                        <input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('Formatu desegokia ')" onchange="try{setCustomValidity('')}catch(e){}" required>
-                    </div>
-                    <div class="submit">
-                        <input type="submit" name="anadirSagardotegi" value="Gehitu">
-                    </div>                
-            </form>
-        </div> 
+
+        <form class="agregarSagardotegis" action="anadirSagardotegi.php" method="post" >
+            <table>
+                <th>Izena</th>
+                <th>Helbidea</th>
+                <th>Herria</th>
+                <th>Probintzia</th>
+                <th>Telefonoa</th>
+                <th>Email-a</th>
+                <th>Web-a</th>
+                <tr>
+                    <td><input type="text" name="izena" id="izena" required title="Sartu izena"></td>
+                    <td><input type="text" name="helbidea" id="helbidea" required title="Sartu helbidea"/></td>
+                    <td><input type="text" name="herria" id="herria" required title="Sartu herria" pattern="[0-9]+" oninvalid="setCustomValidity('zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}"></td>
+                    <td><input type="text" name="probintzia" id="probintzia" required title="Sartu probintzia" pattern="[0-9]+" oninvalid="setCustomValidity('zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}" /></td>
+                    <td><input type="text" name="telefonoa" id="telefonoa" required title="Sartu telefonoa" pattern="[0-9]+" oninvalid="setCustomValidity('zenbakiak sartu ')" onchange="try{setCustomValidity('')}catch(e){}" /></td>
+                    <td><input type="text" name="email" id="email" class="required email" title="aaa@bbb.com" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('Formatu desegokia ')" onchange="try{setCustomValidity('')}catch(e){}" required></td>
+                    <td><input type="text" name="web" required/></td>
+                </tr>
+            </table>
+            <input type="submit" id="bidali" name="anadirSagardotegi" value="Bidali"/>
+        </form>
+    </div>
         
         <div id="usuarios">
         	<?php include 'tablaErabiltzaileak.php';?>
@@ -86,6 +90,7 @@
         	<?php include 'tablaIruzkinak.php';?>
         </div>
         
+        <img id="log" src="img/logo.png"/>
         <div id="subtitulo"><h2>Panel Administrador</h2></div>
        
         <footer id="footer">

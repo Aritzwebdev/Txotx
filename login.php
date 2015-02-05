@@ -21,6 +21,7 @@
 	//$row=mysql_fetch_array($result);
 		if($user=="Admin" && $pasahitz==$row['pasahitza']){
 			$_SESSION["user"]="Admin";
+			echo " ";
 		}else{
 			if($row['erabiltzailea']==$user && $row['pasahitza']==$pasahitz){
 				$_SESSION["user"]=$user;

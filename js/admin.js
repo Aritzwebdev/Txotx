@@ -1,4 +1,4 @@
-function logout(){
+				function logout(){
                     location.href="logout.php";
                 }
 
@@ -54,8 +54,8 @@ function logout(){
                 	izena.addEventListener("input", validacion, false);
                 	herria=document.getElementById("herria");
                 	herria.addEventListener("input", validacion, false);
-                	deskribapena=document.getElementById("deskribapena");
-                	deskribapena.addEventListener("input", validacion, false);   
+                	helbidea=document.getElementById("helbidea");
+                	helbidea.addEventListener("input", validacion, false);   
                		probintzia=document.getElementById("probintzia");
                 	probintzia.addEventListener("input", validacion, false);
                  	email=document.getElementById("email");
@@ -83,10 +83,10 @@ function logout(){
         	        }
 
         	    	//validacion deskribapena
-        	        if(deskribapena.value==""){
-        	        	deskribapena.setCustomValidity('Sartu deskribapena');  
+        	        if(helbidea.value==""){
+        	        	helbidea.setCustomValidity('Sartu helbidea');  
         	        }else{
-        	        	deskribapena.setCustomValidity(''); 
+        	        	helbidea.setCustomValidity(''); 
         	        }
 
         	    	//validacion probintzia
@@ -98,7 +98,7 @@ function logout(){
 
         	    	//validacion email
         	        if (email.value==""){
-        	        	email.setCustomValidity('Sartu probintzia');
+        	        	email.setCustomValidity('Sartu email');
         	        }else{
         	        	email.setCustomValidity('');
         	        }
