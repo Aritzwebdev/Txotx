@@ -184,7 +184,7 @@ $result=mysqli_query($con, $sql);
 				</tr>
 			</thead>
 			<tbody>
-				<?php 
+	<?php 
 	include_once 'conectar.php';
 	$conexion=conectar();
 	// Seleccionar todos los registros 

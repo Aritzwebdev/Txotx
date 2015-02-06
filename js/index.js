@@ -129,6 +129,36 @@ $(document).ready(function(){
 
 });
 
+        
+function autoLog(id) {
+                    var e = document.getElementById(id);
+                    if(e.style.display == 'block'){
+                        e.style.display = 'none';
+                    }
+                    else{
+                        e.style.display = 'block';
+                        document.getElementById('erabiltzaileaLog') .focus();
+                    }
+                }
+
+                function autoKont(id) {
+                    var e = document.getElementById(id);
+                    if(e.style.display == 'block'){
+                        e.style.display = 'none';
+                    }
+                    else{
+                        e.style.display = 'block';
+                        document.getElementById('erabiltzailea').focus();
+                    }
+                }
+
+                function kendu(id) {
+                    var e = document.getElementById(id);
+                
+                    e.style.display = 'none';
+                
+                }
+
         function iniciar(){
           user=document.getElementById("erabiltzailea");
           user.addEventListener("input", validacion, false);

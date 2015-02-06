@@ -12,6 +12,7 @@
         <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
         
         <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
+        <script src="js/index.js"></script>
 
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/index.css" />
@@ -19,37 +20,6 @@
         <link href='css/media-player.css' rel='stylesheet' />
         <script src='js/media-player.js'></script>       
 
-        <script type="text/javascript"> 
-
-                function autoLog(id) {
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block'){
-                        e.style.display = 'none';
-                    }
-                    else{
-                        e.style.display = 'block';
-                        document.getElementById('erabiltzaileaLog') .focus();
-                    }
-                }
-
-                function autoKont(id) {
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block'){
-                        e.style.display = 'none';
-                    }
-                    else{
-                        e.style.display = 'block';
-                        document.getElementById('erabiltzailea').focus();
-                    }
-                }
-
-                function kendu(id) {
-                    var e = document.getElementById(id);
-                
-                    e.style.display = 'none';
-                
-                }
-        </script>
 </head>
 <body>
 
@@ -84,10 +54,10 @@
                 <?php }
                     else{ ?>    
                     <li>
-                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
-                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
+                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" >Saioa itxi</a>
                     </li>
                 <?php } ?>
             </ul>
@@ -212,5 +182,4 @@
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_es.js "></script>
-    <script src="js/index.js"></script>
 <html>

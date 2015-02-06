@@ -27,26 +27,12 @@
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
 	<!-- bxSlider Javascript file -->
 	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/herria.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/bilatu.css"/>
-
-	<script type="text/javascript">
-		function logout(){
-                location.href="logout.php";
-        }
-
-        function perfil(user){
-            if(user=="Admin"){
-                location.href="admin.php";
-            }else{
-                location.href="perfil.php";
-            }
-        }
-	</script>
-
 </head>
 <body>
 	<div class="foo">
@@ -93,38 +79,12 @@
 					<tbody class="taula"></tbody>
 				</table>
 			<div>
-				<script type="text/javascript">
-
-				$(document).ready(function(){
-					var url="listaSidrerias.php";
-					$("#tablajson tbody").html("");
-					
-					$.getJSON(url,function(sidrerias){
-						$.each(sidrerias, function(i,sidreria){
-							var newRow =
-							"<tr value='"+sidreria.Sagardotegia+"' class='tr'>"
-							+"<td>"+ parseInt(i+1) +"<td><a href='#'>"+sidreria.Sagardotegia+"</a></td>"
-							+"</tr>";
-							$(newRow).appendTo("#tablajson tbody");
-						});
-					});
-				});
-
-				</script>
+				
 	 
 	        </section>
 		</div>
 	</div>
 </body>
-<script type="text/javascript">
-		$(".table").on('click','.tr',function(e){
-			e.preventDefault();
-			var sagardotegia=$(this).attr('value');
-
-			location.href="zerrendaSagardo.php?Sagardotegia="+sagardotegia;
-		});
-</script>
-
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.backstretch.js"></script>
 	
