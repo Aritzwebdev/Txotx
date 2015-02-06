@@ -87,6 +87,7 @@ body {
     z-index: 2;
 }
 #registro a{
+    margin-left: -50%;
 	color: white;
 	
 }
@@ -104,6 +105,7 @@ body {
 	left: 67%;
 	top: 5%;
 	display: none;
+    z-index: 5;
 }
 
 input:invalid {

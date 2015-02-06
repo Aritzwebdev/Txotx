@@ -17,39 +17,8 @@
         <link rel="stylesheet" href="css/index.css" />
 
         <link href='css/media-player.css' rel='stylesheet' />
-        <script src='js/media-player.js'></script>       
+        <script src='js/media-player.js'></script>      
 
-        <script type="text/javascript"> 
-
-                function autoLog(id) {
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block'){
-                        e.style.display = 'none';
-                    }
-                    else{
-                        e.style.display = 'block';
-                        document.getElementById('erabiltzaileaLog') .focus();
-                    }
-                }
-
-                function autoKont(id) {
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block'){
-                        e.style.display = 'none';
-                    }
-                    else{
-                        e.style.display = 'block';
-                        document.getElementById('erabiltzailea').focus();
-                    }
-                }
-
-                function kendu(id) {
-                    var e = document.getElementById(id);
-                
-                    e.style.display = 'none';
-                
-                }
-        </script>
 </head>
 <body>
 
@@ -62,8 +31,8 @@
         <div class="container">
         
             <ul id="nav">
-                <li><img src="img/inicio.png" class="imgMenu" /><a href="index.php">Hasiera</a></li>
-                <li><img src="img/logoIcon.png" class="imgMenu" /><a href="#s1">Sagardotegiak</a>
+                <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
+                <li><a href="#s1"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
                         <li><a href="#" id="arab">Araba<img id="araba" src="img/araba.png" /></a></li>
@@ -76,19 +45,19 @@
                 <?php 
                     if (!isset($_SESSION["user"])){ 
                 ?>
-                    <li>
-                       <img src="img/login.png" class="imgMenu" /><a id="sartu" href="#" onclick="autoLog('log'); kendu('reg')">Saioa hasi</a>
+                    <li id="hasi">
+                       <a id="sartu" href="#" onclick="autoLog('log'); kendu('reg')"><img src="img/login.png" class="imgMenu" />Saioa hasi</a>
                     </li> 
-                    <li>
-                       <img src="img/addUsuario.png" class="imgMenu"/><a id="regis" href="#" onclick="autoKont('reg'); kendu('log')">Kontua sortu</a>
+                    <li id="sortu">
+                       <a id="regis" href="#" onclick="autoKont('reg'); kendu('log')"><img src="img/addUsuario.png" class="imgMenu"/>Kontua sortu</a>
                     </li>                 
                 <?php }
                     else{ ?>    
                     <li>
-                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');">Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                       <a id="user" href="#" onclick="perfil('<?php echo $_SESSION["user"]; ?>');"><img src="img/usuario.png" class="imgMenu" />Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
                     <li>
-                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" onclick="logout();">Saioa itxi</a>
+                        <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
                     </li>
                 <?php } ?>
             </ul>
@@ -105,8 +74,8 @@
 
 <!-- WEB -->
         <img id="fondo" src="img/slide.jpg" alt="background" href="#"/>
-        <div id="reg">              
-            <form class="form-3" action="registro.php" method="post" >
+        <div id="reg" onfocusout="kendu('reg')">              
+            <form class="form-3" action="registro.php" method="post">
                     <div>
                         <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
                         <input type="text" name="erabiltzailea" id="erabiltzailea" required title="Sartu erabiltzaile izena">
@@ -136,7 +105,7 @@
                     </div>                
             </form>
         </div>  
-        <div id="log">              
+        <div id="log" onfocusout="kendu('log')">              
             <form class="form-4" action="" method="post"> 
                    
                 <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
@@ -155,7 +124,7 @@
         <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
         <div id="bilatu">
             <form class="bilatzailea" >
-                 <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" onclick="kendu('log'); kendu('reg');" />
+                 <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" />
                 
                  <input class="bilaketaBotoia" id="bilaketa" type="button" value="Bilatu" />
             </form>
@@ -172,7 +141,7 @@
 
         </div>
 
-        <div id='media-player'>
+        <div id='media-player' onfocusout="stop(); stopPlayer();">
             <video id='media-video' controls>
                 <source src='https://dl.dropboxusercontent.com/u/31412543/VID-20150119-WA0005.mp4' type='video/mp4'>
             </video>
@@ -188,7 +157,7 @@
             </div>
         </div>  
        
-        <footer id="footer" onclick="kendu('log'); kendu('reg');">
+        <footer id="footer">
 
             <img src="img/copyleft.png" id="copyleft" />
             <div id="autores" title="Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015">
@@ -225,4 +194,4 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_es.js "></script>
     <script src="js/index.js"></script>
-<html>
+</html>
