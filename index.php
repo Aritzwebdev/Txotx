@@ -113,7 +113,7 @@
                     </div>                
             </form>
         </div>  
-        <div id="log">              
+        <div id="log" onfocusout="kendu('log')">              
             <form class="form-4" action="" method="post"> 
                    
                 <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
@@ -130,7 +130,7 @@
         </div>
 
         <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
-        <div id="bilatu" onclick="kendu('log'); kendu('reg');">
+        <div id="bilatu">
             <form class="bilatzailea" >
                  <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" />
                 
@@ -143,7 +143,7 @@
 
         <h1 id="iniTxotx">TXOTX 2015, denboraldiaren hasiera!!</h1>
         
-        <div id="btnPlay" onclick="kendu('log'); kendu('reg');">
+        <div id="btnPlay">
             
             <a href="#" id="butPlay"><img src="img/logoPlay.png" /></a>
 

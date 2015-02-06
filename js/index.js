@@ -98,8 +98,10 @@ $(document).ready(function(){
             },false);
 
 
-            $('#butPlay').click(function(){
+            $('#butPlay').click(function(e){
                
+                e.preventDefault();
+
                 if(e.style.display == 'block'){
                   $("#media-player").animate({"top": "50%"}, "slow");
 
@@ -112,8 +114,7 @@ $(document).ready(function(){
                 }else{
                   $("#media-player").animate({"left": "38%"}, "slow");
                 }
-                
-                
+                      
             }); 
                
             $('.play').click(function(){
