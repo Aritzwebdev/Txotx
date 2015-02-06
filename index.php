@@ -35,14 +35,14 @@
         
             <ul id="nav">
                 <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-                <li><a href="#s1"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
+                <li><a id="sidres" href="#s1"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
-                        <li><a href="#" id="arab">Araba</br><img id="araba" src="img/araba.png" /></a></li>
-                        <li><a href="#" id="bizka">Bizkaia</br><img id="bizkaia" src="img/bizkaia.png" /></a></li>
-                        <li><a href="#" id="giputxi">Gipuzkoa</br><img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
-                        <li><a href="#" id="nafar">Nafarroa</br><img id="nafarroa" src="img/nafarroa.png" /></a></li>
-                        <li><a href="#" id="ipar">Iparralde</br><img id="iparralde" src="img/iparralde.png" /></a></li>
+                        <li><a href="#" id="arab">Araba</br><img class="imgSub" src="img/araba.png" /></a></li>
+                        <li><a href="#" id="bizka">Bizkaia</br><img class="imgSub" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#" id="giputxi">Gipuzkoa</br><img class="imgSub" src="img/gipuzkoa.png" /></a></li>
+                        <li><a href="#" id="nafar">Nafarroa</br><img class="imgSub" src="img/nafarroa.png" /></a></li>
+                        <li><a href="#" id="ipar">Iparralde</br><img class="imgSub" src="img/iparralde.png" /></a></li>
                     </ul>
                 </li>
                 <?php 
@@ -82,7 +82,7 @@
 
 <!-- WEB -->
         <img id="fondo" src="img/slide.jpg" alt="background" href="#"/>
-        <div id="reg" onfocusout="kendu('reg')">              
+        <div id="reg">              
             <form class="form-3" action="registro.php" method="post">
                     <div>
                         <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
@@ -108,12 +108,12 @@
                         <label for="kodea" style="padding: 15px 0px 2px 0px;"><font color="white">Kode sekretua idatzi: <span id="secret"></span> (<a href="#" class="refresh">aldatu</a>)</font></label>
                         <input type="text" name="kodea" id="kodea" required class="required antispam" maxlength="6" minlength="6" title="Sartu ikusten duzun kodea">
                     </div>
-                    <div class="submit">
+                    <div class="submit" onfocusout="kendu('reg');">
                         <input type="submit" value="Erregistratu">
                     </div>                
             </form>
         </div>  
-        <div id="log" onfocusout="kendu('log')">              
+        <div id="log">              
             <form class="form-4" action="" method="post"> 
                    
                 <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
@@ -130,7 +130,7 @@
         </div>
 
         <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
-        <div id="bilatu">
+        <div id="bilatu" onclick="kendu('log'); kendu('reg');">
             <form class="bilatzailea" >
                  <input class="bilaketa" id="sagardotegia" name="sagardotegia" type="text" value="Sagardotegia..." onfocus="if (this.value == 'Sagardotegia...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Sagardotegia...';}" results="5" autocomplete="on" />
                 
@@ -143,7 +143,7 @@
 
         <h1 id="iniTxotx">TXOTX 2015, denboraldiaren hasiera!!</h1>
         
-        <div id="btnPlay">
+        <div id="btnPlay" onclick="kendu('log'); kendu('reg');">
             
             <a href="#" id="butPlay"><img src="img/logoPlay.png" /></a>
 
@@ -165,7 +165,7 @@
             </div>
         </div>  
        
-        <footer id="footer">
+        <footer id="footer" onclick="kendu('log'); kendu('reg');">
 
             <img src="img/copyleft.png" id="copyleft" />
             <div id="autores" title="Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015">

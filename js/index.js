@@ -140,14 +140,34 @@ $(document).ready(function(){
             });
 
             window.addEventListener('resize', function(){
-                    if($(window).width() <= 800){
-                        $("#autores").text("Copyleft");
-                    }else{
-                        $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
-                    }
-                });
+                if($(window).width() <= 800){
+                  $("#autores").text("Copyleft");
+                }else{
+                  $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
+                }
+            });
+
+
+            $('#sidres').click(function(){
+
+                if ($('#nav ul.subs').is (':visible') && $('#nav ul.subs').parents (':hidden').length == 0){
+                  
+                  $('#nav ul.subs').hide('slow');
+                  $("#nav ul.subs").css({"display": "block"});
+                  $("#nav #hasi").css({"margin-top": "0%"}, "slow");
+
+                }else{
+                  
+                  $("#nav #hasi").css({"margin-top": "53%"}, "slow");
+                  $('#nav ul.subs').show('slow');
+                  $("#nav ul.subs").css({"display": "none"});
+
+                }
+
+            });
 
 });
+        
         function stop(){
             $("#media-player").animate({"top": "50%"}, "slow");
 
@@ -155,61 +175,64 @@ $(document).ready(function(){
             $('#progress-bar').css({ 'width':'172px'});
 
             $("#media-player").animate({"left": "145%"}, "slow");
-        }        
-function autoLog(id) {
+        }  
 
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block'){
-                        e.style.display = 'none';
-                    }
-                    else{
+        function autoLog(id) {
 
-                        if($(window).width() <= 800){
-                            $("#sortu").animate({"top": "50%"}, "slow");
-                            $('#log').animate({ "top":"30%", "left":"15%" }, "slow");
-                            e.style.display = 'block';
-                            document.getElementById('erabiltzaileaLog') .focus();
-                        }else{
-                            $('#log').animate({ "top":"5%", "left":"67%" }, "slow");
-                            e.style.display = 'block';
-                            document.getElementById('erabiltzaileaLog') .focus();
-                        }
+            var e = document.getElementById(id);
+         
+            if(e.style.display == 'block'){
+              e.style.display = 'none';
+            
+            }else{
 
-                        e.style.display = 'block';
-                        document.getElementById('erabiltzaileaLog') .focus();
+              if($(window).width() <= 800){
+                $("#sortu").animate({"top": "50%"}, "slow");
+                $('#log').animate({ "top":"30%", "left":"15%" }, "slow");
+                e.style.display = 'block';
+                document.getElementById('erabiltzaileaLog') .focus();
+              }else{
+                $('#log').animate({ "top":"5%", "left":"67%" }, "slow");
+                e.style.display = 'block';
+                document.getElementById('erabiltzaileaLog') .focus();
+              }
 
-                    }
-                }
+              e.style.display = 'block';
+              document.getElementById('erabiltzaileaLog') .focus();
 
-                function autoKont(id) {
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block'){
-                        e.style.display = 'none';
-                    }
-                    else{
+            }
+        }
 
-                        if($(window).width() <= 800){
-                            $("#sortu").animate({"top": "50%"}, "slow");
-                            $('#reg').animate({ "top":"5%", "left":"27.5%" }, "slow");
-                            e.style.display = 'block';
-                            document.getElementById('erabiltzailea') .focus();
-                        }else{
-                            $('#reg').animate({ "top":"5%", "left":"67%" }, "slow");
-                            e.style.display = 'block';
-                            document.getElementById('erabiltzailea') .focus();
-                        }
-                        e.style.display = 'block';
-                        document.getElementById('erabiltzailea').focus();
+        function autoKont(id) {
+          var e = document.getElementById(id);
+          if(e.style.display == 'block'){
+            e.style.display = 'none';
+          
+          }else{
 
-                    }
-                }
+            if($(window).width() <= 800){
+              $("#sortu").animate({"top": "50%"}, "slow");
+              $('#reg').animate({ "top":"5%", "left":"27.5%" }, "slow");
+              e.style.display = 'block';
+              document.getElementById('erabiltzailea') .focus();
+            }else{
+              $('#reg').animate({ "top":"5%", "left":"67%" }, "slow");
+              e.style.display = 'block';
+              document.getElementById('erabiltzailea') .focus();
+            }
+            
+            e.style.display = 'block';
+            document.getElementById('erabiltzailea').focus();
 
-                function kendu(id) {
-                    var e = document.getElementById(id);
+          }
+        }
+
+        function kendu(id) {
+          var e = document.getElementById(id);
                 
-                    e.style.display = 'none';
+          e.style.display = 'none';
                 
-                }
+        }
 
 
         /* API PARA VALIDACIONES CLIENTE */        

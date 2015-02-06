@@ -52,6 +52,12 @@ body {
     z-index: -1;
     font: 1.2em 'Ubuntu';
 }
+
+.imgSub{
+    margin-top: 5%;
+    margin-left: -7%;
+}
+
 #hizkuntzak li{
     font-family: 'Ubuntu', 'Lato', sans-serif;
     font-style: italic;
@@ -465,6 +471,40 @@ a{
         top: 50%;
         left: 5%;
         font-size: 10px;
+    }
+
+    .imgSub{
+        display: none;
+    }
+
+    #arab{
+        position: absolute;
+        top: 10%;
+        left: 60%;
+    }
+
+    #bizka{
+        position: absolute;
+        top: 25%;
+        left: 60%;
+    }
+
+    #giputxi{
+        position: absolute;
+        top: 40%;
+        left: 60%;
+    }
+
+    #nafar{
+        position: absolute;
+        top: 55%;
+        left: 60%;
+    }
+
+    #ipar{
+        position: absolute;
+        top: 70%;
+        left: 60%;
     }
 
     #hizkuntzak{
