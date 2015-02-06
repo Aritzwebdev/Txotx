@@ -396,6 +396,12 @@ border: 1px solid green;
     z-index: -1;
 }
 
+#copyleft{
+    float: left;
+    padding-top: 3px;
+    padding-left: 5px;
+}
+
 #autores{
     float: left;
     padding-left: 10px;
@@ -411,7 +417,7 @@ border: 1px solid green;
 #info{
     width: 20px;
     height: 20px;
-    margin-left: 460px;
+    margin-left: 450px;
 }
 
 #face,
@@ -427,3 +433,76 @@ border: 1px solid green;
 a{
     text-decoration: none;
 }
+
+
+/* RESPONSIVE */
+@media only screen and (max-width: 800px) {
+
+    #registro{
+        position: absolute;
+        left: -20%;
+        background: none;
+    }
+
+    #logo{
+        position: absolute;
+        top: 2%;
+        left: 8%;
+        width: 50px;
+        height: 50px;
+    }
+
+    #titulo{
+        position: absolute;
+        left: 22%;
+        font-size: 45px;
+    }
+
+    #subtitulo{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        font-size: 10px;
+    }
+
+    #hizkuntzak{
+        position: absolute;
+        top: 30%;
+        left: 88%;
+    }
+
+    #bilatu{
+        position: absolute;
+        top: 55%;
+        left: 20%;
+    }
+
+    #iniTxotx{
+        position: absolute;
+        left: 16%;
+        z-index: -1;
+    }
+
+    #btnPlay{
+        position: absolute;
+        top: 65%;
+        left: 30%;
+        width: 125px;
+        height: 125px;
+        z-index: -1;
+    }
+
+    #redSocial{
+        float: left;
+        padding-left: 45px;
+    }
+
+    #info{
+        width: 20px;
+        height: 20px;
+        margin-left: 45px;
+    }
+
+
+
+}    

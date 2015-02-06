@@ -373,7 +373,7 @@ a{
 
     #log{
         position: absolute;
-        top: 64%;
+        top: 80%;
         left: 22%;
         z-index: -1;
     }
@@ -381,7 +381,7 @@ a{
     #subtitulo{
 	    margin: auto;
 	    position: absolute;
-	    top: 68%;
+	    top: 85%;
 	    left: 30%;
 	    color: white;
 	    z-index: -1;
@@ -391,7 +391,7 @@ a{
 	
 	#registro{
 		position: absolute;
-        left: -7%;
+        
 	    top: -2%;
 	}
 		

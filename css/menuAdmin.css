@@ -21,13 +21,17 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-radius:5px;
+  border-radius:10px;
   background: rgba(0,0,0,0.5);
   z-index: 5;
 }
 
 #cssmenu ul .men,
 #cssmenu ul li a{
+  background: none;
+}
+
+#cssmenu ul li.men1{
   background: none;
 }
 
@@ -39,7 +43,7 @@
 
 #cssmenu .active ul li{
   margin-top: 1px;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.5);
 }
 
 #cssmenu:after,
@@ -269,6 +273,28 @@
     width: 100%;
    
   }
+
+#cssmenu ul .men,
+#cssmenu ul li{
+  margin: 1px;
+  background: rgba(0,0,0,0.5);
+}
+
+#cssmenu .active ul{
+  margin-top: 1px;
+  background: none;
+}
+
+#cssmenu .active ul li{
+  margin-bottom: 1px;
+  background: rgba(0,0,0,0.5);
+}
+
+#cssmenu ul li.men1{
+  margin-top: 26px;
+  background: rgba(0,0,0,0.5);
+}
+
   #cssmenu > ul > li > a,
   #cssmenu ul ul li a,
   #cssmenu ul ul li:first-child > a,
