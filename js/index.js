@@ -139,8 +139,15 @@ $(document).ready(function(){
 
             });
 
-});
+            window.addEventListener('resize', function(){
+                    if($(window).width() <= 800){
+                        $("#autores").text("Copyleft");
+                    }else{
+                        $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
+                    }
+                });
 
+});
         function stop(){
             $("#media-player").animate({"top": "50%"}, "slow");
 
@@ -148,14 +155,15 @@ $(document).ready(function(){
             $('#progress-bar').css({ 'width':'172px'});
 
             $("#media-player").animate({"left": "145%"}, "slow");
-        }
+        }        
+function autoLog(id) {
 
-        function autoLog(id) {
                     var e = document.getElementById(id);
                     if(e.style.display == 'block'){
                         e.style.display = 'none';
                     }
                     else{
+
                         if($(window).width() <= 800){
                             $("#sortu").animate({"top": "50%"}, "slow");
                             $('#log').animate({ "top":"30%", "left":"15%" }, "slow");
@@ -166,6 +174,10 @@ $(document).ready(function(){
                             e.style.display = 'block';
                             document.getElementById('erabiltzaileaLog') .focus();
                         }
+
+                        e.style.display = 'block';
+                        document.getElementById('erabiltzaileaLog') .focus();
+
                     }
                 }
 
@@ -175,6 +187,7 @@ $(document).ready(function(){
                         e.style.display = 'none';
                     }
                     else{
+
                         if($(window).width() <= 800){
                             $("#sortu").animate({"top": "50%"}, "slow");
                             $('#reg').animate({ "top":"5%", "left":"27.5%" }, "slow");
@@ -185,6 +198,9 @@ $(document).ready(function(){
                             e.style.display = 'block';
                             document.getElementById('erabiltzailea') .focus();
                         }
+                        e.style.display = 'block';
+                        document.getElementById('erabiltzailea').focus();
+
                     }
                 }
 
@@ -194,6 +210,7 @@ $(document).ready(function(){
                     e.style.display = 'none';
                 
                 }
+
 
         /* API PARA VALIDACIONES CLIENTE */        
 

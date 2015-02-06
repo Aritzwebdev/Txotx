@@ -16,7 +16,7 @@ if(isset($_POST['butdatuak'])){
 	if($result){
 		echo "<script type='text/javascript'>alert('Datuak aldatu dira');location.href = 'perfil.php';</script>";
 	}else{
-		echo "<script type='text/javascript'>alert('Ezin da datuak aldatu');location.href = 'perfil.php';</script>";
+		echo "<script type='text/javascript'>alert('Ezin dira datuak aldatu');location.href = 'perfil.php';</script>";
 	}
 }else{
 	header("Location:perfil.php");

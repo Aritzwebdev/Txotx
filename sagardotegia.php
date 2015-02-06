@@ -29,6 +29,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
 	<!-- bxSlider Javascript file -->
 	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/sagardotegia.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
@@ -38,31 +39,29 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<script type="text/javascript">
 		
 		function initialize() {
-			var lat="<?php echo $lat; ?>";
-			var lng="<?php echo $lng; ?>";
+            var lat="<?php echo $lat; ?>";
+            var lng="<?php echo $lng; ?>";
 
-			var mapProp = {
-			  //center:new google.maps.LatLng(43.2963,-1.8727),
-			  center:new google.maps.LatLng(lat,lng),
-			  zoom:16,
-			  mapTypeId:google.maps.MapTypeId.ROADMAP
-			};
-			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-			var marker=new google.maps.Marker({
-				position:new google.maps.LatLng(lat,lng)
-			  	//position:new google.maps.LatLng(43.2963,-1.8727)
-			});
+            var mapProp = {
+              //center:new google.maps.LatLng(43.2963,-1.8727),
+              center:new google.maps.LatLng(lat,lng),
+              zoom:16,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker=new google.maps.Marker({
+                position:new google.maps.LatLng(lat,lng)
+                //position:new google.maps.LatLng(43.2963,-1.8727)
+            });
 
-			marker.setMap(map);
+            marker.setMap(map);
 
-			var m = document.getElementById("googleMap");
-			var a = document.getElementById("slider");
-			
-				a.style.display = 'none';
-				m.style.display = 'block';
-		}
-		//google.maps.event.addDomListener(window, 'load', initialize());
-	
+            var m = document.getElementById("googleMap");
+            var a = document.getElementById("slider");
+            
+                a.style.display = 'none';
+                m.style.display = 'block';
+        }	
 	</script>
 
 </head>
@@ -215,6 +214,5 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.backstretch.js"></script>
-	<script src="js/sagardotegia.js"></script>
 
 </html>

@@ -12,12 +12,15 @@
         <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
         
         <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
+        <script src="js/index.js"></script>
 
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/index.css" />
 
         <link href='css/media-player.css' rel='stylesheet' />
-        <script src='js/media-player.js'></script>      
+
+        <script src='js/media-player.js'></script>         
+
 
 </head>
 <body>
@@ -35,11 +38,11 @@
                 <li><a href="#s1"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
                     <span id="s1"></span>
                     <ul class="subs">
-                        <li><a href="#" id="arab">Araba<img id="araba" src="img/araba.png" /></a></li>
-                        <li><a href="#" id="bizka">Bizkaia<img id="bizkaia" src="img/bizkaia.png" /></a></li>
-                        <li><a href="#" id="giputxi">Gipuzkoa<img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
-                        <li><a href="#" id="nafar">Nafarroa<img id="nafarroa" src="img/nafarroa.png" /></a></li>
-                        <li><a href="#" id="ipar">Iparralde<img id="iparralde" src="img/iparralde.png" /></a></li>
+                        <li><a href="#" id="arab">Araba</br><img id="araba" src="img/araba.png" /></a></li>
+                        <li><a href="#" id="bizka">Bizkaia</br><img id="bizkaia" src="img/bizkaia.png" /></a></li>
+                        <li><a href="#" id="giputxi">Gipuzkoa</br><img id="gipuzkoa" src="img/gipuzkoa.png" /></a></li>
+                        <li><a href="#" id="nafar">Nafarroa</br><img id="nafarroa" src="img/nafarroa.png" /></a></li>
+                        <li><a href="#" id="ipar">Iparralde</br><img id="iparralde" src="img/iparralde.png" /></a></li>
                     </ul>
                 </li>
                 <?php 
@@ -58,6 +61,11 @@
                     </li>
                     <li>
                         <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
+                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
+                    </li>
+                    <li>
+                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" >Saioa itxi</a>
+
                     </li>
                 <?php } ?>
             </ul>
@@ -163,14 +171,6 @@
             <div id="autores" title="Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015">
                 Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
             </div>
-           
-            <script type="text/javascript">
-                if($(window).width() <= 800){
-                    $("#autores").text("Copyleft");
-                }else{
-                    $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
-                }
-           </script> 
 
             <div id="redSocial"> 
                 <a href="http://www.facebook.com/sagardotegida" target="_blank"><img src="img/facebook.png" id="face" /></a>
