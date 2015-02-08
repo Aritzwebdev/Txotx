@@ -98,9 +98,7 @@ $(document).ready(function(){
             },false);
 
 
-            $('#butPlay').click(function(e){
-               
-                e.preventDefault();
+            $('#butPlay').click(function(){
 
                 if(e.style.display == 'block'){
                   $("#media-player").animate({"top": "50%"}, "slow");
@@ -153,14 +151,14 @@ $(document).ready(function(){
 
                 if ($('#nav ul.subs').is (':visible') && $('#nav ul.subs').parents (':hidden').length == 0){
                   
-                  $('#nav ul.subs').hide('slow');
+                  $('#nav ul.subs').hide('fast');
                   $("#nav ul.subs").css({"display": "block"});
                   $("#nav #hasi").css({"margin-top": "0%"}, "slow");
 
                 }else{
                   
                   $("#nav #hasi").css({"margin-top": "53%"}, "slow");
-                  $('#nav ul.subs').show('slow');
+                  $('#nav ul.subs').show('fast');
                   $("#nav ul.subs").css({"display": "none"});
 
                 }

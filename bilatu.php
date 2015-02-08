@@ -16,6 +16,8 @@
 
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/bilatu.css"/>
+
+	<title>Sagardotegida.tk/Herriak</title>
 </head>
 <body>
 	

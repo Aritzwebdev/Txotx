@@ -21,6 +21,7 @@
 
         <script src='js/media-player.js'></script>         
 
+        <title>Sagardotegida.tk</title>
 
 </head>
 <body>
@@ -61,12 +62,8 @@
                     </li>
                     <li>
                         <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
-                       <img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a>
                     </li>
-                    <li>
-                        <img src="img/logout.png" class="imgMenu" /><a id="itxi" href="#" >Saioa itxi</a>
-
-                    </li>
+                    
                 <?php } ?>
             </ul>
                 <div id="hizkuntzak">
@@ -113,7 +110,7 @@
                     </div>                
             </form>
         </div>  
-        <div id="log" onfocusout="kendu('log')">              
+        <div id="log">              
             <form class="form-4" action="" method="post"> 
                    
                 <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>

@@ -15,25 +15,27 @@ $result=mysqli_query($con, $sql);
     <!--<script type="text/javascript" language="javascript" src="js/api.js"></script>-->
 	
 	<link rel="stylesheet" href="css/perfil.css"/>	
-	<link rel="stylesheet" href="css/menuAdmin.css" media="screen, projection"/>
+	<link rel="stylesheet" href="css/menuPerfil.css" media="screen, projection"/>
+
+	<title>Sagardotegida.tk/ErabiltzailePerfila</title>
 </head>
 <body>
 <div class="foo">
 
 	<img id="logo" src="img/logo.png" />
 	<h1 id="titulo">SagardoteGida</h1>
+	<div id="hizkuntzak">eu|es</div>
 
 	<header id="registro">
 	        <div class="container"> 	
 	            <div id='cssmenu' class="align-center">
 		<ul>
-            <li><a href="index.php">Hasiera</a></li>
-   			<li><a href="#" id="datu">Datuak</a></li>
-		  	<li><a href="#" id="cambiopass">Pasahitza aldatu</a></li>
-		  	<li><a href="#" id="iruzkin">Iruzkinak</a></li>
-            <li><a href="#" id="elimUsu">Erabiltzailea ezabatu</a></li>
-            <li><a id="itxi" href="#" >Saioa itxi</a></li>
-            <li><a id="idioma" href="#" >eu|es</a></li>
+            <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
+   			<li><a href="#" id="datu"><img src="img/usuario.png" class="imgMenu" />Datuak</a></li>
+		  	<li><a href="#" id="cambiopass"><img src="img/editar.png" class="imgMenu" />Pasahitza aldatu</a></li>
+		  	<li><a href="#" id="iruzkin"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
+            <li><a href="#" id="elimUsu"><img src="img/menos.png" class="imgMenu" />Erabiltzailea ezabatu</a></li>
+            <li><a id="itxi" href="#"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
 		</ul>
 	</div>
 	        </div>

@@ -13,13 +13,6 @@
 
 
 <body>
- 
-
-
-        <!-- Cabecera -->
-        <header>
-            <h1>Parsear o leer JSON con jQuery</h1>
-        </header>
 
         <!-- Contenido -->
         <section>

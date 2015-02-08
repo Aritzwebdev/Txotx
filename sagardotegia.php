@@ -64,6 +64,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
         }	
 	</script>
 
+	<title>Sagardotegida.tk/Sagardotegia</title>
 </head>
 
 <body>

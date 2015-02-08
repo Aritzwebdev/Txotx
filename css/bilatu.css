@@ -79,13 +79,13 @@ input[type="search"]:focus{
 	left: -15%;
 }
 
-#hizkuntzak li{
+#hizkuntzak li,
+#hizkuntzak li a{
     display:inline-block;
     float: right;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 10px;
-    color: white;
+  	padding-left: 2px;
+  	padding-right: 2px;
+    color: black;
 }
 #top_header li{
     display:inline-block;
@@ -155,7 +155,7 @@ a:hover{
 #taulaHerriak{
 	position: relative;
 	left: 5%;
-	margin-top: 5%;
+	margin-top: 2%;
 }
 
 #taulaHerriak2{
@@ -192,12 +192,48 @@ a:hover{
 #sagar_ize:hover{
 	color: purple;
 }
-/*@media all and(max-width: 900px){
-	#header h1{
-		color: black;
-		font-size: 48px;
-		position: absolute;
-		left: 1%;
-		top: 10%;
+
+/* RESPONSIVE */
+@media only screen and (max-width: 800px) {
+	#logo{
+	    position: absolute;
+	    top: 7%;
+	    left: -20%;
+	    margin-bottom: 1%;
+	    width: 50px;
+	    height: 50px;
+	    z-index: 3;
 	}
-}*/
+	#titulo{ 
+	    position: absolute;
+	    top: 10%;
+	    left: 25%;
+	    font-size: 40px;
+	    margin-bottom: 1%;
+		color: black;
+	    text-align: center;
+	}
+	#menu_txikia{
+		background: none;
+		margin-top: 110px;
+	}
+
+	#bil{
+		position: fixed;
+		top: 25%;
+		left: 65%;
+	}
+
+	#hizkuntzak{
+		position: absolute;
+		top: 15%;
+		left: 75%;
+	}
+
+	#taulaHerriak{
+		position: absolute;
+		top: 35%;
+		left: 15%;
+	}
+
+}

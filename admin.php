@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="css/tabla.css" />
         <link rel="stylesheet" href="css/admin.css" />
 
+        <title>Sagardotegida.tk/Administrador</title>
+
 </head>
 <body>
 

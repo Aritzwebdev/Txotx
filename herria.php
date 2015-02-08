@@ -33,6 +33,8 @@
 
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/bilatu.css"/>
+
+	<title>Sagardotegida.tk/Sagardotegiak</title>
 </head>
 <body>
 	<div class="foo">

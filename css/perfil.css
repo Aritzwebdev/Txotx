@@ -56,7 +56,7 @@ body {
 #log{
     position: relative;
     left: 2%;
-    margin-top: 15px;
+    margin-top: 25px;
     width: 25px;
     height:25px;
 }
@@ -91,17 +91,19 @@ body {
     display: none;
 }
 #hizkuntzak {
-    position: relative;
-    top: 6px;
-    color: white;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    color: black;
     font-size: 14px;
     text-decoration: none;
 }
 #hizkuntzak a{
-    color: white;
+    color: black;
     font-size: 14px;
     text-decoration: none;
 }
+
 @media only screen and (max-width: 800px) {
 	
 	#logo{
@@ -174,4 +176,9 @@ body {
 		left:1%;
 	}
 	
+  #hizkuntzak{
+    position: absolute;
+    top: 4%;
+    left: 90%;
+  }
 }
