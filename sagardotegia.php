@@ -151,7 +151,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 		</div>
 		
 		<!-- GOOGLE MAPS -->
-		<div id="googleMap" style="width: 640px; height: 400px;"></div>
+		<div id="googleMap"></div>
 		
 		<!-- SLIDER -->
 		<div id="slider"> 
