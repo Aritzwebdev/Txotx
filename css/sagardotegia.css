@@ -367,8 +367,8 @@ border: 1px solid green;
 	#googleMap{
 		width:90%;
 		height:200px;
-		position: relative;
-		top: 20%;
+		position: absolute;
+		top: 45%;
 		left: 5%;
 	}
 	#comentarios{
