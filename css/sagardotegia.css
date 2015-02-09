@@ -114,9 +114,12 @@ a{
 	left: 9%
 }
 #googleMap{
+	width: 640px; 
+	height: 400px;
 	position: absolute;
 	top: 31%;
 	left: 40%;
+	margin-bottom:2px;
 }
 
 #slider{
@@ -331,4 +334,56 @@ border: 1px solid green;
     transform: rotate(75deg);
     background: linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
     pointer-events: none;
+}
+
+@media only screen and (max-width: 800px) {
+	
+	
+	
+	#logo{
+	   	position: absolute;
+		top: 5%;
+		left: -20%;
+	    width: 60px;
+	    height: 60px;
+	    z-index: 3;
+	}
+	
+	#titulo{ 
+	    position: absolute;
+	    top: 9%;
+	    left: 25%;
+	    font-size: 40px;
+	    margin-bottom: 1%;
+		color: black;
+	    text-align: center;
+	}
+	#googleMap{
+		width:90%;
+		height:200px;
+		position: absolute;
+		top: 110%;
+		left: 5%;
+	}
+	
+	#iruzkin{
+		position: absolute;
+		width: 300px;
+		top: 50%;
+		left: 9%;
+		display: none;
+		overflow: scroll;
+		height: 180px;
+	}
+
+	#iruzkinak{
+		width:250px;
+	}
+	
+	#iruzkinSartu{
+		position: absolute;
+		top: 85%;
+		left: 9%;
+	}
+		
 }
