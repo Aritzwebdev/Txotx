@@ -114,12 +114,10 @@ a{
 	left: 9%
 }
 #googleMap{
-	width: 640px; 
-	height: 400px;
+	width: 640px; height: 400px;
 	position: absolute;
 	top: 31%;
 	left: 40%;
-	margin-bottom:2px;
 }
 
 #slider{
@@ -140,8 +138,14 @@ a{
 }
 #iruzkinSartu{
 	position: absolute;
-	top: 80%;
+	top: 77%;
 	left: 9%;
+
+}
+#iruzkinSartu  #btnbidali{
+	position: absolute;
+	top: 77%;
+	left: 100%;
 
 }
 #nork{
@@ -338,7 +342,9 @@ border: 1px solid green;
 
 @media only screen and (max-width: 800px) {
 	
-	
+	.foo{
+		height:140%;
+	}
 	
 	#logo{
 	   	position: absolute;
@@ -361,15 +367,19 @@ border: 1px solid green;
 	#googleMap{
 		width:90%;
 		height:200px;
-		position: absolute;
-		top: 110%;
+		position: relative;
+		top: 20%;
 		left: 5%;
+	}
+	#comentarios{
+		position: absolute;
+		top:510%;
 	}
 	
 	#iruzkin{
 		position: absolute;
 		width: 300px;
-		top: 50%;
+		top: 90%;
 		left: 9%;
 		display: none;
 		overflow: scroll;
@@ -382,8 +392,8 @@ border: 1px solid green;
 	
 	#iruzkinSartu{
 		position: absolute;
-		top: 85%;
+		top: 130%;
 		left: 9%;
 	}
 		
-}
+}	
