@@ -100,18 +100,24 @@ $(document).ready(function(){
 
             $('#butPlay').click(function(){
 
-                if(e.style.display == 'block'){
+                /*if ($('#media-player').is (':visible') && $('#media-player').parents (':hidden').length == 0){
                   $("#media-player").animate({"top": "50%"}, "slow");
 
                   $('#media-video').css({ 'width':'305px', 'height':'160px' });
                   $('#progress-bar').css({ 'width':'172px'});
 
-                  $("#media-player").animate({"left": "145%"}, "slow");
-                  
-                  e.style.display = 'none';
+                  $("#media-player").animate({"left": "137%"}, "slow");
+                  $('#media-player').hide('slow');
+                  //$('#media-player').css({'display' : 'none'});
+                  alert('visible');
+
                 }else{
+                  alert('no visible');
+                  //$('#media-player').css({'display' : 'block'});*/
+                  $('#media-player').show('slow');
                   $("#media-player").animate({"left": "38%"}, "slow");
-                }
+                  
+                //}
                       
             }); 
                

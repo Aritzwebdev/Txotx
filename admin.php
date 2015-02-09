@@ -96,7 +96,7 @@
         <div id="subtitulo"><h2>Panel Administrador</h2></div>
        
         <footer id="footer">
-                                Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
+            Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
         </footer>
 
 

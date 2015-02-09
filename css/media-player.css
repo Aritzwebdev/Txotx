@@ -16,6 +16,7 @@ h1 {
 	float:left;
 	padding:1em 1em .5em;
 	background: rgba(0,0,0,0.5);
+	display: none;
 }
 
 video {

@@ -138,7 +138,7 @@
         <!-- REPRODUCTOR DE VIDEO -->
 
 
-        <h1 id="iniTxotx">TXOTX 2015, denboraldiaren hasiera!!</h1>
+        <h1 id="iniTxotx">Inicio de la temporada TXOTX 2015!!</h1>
         
         <div id="btnPlay">
             
