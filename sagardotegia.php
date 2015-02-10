@@ -104,7 +104,6 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 <div id="menu_txikia">
 	<form action="herria.php" method="get">
 		<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
-		<!--<a id="menu_txiki_izena"><?php echo ">".$sagardotegia ?></a>-->
 	</form>
 </div>
 

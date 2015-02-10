@@ -24,7 +24,7 @@ $(document).ready(function(){
         });
 
         $("#comentarios").click(function(){
-            $("#iruzkin").show();
+            $("#iruzkin").toggle();
         });
 
         $("#argazkiak").click(function(){
@@ -39,7 +39,7 @@ $(document).ready(function(){
 
         $("#iriki").click(function(){
             
-                $("#login").show();
+                $("#login").toggle();
                 $("#erabiltzaileaLog").focus();
             
         });

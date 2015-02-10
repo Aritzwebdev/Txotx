@@ -173,15 +173,14 @@ $result=mysqli_query($con, $sql);
 
 	<div id="iruzkinak" class="greenBox">
 	<div class="myTable">
-		<table class="table-bordered table-striped table-condensed flip-content">
+		<table class="table-bordered table-striped table-condensed flip-content" cellspacing="10">
 		<form action="borrarComentariosUser.php" method="post">
 			<thead class="flip-content">
 				<tr>
 					<th>Borrar</th>
 					<th>Id</th>
-					<th>Erabiltzailea</th>
-					<th>Iruzkina</th>
 					<th>Data</th>
+					<th>Iruzkinak</th>
 					<th>Sagardotegia</th>
 				</tr>
 			</thead>
@@ -190,7 +189,7 @@ $result=mysqli_query($con, $sql);
 	include_once 'conectar.php';
 	$conexion=conectar();
 	// Seleccionar todos los registros 
-	$consulta = "SELECT * FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
+	$consulta = "SELECT idiruzkinak, data, iruzkina, sagardotegia FROM iruzkinak WHERE erabiltzailea='".$_SESSION["user"]."';";
 	$result=mysqli_query($conexion, $consulta);
 	while ($registro = mysqli_fetch_row($result)){
 		echo "<tr>";
