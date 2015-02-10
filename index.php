@@ -105,7 +105,7 @@
                         <label for="kodea" style="padding: 15px 0px 2px 0px;"><font color="white">Kode sekretua idatzi: <span id="secret"></span> (<a href="#" class="refresh">aldatu</a>)</font></label>
                         <input type="text" name="kodea" id="kodea" required class="required antispam" maxlength="6" minlength="6" title="Sartu ikusten duzun kodea">
                     </div>
-                    <div class="submit" onfocusout="kendu('reg');">
+                    <div class="submit">
                         <input type="submit" value="Erregistratu">
                     </div>                
             </form>
