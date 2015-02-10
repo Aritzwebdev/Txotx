@@ -1,8 +1,12 @@
 <?php
 	session_start();
 		
-	$user=$_POST["user"];
-	$pass=$_POST["pass"];
+	if($_POST["user"]=="" && $_POST["pass"]==""){
+		echo "Sartu erabiltzaile eta pasahitza";
+	}else{
+		$user=$_POST["user"];
+		$pass=$_POST["pass"];
+	}
 
 	include 'conectar.php';
 	
