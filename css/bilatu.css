@@ -195,6 +195,11 @@ a:hover{
 
 /* RESPONSIVE */
 @media only screen and (max-width: 800px) {
+	
+	.foo{
+		height:1200px;
+	}
+	
 	#logo{
 	    position: absolute;
 	    top: 7%;
@@ -208,7 +213,7 @@ a:hover{
 	    position: absolute;
 	    top: 10%;
 	    left: 25%;
-	    font-size: 40px;
+	    font-size: 35px;
 	    margin-bottom: 1%;
 		color: black;
 	    text-align: center;
@@ -223,6 +228,15 @@ a:hover{
 		top: 25%;
 		left: 65%;
 	}
+	
+	#probin{
+		margin-top:32px;
+		margin-left:18px;
+	}
+	
+	#herri{
+		margin-top:25px;
+	}
 
 	#hizkuntzak{
 		position: absolute;
@@ -231,9 +245,16 @@ a:hover{
 	}
 
 	#taulaHerriak{
+		margin-top:25px;
 		position: absolute;
-		top: 35%;
+		top: 40%;
 		left: 15%;
+	}
+	
+	#taulaHerriak2,#taulaHerriak3,#taulaHerriak4,#taulaHerriak5{
+		margin-top:2px;
+		position:absolute;
+		left:1%;
 	}
 
 }
