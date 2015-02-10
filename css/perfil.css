@@ -12,7 +12,6 @@ body {
     width: 90%;
     height: 570px;
     margin: 20px auto;
-    background: url('../img/fondoTextura.png') repeat;
     background: rgba(255,255,255,0.7);   
     padding: 20px;
     z-index: 2;

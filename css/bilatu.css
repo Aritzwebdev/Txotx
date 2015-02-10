@@ -120,7 +120,7 @@ input[type="search"]:focus{
 	font-style: italic;
 }
 #registro a:hover{
-	color: grey;
+	color: black;
 }
 #izena{
 	border: 2px solid black;
@@ -150,6 +150,15 @@ a:hover{
 	left: 10%;
 	font: 1.5em 'Ubuntu';
 	font-weight: 9; 
+}
+
+#sagardo{
+	position: absolute;
+	top: 36.5%;
+	left: 10%;
+
+	font: 1.5em 'Ubuntu';
+	font-weight: 9;
 }
 
 #taulaHerriak{
@@ -215,25 +224,80 @@ a:hover{
 	}
 	#menu_txikia{
 		background: none;
-		margin-top: 110px;
+		margin-top: 115px;
 	}
 
 	#bil{
-		position: fixed;
+		position: absolute;
 		top: 25%;
-		left: 65%;
+		left: 59.5%;
 	}
 
 	#hizkuntzak{
 		position: absolute;
-		top: 15%;
-		left: 75%;
+		top: -220%;
+		left: 86%;
+	}
+
+	#header h1{
+		position: absolute;
+		top: 31.5%;
+		left: 16%;
+		color: black;
+		font-size: 30px;
+	}
+
+	#sagardo{
+		position: absolute;
+		top: 37%;
+		left: 17%;
 	}
 
 	#taulaHerriak{
 		position: absolute;
-		top: 35%;
-		left: 15%;
+		top: 40%;
+		left: 17%;
+	}
+
+	#taulaHerriak2{
+		position: relative;
+		margin-top: 5px;
+		left: -1%;
+	}
+
+	#taulaHerriak3{
+		position: relative;
+		margin-top: 5px;
+		left: -1%;
+	}
+
+	#taulaHerriak4{
+		position: relative;
+		margin-top: 5px;
+		left: -1%;
+	}
+
+	#taulaHerriak5{
+		position: relative;
+		margin-top: 5px;
+		left: -1%;
+	}
+
+	.foo {
+	    width: 85%;
+	    height: 1125px;
+	    margin: 20px auto;
+	    background: rgba(255,255,255,0.7);   
+	    padding: 20px;
+	    z-index: 2;
+	}
+
+	#registro{
+	    background-color: green;
+	    display: block;
+	    width: 90%;
+	    height: 40px;
+	    -webkit-border-radius: 10px;
 	}
 
 }

@@ -401,6 +401,14 @@ border: 1px solid green;
 		top: 55%;
 		left: 5%;
 	}
+
+    #slider{
+        background: none;
+        position: absolute;
+        top: 55%;
+        left: 5%;
+    }
+
 	#comentarios{
 		position: absolute;
 		top:510%;

@@ -72,12 +72,10 @@
 	        <!-- Contenido -->
 	        <section>
 	            
+	        <div id="sagardo"> Sagardotegiak </div>
+
 	        <div id="taulaHerriak">
 				<table class="table" id="tablajson">
-					<thead>
-						<th></th>
-						<th>Sagardotegiak</th>			
-					</thead>
 					<tbody class="taula"></tbody>
 				</table>
 			<div>

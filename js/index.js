@@ -155,13 +155,15 @@ $(document).ready(function(){
                         $('#nav ul.subs').hide('fast');
                         $("#nav ul.subs").css({"display": "block"});
                         $("#nav #hasi").css({"margin-top": "0%"}, "slow");
+                        $("#nav #user").css({"margin-top": "0%"}, "slow");
 
                         $("#subtitulo").css({"display": "block"});
                         $("#bilatu").css({"display": "block"});
 
                       }else{
                         
-                        $("#nav #hasi").css({"margin-top": "53%"}, "slow");
+                        $("#nav #hasi").css({"margin-top": "51%"}, "slow");
+                        $("#nav #user").css({"margin-top": "73%"}, "slow");
                         $('#nav ul.subs').show('fast');
                         $("#nav ul.subs").css({"display": "none"});
 
