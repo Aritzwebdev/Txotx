@@ -33,9 +33,10 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
+	<link rel="stylesheet" href="css/menuSagardotegia.css"/>
 	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/sagardotegia.css"/>
-
+	
 	<script type="text/javascript">
 		
 		function initialize() {
@@ -74,98 +75,107 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<img id="logo" src="img/logo.png" />
 	<h1 id="titulo">SagardoteGida</h1>
 
-<header id="registro">
+	<header id="registro">
+        <div class="container">
+        
+            <ul id="nav">
+                <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
+                <li><a href="#" id="argazkiak" ><img src="img/fotos.png" class="imgMenu" /> Argazkiak </a></li>
+				<li><a href="#" id="mapa" ><img src="img/mapa.png" class="imgMenu" /> Mapa </a></li>   
+            </ul>
+                
+            <ul>
 
-	<ul id="top_header">
-		<li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-		<li><a href="#" id="argazkiak" ><img src="img/fotos.png" class="imgMenu" /> Argazkiak </a></li>
-		<li><a href="#" id="mapa" ><img src="img/mapa.png" class="imgMenu" /> Mapa </a></li>
-	</ul>
-	<ul id="hizkuntzak">
-		<li><a href="">eu</a></li>
-		<li>|</li>
-		<li><a href="">es</a></li>
-	</ul>
-	<?php 
-        if (isset($_SESSION["user"])){ 
-    ?>
-		<ul id="top_headerDer">
-			<li><a id="itxi" href="#" ><img src="img/logout.png" class="imgMenu" />Saioa itxi</a></li>
-			<li><img src="img/usuario.png" class="imgMenu" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
-		</ul>
-	<?php }else{ ?>
-		<ul id="top_headerDer">
-			<li><a id="iriki" href="#" ><img src="img/login.png" class="imgMenu" />Saioa hasi</a></li>	
-		</ul>
-	<?php } ?>
+	            <?php 
+			        if (isset($_SESSION["user"])){ 
+			    ?>
+					<ul id="top_headerDer">
+						<li id="saioItxi"><a id="itxi" href="#" ><img src="img/logout.png" class="imgMenuDer" />Saioa itxi</a></li>
+						<li id="agurra"><img src="img/usuario.png" class="imgMenuDer" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
+					</ul>
+				<?php }else{ ?>
+					<ul id="top_headerDer">
+						<li id="saioHasi"><a id="iriki" href="#" ><img src="img/login.png" class="imgMenuDer" />Saioa hasi</a></li>	
+					</ul>
+				<?php } ?>
 
-</header>
+            </ul>
 
-<div id="menu_txikia">
-	<form action="herria.php" method="get">
-		<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
-	</form>
-</div>
+            <div id="hizkuntzak">
+                <li><a href="index.php">eu</a></li>
+                <li>|</li>
+                <li><a href="index_esp.php">es</a></li>
+            </div>
+            
+        </div>
 
-<div id="header">
-	<img id="log" src="img/logo.png"/>
-	<h1 id="userPerfil"><?php echo $sagardotegia; ?> sagardotegia</h1>
-</div>
+    </header>
 
-<div id="login">              
-    <form class="form-4" action="" method="post"> 
-                  
-    	<label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
-        <input type="text" name="erabiltzaileaLog" id="erabiltzaileaLog" title="Sartu erabiltzaile izena" />
-                    
-                    
-        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
-        <input type="password" name="pasahitzaLog" id="pasahitzaLog" title="Sartu pasahitza" />
-                   
-        <font color="red"><div id="aviso"></div></font></br>
-                    
-        <input type="button" value="Sartu" id="butsartu" />
-    </form>
-</div>
+	<div id="menu_txikia">
+		<form action="herria.php" method="get">
+			<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
+		</form>
+	</div>
 
-<?php
-	$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$sagardotegia."';";
-	$result=mysqli_query($con, $sql);
+	<div id="header">
+		<img id="log" src="img/logo.png"/>
+		<h1 id="userPerfil"><?php echo $sagardotegia; ?> sagardotegia</h1>
+	</div>
 
-	while($row=mysqli_fetch_array($result)){
-?>
-		<div id="deskribapena">
-			<?php
-				echo "<br>";
-				echo $row['deskribapena']."<br>";
-				echo "Telefonoa: ".$row['telefonoa']."<br>";
-				if($row['email']!=""){
-					echo "Email: ".$row['email']."<br>";
-				}
-				if($row['web']!=""){
-					echo "Web: ".$row['web']."<br>";
-				} 
-			?>
-			<a id="comentarios" href="#" >Iruzkinak ikusi</a>
-		</div>
-		
-		<!-- GOOGLE MAPS -->
-		<div id="googleMap"></div>
-		
-		<!-- SLIDER -->
-		<div id="slider"> 
+	<div id="login">              
+	    <form class="form-4" action="" method="post"> 
+	                  
+	    	<label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
+	        <input type="text" name="erabiltzaileaLog" id="erabiltzaileaLog" title="Sartu erabiltzaile izena" />
+	                    
+	                    
+	        <label for="pasahitza" style="padding: 15px 0px 2px 0px;"><font color="white">Pasahitza</font></label>
+	        <input type="password" name="pasahitzaLog" id="pasahitzaLog" title="Sartu pasahitza" />
+	                   
+	        <font color="red"><div id="aviso"></div></font></br>
+	                    
+	        <input type="button" value="Sartu" id="butsartu" />
+	    </form>
+	</div>
 
-			<ul class="bxslider">
-			  <li><img src="img/sidra.jpg" /></li>
-			  <li><img src="img/slide.jpg" /></li>
-			  <li><img src="img/txotx2.jpg" /></li>
-			  <li><img src="img/sag-usurbilsaizar01.jpg" /></li>
-			</ul>
+	<?php
+		$sql="SELECT deskribapena, telefonoa, email, web FROM sagardotegiak WHERE izena='".$sagardotegia."';";
+		$result=mysqli_query($con, $sql);
 
-		</div>
-<?php
-	}	
-?>	
+		while($row=mysqli_fetch_array($result)){
+	?>
+			<div id="deskribapena">
+				<?php
+					echo "<br>";
+					echo $row['deskribapena']."<br>";
+					echo "Telefonoa: ".$row['telefonoa']."<br>";
+					if($row['email']!=""){
+						echo "Email: ".$row['email']."<br>";
+					}
+					if($row['web']!=""){
+						echo "Web: ".$row['web']."<br>";
+					} 
+				?>
+				<a id="comentarios" href="#" >Iruzkinak ikusi</a>
+			</div>
+			
+			<!-- GOOGLE MAPS -->
+			<div id="googleMap"></div>
+			
+			<!-- SLIDER -->
+			<div id="slider"> 
+
+				<ul class="bxslider">
+				  <li><img src="img/sidra.jpg" /></li>
+				  <li><img src="img/slide.jpg" /></li>
+				  <li><img src="img/txotx2.jpg" /></li>
+				  <li><img src="img/sag-usurbilsaizar01.jpg" /></li>
+				</ul>
+
+			</div>
+	<?php
+		}	
+	?>	
 	<div id="iruzkin">
 		<div id="iruzkin_header">
 			<h3>Iruzkinak</h3>
