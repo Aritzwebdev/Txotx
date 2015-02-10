@@ -6,6 +6,7 @@ html {
     background-color: #000;
     height: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 body {
     width: 90%;

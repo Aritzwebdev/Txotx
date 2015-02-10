@@ -184,7 +184,7 @@
     }
     #nav li #s1:target + ul.subs,
     #nav li #s2:target + ul.subs {
-        display: block;
+        display: none;
     }
 
     #nav ul.subs > li {

@@ -147,28 +147,36 @@ $(document).ready(function(){
             window.addEventListener('resize', function(){
                 if($(window).width() <= 800){
                   $("#autores").text("Copyleft");
+
+                  $('#sidres').click(function(){
+
+                      if ($('#nav ul.subs').is (':visible') && $('#nav ul.subs').parents (':hidden').length == 0){
+                        
+                        $('#nav ul.subs').hide('fast');
+                        $("#nav ul.subs").css({"display": "block"});
+                        $("#nav #hasi").css({"margin-top": "0%"}, "slow");
+
+                        $("#subtitulo").css({"display": "block"});
+                        $("#bilatu").css({"display": "block"});
+
+                      }else{
+                        
+                        $("#nav #hasi").css({"margin-top": "53%"}, "slow");
+                        $('#nav ul.subs').show('fast');
+                        $("#nav ul.subs").css({"display": "none"});
+
+                        $("#subtitulo").css({"display": "none"});
+                        $("#bilatu").css({"display": "none"});
+
+                      }
+
+                  });
+
                 }else{
                   $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
                 }
-            });
 
-
-            $('#sidres').click(function(){
-
-                if ($('#nav ul.subs').is (':visible') && $('#nav ul.subs').parents (':hidden').length == 0){
-                  
-                  $('#nav ul.subs').hide('fast');
-                  $("#nav ul.subs").css({"display": "block"});
-                  $("#nav #hasi").css({"margin-top": "0%"}, "slow");
-
-                }else{
-                  
-                  $("#nav #hasi").css({"margin-top": "53%"}, "slow");
-                  $('#nav ul.subs').show('fast');
-                  $("#nav ul.subs").css({"display": "none"});
-
-                }
-
+              
             });
 
 });
