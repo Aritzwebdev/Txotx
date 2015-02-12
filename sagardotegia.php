@@ -30,6 +30,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<!-- bxSlider Javascript file -->
 	<script src="js/jquery.bxslider.min.js"></script>
 	<script src="js/sagardotegia.js"></script>
+	<script type="text/javascript" src="js/menuAdmin.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
@@ -76,41 +77,32 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 	<h1 id="titulo">SagardoteGida</h1>
 
 	<header id="registro">
-        <div class="container">
-        
-            <ul id="nav">
-                <li><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-                <li><a href="#" id="argazkiak" ><img src="img/fotos.png" class="imgMenu" /> Argazkiak </a></li>
-				<li><a href="#" id="mapa" ><img src="img/mapa.png" class="imgMenu" /> Mapa </a></li>   
-            </ul>
-                
-            <ul>
-
-	            <?php 
-			        if (isset($_SESSION["user"])){ 
-			    ?>
-					<ul id="top_headerDer">
-						<li id="saioItxi"><a id="itxi" href="#" ><img src="img/logout.png" class="imgMenuDer" />Saioa itxi</a></li>
-						<li id="agurra"><img src="img/usuario.png" class="imgMenuDer" /><a id="user" href="#" >Kaixo, <ins><?php echo $_SESSION["user"]; ?></ins></a></li>
-					</ul>
-				<?php }else{ ?>
-					<ul id="top_headerDer">
-						<li id="saioHasi"><a id="iriki" href="#" ><img src="img/login.png" class="imgMenuDer" />Saioa hasi</a></li>	
-					</ul>
-				<?php } ?>
-
-            </ul>
-
-            <div id="hizkuntzak">
+   <div class="container"> 	
+	            <div id='cssmenu' class="align-center">
+		<ul>
+          	<li><a href="index.php"><img src="img/inicio.png"/>Hasiera</a></li>
+           	<li><a href="#" id="argazkiak" ><img src="img/fotos.png"/> Argazkiak </a></li>
+			<li><a href="#" id="mapa" ><img src="img/mapa.png"/> Mapa </a></li>
+			<?php 
+				if (isset($_SESSION["user"])){ 
+			?>		
+				<li><a id="itxi" href="#" ><img src="img/logout.png"/>Saioa itxi</a></li>
+				<li><a id="user" href="#" >Kaixo,<?php echo $_SESSION["user"]; ?></a></li>		
+			<?php }else{ ?>				
+				<li><a id="iriki" href="#" ><img src="img/login.png"/>Saioa hasi</a></li>			
+			<?php } ?>
+		</ul>
+		
+		 <div id="hizkuntzak">
                 <li><a href="index.php">eu</a></li>
                 <li>|</li>
                 <li><a href="index_esp.php">es</a></li>
             </div>
-            
-        </div>
+	</div>
+	        </div>
 
     </header>
-
+    
 	<div id="menu_txikia">
 		<form action="herria.php" method="get">
 			<input id="menu_txiki_herria" type="submit" name="herria" value="<?php echo $herria;?>">
