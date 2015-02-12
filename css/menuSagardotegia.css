@@ -1,114 +1,399 @@
-.container {
-    margin-left: 8%;
-    margin-right: 5%;
-    margin-top: 1px;
-    width: 96%;
-    z-index: 5;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+#cssmenu{
+  position: absolute;
+  left: 0%;
+  width: 90%;
+	background:green;
 }
-/* common and top level styles */
+
+#cssmenu,
+#cssmenu ul li a{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  height: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius:10px;
+  z-index: 5;
+}
+
+#cssmenu ul .men,
+#cssmenu ul li a{
+  background: none;
+}
+
+#cssmenu ul li.men1{
+  background: none;
+}
+
+#cssmenu .active ul{
+  margin-top: -8px;
+  margin-left: 20px;
+  background: none;
+}
+
+#cssmenu .active ul li{
+  margin-top: 1px;
+  background: rgba(0,0,0,0.5);
+}
+
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu #menu-button {
+  display: none;
+}
+#cssmenu {
+  width: 100%;
+  border-radius: 5px;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  color: white;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center ul ul {
+  text-align: left;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right ul ul {
+  text-align: right;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu > ul > li > a {
+  padding: 20px 25px;
+  font-size: 13px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover,
+#cssmenu > ul > li.active > a {
+  color: white;
+}
+#cssmenu > ul > li.has-sub > a {
+  padding-right: 40px;
+}
+#cssmenu ul > li.has-sub > a:after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  top: 17.5px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: green;
+  background-size: 36px 36px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+#cssmenu ul > li.has-sub:hover > a:after {
+  background-position: 0 -18px;
+}
+#cssmenu ul > li.has-sub > a:before {
+  content: '';
+  position: absolute;
+  right: 11px;
+  top: 25.5px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 3px solid transparent;
+  border-top-color: #ffffff;
+  z-index: 99;
+}
+
+#cssmenu ul ul {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: top .2s ease, opacity .2s ease;
+  -moz-transition: top .2s ease, opacity .2s ease;
+  -ms-transition: top .2s ease, opacity .2s ease;
+  -o-transition: top .2s ease, opacity .2s ease;
+  transition: top .2s ease, opacity .2s ease;
+}
+#cssmenu > ul > li > ul {
+  top: 91px;
+  padding-top: 8px;
+  border-radius: 5px;
+
+}
+#cssmenu > ul > li:hover > ul {
+  left: auto;
+  top: 51px;
+  opacity: 1;
+}
+#cssmenu.align-right > ul > li:hover > ul {
+  right: 0;
+}
+#cssmenu ul ul ul {
+  top: 40px;
+}
+#cssmenu ul ul > li:hover > ul {
+  top: 0;
+  left: 178px;
+  padding-left: 10px;
+  opacity: 1;
+}
+#cssmenu.align-right ul ul > li:hover > ul {
+  left: auto;
+  right: 178px;
+  padding-left: 0;
+  padding-right: 10px;
+  opacity: 1;
+}
+#cssmenu ul ul li a {
+  width: 180px;
+  padding: 12px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li > a:hover,
+#cssmenu ul ul li.active > a {
+  color: green;
+}
+#cssmenu ul ul li:first-child > a {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#cssmenu ul ul li:last-child > a {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#cssmenu ul ul > li.has-sub > a:after {
+  right: 12px;
+  top: 9.5px;
+  background-size: 36px 36px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+#cssmenu.align-right ul ul > li.has-sub > a:after {
+  right: auto;
+  left: 12px;
+}
+#cssmenu ul ul > li.has-sub:hover > a:after {
+  background-position: 0 -18px;
+}
+#cssmenu ul ul > li.has-sub > a:before {
+  top: 15.5px;
+  right: 16px;
+  border-top-color: transparent;
+  border-left-color: #ffffff;
+}
+#cssmenu.align-right ul ul > li.has-sub > a:before {
+  top: 15.5px;
+  right: auto;
+  left: 16px;
+}
 
 .imgMenu{
     float: left;
     list-style: none outside none;
-    margin-top:11px;
+    margin-top: -9px;
+    margin-right: 5px;
     padding: 0;
 }
 
-#nav span {
-    display: none;
-}
-#nav, #nav ul {
-    float: left;
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-}
-#nav {
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #cssmenu {
+    width: 90%;
+    
+  }
+  #cssmenu ul,
+  #cssmenu ul ul,
+  #cssmenu ul ul ul,
+  #cssmenu > ul,
+  #cssmenu.align-center > ul,
+  #cssmenu > ul > li > ul,
+  #cssmenu > ul > li:hover > ul,
+  #cssmenu ul ul li:hover > ul,
+  #cssmenu ul ul ul li:hover > ul,
+  #cssmenu.align-right ul ul,
+  #cssmenu.align-right ul ul li:hover > ul,
+  #cssmenu.align-right ul ul ul li:hover > ul {
+  background:green;
     position: relative;
-    width: 98%;
-    height: 35px;
-}
-
-#nav > li {
-    border-bottom: 5px solid transparent;
-    float: left;
-    margin-bottom: -5px;
+    left: 0;
+    right: auto;
+    top: 0;
+    width: 100%;
+    display: none;
+    padding: 0;
+    opacity: 1;
     text-align: left;
-    -moz-transition: all 300ms ease-in-out 0s;
-    -ms-transition: all 300ms ease-in-out 0s;
-    -o-transition: all 300ms ease-in-out 0s;
-    -webkit-transition: all 300ms ease-in-out 0s;
-    transition: all 300ms ease-in-out 0s;
+  }
+  #cssmenu ul li {
+    width: 100%;
+   
+  }
+
+#cssmenu ul .men,
+#cssmenu ul li{
+  margin: 1px;
+  background: rgba(0,0,0,0.5);
 }
-#nav li a {
-    display: block;
-    text-decoration: none;
-    -moz-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
-    -ms-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
-    -o-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
-    -webkit-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
-    transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
-    white-space: normal;
-    height: 40px;
-    font-weight: bold;
+
+#cssmenu .active ul{
+  margin-top: 1px;
+  background: none;
 }
-#nav > li > a {
-    color: white;
+
+#cssmenu .active ul li{
+  margin-bottom: 1px;
+  background: rgba(0,0,0,0.5);
+}
+
+#cssmenu ul li.men1{
+  margin-top: 26px;
+  background: rgba(0,0,0,0.5);
+}
+
+  #cssmenu > ul > li > a,
+  #cssmenu ul ul li a,
+  #cssmenu ul ul li:first-child > a,
+  #cssmenu ul ul li:last-child > a {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+  #cssmenu ul li a {
+    padding-left: 12.5px;
+  }
+  #cssmenu ul ul li a {
+    padding: 14px 25px 14px 27.5px;
+  }
+  #cssmenu ul ul ul li a {
+    padding-left: 42.5px;
+  }
+  #cssmenu ul ul ul ul li a {
+    padding-left: 57.5px;
+  }
+  #cssmenu > ul > li.has-sub > a:after,
+  #cssmenu > ul > li.has-sub > a:before,
+  #cssmenu ul ul li.has-sub > a:after,
+  #cssmenu ul ul li.has-sub > a:before {
+    display: none;
+  }
+  #cssmenu #menu-button {
+    position: relative;
     display: block;
-    font-size: 1.3em;
-    line-height: 49px;
-    padding: 0 30px;
+    padding: 20px;
+    padding-left: 12.5px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
-}
-#nav > li:hover > a, #nav > a:hover {
-    color: black;
-    border-radius: 5px;
-    font-size: 16px;
-}
-#nav li.active > a {
-    background-color: #333333;
-    color: #FFFFFF;
-}
-
-
-/* responsive rules */
-@media all and (max-width : 800px) {
-    #nav > li {
-        float: none;
-        background: rgba(0,0,0,0.5);
-        border-radius: 10px;
-        border-bottom: 0;
-        margin-bottom: 1px;
-        padding-left: 100px;
-    }
-    #nav ul.subs {
-        display: none;
-        position: absolute;
-        top: 234%;
-        left: -3%;
-        border-radius: 5px;
-    }
-
-    #nav li #hasi{
-        position: absolute;
-        top: 25%;
-        left: 15%;
-    }
-
-    #nav li:hover ul.subs {
-        display: none;
-    }
-    #nav li #s1:target + ul.subs,
-    #nav li #s2:target + ul.subs {
-        display: none;
-    }
-
-    #nav ul.subs > li {
-        display: block;
-        width: auto;
-    }
+  }
+  #cssmenu .submenu-button {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 53px;
+    height: 53px;
+    border-left: 1px solid rgba(120, 120, 120, 0.5);
+    z-index: 10;
+    cursor: pointer;
+  }
+  #cssmenu ul ul .submenu-button {
+    height: 41px;
+  }
+  #cssmenu ul .submenu-button:after,
+  #cssmenu #menu-button:after {
+    content: '';
+    position: absolute;
+    right: 12.5px;
+    top: 12.5px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 15px;
+    background: #008000;
+    background-size: 56px 56px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+  }
+  #cssmenu ul .submenu-button.submenu-opened:after,
+  #cssmenu #menu-button.menu-opened:after {
+    background-position: 0 -28px;
+  }
+  #cssmenu ul ul .submenu-button:after {
+    top: 6.5px;
+  }
+  #cssmenu #menu-button:before,
+  #cssmenu .submenu-button:before {
+    content: '';
+    position: absolute;
+    right: 22.5px;
+    top: 25.5px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    z-index: 99;
+  }
+  #cssmenu ul ul .submenu-button:before {
+    top: 19.5px;
+  }
+  #cssmenu #menu-button.menu-opened:before,
+  #cssmenu .submenu-button.submenu-opened:before {
+    border-top-color: #19799f;
+  }
 
 }
