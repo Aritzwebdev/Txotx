@@ -463,6 +463,7 @@ a{
 
     #titulo{
         position: absolute;
+        margin-top: 1%;
         left: 22%;
         font-size: 35px;
     }
@@ -517,7 +518,7 @@ a{
     #bilatu{
         position: absolute;
         top: 55%;
-        left: 20%;
+        left: 7.5%;
     }
 
     #iniTxotx{
