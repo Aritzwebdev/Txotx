@@ -411,12 +411,13 @@ border: 1px solid green;
         background: none;
         position: absolute;
         top: 55%;
-        left: 5%;
+        left: -15%;
+        width: 125%;
     }
 
 	#comentarios{
 		position: absolute;
-		top:630%;
+		top:103.5%;
 	}
 	
 	#iruzkin{

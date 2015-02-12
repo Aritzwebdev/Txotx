@@ -146,7 +146,7 @@
 
         </div>
 
-        <div id='media-player' onfocusout="stop(); stopPlayer();">
+        <div id='media-player'>
             <video id='media-video' controls>
                 <source src='https://dl.dropboxusercontent.com/u/31412543/VID-20150119-WA0005.mp4' type='video/mp4'>
             </video>

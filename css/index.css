@@ -29,7 +29,7 @@ body {
 #logo{
     position: absolute;
     top: 1%;
-    left: 36%;
+    left: 34%;
     width: 60px;
     height: 60px;
     z-index: 3;
@@ -38,7 +38,7 @@ body {
 	margin: auto; 
     position: absolute;
     top: 5%;
-    left: 41%;
+    left: 38.5%;
     font-size: 54px;
 	color: white;
     text-align: center;
@@ -309,7 +309,7 @@ border: 1px solid green;
 #bilatu{
     position: fixed;
     top: 57%;
-    left: 41%;
+    left: 36.5%;
     z-index: -1;
 }
 
@@ -341,7 +341,7 @@ border: 1px solid green;
 .bilatzailea .bilaketa {
     background: #fff;
     padding: 6px 6px 6px 8px;
-    width: 202px;
+    width: 302px;
     border: solid 1px #bcbbbb;
     outline: none;
 
@@ -356,9 +356,9 @@ border: 1px solid green;
 .bilatzailea .bilaketaBotoia {
     color: #fff;
     border: solid 1px #494949;
-    font-size: 11px;
-    height: 27px;
-    width: 27px;
+    font-size: 12px;
+    height: 35px;
+    width: 35px;
     text-shadow: 0 1px 1px rgba(0,0,0,.6);
 
     -webkit-border-radius: 2em;
