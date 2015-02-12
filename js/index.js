@@ -91,14 +91,19 @@ $(document).ready(function(){
         document.getElementById("media-video").addEventListener("ended", function(){
                 $("#media-player").animate({"top": "50%"}, "slow");
 
-                $('#media-video').css({ 'width':'305px', 'height':'160px' });
+                $('#media-video').animate({ 'width':'305px', 'height':'160px' });
                 $('#progress-bar').css({ 'width':'172px'});
 
-                $("#media-player").animate({"left": "145%"}, "slow");
+                $("#media-player").css({"left": "145%"}, "slow");
             },false);
 
 
             $('#butPlay').click(function(){
+
+              if($(window).width() <= 800){
+                
+                $('#media-player').show('slow');
+                $("#media-player").animate({"left": "11%"}, "slow");
 
                 /*if ($('#media-player').is (':visible') && $('#media-player').parents (':hidden').length == 0){
                   $("#media-player").animate({"top": "50%"}, "slow");
@@ -110,26 +115,40 @@ $(document).ready(function(){
                   $('#media-player').hide('slow');
                   //$('#media-player').css({'display' : 'none'});
                   alert('visible');
-
-                }else{
-                  alert('no visible');
-                  //$('#media-player').css({'display' : 'block'});*/
+                */
+              }else{
+                  //alert('no visible');
+                  //$('#media-player').css({'display' : 'block'});
                   $('#media-player').show('slow');
-                  $("#media-player").animate({"left": "38%"}, "slow");
+                  $("#media-player").animate({"left": "35%"}, "slow");
+                  $("#media-player").animate({"top": "35%"}, "slow");
+                  $('#media-video').animate({ 'width':'385px', 'height':'240px' });
+                  $('#progress-bar').css({ 'width':'160px'});
                   
                 //}
+              }
                       
             }); 
                
             $('.play').click(function(){
 
-                $("#media-player").animate({"top": "20%"}, "slow");
-                $('#media-player').animate({"left": "25%"}, "slow");
+              if($(window).width() <= 800){
 
-                $('#media-video').css({ 'width':'750px', 'height':'425px' });
+                $("#media-player").animate({"top": "42.5%"}, "slow");
+                $('#media-player').animate({"left": "2%"}, "slow");
+
+                $('#media-video').animate({ 'width':'385px', 'height':'240px' });
+                $('#progress-bar').animate({ 'width':'160px'});
+
+              }else{
+
+                $("#media-player").animate({"top": "20%"}, "slow");
+                $('#media-player').animate({"left": "22.5%"}, "slow");
+
+                $('#media-video').animate({ 'width':'750px', 'height':'425px' });
                 $('#progress-bar').css({ 'width':'625px'});
 
-               // terminado();
+              }
 
             });
 
@@ -137,7 +156,7 @@ $(document).ready(function(){
                 
                 $("#media-player").animate({"top": "50%"}, "slow");
 
-                $('#media-video').css({ 'width':'305px', 'height':'160px' });
+                $('#media-video').animate({ 'width':'305px', 'height':'160px' });
                 $('#progress-bar').css({ 'width':'172px'});
 
                 $("#media-player").animate({"left": "145%"}, "slow");
@@ -161,9 +180,9 @@ $(document).ready(function(){
                         $("#bilatu").css({"display": "block"});
 
                       }else{
-                        
-                        $("#nav #hasi").css({"margin-top": "51%"}, "slow");
-                        $("#nav #user").css({"margin-top": "73%"}, "slow");
+
+                        $("#nav #hasi").css({"margin-top": "52%"}, "slow");
+                        $("#nav #user").css({"margin-top": "74%"}, "slow");
                         $('#nav ul.subs').show('fast');
                         $("#nav ul.subs").css({"display": "none"});
 
@@ -186,7 +205,7 @@ $(document).ready(function(){
         function stop(){
             $("#media-player").animate({"top": "50%"}, "slow");
 
-            $('#media-video').css({ 'width':'305px', 'height':'160px' });
+            $('#media-video').animate({ 'width':'305px', 'height':'160px' });
             $('#progress-bar').css({ 'width':'172px'});
 
             $("#media-player").animate({"left": "145%"}, "slow");

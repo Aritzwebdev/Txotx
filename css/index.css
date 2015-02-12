@@ -67,7 +67,7 @@ body {
     top: -20px;
     left: 89%;
     padding-top: -30px;
-    margin-left: 5px;
+    padding-left: 5px;
     color: white;
 }
 #hizkuntzak li a:hover{
@@ -399,7 +399,7 @@ border: 1px solid green;
 #btnPlay{
     position: absolute;
     top: 65%;
-    left: 85%;
+    left: 83%;
     width: 125px;
     height: 125px;
     z-index: -1;
