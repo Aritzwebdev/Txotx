@@ -37,13 +37,6 @@ $(document).ready(function(){
             $("#slider").hide();
         });
 
-        $("#iriki").click(function(){
-            
-                $("#login").toggle();
-                $("#erabiltzaileaLog").focus();
-            
-        });
-
         $("#itxi").click(function(){
             location.href="logout.php";
         });
@@ -73,4 +66,29 @@ $(document).ready(function(){
                 });
             }
         });
-    });
+});
+
+    function autoLog(id) {
+
+        var e = document.getElementById(id);
+        
+        if(e.style.display == 'block'){
+            e.style.display = 'none';
+                
+        }else{
+
+            if($(window).width() <= 800){
+                $('#login').animate({ "top":"47%", "left":"15%" }, "slow");
+                e.style.display = 'block';
+                document.getElementById('erabiltzaileaLog') .focus();
+            }else{
+                $('#login').animate({ "top":"10.5%", "left":"65%" }, "slow");
+                e.style.display = 'block';
+                document.getElementById('erabiltzaileaLog') .focus();
+            }
+
+            e.style.display = 'block';
+            document.getElementById('erabiltzaileaLog') .focus();
+
+        }
+    }

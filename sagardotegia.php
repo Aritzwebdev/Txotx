@@ -27,10 +27,13 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 <head>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSSM7-xksXzaoxuMpicqx0Df6cUOsblbY"></script>
+	
+	<script type="text/javascript" src="js/sagardotegia.js"></script>
+	<script type="text/javascript" src="js/menuAdmin.js"></script>
+
 	<!-- bxSlider Javascript file -->
 	<script src="js/jquery.bxslider.min.js"></script>
-	<script src="js/sagardotegia.js"></script>
-	<script type="text/javascript" src="js/menuAdmin.js"></script>
+	
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
@@ -75,31 +78,31 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 
 	<img id="logo" src="img/logo.png" />
 	<h1 id="titulo">SagardoteGida</h1>
+	<div id="hizkuntzak">
+        <li><a href="index.php">eu</a></li>
+        <li>|</li>
+        <li><a href="index_esp.php">es</a></li>
+    </div>
 
 	<header id="registro">
-   <div class="container"> 	
-	            <div id='cssmenu' class="align-center">
-		<ul>
-          	<li><a href="index.php"><img src="img/inicio.png"/>Hasiera</a></li>
-           	<li><a href="#" id="argazkiak" ><img src="img/fotos.png"/> Argazkiak </a></li>
-			<li><a href="#" id="mapa" ><img src="img/mapa.png"/> Mapa </a></li>
-			<?php 
-				if (isset($_SESSION["user"])){ 
-			?>		
-				<li><a id="itxi" href="#" ><img src="img/logout.png"/>Saioa itxi</a></li>
-				<li><a id="user" href="#" >Kaixo,<?php echo $_SESSION["user"]; ?></a></li>		
-			<?php }else{ ?>				
-				<li><a id="iriki" href="#" ><img src="img/login.png"/>Saioa hasi</a></li>			
-			<?php } ?>
-		</ul>
-		
-		 <div id="hizkuntzak">
-                <li><a href="index.php">eu</a></li>
-                <li>|</li>
-                <li><a href="index_esp.php">es</a></li>
-            </div>
+   	
+   	<div class="container"> 	
+	    <div id='cssmenu' class="align-center">
+			<ul>
+	          	<li><a href="index.php"><img src="img/inicio.png"/ id="ini">Hasiera</a></li>
+	           	<li><a href="#" id="argazkiak" ><img src="img/fotos.png"/> Argazkiak </a></li>
+				<li><a href="#" id="mapa" ><img src="img/mapa.png"/> Mapa </a></li>
+				<?php 
+					if (isset($_SESSION["user"])){ 
+				?>		
+					<li><a id="user" href="#" ><img src="img/usuario.png"/> Kaixo,<?php echo $_SESSION["user"]; ?></a></li>
+					<li><a id="itxi" href="#" ><img src="img/logout.png"/>Saioa itxi</a></li>		
+				<?php }else{ ?>				
+					<li><a id="iriki" href="#" onclick="autoLog('login');" ><img src="img/login.png"/>Saioa hasi</a></li>			
+				<?php } ?>
+			</ul>	 
+		</div>
 	</div>
-	        </div>
 
     </header>
     
@@ -139,16 +142,16 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 			<div id="deskribapena">
 				<?php
 					echo "<br>";
-					echo $row['deskribapena']."<br>";
-					echo "Telefonoa: ".$row['telefonoa']."<br>";
+					echo "<strong><i> Helbidea: </i></strong>". $row['deskribapena']."<br>";
+					echo "<strong><i> Telefonoa: </i></strong>".$row['telefonoa']."<br>";
 					if($row['email']!=""){
-						echo "Email: ".$row['email']."<br>";
+						echo "<strong><i>Email: </i></strong>".$row['email']."<br>";
 					}
 					if($row['web']!=""){
-						echo "Web: ".$row['web']."<br>";
+						echo "<strong><i>Web: </i></strong>".$row['web']."<br>";
 					} 
 				?>
-				<a id="comentarios" href="#" >Iruzkinak ikusi</a>
+				<a id="comentarios" href="#" ><u>Iruzkinak ikusi</u></a>
 			</div>
 			
 			<!-- GOOGLE MAPS -->
@@ -185,7 +188,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 				while($row=mysqli_fetch_array($result)){
 				?>
 				<div id="nork">
-					<?php echo $row['erabiltzailea']."    ".$row['data'];?>
+					<?php echo "<strong><i>".$row['erabiltzailea']."</i></strong>    ".$row['data'];?>
 				</div>
 				<div id="iruzkina">
 					<?php echo $row['iruzkina']."<br><br>";?>

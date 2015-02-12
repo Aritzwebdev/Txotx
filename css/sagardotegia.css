@@ -23,14 +23,14 @@ a{
 #log{
 	position: relative;
 	left: 2%;
-	margin-top: 15px;
+	margin-top: 22px;
 	width: 25px;
 	height:25px;
 }
 
 #userPerfil{
     margin-left: 12px;
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 #hizkuntzak li,
@@ -91,7 +91,7 @@ a{
 #menu_txiki_herria{
 	background: none;
 	position: relative;
-	top: 7px;
+	top: 12px;
 	left: 1%;
 	color: green;
 	border: 0px;
@@ -100,9 +100,10 @@ a{
 	color: green;
 	font-size: 14px;
 	position: relative;
-	top: 5px;
+	top: 10px;
 	left: -10px;
 }
+
 #deskribapena{
 	position: absolute;
 	top: 32%;
@@ -125,7 +126,7 @@ a{
 #iruzkin{
 	position: absolute;
 	width: 370px;
-	top: 45%;
+	top: 50%;
 	left: 9%;
 	display: none;
 	overflow: scroll;
@@ -133,7 +134,7 @@ a{
 }
 #iruzkinSartu{
 	position: absolute;
-	top: 75%;
+	top: 80%;
 	left: 9%;
 
 }
@@ -143,6 +144,11 @@ a{
 	left: 100%;
 
 }
+
+#iruzkina{
+    margin-left: 2%;
+}
+
 #nork{
 	border-left: 1px solid black;
 	border-bottom: 1px solid black;
@@ -157,8 +163,8 @@ a{
 
 #login{
 	position: fixed;
-	left: 67%;
-	top: 9%;
+	left: 65%;
+	top: 10.5%;
 	display: none;
 	z-index: 5;
 }
@@ -340,6 +346,12 @@ border: 1px solid green;
 	.foo{
 		height:140%;
 	}
+
+    #hizkuntzak{
+        position: absolute;
+        top: 3.5%;
+        left: 87%;
+    }
 	
 	#logo{
 	   	position: absolute;
@@ -359,6 +371,17 @@ border: 1px solid green;
 		color: black;
 	    text-align: center;
 	}
+
+    #log{
+        margin-top: 125%;
+        margin-left: -275%;
+    }
+
+    #userPerfil{
+        margin-top: 50%;
+        margin-left: -170%;
+    }
+
 	#deskribapena{
 		position:absolute;
 		top:35%;
