@@ -6,7 +6,7 @@ if(isset($_POST['anadirSagardotegi'])){
 	if(!empty($_POST['izena'])){
 		$izena=$_POST['izena'];
 		$herria=$_POST['herria'];
-		$deskribapena=$_POST['deskribapena'];
+		$deskribapena=$_POST['helbidea'];
 		$probintzia=$_POST['probintzia'];
 		$telefonoa=$_POST['telefonoa'];
 		$email=$_POST['email'];

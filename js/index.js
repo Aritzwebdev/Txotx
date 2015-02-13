@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
 
+      //PERFIL SI ES ADMIN ENTRA DIRECTAMENTE EN LA PAGINA DE GESTOR DE ADMINISTRACION
         $("#user").click(function(){
           if($("#erabiltzaileaLog").val()=="Admin"){
             location.href="admin.php";
@@ -8,10 +9,12 @@ $(document).ready(function(){
           }
         });     
 
+        //CERRAR SESION
         $("#itxi").click(function(){
           location.href="logout.php";
         });
 
+        // LISTA DE PUEBLOS CON SIDRERIAS POR PROVINCIA
         $("#giputxi").click(function(){
 
             document.location.href="zerrenda.php?probintzia=1";
@@ -41,6 +44,8 @@ $(document).ready(function(){
             document.location.href="zerrenda.php?probintzia=5";
           
         });
+
+        // BUSCADOR SIDRERIAS
         $("#bilaketa").click(function(){
             var sagardotegia=$("#sagardotegia").val();
             if(sagardotegia==""){
@@ -53,6 +58,7 @@ $(document).ready(function(){
             
         });
 
+        //LOGIN
         $("#butsartu").click(function(evento){
             evento.preventDefault();
             if($("#erabiltzaileaLog").val()=="" && $("#pasahitzaLog").val()==""){
@@ -70,6 +76,7 @@ $(document).ready(function(){
             }
         });
 
+        // CREACION DEL NUMERO SECRETO ALEATORIO
         function randomgen()
         {
             var rannumber='';
@@ -88,6 +95,8 @@ $(document).ready(function(){
             if ( antispam==$("#secret").text() ) return true;
         });
 
+
+        // LISTENER FIN DE VIDEO
         document.getElementById("media-video").addEventListener("ended", function(){
                 $("#media-player").animate({"top": "50%"}, "slow");
 
@@ -97,7 +106,7 @@ $(document).ready(function(){
                 $("#media-player").css({"left": "145%"}, "slow");
             },false);
 
-
+        // FUNCION TRAER VIDEO
             $('#butPlay').click(function(){
 
               if($(window).width() <= 800){
@@ -130,6 +139,7 @@ $(document).ready(function(){
                       
             }); 
                
+          // FUNCION INICIAR VIDEO RESPONSIVE
             $('.play').click(function(){
 
               if($(window).width() <= 800){
@@ -152,6 +162,7 @@ $(document).ready(function(){
 
             });
 
+          // FUNCION TERMINAR VIDEO Y ESCONDERLO
             $('.stop').click(function(){
                 
                 $("#media-player").animate({"top": "50%"}, "slow");
@@ -163,6 +174,7 @@ $(document).ready(function(){
 
             });
 
+          // LISTENER RESPONSIVE
             window.addEventListener('resize', function(){
                 if($(window).width() <= 800){
                   $("#autores").text("Copyleft");
@@ -202,6 +214,7 @@ $(document).ready(function(){
 
 });
         
+        // FUNCION PARAR VIDEO Y ESCONDERLO AL PERDER EL FOCO EL VIDEO.(sin uso)
         function stop(){
             $("#media-player").animate({"top": "50%"}, "slow");
 
@@ -211,6 +224,7 @@ $(document).ready(function(){
             $("#media-player").animate({"left": "145%"}, "slow");
         }  
 
+      // FUNCION DIV LOGIN RESPONSIVE  
         function autoLog(id) {
 
             var e = document.getElementById(id);
@@ -237,6 +251,7 @@ $(document).ready(function(){
             }
         }
 
+      // FUNCION DIV REGISTRO RESPONSIVE  
         function autoKont(id) {
           var e = document.getElementById(id);
           if(e.style.display == 'block'){
@@ -261,6 +276,7 @@ $(document).ready(function(){
           }
         }
 
+      // FUNCION PARA ESCONDER DIV
         function kendu(id) {
           var e = document.getElementById(id);
                 

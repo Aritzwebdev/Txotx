@@ -23,6 +23,12 @@ a{
     color: white;
     z-index: 3;
 }
+
+#infoReg{
+    font-size: 14px;
+    color: green;
+}
+
 #fondo{
 	position:absolute;
 	top:0;

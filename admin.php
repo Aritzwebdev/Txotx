@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
        	<meta content="width=device-width, height=device-height, initial-scale=1.0" name="viewport" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
         <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>

@@ -148,7 +148,7 @@ $sagardotegia=$_SESSION['Sagardotegia'];
 						echo "<strong><i>Email: </i></strong>".$row['email']."<br>";
 					}
 					if($row['web']!=""){
-						echo "<strong><i>Web: </i></strong>".$row['web']."<br>";
+						echo "<strong><i>Web: </i></strong><a href='".$row['web']."'>".$row['web']."</a><br>";
 					} 
 				?>
 				<a id="comentarios" href="#" ><u>Iruzkinak ikusi</u></a>

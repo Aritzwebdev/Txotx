@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	// OBTENER LISTADO DE SIDRERIAS POR JSON Y ESCRIBIR LOS DATOS EN LA TABLA
 	$(document).ready(function(){
 		var url="listaSidrerias.php";
 		$("#tablajson tbody").html("");

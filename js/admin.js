@@ -1,29 +1,29 @@
-				function logout(){
-                    location.href="logout.php";
-                }
-
-                function perfil(){
-                    location.href="perfil.php";
-                }
+				
                 $(document).ready(function(){
                 
+                    //OCULTAR TODOS LOS FORMULARIOS
 	                $('#borrar').hide();
 	        		$('#anadir').hide();
 	        		$('#usuarios').hide();
 	        		$('#comentarios').hide();
 
+                    // FUNCION ENSEÑAR FORMULARIO BORRAR SIDRERIA
 	        		$('#borrarSagardotegi').click(function(){
 	            		$('#borrar').show();
 	            		$('#anadir').hide();
 	            		$('#usuarios').hide();
 	            		$('#comentarios').hide();
 	            	});
+
+                    // FUNCION ENSEÑAR FORMULARIO BORRAR USUARIO
 	        		$('#borrarUsuarios').click(function(){
 	            		$('#borrar').hide();
 	            		$('#anadir').hide();
 	            		$('#usuarios').show();
 	            		$('#comentarios').hide();
 	            	});	
+
+                    //FUNCION ENSEÑAR FORMULARIO AÑADIR SIDRERIA
 	        		$('#anadirSagardotegi').click(function(){
 	            		$('#borrar').hide();
 	            		$('#anadir').show();
@@ -31,6 +31,7 @@
 	            		$('#comentarios').hide();
 	            	});
 
+                    //FUNCION ENSEÑAR FORMULARIO BORRAR COMENTARIOS
 	            	$('#borrarComentarios').click(function(){
 	            		$('#borrar').hide();
 	            		$('#anadir').hide();
@@ -38,6 +39,7 @@
 	            		$('#comentarios').show();
 	            	});	
 
+                    //FUCION OCULATAR TODOS LOS FORMULARIOS
 	            	$('img').click(function(){
 	            		$('#borrar').hide();
 	            		$('#anadir').hide();
@@ -45,6 +47,7 @@
 	            		$('#comentarios').hide();
 	            	});
 
+                // LISTENER RESPONSIVE
                 window.addEventListener('resize', function(){
                     if($(window).width() <= 800){
 
@@ -58,7 +61,16 @@
                 });
             });
                 
-                
+                // FUNCION CERRAR SESION
+                function logout(){
+                    location.href="logout.php";
+                }
+
+                // FUNCION IR A PERFIL.PHP
+                function perfil(){
+                    location.href="perfil.php";
+                }
+
                 /*  API PARA VALIDAR FORMULARIO DE REGISTRO  */
 
                 function iniciar(){

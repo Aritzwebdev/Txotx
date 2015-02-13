@@ -7,25 +7,28 @@
 <html>
 <head>
         <meta charset="utf-8" />
+
+        <!-- SCRIPTS -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>  <!--/*http://code.jquery.com/jquery-2.1.0.min.js-->     
         <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
         <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
         
         <script type="text/javascript" language="javascript" src="js/apiUsers.js"></script>
         <script src="js/index.js"></script>
+        <script src='js/media-player.js'></script>
 
+        <!-- CSS -->
         <link rel="stylesheet" href="css/menu.css" media="screen, projection"/>
         <link rel="stylesheet" href="css/index.css" />
 
         <link href='css/media-player.css' rel='stylesheet' />
-
-        <script src='js/media-player.js'></script>         
 
         <title>Sagardotegida.tk</title>
 
 </head>
 <body>
 
+    <!-- LOGOTIPO Y TITULO DE LA WEB -->
     <img id="logo" src="img/logo.png"/>
     <h1 id="titulo">SagardoteGida</h1>
 
@@ -79,8 +82,13 @@
 
 <!-- WEB -->
         <img id="fondo" src="img/slide.jpg" alt="background" href="#"/>
+
+        <!-- FORMULARIO DE REGISTRO -->
         <div id="reg">              
             <form class="form-3" action="registro.php" method="post">
+                    <div>
+                        <label id="infoReg">Erregistratu zaitez iruzkinak, balorazioak edo erreserbak egin ahal izateko!</label>
+                    </div>
                     <div>
                         <label for="erabiltzailea" style="padding: 10px 0px 2px 0px;"><font color="white">Erabiltzailea</font></label>
                         <input type="text" name="erabiltzailea" id="erabiltzailea" required title="Sartu erabiltzaile izena">
@@ -110,6 +118,8 @@
                     </div>                
             </form>
         </div>  
+
+        <!-- FORMULARIO DE LOGIN -->
         <div id="log">              
             <form class="form-4" action="" method="post"> 
                    
@@ -126,6 +136,7 @@
             </form>
         </div>
 
+        <!-- SUBITULO Y BUSCADOR DE SIDRERIAS -->
         <div id="subtitulo"><h2>Zure gustoko sagardotegiaren informazioa klik batera</h2></div>
         <div id="bilatu">
             <form class="bilatzailea" >
@@ -135,8 +146,8 @@
             </form>
         </div>
         
-        <!-- REPRODUCTOR DE VIDEO -->
 
+        <!-- REPRODUCTOR DE VIDEO -->
 
         <h1 id="iniTxotx">Inicio de la temporada TXOTX 2015!!</h1>
         
@@ -162,6 +173,7 @@
             </div>
         </div>  
        
+       <!-- PIE DE PAGINA -->
         <footer id="footer" onclick="kendu('log'); kendu('reg');">
 
             <img src="img/copyleft.png" id="copyleft" />

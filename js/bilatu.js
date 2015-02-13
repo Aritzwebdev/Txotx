@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+	// OBTENER LISTADO DE PUEBLOS POR JSON Y ESCRIBIR LOS DATOS EN LA TABLA DE 10 EN 10
 	var url="listaPueblos.php";
 	$("#tablajson tbody").html("");
 		

@@ -1,9 +1,11 @@
 	$(document).ready(function(){
 
+		// CERRAR SESION
 		$("#itxi").click(function(){
 			location.href="logout.php";
 		});
 
+		// ELIMINAR USUARIO
 		$("#elimUsu").click(function(){
 			var baja=confirm ("Erabiltzailea ezabatu nahi duzu?");
         		if(baja){
@@ -11,6 +13,7 @@
         		}
         });
 
+		// FUNCIONES PARA MOSTRAR LOS DIFERENTES FORMULARIOS
 		$("#datu").click(function(){
 			$("#datuak").show();
 			$(".greenBox").hide();
@@ -38,6 +41,7 @@
 
 	 });
 
+	// FUNCION QUE CAMBIA DE IMAGEN DE FONDO AUTOMATICAMENTE CADA 4 SEGUNDOS
 	$.backstretch([
 	    "img/txotx.jpg",
 	    "img/slide.jpg",
