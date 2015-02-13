@@ -44,7 +44,19 @@
 	            		$('#usuarios').hide();
 	            		$('#comentarios').hide();
 	            	});
+
+                window.addEventListener('resize', function(){
+                    if($(window).width() <= 800){
+
+                      $("#autores").text("Copyleft");
+
+                    }else{
+                      $("#autores").text("Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015");
+                    }
+
+              
                 });
+            });
                 
                 
                 /*  API PARA VALIDAR FORMULARIO DE REGISTRO  */

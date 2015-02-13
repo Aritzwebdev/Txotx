@@ -1,14 +1,7 @@
-
+/* CSS DEL VIDEO */
 body { font-family:'verdana'; }
 
-h1 { 
-	position: absolute;
-	top: 89%;
-	left: 39%;
-	font-size:16px;
-	color:white;
-}
-
+/* DIV DONDE VA EL VIDEO */
 #media-player {
 	position: absolute;
 	top: 50%;
@@ -19,6 +12,7 @@ h1 {
 	display: none;
 }
 
+/* VIDEO */
 video {
 	border:1px solid grey;
 	width:305px;
@@ -26,6 +20,7 @@ video {
 	background:#000;
 }
 
+/* POSICION Y FORMATO BOTONES ACCION */
 button {
 	text-indent:-9999px;
 	width:16px;
@@ -35,6 +30,7 @@ button {
 	background:transparent url('../img/buttons.png') no-repeat 0 0;
 }
 
+/* BOTONES DE ACCION DEL VIDEO */
 .pause { background-position:-19px 0; }
 .stop { background-position:-38px 0; }
 .volume-plus { background-position:-57px 0; }
@@ -43,6 +39,7 @@ button {
 .unmute { background-position:-114px 0; }
 .replay { background-position:-133px 0; }
 
+/* BARRA PROGRESO */
 progress {
 	color:green;
 	font-size:12px;

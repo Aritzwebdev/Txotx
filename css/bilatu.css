@@ -1,7 +1,17 @@
+/* FUENTE GENERAL */
 body{
 	font-family: 'Ubuntu', 'Lato', sans-serif;
 }
 
+a{
+	color: black;
+    text-decoration: none;
+}
+a:hover{
+	color: green;
+}
+
+/* POSICIONAMIENTO Y TAMAÑO LOGOTIPO */
 #logo{
     margin-left: 30%;
     margin-top: -0.5%;
@@ -10,6 +20,8 @@ body{
     height: 60px;
     z-index: 3;
 }
+
+/* POSICIONAMIENTO, TAMAÑO Y COLOR DEL TITULO */
 #titulo{ 
     position: absolute;
     top: 10%;
@@ -20,6 +32,7 @@ body{
     text-align: center;
 }
 
+/* POSICIONAMIENTO DEL ENLACE PARA VOLVER ATRAS */
 #bilatu{
 	background-color: none;
 	position: relative;
@@ -33,6 +46,7 @@ body{
 	margin-top: 3px;
 }
 
+/* POSICIONAMIENTO Y MOVIMIENTO BUSCADOR CON LUPA PEQUEÑO */
 #bil{
 	position: fixed;
 	top: 25%;
@@ -57,14 +71,16 @@ input[type="search"]:focus{
 	background-color: #FFF;
 }
 
+/* POSICIONAMIENTO, COLOR Y TAMAÑO DEL NOMBRE DE LA PROBINCIA SELECCIONADA */
 #header h1{
 	position: absolute;
-	top: 30%;
-	left: 10%;
+	top: 31%;
+	left: 9%;
 	color: black;
 	font-size: 30px;
 }
 
+/* LOGOTIPO EN MINIATURA COMO DETALLE DE LA PROBINCIA */
 #log{
 	position: relative;
 	left: 2%;
@@ -73,20 +89,24 @@ input[type="search"]:focus{
 	height:25px;
 }
 
-#probin{
-	position: absolute;
-	top: 10%;
-	left: -15%;
+/* POSICIONAMIENTO Y COLOR DE LOS IDIOMAS EN LA PAGINA */
+#hizkuntzak li{
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-style: italic;
+    display:inline-block;
+    position: relative;
+    top: 5%;
+    left: 10%;
+    padding-left: 5px;
+    color: #000;
 }
 
-#hizkuntzak li,
-#hizkuntzak li a{
-    display:inline-block;
-    float: right;
-  	padding-left: 2px;
-  	padding-right: 2px;
+#hizkuntzak li a,
+#hizkuntzak li a:hover{
     color: black;
 }
+
+/* POSICIONAMIENTO Y TAMAÑO HASIERA */
 #top_header li{
     display:inline-block;
     float: left;
@@ -108,6 +128,7 @@ input[type="search"]:focus{
     padding-right: 2px;
 }
 
+/* CONFIGURACION MENU */
 #registro{
     background-color: green;
     display: block;
@@ -122,6 +143,8 @@ input[type="search"]:focus{
 #registro a:hover{
 	color: black;
 }
+
+/*  */
 #izena{
 	border: 2px solid black;
 	display: -webkit-box;
@@ -136,14 +159,8 @@ input[type="search"]:focus{
 	/*-webkit-box-shadow: rgba(110,110,110, 0.7) 10px 10px 10px; 
 	rgb(a): es la intensidad de la sombra. LO MISMO CON inset al final para hacerla sombra dentro*/
 }
-a{
-	color: black;
-    text-decoration: none;
-}
-a:hover{
-	color: green;
-}
 
+/* POSICIONAMIENTO Y TAMAÑO FUENTE DE HERRIAK */
 #herri{
 	position: absolute;
 	top: 36.5%;
@@ -151,6 +168,7 @@ a:hover{
 	font: 1.5em 'Ubuntu';
 	font-weight: 9; 
 }
+
 
 #sagardo{
 	position: absolute;
@@ -161,6 +179,7 @@ a:hover{
 	font-weight: 9;
 }
 
+/* POSICIONAMIENTO TABLAS DONDE SALEN TODOS LOS PUEBLOS */
 #taulaHerriak{
 	position: relative;
 	left: 5%;
@@ -202,13 +221,20 @@ a:hover{
 	color: purple;
 }
 
-/* RESPONSIVE */
+/* CONFIGURACION RESPONSIVE CUANDO ES MENOS DE 800 PIXELS */
 @media only screen and (max-width: 800px) {
 	
-	.foo{
-		height:1200px;
+	/* FONDO BLANCO TRANSPARENTE DONDE SE VE TODA LA INFORMACION */
+	.foo {
+	    width: 85%;
+	    height: 1125px;
+	    margin: 20px auto;
+	    background: rgba(255,255,255,0.7);   
+	    padding: 20px;
+	    z-index: 2;
 	}
 	
+	/* POSICION LOGOTIPO Y TITULO */
 	#logo{
 	    position: absolute;
 	    top: 7%;
@@ -227,39 +253,40 @@ a:hover{
 		color: black;
 	    text-align: center;
 	}
+
+	/* QUITAR EL FONDO AL MENU PEQUEÑO DONDE SE PUEDE VOLVER ATRAS Y CAMBIAR POSICIOIN */
 	#menu_txikia{
 		background: none;
 		margin-top: 115px;
 	}
 
+	/* CAMBIAR POSICION DEL BUSCADOR PEQUEÑO CON LUPA */
 	#bil{
 		position: absolute;
 		top: 25%;
 		left: 59.5%;
 	}
 	
-	#probin{
-		margin-top:32px;
-		margin-left:18px;
+	/* CAMBIO POSICION DE LA PROVINCIA SELECCIONADA */
+	#header h1{
+		position: absolute;
+		top: 31.5%;
+		left: 16%;
+		color: black;
+		font-size: 30px;
 	}
-	
+
+	/* CAMBIO DE POSICION DE herriak */
 	#herri{
 		margin-top:10px;
 		margin-left:30px;
 	}
 
+	/* CAMBIO POSICION DE IDIOMAS */
 	#hizkuntzak{
 		position: absolute;
 		top: -220%;
-		left: 86%;
-	}
-
-	#header h1{
-		position: absolute;
-		top: 26%;
-		left: 13%;
-		color: black;
-		font-size: 30px;
+		left: 83%;
 	}
 
 	#sagardo{
@@ -268,6 +295,7 @@ a:hover{
 		left: 17%;
 	}
 
+	/* CAMBIO POSICION DE LAS TABLAS CON LA INFORMACION DE LOS PUEBLOS DONDE HAY SIDRERIAS */
 	#taulaHerriak{
 		margin-top:25px;
 		position: absolute;
@@ -299,15 +327,7 @@ a:hover{
 		left: -1%;
 	}
 
-	.foo {
-	    width: 85%;
-	    height: 1125px;
-	    margin: 20px auto;
-	    background: rgba(255,255,255,0.7);   
-	    padding: 20px;
-	    z-index: 2;
-	}
-
+	/* POSICION MENU */
 	#registro{
 	    background-color: green;
 	    display: block;

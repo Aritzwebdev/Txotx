@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+/* MENU RESPONSIVE DE LA PAGINA ADMINISTRADOR */
+
 #cssmenu{
   position: absolute;
   left: -10%;

@@ -1,3 +1,5 @@
+/* CSS PERFIL */
+/* CSS GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@ body {
     -webkit-font-smoothing: antialiased;  
 }
 
+/* DIV BLANCO TRANSPARENCE DONDE SE ENSEÑA LA INFORMACION */
 .foo {
     width: 90%;
     height: 570px;
@@ -17,6 +20,7 @@ body {
     z-index: 2;
 }
 
+/* FONDO DE LA PAGINA */
 #fondo{
     position: fixed;
     top: 0;
@@ -26,6 +30,7 @@ body {
     z-index: -1;
 }
 
+/* POSICION, TAMAÑO Y FORMATO DEL LOGOTIPO Y TITULO DE LA PAGINA */
 #logo{
     margin-left: 30%;
     margin-top: -0.5%;
@@ -44,6 +49,7 @@ body {
     text-align: center;
 }
 
+/* POSICION, TAMAÑO Y COLOR DEL NOMBRE DE USUARIO */
 #header h1{
     position: absolute;
     top: 28%;
@@ -53,17 +59,14 @@ body {
 }
 
 #log{
-    position: relative;
-    left: 2%;
-    margin-top: 25px;
+    position: absolute;
+    top: 27.25%;
+    left: 6%;
     width: 25px;
     height:25px;
 }
 
-#userPerfil{
-    margin: 10px;
-}
-
+/* POSICION FORMULARIO COMENTARIOS */
 .greenBox{
     position: absolute;
     top: 40%;
@@ -72,6 +75,7 @@ body {
     display: none;
 }
 
+/* POSICION FORMULARIO DATOS USUARIO */
 #datuak{
     position: absolute;
     top: 35%;
@@ -84,12 +88,23 @@ body {
     left: 25%;
     display: none;
 }
+
+/* FORMULARIO PARA CAMBIAR CONTRASEÑA */
 #pass{
     position: absolute;
     top: 40%;
     left: 32%;
     display: none;
 }
+
+/* DIV DONDE SE AVISA DE SI HAY ERROR AL CAMBIAR CONTRASEÑA */
+#errorea{
+  position: absolute;
+  top: 55%;
+  left: 40%;
+}
+
+/* POSICION TAMAÑO Y COLOR DE LOS IDIOMAS */
 #hizkuntzak {
     position: absolute;
     top: 5%;
@@ -104,8 +119,11 @@ body {
     text-decoration: none;
 }
 
+
+/* CONFIGURACION RESPONSIVE A MENOS DE 800 PIXELS */
 @media only screen and (max-width: 800px) {
 	
+  /* POSICION Y TAMAÑO MODIFICADOS DEL LOGOTIPO Y EL TITULO */
 	#logo{
 		position:absolute;
 		left:-25%;
@@ -122,6 +140,7 @@ body {
 
 	}
 
+  /* POSICION Y TAMAÑO MENU  */
 	#registro{
 		position:absolute;
 		left:5%;
@@ -135,6 +154,7 @@ body {
         left: 3%;     
     }
 	
+    /* POSICION DE LOS CAMPOS DEL FORMULARIO DATOS USUARIO */
    #datuak #izena{
    	position:absolute;
    	left:32%;
@@ -165,20 +185,24 @@ body {
    	top:150%; 
    }
 		
+    /* POSICION DEL FORMULARIO CAMBIAR CONTRASEÑA */
 	#pass{
 		position:absolute;
 		left:5%;
 	}	
 	
+  /* POSICION DEL FORMULARIO COMENTARIOS */
 	#iruzkinak{
-	width:50px;
+	  width:50px;
 		position:absolute;
 		left:1%;
 	}
 	
+  /* POSICION IDIOMAS */
   #hizkuntzak{
     position: absolute;
     top: 4%;
     left: 90%;
   }
+
 }

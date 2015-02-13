@@ -119,14 +119,14 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.backstretch.js"></script>
 	
-<script type="text/javascript">
-		$.backstretch([
-	          "img/txotx.jpg",
-	          "img/slide.jpg",
-	          "img/sidra.jpg"
-	        ], {
-	            fade: 750,
-	            duration: 4000
-	        });
-</script>
+	<script type="text/javascript">
+			$.backstretch([
+		          "img/txotx.jpg",
+		          "img/slide.jpg",
+		          "img/sidra.jpg"
+		        ], {
+		            fade: 750,
+		            duration: 4000
+		        });
+	</script>
 </html>

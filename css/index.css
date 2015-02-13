@@ -1,3 +1,4 @@
+/* CONFIG CSS GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +15,10 @@ body {
     font: 0.75em/1.5em 'Ubuntu';
 }
 
+a{
+    text-decoration: none;
+}
+
 #contenido2{
     color: white;
     z-index: 3;
@@ -26,6 +31,8 @@ body {
 	width: 100%;
 	height: 95%;
 }
+
+/* POSICION Y TAMAÑO DE LOGOTIPO PRINCIPAL */
 #logo{
     position: absolute;
     top: 1%;
@@ -34,6 +41,8 @@ body {
     height: 60px;
     z-index: 3;
 }
+
+/* POSICION, TAMAÑO Y FORMATO TITULO */
 #titulo{
 	margin: auto; 
     position: absolute;
@@ -44,6 +53,8 @@ body {
     text-align: center;
     font: 'Ubuntu';
 }
+
+/* POSICION, TAMAÑO Y FORMATO SUBTITULO */
 #subtitulo{
     margin: auto;
     position: absolute;
@@ -54,11 +65,13 @@ body {
     font: 1.2em 'Ubuntu';
 }
 
+/* POSICION IMAGENES ESCUDOS */
 .imgSub{
     margin-top: 5%;
     margin-left: -7%;
 }
 
+/* POSICION IDIOMAS */
 #hizkuntzak li{
     font-family: 'Ubuntu', 'Lato', sans-serif;
     font-style: italic;
@@ -81,6 +94,8 @@ body {
     float: right;
     padding: 10px;
 }
+
+/* POSICION Y FORMATO DIV MENU */
 #registro{
     background: rgba(0,0,0,0.6);
     display: block;
@@ -101,12 +116,16 @@ body {
 #registro a:hover{
 	color: black;
 }
+
+/* IMAGEN LOGOTIPO MODIFICADA  */
 #log{
 	position: fixed;
 	left: 67%;
 	top: 5%;
 	display: none;
 }
+
+/* POSICION Y FORMATO DEL LOGIN */
 #reg{
 	position: fixed;
 	left: 67%;
@@ -129,6 +148,7 @@ border: 1px solid green;
  
 }
 
+/* ESTILO, TAMAÑOS Y FORMATO EN GENERAL DE LOS DIV / FORMULARIOS REGISTRO Y LOGIN */
 .form-3, 
 .form-4 {
     font-family: 'Ubuntu', 'Lato', sans-serif;
@@ -305,7 +325,7 @@ border: 1px solid green;
     display: none;
 }
 
-/* BUSCADOR */
+/* POSICION BUSCADOR */
 #bilatu{
     position: fixed;
     top: 57%;
@@ -313,6 +333,7 @@ border: 1px solid green;
     z-index: -1;
 }
 
+/* FORMATO Y CARACTERISTICAS BUSCADOR */
 .bilatzailea {
     display: inline-block;
     zoom: 1; /* ie7 hack for display:inline-block */
@@ -372,12 +393,14 @@ border: 1px solid green;
     -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
 }
 
+/* POSICION VIDEO INICIO TXOTX */
 .video{
     position: absolute;
     top: 45%;
     left: 38%;
 }
 
+/* PIE DE PAGINA */
 #footer{
 	position: absolute;
 	top: 95%;
@@ -390,12 +413,17 @@ border: 1px solid green;
     z-index: -1;
 }
 
+/* POSICION FRASE INICION TXOTX */
 #iniTxotx{
     position: absolute;
-    left: 79%;
+    top: 89%;
+    left: 78%;
+    color: white;
+    font-size: 17px;
     z-index: -1;
 }
 
+/* POSICION Y TAMAÑO BOTON DE INICION VIDEO */
 #btnPlay{
     position: absolute;
     top: 65%;
@@ -405,20 +433,26 @@ border: 1px solid green;
     z-index: -1;
 }
 
+/* POSICION DE LA IMAGEN DE COPYLEFT */
 #copyleft{
     float: left;
     padding-top: 3px;
     padding-left: 5px;
 }
 
+/* POSICION DE LOS NOMBRES DE LOS AUTORES */
 #autores{
     float: left;
     padding-left: 10px;
 }
+
+/* POSICION BOTONES REDES SOCIALES */
 #redSocial{
     float: left;
     padding-left: 175px;
 }
+
+/* POSICION BOTON INFORMACION */
 #about{
     float: right;
 }
@@ -429,6 +463,7 @@ border: 1px solid green;
     margin-left: 450px;
 }
 
+/* FORMATO BOTONES REDES SOCIALES */
 #face,
 #yout,
 #inst,
@@ -439,14 +474,12 @@ border: 1px solid green;
     height: 25px;
 }
 
-a{
-    text-decoration: none;
-}
 
 
 /* RESPONSIVE */
 @media only screen and (max-width: 800px) {
 
+    /* CAMBIO EN LAS POSICIONES Y FORMATOS DE VARIOS ELEMENTOS */
     #registro{
         position: absolute;
         left: -20%;
@@ -546,7 +579,5 @@ a{
         height: 20px;
         margin-left: 45px;
     }
-
-
 
 }    

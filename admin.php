@@ -30,25 +30,25 @@
      <header id="registro">
         <div class="container">
             <div id='cssmenu' class="align-center">
-		<ul>
-            <li class="men"><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
-   			<li class="active"><a href="#s"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
-      			<ul>
-         			<li><a href="#" id="anadirSagardotegi"><img src="img/mas.png" class="imgMenu" />Gehitu</a></li>
-         			<li><a href="#" id="borrarSagardotegi"><img src="img/menos.png" class="imgMenu" />Ezabatu</a></li>
-      			</ul>
-   			</li>
-		  	<li class="men1"><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
-		  	<li class="men"><a href="#" id="borrarComentarios"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
-        <?php 
-            if (isset($_SESSION["user"])){ 
-        ?>   
-            <li class="men">
-                <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
-            </li>
-        <?php } ?>
-		</ul>
-	</div>
+        		<ul>
+                    <li class="men"><a href="index.php"><img src="img/inicio.png" class="imgMenu" />Hasiera</a></li>
+           			<li class="active"><a href="#s"><img src="img/logoIcon.png" class="imgMenu" />Sagardotegiak</a>
+              			<ul>
+                 			<li><a href="#" id="anadirSagardotegi"><img src="img/mas.png" class="imgMenu" />Gehitu</a></li>
+                 			<li><a href="#" id="borrarSagardotegi"><img src="img/menos.png" class="imgMenu" />Ezabatu</a></li>
+              			</ul>
+           			</li>
+        		  	<li class="men1"><a href="#" id="borrarUsuarios"><img src="img/usuario.png" class="imgMenu" />Erabiltzaileak</a></li>
+        		  	<li class="men"><a href="#" id="borrarComentarios"><img src="img/iruzkinak.png" class="imgMenu" />Iruzkinak</a></li>
+                <?php 
+                    if (isset($_SESSION["user"])){ 
+                ?>   
+                    <li class="men">
+                        <a id="itxi" href="#" onclick="logout();"><img src="img/logout.png" class="imgMenu" />Saioa itxi</a>
+                    </li>
+                <?php } ?>
+        		</ul>
+        	</div>
         </div>
     </header>
 
@@ -95,8 +95,26 @@
         <img id="log" src="img/logo.png"/>
         <div id="subtitulo"><h2>Panel Administrador</h2></div>
        
-        <footer id="footer">
-            Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
+       <footer id="footer" onclick="kendu('log'); kendu('reg');">
+
+            <img src="img/copyleft.png" id="copyleft" />
+            <div id="autores" title="Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015">
+                Copyleft Aritz Etxegia, Rubén Aparicio y Lander Reyes 2014 / 2015
+            </div>
+
+            <div id="redSocial"> 
+                <a href="http://www.facebook.com/sagardotegida" target="_blank"><img src="img/facebook.png" id="face" /></a>
+                <a href="https://www.twitter.com/SagardoteGida" target="_blank"><img src="img/twitter.png" id="twit" /></a>
+                <a href="https://www.youtube.com/channel/UCoDkOZgVVDrDJSpgUptF5Gw/feed" target="_blank"><img src="img/youtube.png" id="yout" /></a>
+                <a href="https://plus.google.com/u/0/105399675361069810113/posts" target="_blank"><img src="img/google+.png" id="goog" /></a>
+                <a href="https://instagram.com/sagardotegida" target="_blank"><img src="img/instagram.png" id="inst" /></a>
+            </div>
+            <img src="img/info.png" id="info" />
+            <div id="about">
+            Kontaktua
+            </div>
+            
+
         </footer>
 
 
