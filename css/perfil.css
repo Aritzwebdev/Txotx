@@ -150,9 +150,17 @@ body {
 	
     #log{
         position: absolute;
-        top: 25%;
-        left: 3%;     
+        top: 27%;
+        left: 6%;     
     }
+
+    #header h1{
+      position: absolute;
+      top: 28%;
+      left: 12%;
+      color: black;
+      font-size: 25px;
+  }
 	
     /* POSICION DE LOS CAMPOS DEL FORMULARIO DATOS USUARIO */
    #datuak #izena{
